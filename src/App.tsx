@@ -8,10 +8,10 @@ function App(): JSX.Element {
                 UD CISC275 with React Hooks and TypeScript
             </header>
             <p>
-                Edit <code>src/App.tsx</code> and save. This page will
+                Edit <code>src/App.tsx</code> and save. This pagSe will
                 automatically reload.
             </p>
-            <p>Will Gunter, John Bean</p>
+            <p>Will Gunter, John Bean, Sonika Sharma</p>
         </div>
     );
 }
