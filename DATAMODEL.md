@@ -15,7 +15,11 @@ Semester Object
  
 List of Semesters as top level data object???
   - Semester panel will be updated by using .map to display the list of semesters
- 
+
+Concentration Object
+  - name: string //Name of concentration
+  - requiredCourses: list of Class Objects //Courses that are required for the concentration
+
 SEMESTER PANEL
   - Creates new semester objects
   - Allows user to put class objects into the classes list in the semester object
