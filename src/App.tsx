@@ -11,7 +11,7 @@ function App(): JSX.Element {
                 Edit <code>src/App.tsx</code> and save. This pagSe will
                 automatically reload.
             </p>
-            <p>Will Gunter, John Bean, Sonika Sharma!</p>
+            <p>Will Gunter, John Bean, Sonika Sharma</p>
         </div>
     );
 }
