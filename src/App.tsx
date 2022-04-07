@@ -13,16 +13,10 @@ function App(): JSX.Element {
                 automatically reload.
             </p>
             <p>Will Gunter, John Bean, Sonika Sharma</p>
-            <Button
-                data-testid="First button"
-                onClick={() => console.log("I am logged")}
-            >
+            <Button onClick={() => console.log("I am logged")}>
                 Clear All Courses
             </Button>
-            <Button
-                data-testid="Second button"
-                onClick={() => console.log("I am logged")}
-            >
+            <Button onClick={() => console.log("I am logged")}>
                 Clear All Semesters
             </Button>
         </div>
