@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Introduction to Typing",
+        "department": "CISC",
+        "id": "144",
+        "section": "001",
+        "instructor": "Jerry Soupbase",
+        "credits": 3,
+        "creditTypes": ["MAJOR_REQUIREMENT"],
+        "semestersOffered": ["FALL", "SPRING"]
+    },
+    {
+        "name": "Introduction to Updating Windows",
+        "department": "CISC",
+        "id": "102",
+        "section": "001",
+        "instructor": "Leah Greenonion",
+        "credits": 1,
+        "creditTypes": ["ELECTIVE"],
+        "semestersOffered": ["WINTER", "SPRING"]
+    },
+    {
+        "name": "Advanced Typing",
+        "department": "CISC",
+        "id": "244",
+        "section": "001",
+        "instructor": "Samantha Chickenstock",
+        "credits": 3,
+        "creditTypes": ["CONCENTRATION_REQUIREMENT"],
+        "semestersOffered": ["FALL"]
+    },
+    {
+        "name": "Laptop Hygiene",
+        "department": "CISC",
+        "id": "244",
+        "section": "001",
+        "instructor": "Freddy Garlicpowder",
+        "credits": 3,
+        "creditTypes": ["TECH_ELECTIVE"],
+        "semestersOffered": ["FALL", "SPRING"]
+    }
+]
