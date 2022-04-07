@@ -1,4 +1,4 @@
-import { SemesterSeason } from "./Semester";
+import { SemesterSeason } from "./semester";
 
 /**CourseType describes what credit(s) the course fufills
  * NOTE: We can add more course types as we see fit, these are just the ones I could think of.
