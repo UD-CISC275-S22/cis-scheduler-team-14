@@ -9,7 +9,6 @@ import { Semester, SemesterSeason } from "./interfaces/semester";
 
 function App(): JSX.Element {
     /**Plan States*/
-    const [plans, setPlans] = useState<Plan[]>([]);
     const PLANS = premadePlans.map(
         (plan): Plan => ({
             ...plan,
@@ -29,19 +28,23 @@ function App(): JSX.Element {
             )
         })
     );
-    setPlans(PLANS);
+    const [plans, setPlans] = useState<Plan[]>(PLANS);
+    console.log(PLANS[0]);
     /**Course States*/
-    const [courses, setCourses] = useState<Course[]>([]);
+    //const [courses, setCourses] = useState<Course[]>([]);
     /**Add Semester to Plan States & Constants */
-    const [showAddSemesterModal, setShowAddSemesterModal] = useState(false);
+    const [showAddSemesterModal, setShowAddSemesterModal] =
+        useState<boolean>(false);
     const handleCloseAddSemesterModal = () => setShowAddSemesterModal(false);
     const handleShowAddSemesterModal = () => setShowAddSemesterModal(true);
+
     function addSemester(newSemester: Semester) {
-        const matchingPlan = plans.findIndex((plan) => plan.id === plan.id);
-        plans[matchingPlan].semesters = [
-            ...plans[matchingPlan].semesters,
-            newSemester
-        ];
+        setPlans(
+            plans.map((plan) => ({
+                ...plan,
+                semesters: [...plan.semesters, newSemester]
+            }))
+        );
     }
 
     return (
@@ -54,6 +57,13 @@ function App(): JSX.Element {
                 automatically reload.
             </p>
             <p>Will Gunter, John Bean, Sonika Sharma</p>
+            <p>Number of Semesters in Plan 1: {plans[0].semesters.length}</p>
+            <p>
+                Semester IDs:{" "}
+                {plans[0].semesters.map(
+                    (semester: Semester) => `${semester.id}, `
+                )}
+            </p>
             <div>
                 <Button
                     variant="success"

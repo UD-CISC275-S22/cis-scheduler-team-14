@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { Button, Col, Form, Modal, Row } from "react-bootstrap";
-import { Course } from "../interfaces/course";
-import { Plan } from "../interfaces/plan";
 import { Semester, SemesterSeason } from "../interfaces/semester";
 
 export function AddSemesterModal({
@@ -16,16 +14,14 @@ export function AddSemesterModal({
     const [id, setId] = useState<number>(0);
     const [year, setYear] = useState<number>(0);
     const [season, setSeason] = useState<SemesterSeason>("FALL");
-    const [credits, setCredits] = useState<number>(0);
-    const [courses, setCourses] = useState<Course[]>([]);
 
     function saveChanges() {
         addSemester({
             year: year,
             id: id,
             season: season,
-            credits: credits,
-            courses: courses
+            credits: 0,
+            courses: []
         });
         handleClose();
     }
@@ -84,20 +80,6 @@ export function AddSemesterModal({
                             <option value="SPRING">Spring</option>
                             <option value="SUMMER">Summer</option>
                         </Form.Control>
-                    </Col>
-                </Form.Group>
-                {/*Credits*/}
-                <Form.Group controlId="formSemesterCredits" as={Row}>
-                    <Form.Label column sm={3}>
-                        Credits:
-                    </Form.Label>
-                    <Col>
-                        <Form.Control
-                            value={credits}
-                            onChange={(
-                                event: React.ChangeEvent<HTMLInputElement>
-                            ) => setCredits(parseInt(event.target.value))}
-                        />
                     </Col>
                 </Form.Group>
             </Modal.Body>
