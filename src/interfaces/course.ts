@@ -31,6 +31,6 @@ export interface Course {
 }
 
 /** Returns a string representing a course, such as "CISC275: Introduction to Software Engineering" */
-export function toString(course: Course): string {
+export function getCourseString(course: Course): string {
     return course.department + course.id + ": " + course.name;
 }
