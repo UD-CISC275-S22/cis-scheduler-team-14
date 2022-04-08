@@ -1,7 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
+import { CourseFinder } from "./components/CourseFinder";
+import premadeCourses from "./data/courses.json";
+import { Course, CreditType } from "./interfaces/course";
+import { SemesterSeason } from "./interfaces/semester";
 
 function App(): JSX.Element {
+    /** Importing premade courses from courses.json */
+    const [courses, setCourses] = useState<Course[]>([]);
+    const COURSES = premadeCourses.map(
+        (course): Course => ({
+            ...course,
+            creditTypes: course.creditTypes as CreditType[],
+            semestersOffered: course.semestersOffered as SemesterSeason[]
+        })
+    );
+    setCourses(COURSES);
+
     return (
         <div className="App">
             <header className="App-header">
@@ -12,6 +27,9 @@ function App(): JSX.Element {
                 automatically reload.
             </p>
             <p>Will Gunter, John Bean, Sonika Sharma</p>
+            <div>
+                <CourseFinder courseData={courses}></CourseFinder>
+            </div>
         </div>
     );
 }

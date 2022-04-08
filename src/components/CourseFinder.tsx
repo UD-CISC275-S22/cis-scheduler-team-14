@@ -4,7 +4,11 @@ import { Course, CreditType, getCourseString } from "../interfaces/course";
 import { SemesterSeason } from "../interfaces/semester";
 
 /** A search tab to search for a certain course within the given course catalog */
-export function CourseFinder(courseData: Course[]): JSX.Element {
+export function CourseFinder({
+    courseData
+}: {
+    courseData: Course[];
+}): JSX.Element {
     const [query, setQuery] = useState<string>("");
 
     /** Imports an array of Course objects, type casts creditTypes and semestersOffered */
