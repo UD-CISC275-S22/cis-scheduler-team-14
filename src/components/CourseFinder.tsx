@@ -51,6 +51,7 @@ export function CourseFinder(courseData: Course[]): JSX.Element {
         }
     }
 
+    /** Returns final CourseFinder component */
     return (
         <div>
             <SearchTextField></SearchTextField>
