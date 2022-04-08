@@ -1,7 +1,7 @@
 import { Course } from "./course";
 
 /** SemesterType describes what season the semester takes place */
-export type SemesterSeason = "FALL" | "WINTER" | "SPRING" | "SUMMER";
+export type SemesterSeason = "FALL" | "WINTER" | "SPRING" | "SUMMER" | "EMPTY";
 
 /** A representation of a Semester that classes are scheduled in */
 export interface Semester {
