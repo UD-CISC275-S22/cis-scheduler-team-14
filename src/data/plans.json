@@ -1,0 +1,25 @@
+[
+    {
+        "id": 1,
+        "semesters": [
+            {
+                "id": 1,
+                "year": 2022,
+                "season": "FALL",
+                "credits": 4,
+                "courses": [
+                    {
+                        "name": "Intro to Computer Science",
+                        "department": "CISC",
+                        "id": "101",
+                        "section": "010",
+                        "instructor": "Dr. Bart",
+                        "credits": 4,
+                        "creditTypes": ["MAJOR_REQUIREMENT"],
+                        "semestersOffered": ["FALL", "SPRING"]
+                    }
+                ]
+            }
+        ]
+    }
+]
