@@ -2,23 +2,35 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-PASS src/App.test.tsx
-  ✓ renders the course name somewhere (44 ms)
+  console.log
+    {
+      id: 1,
+      semesters: [
+        { id: 1, year: 2022, season: 'FALL', credits: 4, courses: [Array] }
+      ]
+    }
 
--------------------|---------|----------|---------|---------|-------------------
-File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
--------------------|---------|----------|---------|---------|-------------------
-All files          |     100 |      100 |     100 |     100 |                   
- src               |     100 |      100 |     100 |     100 |                   
-  App.tsx          |     100 |      100 |     100 |     100 |                   
- src/interfaces    |       0 |        0 |       0 |       0 |                   
-  concentration.ts |       0 |        0 |       0 |       0 |                   
-  course.ts        |       0 |        0 |       0 |       0 |                   
-  plan.ts          |       0 |        0 |       0 |       0 |                   
-  semester.ts      |       0 |        0 |       0 |       0 |                   
--------------------|---------|----------|---------|---------|-------------------
+      at App (src/App.tsx:32:13)
+
+PASS src/App.test.tsx
+  ✓ renders the course name somewhere (97 ms)
+
+-----------------------|---------|----------|---------|---------|-------------------
+File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-----------------------|---------|----------|---------|---------|-------------------
+All files              |    62.5 |      100 |   42.85 |   68.18 |                   
+ src                   |   73.33 |      100 |   55.55 |   84.61 |                   
+  App.tsx              |   73.33 |      100 |   55.55 |   84.61 | 42-43             
+ src/components        |   44.44 |      100 |      20 |   44.44 |                   
+  AddSemesterModal.tsx |   44.44 |      100 |      20 |   44.44 | 19-26,45-75       
+ src/interfaces        |       0 |        0 |       0 |       0 |                   
+  concentration.ts     |       0 |        0 |       0 |       0 |                   
+  course.ts            |       0 |        0 |       0 |       0 |                   
+  plan.ts              |       0 |        0 |       0 |       0 |                   
+  semester.ts          |       0 |        0 |       0 |       0 |                   
+-----------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 passed, 1 total
 Tests:       1 passed, 1 total
 Snapshots:   0 total
-Time:        2.111 s
+Time:        2.538 s
 Ran all test suites.
