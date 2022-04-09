@@ -1,8 +1,10 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 import "./App.css";
-import "./Course.tsx";
-import { clearAllCourse } from "./Course";
+import "./courses.tsx";
+import "./semester.tsx";
+import { clearAllCourse } from "./courses";
+import { clearAllSemester } from "./semester";
 
 function App(): JSX.Element {
     return (
@@ -16,9 +18,7 @@ function App(): JSX.Element {
             </p>
             <p>Will Gunter, John Bean, Sonika Sharma</p>
             <Button onClick={clearAllCourse}>Clear All Courses</Button>
-            <Button onClick={() => console.log("I am logged")}>
-                Clear All Semesters
-            </Button>
+            <Button onClick={clearAllSemester}>Clear All Semesters</Button>
         </div>
     );
 }
