@@ -7,7 +7,6 @@ import { SemesterSeason } from "./interfaces/semester";
 
 function App(): JSX.Element {
     /** Importing premade courses from courses.json */
-    const [courses, setCourses] = useState<Course[]>([]);
     const COURSES = premadeCourses.map(
         (course): Course => ({
             ...course,
@@ -15,7 +14,7 @@ function App(): JSX.Element {
             semestersOffered: course.semestersOffered as SemesterSeason[]
         })
     );
-    setCourses(COURSES);
+    const [courses, setCourses] = useState<Course[]>(COURSES);
 
     return (
         <div className="App">
