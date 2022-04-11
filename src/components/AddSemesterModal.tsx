@@ -39,6 +39,7 @@ export function AddSemesterModal({
                     </Form.Label>
                     <Col>
                         <Form.Control
+                            type="number"
                             value={id}
                             onChange={(
                                 event: React.ChangeEvent<HTMLInputElement>
@@ -53,6 +54,7 @@ export function AddSemesterModal({
                     </Form.Label>
                     <Col>
                         <Form.Control
+                            type="number"
                             value={year}
                             onChange={(
                                 event: React.ChangeEvent<HTMLInputElement>
