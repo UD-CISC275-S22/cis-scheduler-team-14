@@ -1,9 +1,9 @@
 import { useState } from "react";
 import "./interfaces/course";
 import { Course } from "./interfaces/course";
-const [course, setCourse] = useState<Course[]>([]);
 
 export function clearAllCourse() {
+    const [course, setCourse] = useState<Course[]>([]);
     setCourse([]);
     course;
 }
