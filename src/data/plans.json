@@ -10,12 +10,12 @@
                 "courses": [
                     {
                         "name": "Intro to Computer Science",
-                        "department": "CISC",
-                        "id": "101",
-                        "section": "010",
-                        "instructor": "Dr. Bart",
+                        "code": "CISC 101",
+                        "description": "An intro computer science course",
                         "credits": 4,
                         "creditTypes": ["MAJOR_REQUIREMENT"],
+                        "prerequisites": "",
+                        "restrictions": "",
                         "semestersOffered": ["FALL", "SPRING"]
                     }
                 ]

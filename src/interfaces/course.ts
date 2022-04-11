@@ -15,23 +15,23 @@ export type CreditType =
 export interface Course {
     /**The full name of the course */
     name: string;
-    /**The three or four letter abbreviation for the department the course is a part of */
-    department: string;
-    /**The three or four digit code that represents the course */
-    id: string;
-    /**The course section number */
-    section: string;
-    /**The name of the course instructor */
-    instructor: string;
+    /**The department code and course ID of the course */
+    code: string;
+    /**Description of the course */
+    description: string;
     /**The amount of credit hours the course counts for */
     credits: number;
     /**A list of CreditTypes representing the credits provided by the course */
     creditTypes: CreditType[];
+    /**PreRequisites for the class */
+    prerequisites: string;
+    /**Restrictions on the course */
+    restrictions: string;
     /**A list of SemesterTypes representing what semester(s) the course is offered in */
     semestersOffered: SemesterSeason[];
 }
 
 /** Returns a string representing a course, such as "CISC275: Introduction to Software Engineering" */
 export function getCourseString(course: Course): string {
-    return course.department + course.id + ": " + course.name;
+    return course.code + ": " + course.name;
 }

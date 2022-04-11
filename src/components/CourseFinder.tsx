@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Form } from "react-bootstrap";
-import { Course, CreditType } from "../interfaces/course";
+import { Course, CreditType, getCourseString } from "../interfaces/course";
 import { SemesterSeason } from "../interfaces/semester";
 
 /** A search tab to search for a certain course within the given course catalog */
@@ -22,7 +22,7 @@ export function CourseFinder({
 
     /** A filter to find if a course contains the given query */
     const containsQuery = (course: Course): boolean =>
-        course.id.toLowerCase().includes(query.toLowerCase()) ||
+        course.code.toLowerCase().includes(query.toLowerCase()) ||
         course.name.toLowerCase().includes(query.toLowerCase());
 
     /** Function to update the query useState */
@@ -42,11 +42,7 @@ export function CourseFinder({
                 />
             </Form.Group>
             {COURSES.filter(containsQuery).map((course: Course) => (
-                <div key={course.id}>
-                    {course.department}
-                    {course.id}
-                    {": " + course.name}
-                </div>
+                <div key={course.code}>{getCourseString(course)}</div>
             ))}
             <div>{query}</div>
         </div>
