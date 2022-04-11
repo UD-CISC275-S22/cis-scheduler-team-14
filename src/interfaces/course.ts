@@ -30,3 +30,8 @@ export interface Course {
     /**A list of SemesterTypes representing what semester(s) the course is offered in */
     semestersOffered: SemesterSeason[];
 }
+
+/** Returns a string representing a course, such as "CISC275: Introduction to Software Engineering" */
+export function getCourseString(course: Course): string {
+    return course.department + course.id + ": " + course.name;
+}

@@ -36,7 +36,7 @@ function App(): JSX.Element {
     const [plans, setPlans] = useState<Plan[]>(PLANS);
     console.log(PLANS[0]);
     /**Course States*/
-    //const [courses, setCourses] = useState<Course[]>([]);
+
     /**Add Semester to Plan States & Constants */
     const [showAddSemesterModal, setShowAddSemesterModal] =
         useState<boolean>(false);
