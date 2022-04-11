@@ -16,7 +16,7 @@ function App(): JSX.Element {
                 Edit <code>src/App.tsx</code> and save. This page will
                 automatically reload.
             </p>
-            <p>Will Gunter, John Bean, Sonika Sharma</p>
+            <p>Will Gunter, John Bean, Sonika Sharma!</p>
             <Button onClick={clearAllCourse}>Clear All Courses</Button>
             <Button onClick={clearAllSemester}>Clear All Semesters</Button>
         </div>
