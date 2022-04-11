@@ -14,6 +14,7 @@ function App(): JSX.Element {
             semestersOffered: course.semestersOffered as SemesterSeason[]
         })
     );
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [courses, setCourses] = useState<Course[]>(COURSES);
 
     return (
