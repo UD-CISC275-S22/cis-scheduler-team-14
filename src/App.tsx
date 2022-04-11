@@ -1,3 +1,8 @@
+import "./App.css";
+import "./courses.tsx";
+import "./semester.tsx";
+import { clearAllCourse } from "./courses";
+import { clearAllSemester } from "./semester";
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import "./App.css";
@@ -53,10 +58,12 @@ function App(): JSX.Element {
                 UD CISC275 with React Hooks and TypeScript
             </header>
             <p>
-                Edit <code>src/App.tsx</code> and save. This pagSe will
+                Edit <code>src/App.tsx</code> and save. This page will
                 automatically reload.
             </p>
             <p>Will Gunter, John Bean, Sonika Sharma</p>
+            <Button onClick={clearAllCourse}>Clear All Courses</Button>
+            <Button onClick={clearAllSemester}>Clear All Semesters</Button>
             <p>Number of Semesters in Plan 1: {plans[0].semesters.length}</p>
             <p>
                 Semester IDs:{" "}
