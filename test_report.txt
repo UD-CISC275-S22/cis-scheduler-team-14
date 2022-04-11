@@ -2,51 +2,49 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-FAIL src/App.test.tsx
-  ● Test suite failed to run
+  console.log
+    {
+      id: 1,
+      semesters: [
+        { id: 1, year: 2022, season: 'FALL', credits: 4, courses: [Array] }
+      ]
+    }
 
-    Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
-    1. You might have mismatching versions of React and the renderer (such as React DOM)
-    2. You might be breaking the Rules of Hooks
-    3. You might have more than one copy of React in the same app
-    See https://reactjs.org/link/invalid-hook-call for tips about how to debug and fix this problem.
+      at App (src/App.tsx:37:13)
 
-      2 | import "./interfaces/course";
-      3 | import { Course } from "./interfaces/course";
-    > 4 | const [course, setCourse] = useState<Course[]>([]);
-        |                             ^
-      5 |
-      6 | export function clearAllCourse() {
-      7 |     setCourse([]);
+  console.log
+    {
+      id: 1,
+      semesters: [
+        { id: 1, year: 2022, season: 'FALL', credits: 4, courses: [Array] }
+      ]
+    }
 
-      at resolveDispatcher (node_modules/react/cjs/react.development.js:1476:13)
-      at useState (node_modules/react/cjs/react.development.js:1507:20)
-      at Object.<anonymous> (src/courses.tsx:4:29)
-      at Object.<anonymous> (src/App.tsx:2:1)
-      at Object.<anonymous> (src/App.test.tsx:3:1)
-      at TestScheduler.scheduleTests (node_modules/@jest/core/build/TestScheduler.js:333:13)
-      at runJest (node_modules/@jest/core/build/runJest.js:404:19)
-      at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
-      at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
+      at App (src/App.tsx:37:13)
+
+PASS src/App.test.tsx
+  DoubleHalf Component tests
+    ✓ renders the course name somewhere (111 ms)
+    ✓ There are Clear All Courses and Clear All Semesters buttons (127 ms)
 
 -----------------------|---------|----------|---------|---------|-------------------
 File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------|---------|----------|---------|---------|-------------------
-All files              |       0 |        0 |       0 |       0 |                   
- src                   |       0 |      100 |       0 |       0 |                   
-  App.tsx              |       0 |      100 |       0 |       0 | 17-71             
-  courses.tsx          |       0 |      100 |       0 |       0 | 4-8               
-  semester.tsx         |       0 |      100 |       0 |       0 | 4-8               
- src/components        |       0 |        0 |       0 |       0 |                   
-  AddSemesterModal.tsx |       0 |      100 |       0 |       0 | 14-77             
+All files              |   38.46 |        0 |   27.27 |   40.54 |                   
+ src                   |   52.38 |      100 |   45.45 |   57.89 |                   
+  App.tsx              |   73.33 |      100 |   55.55 |   84.61 | 47-48             
+  courses.tsx          |       0 |      100 |       0 |       0 | 6-8               
+  semester.tsx         |       0 |      100 |       0 |       0 | 6-8               
+ src/components        |   23.52 |        0 |      10 |   23.52 |                   
+  AddSemesterModal.tsx |   44.44 |      100 |      20 |   44.44 | 19-26,46-77       
   CourseFinder.tsx     |       0 |        0 |       0 |       0 | 12-45             
  src/interfaces        |       0 |      100 |       0 |       0 |                   
   course.ts            |       0 |      100 |       0 |       0 | 36                
   plan.ts              |       0 |        0 |       0 |       0 |                   
   semester.ts          |       0 |        0 |       0 |       0 |                   
 -----------------------|---------|----------|---------|---------|-------------------
-Test Suites: 1 failed, 1 total
-Tests:       0 total
+Test Suites: 1 passed, 1 total
+Tests:       2 passed, 2 total
 Snapshots:   0 total
-Time:        3.034 s
+Time:        3.081 s
 Ran all test suites.
