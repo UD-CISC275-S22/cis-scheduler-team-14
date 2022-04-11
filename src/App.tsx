@@ -1,11 +1,8 @@
 import "./App.css";
-import "./courses.tsx";
-import "./semester.tsx";
-import { clearAllCourse } from "./courses";
-import { clearAllSemester } from "./semester";
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
-import "./App.css";
+import { clearAllCourse } from "./courses";
+import { clearAllSemester } from "./semester";
 import { AddSemesterModal } from "./components/AddSemesterModal";
 import premadePlans from "./data/plans.json";
 import { Course, CreditType } from "./interfaces/course";
