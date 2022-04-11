@@ -1,3 +1,4 @@
+//import { useState } from "react";
 import { SemesterSeason } from "./semester";
 
 /**CourseType describes what credit(s) the course fufills

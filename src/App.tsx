@@ -1,21 +1,56 @@
-import React, { useState } from "react";
 import "./App.css";
-import { CourseFinder } from "./components/CourseFinder";
-import premadeCourses from "./data/courses.json";
+import "./courses.tsx";
+import "./semester.tsx";
+import { clearAllCourse } from "./courses";
+import { clearAllSemester } from "./semester";
+import React, { useState } from "react";
+import { Button } from "react-bootstrap";
+import "./App.css";
+import { AddSemesterModal } from "./components/AddSemesterModal";
+import premadePlans from "./data/plans.json";
 import { Course, CreditType } from "./interfaces/course";
-import { SemesterSeason } from "./interfaces/semester";
+import { Plan } from "./interfaces/plan";
+import { Semester, SemesterSeason } from "./interfaces/semester";
 
 function App(): JSX.Element {
-    /** Importing premade courses from courses.json */
-    const COURSES = premadeCourses.map(
-        (course): Course => ({
-            ...course,
-            creditTypes: course.creditTypes as CreditType[],
-            semestersOffered: course.semestersOffered as SemesterSeason[]
+    /**Plan States*/
+    const PLANS = premadePlans.map(
+        (plan): Plan => ({
+            ...plan,
+            semesters: plan.semesters.map(
+                (semester): Semester => ({
+                    ...semester,
+                    season: semester.season as SemesterSeason,
+                    courses: semester.courses.map(
+                        (course): Course => ({
+                            ...course,
+                            creditTypes: course.creditTypes as CreditType[],
+                            semestersOffered:
+                                course.semestersOffered as SemesterSeason[]
+                        })
+                    )
+                })
+            )
         })
     );
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const [courses, setCourses] = useState<Course[]>(COURSES);
+    const [plans, setPlans] = useState<Plan[]>(PLANS);
+    console.log(PLANS[0]);
+    /**Course States*/
+
+    /**Add Semester to Plan States & Constants */
+    const [showAddSemesterModal, setShowAddSemesterModal] =
+        useState<boolean>(false);
+    const handleCloseAddSemesterModal = () => setShowAddSemesterModal(false);
+    const handleShowAddSemesterModal = () => setShowAddSemesterModal(true);
+
+    function addSemester(newSemester: Semester) {
+        setPlans(
+            plans.map((plan) => ({
+                ...plan,
+                semesters: [...plan.semesters, newSemester]
+            }))
+        );
+    }
 
     return (
         <div className="App">
@@ -23,12 +58,32 @@ function App(): JSX.Element {
                 UD CISC275 with React Hooks and TypeScript
             </header>
             <p>
-                Edit <code>src/App.tsx</code> and save. This pagSe will
+                Edit <code>src/App.tsx</code> and save. This page will
                 automatically reload.
             </p>
             <p>Will Gunter, John Bean, Sonika Sharma</p>
+            <Button onClick={clearAllCourse}>Clear All Courses</Button>
+            <Button onClick={clearAllSemester}>Clear All Semesters</Button>
+            <p>Number of Semesters in Plan 1: {plans[0].semesters.length}</p>
+            <p>
+                Semester IDs:{" "}
+                {plans[0].semesters.map(
+                    (semester: Semester) => `${semester.id}, `
+                )}
+            </p>
             <div>
-                <CourseFinder courseData={courses}></CourseFinder>
+                <Button
+                    variant="success"
+                    className="m-4"
+                    onClick={handleShowAddSemesterModal}
+                >
+                    Add Semester To Plan
+                </Button>
+                <AddSemesterModal
+                    show={showAddSemesterModal}
+                    handleClose={handleCloseAddSemesterModal}
+                    addSemester={addSemester}
+                ></AddSemesterModal>
             </div>
         </div>
     );
