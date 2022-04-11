@@ -10,7 +10,7 @@
       ]
     }
 
-      at App (src/App.tsx:37:13)
+      at App (src/App.tsx:34:13)
 
   console.log
     {
@@ -20,19 +20,19 @@
       ]
     }
 
-      at App (src/App.tsx:37:13)
+      at App (src/App.tsx:34:13)
 
 PASS src/App.test.tsx
   DoubleHalf Component tests
-    ✓ renders the course name somewhere (105 ms)
-    ✓ There are Clear All Courses and Clear All Semesters buttons (124 ms)
+    ✓ renders the course name somewhere (80 ms)
+    ✓ There are Clear All Courses and Clear All Semesters buttons (95 ms)
 
 -----------------------|---------|----------|---------|---------|-------------------
 File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------|---------|----------|---------|---------|-------------------
 All files              |   38.46 |        0 |   27.27 |   40.54 |                   
  src                   |   52.38 |      100 |   45.45 |   57.89 |                   
-  App.tsx              |   73.33 |      100 |   55.55 |   84.61 | 47-48             
+  App.tsx              |   73.33 |      100 |   55.55 |   84.61 | 44-45             
   courses.tsx          |       0 |      100 |       0 |       0 | 6-8               
   semester.tsx         |       0 |      100 |       0 |       0 | 6-8               
  src/components        |   23.52 |        0 |      10 |   23.52 |                   
@@ -46,5 +46,5 @@ All files              |   38.46 |        0 |   27.27 |   40.54 |
 Test Suites: 1 passed, 1 total
 Tests:       2 passed, 2 total
 Snapshots:   0 total
-Time:        3.105 s
+Time:        2.244 s
 Ran all test suites.
