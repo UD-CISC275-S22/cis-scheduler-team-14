@@ -1,29 +1,56 @@
 import React, { useState } from "react";
-import { Button, Col, Form, Modal, Row } from "react-bootstrap";
-import { Semester, SemesterSeason } from "../interfaces/semester";
+import { Button, Col, Dropdown, Form, Modal, Row } from "react-bootstrap";
+import { Season, Semester } from "../interfaces/semester";
 
 export function AddSemesterModal({
     show,
     handleClose,
-    addSemester
+    semesters,
+    setSemesters
 }: {
     show: boolean;
     handleClose: () => void;
-    addSemester: (newSemester: Semester) => void;
+    semesters: Semester[];
+    setSemesters: (semesters: Semester[]) => void;
 }) {
-    const [id, setId] = useState<number>(0);
-    const [year, setYear] = useState<number>(0);
-    const [season, setSeason] = useState<SemesterSeason>("FALL");
+    const [inSeason, setInSeason] = useState<Season>(Season.fall);
+    const [inYear, setInYear] = useState<number>(2022);
+    const [alert, setAlert] = useState<string>("");
 
     function saveChanges() {
-        addSemester({
-            year: year,
-            id: id,
-            season: season,
-            credits: 0,
-            courses: []
-        });
-        handleClose();
+        const newSemester: Semester[] = semesters;
+        if (
+            semesters.filter((s) => s.season === inSeason && s.year === inYear)
+                .length > 0
+        ) {
+            setAlert("Semester already exists in this plan.");
+        } else {
+            newSemester.push({
+                season: inSeason,
+                year: inYear,
+                courses: []
+            });
+            newSemester.sort(compareSemesters);
+            setSemesters(newSemester);
+            setAlert("");
+            handleClose();
+        }
+    }
+
+    function compareSemesters(a: Semester, b: Semester) {
+        if (a.year < b.year) {
+            return -1;
+        } else if (a.year > b.year) {
+            return 1;
+        } else {
+            if (a.season < b.season) {
+                return -1;
+            } else if (a.season > b.season) {
+                return 1;
+            } else {
+                return 0;
+            }
+        }
     }
 
     return (
@@ -32,21 +59,6 @@ export function AddSemesterModal({
                 <Modal.Title>Add New Semester</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                {/*ID*/}
-                <Form.Group controlId="formSemesterID" as={Row}>
-                    <Form.Label column sm={3}>
-                        Semester ID:
-                    </Form.Label>
-                    <Col>
-                        <Form.Control
-                            type="number"
-                            value={id}
-                            onChange={(
-                                event: React.ChangeEvent<HTMLInputElement>
-                            ) => setId(parseInt(event.target.value))}
-                        />
-                    </Col>
-                </Form.Group>
                 {/*Year*/}
                 <Form.Group controlId="formSemesterYear" as={Row}>
                     <Form.Label column sm={3}>
@@ -55,10 +67,10 @@ export function AddSemesterModal({
                     <Col>
                         <Form.Control
                             type="number"
-                            value={year}
+                            value={inYear}
                             onChange={(
                                 event: React.ChangeEvent<HTMLInputElement>
-                            ) => setYear(parseInt(event.target.value))}
+                            ) => setInYear(parseInt(event.target.value))}
                         />
                     </Col>
                 </Form.Group>
@@ -68,22 +80,51 @@ export function AddSemesterModal({
                         Season:
                     </Form.Label>
                     <Col>
-                        <Form.Control
-                            as="select"
-                            value={season}
-                            onChange={(
-                                event: React.ChangeEvent<HTMLInputElement>
-                            ) =>
-                                setSeason(event.target.value as SemesterSeason)
-                            }
-                        >
-                            <option value="FALL">Fall</option>
-                            <option value="WINTER">Winter</option>
-                            <option value="SPRING">Spring</option>
-                            <option value="SUMMER">Summer</option>
-                        </Form.Control>
+                        <Dropdown>
+                            <Dropdown.Toggle
+                                variant="secondary"
+                                id="dropdown-basic"
+                            >
+                                {inSeason}
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu>
+                                <Dropdown.Item
+                                    onClick={() => {
+                                        setInSeason(Season.fall);
+                                        setAlert("");
+                                    }}
+                                >
+                                    Fall
+                                </Dropdown.Item>
+                                <Dropdown.Item
+                                    onClick={() => {
+                                        setInSeason(Season.spring);
+                                        setAlert("");
+                                    }}
+                                >
+                                    Spring
+                                </Dropdown.Item>
+                                <Dropdown.Item
+                                    onClick={() => {
+                                        setInSeason(Season.summer);
+                                        setAlert("");
+                                    }}
+                                >
+                                    Summer
+                                </Dropdown.Item>
+                                <Dropdown.Item
+                                    onClick={() => {
+                                        setInSeason(Season.winter);
+                                        setAlert("");
+                                    }}
+                                >
+                                    Winter
+                                </Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown>
                     </Col>
                 </Form.Group>
+                <p id="alert">{alert}</p>
             </Modal.Body>
             <Modal.Footer>
                 <Button variant="secondary" onClick={handleClose}>
