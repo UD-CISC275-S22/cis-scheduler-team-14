@@ -1,8 +1,6 @@
 import "./App.css";
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
-import { clearAllCourse } from "./courses";
-import { clearAllSemester } from "./semester";
 import { AddSemesterModal } from "./components/AddSemesterModal";
 import premadePlans from "./data/plans.json";
 import { Course, CreditType } from "./interfaces/course";
@@ -47,6 +45,18 @@ function App(): JSX.Element {
                 semesters: [...plan.semesters, newSemester]
             }))
         );
+    }
+
+    function clearAllCourse() {
+        const [course, setCourse] = useState<Course[]>([]);
+        setCourse([]);
+        course;
+    }
+
+    function clearAllSemester() {
+        const origplan = plans[0];
+        origplan.semesters = [];
+        setPlans([origplan]);
     }
 
     return (
