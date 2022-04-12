@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Col, Dropdown, Form, Modal, Row } from "react-bootstrap";
+import { Button, Col, Form, Modal, Row } from "react-bootstrap";
 import { Plan } from "../interfaces/plan";
 
 export function AddPlanModal({
@@ -19,7 +19,7 @@ export function AddPlanModal({
     function savePlan(): void {
         const newPlan: Plan[] = plans;
         if (plans.filter((p) => p.id === inId).length > 0) {
-            setAlert("Plan with this ID already exists");
+            setAlert("Plan with this ID already exists.");
         } else {
             newPlan.push({ id: inId, semesters: [] });
             newPlan.sort(comparePlans);
@@ -46,9 +46,9 @@ export function AddPlanModal({
             </Modal.Header>
             <Modal.Body>
                 {/*ID*/}
-                <Form.Group controlId="formSemesterYear" as={Row}>
+                <Form.Group controlId="formPlanID" as={Row}>
                     <Form.Label column sm={3}>
-                        Year:
+                        ID:
                     </Form.Label>
                     <Col>
                         <Form.Control

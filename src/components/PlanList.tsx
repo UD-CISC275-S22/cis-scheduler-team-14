@@ -25,6 +25,7 @@ export function PlanList({
                         <PlanView
                             plan={plan}
                             deletePlan={deletePlan}
+                            plans={plans}
                         ></PlanView>
                     </div>
                 ))}
