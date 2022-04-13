@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { Button, Stack } from "react-bootstrap";
+import { Stack } from "react-bootstrap";
+import Button from "@mui/material/Button";
+import Add from "@mui/icons-material/Add";
 import { Plan } from "../interfaces/plan";
 import { PlanView } from "./PlanView";
 import { AddPlanModal } from "./AddPlanModal";
@@ -31,7 +33,9 @@ export function PlanList({
                 ))}
             </Stack>
             <Button
-                variant="success"
+                variant="contained"
+                startIcon={<Add />}
+                color="success"
                 className="m-4"
                 onClick={handleShowAddPlanModal}
             >

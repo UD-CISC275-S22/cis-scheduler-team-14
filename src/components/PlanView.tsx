@@ -2,7 +2,9 @@ import { Plan } from "../interfaces/plan";
 import React, { useState } from "react";
 import { Semester } from "../interfaces/semester";
 import { AddSemesterModal } from "./AddSemesterModal";
-import { Button } from "react-bootstrap";
+import DeleteIcon from "@mui/icons-material/Delete";
+import Add from "@mui/icons-material/Add";
+import Button from "@mui/material/Button";
 import { SemesterList } from "./SemesterList";
 
 export function PlanView({
@@ -25,8 +27,10 @@ export function PlanView({
             <h6>{plan.semesters.length} Semester(s)</h6>
             <SemesterList semesters={semesters} setSemesters={setSemesters} />
             <Button
-                variant="success"
-                className="m-4"
+                startIcon={<Add />}
+                variant="contained"
+                color="success"
+                className="m-2"
                 onClick={handleShowAddSemesterModal}
             >
                 Add Semester
@@ -40,8 +44,10 @@ export function PlanView({
             {/*Delete Plan*/}
             {plans.length > 1 ? (
                 <Button
-                    variant="danger"
-                    className="m-4"
+                    startIcon={<DeleteIcon />}
+                    variant="outlined"
+                    color="secondary"
+                    className="m-2"
                     onClick={() => deletePlan(plan.id)}
                 >
                     Delete Plan

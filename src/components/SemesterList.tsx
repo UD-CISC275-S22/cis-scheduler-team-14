@@ -26,7 +26,7 @@ export function SemesterList({
                 {semesters.map((semester: Semester) => (
                     <div
                         key={semester.year + "-" + semester.season}
-                        className="bg-light border m-2 p-2"
+                        className="bg-light border m-2 p-0"
                     >
                         <SemesterView
                             semester={semester}

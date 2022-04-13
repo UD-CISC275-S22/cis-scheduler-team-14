@@ -1,6 +1,10 @@
 import React, { useState } from "react";
-import { Button, Col, Form, Modal, Row } from "react-bootstrap";
+import { Col, Form, Modal, Row } from "react-bootstrap";
 import { Plan } from "../interfaces/plan";
+import CancelIcon from "@mui/icons-material/Cancel";
+import Add from "@mui/icons-material/Add";
+import Button from "@mui/material/Button";
+import Alert from "@mui/material/Alert";
 
 export function AddPlanModal({
     show,
@@ -63,13 +67,25 @@ export function AddPlanModal({
                         />
                     </Col>
                 </Form.Group>
-                <p id="alert">{alert}</p>
+                {alert && <Alert severity="error">{alert}</Alert>}
             </Modal.Body>
             <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose}>
+                <Button
+                    variant="outlined"
+                    className="m-2"
+                    startIcon={<CancelIcon />}
+                    onClick={handleClose}
+                    color="secondary"
+                >
                     Cancel
                 </Button>
-                <Button variant="primary" onClick={savePlan}>
+                <Button
+                    variant="contained"
+                    className="m-2"
+                    startIcon={<Add />}
+                    onClick={savePlan}
+                    color="primary"
+                >
                     Add Plan
                 </Button>
             </Modal.Footer>

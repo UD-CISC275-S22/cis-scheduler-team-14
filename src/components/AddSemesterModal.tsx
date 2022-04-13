@@ -1,6 +1,10 @@
 import React, { useState } from "react";
-import { Button, Col, Dropdown, Form, Modal, Row } from "react-bootstrap";
+import { Col, Dropdown, Form, Modal, Row } from "react-bootstrap";
 import { Season, Semester } from "../interfaces/semester";
+import CancelIcon from "@mui/icons-material/Cancel";
+import Add from "@mui/icons-material/Add";
+import Button from "@mui/material/Button";
+import Alert from "@mui/material/Alert";
 
 export function AddSemesterModal({
     show,
@@ -124,14 +128,26 @@ export function AddSemesterModal({
                         </Dropdown>
                     </Col>
                 </Form.Group>
-                <p id="alert">{alert}</p>
+                {alert && <Alert severity="error">{alert}</Alert>}
             </Modal.Body>
             <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose}>
-                    Close
+                <Button
+                    variant="outlined"
+                    className="m-2"
+                    startIcon={<CancelIcon />}
+                    onClick={handleClose}
+                    color="secondary"
+                >
+                    Cancel
                 </Button>
-                <Button variant="primary" onClick={saveChanges}>
-                    Save New Semester
+                <Button
+                    variant="contained"
+                    className="m-2"
+                    startIcon={<Add />}
+                    onClick={saveChanges}
+                    color="primary"
+                >
+                    Add Plan
                 </Button>
             </Modal.Footer>
         </Modal>
