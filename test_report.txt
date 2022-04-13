@@ -10,7 +10,7 @@
       ]
     }
 
-      at App (src/App.tsx:32:13)
+      at App (src/App.tsx:43:13)
 
   console.log
     {
@@ -20,31 +20,31 @@
       ]
     }
 
-      at App (src/App.tsx:32:13)
+      at App (src/App.tsx:43:13)
 
 PASS src/App.test.tsx
   DoubleHalf Component tests
-    ✓ renders the course name somewhere (80 ms)
-    ✓ There are Clear All Courses and Clear All Semesters buttons (88 ms)
+    ✓ renders the course name somewhere (90 ms)
+    ✓ There are Clear All Courses and Clear All Semesters buttons (93 ms)
 
 -----------------------|---------|----------|---------|---------|-------------------
 File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------|---------|----------|---------|---------|-------------------
-All files              |   33.33 |        0 |      25 |   34.88 |                   
- src                   |   40.74 |      100 |   38.46 |      44 |                   
-  App.tsx              |   52.38 |      100 |   45.45 |   57.89 | 42-59             
+All files              |   54.16 |       50 |      48 |   56.52 |                   
+ src                   |   46.66 |      100 |   42.85 |      50 |                   
+  App.tsx              |   58.33 |      100 |      50 |   63.63 | 53-70             
   courses.tsx          |       0 |      100 |       0 |       0 | 6-8               
   semester.tsx         |       0 |      100 |       0 |       0 | 6-8               
- src/components        |   23.52 |        0 |      10 |   23.52 |                   
+ src/components        |    64.7 |       50 |      50 |    64.7 |                   
   AddSemesterModal.tsx |   44.44 |      100 |      20 |   44.44 | 19-26,46-77       
-  CourseFinder.tsx     |       0 |        0 |       0 |       0 | 12-45             
- src/interfaces        |       0 |      100 |       0 |       0 |                   
-  course.ts            |       0 |      100 |       0 |       0 | 36                
+  CourseFinder.tsx     |    87.5 |       50 |      80 |    87.5 | 30                
+ src/interfaces        |     100 |      100 |     100 |     100 |                   
+  course.ts            |     100 |      100 |     100 |     100 |                   
   plan.ts              |       0 |        0 |       0 |       0 |                   
   semester.ts          |       0 |        0 |       0 |       0 |                   
 -----------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 passed, 1 total
 Tests:       2 passed, 2 total
 Snapshots:   0 total
-Time:        2.16 s
+Time:        2.273 s
 Ran all test suites.
