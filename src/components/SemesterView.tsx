@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Semester } from "../interfaces/semester";
-import { Button } from "react-bootstrap";
 import { Course } from "../interfaces/course";
+import DeleteIcon from "@mui/icons-material/Delete";
+import Button from "@mui/material/Button";
 
 export function SemesterView({
     semester,
@@ -29,8 +30,10 @@ export function SemesterView({
             {/*Delete Semester*/}
             {semesters.length > -1 ? (
                 <Button
-                    variant="danger"
-                    className="m-1"
+                    startIcon={<DeleteIcon />}
+                    variant="outlined"
+                    color="secondary"
+                    className="m-2"
                     onClick={() =>
                         deleteSemester(semester.year, semester.season)
                     }
