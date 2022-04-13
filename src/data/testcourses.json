@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Introduction to Typing",
+        "code": "CISC144",
+        "description": "How to type",
+        "credits": 3,
+        "creditTypes": ["MAJOR_REQUIREMENT"],
+        "prerequisites": "",
+        "restrictions": "",
+        "semestersOffered": ["FALL", "SPRING"]
+    },
+    {
+        "name": "Introduction to Updating Windows",
+        "code": "CISC102",
+        "description": "How to update to Windows 12",
+        "credits": 1,
+        "creditTypes": ["ELECTIVE"],
+        "prerequisites": "",
+        "restrictions": "",
+        "semestersOffered": ["WINTER", "SPRING"]
+    },
+    {
+        "name": "Advanced Typing",
+        "code": "CISC287",
+        "description": "How to type faster",
+        "credits": 3,
+        "creditTypes": ["CONCENTRATION_REQUIREMENT"],
+        "prerequisites": "",
+        "restrictions": "",
+        "semestersOffered": ["FALL"]
+    },
+    {
+        "name": "Laptop Hygiene",
+        "code": "CISC255",
+        "description": "How to clean your laptop.",
+        "credits": 3,
+        "creditTypes": ["TECH_ELECTIVE"],
+        "prerequisites": "CISC144",
+        "restrictions": "",
+        "semestersOffered": ["FALL", "SPRING"]
+    }
+]
