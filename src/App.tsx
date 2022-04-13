@@ -6,8 +6,19 @@ import premadePlans from "./data/plans.json";
 import { Course, CreditType } from "./interfaces/course";
 import { Plan } from "./interfaces/plan";
 import { Semester, SemesterSeason } from "./interfaces/semester";
+import TestCourses from "./data/testcourses.json";
+import { CourseFinder } from "./components/CourseFinder";
 
 function App(): JSX.Element {
+    /** Test Course states */
+    const TESTCOURSES = TestCourses.map(
+        (course): Course => ({
+            ...course,
+            creditTypes: course.creditTypes as CreditType[],
+            semestersOffered: course.semestersOffered as SemesterSeason[]
+        })
+    );
+    const [testCourses] = useState<Course[]>(TESTCOURSES);
     /**Plan States*/
     const PLANS = premadePlans.map(
         (plan): Plan => ({
@@ -91,6 +102,9 @@ function App(): JSX.Element {
                     handleClose={handleCloseAddSemesterModal}
                     addSemester={addSemester}
                 ></AddSemesterModal>
+            </div>
+            <div>
+                <CourseFinder courseData={testCourses}></CourseFinder>
             </div>
         </div>
     );
