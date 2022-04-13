@@ -2,15 +2,25 @@ import "./App.css";
 import React, { useState } from "react";
 import headerimg from "./media/background.jpg";
 import { Button } from "react-bootstrap";
-import { clearAllCourse } from "./components/Course";
-import { clearAllSemester } from "./components/Semester";
+import { AddSemesterModal } from "./components/AddSemesterModal";
 import premadePlans from "./data/plans.json";
 import { Course, CreditType } from "./interfaces/course";
 import { Plan } from "./interfaces/plan";
 import { Semester, Season } from "./interfaces/semester";
 import { PlanList } from "./components/PlanList";
+import TestCourses from "./data/testcourses.json";
+import { CourseFinder } from "./components/CourseFinder";
 
 function App(): JSX.Element {
+    /** Test Course states */
+    const TESTCOURSES = TestCourses.map(
+        (course): Course => ({
+            ...course,
+            creditTypes: course.creditTypes as CreditType[],
+            semestersOffered: course.semestersOffered as SemesterSeason[]
+        })
+    );
+    const [testCourses] = useState<Course[]>(TESTCOURSES);
     /**Plan States*/
     const PLANS = premadePlans.map(
         (plan): Plan => ({
@@ -38,6 +48,32 @@ function App(): JSX.Element {
     console.log(PLANS[0]);
     /**Course States*/
 
+    /**Add Semester to Plan States & Constants */
+    const [showAddSemesterModal, setShowAddSemesterModal] =
+        useState<boolean>(false);
+    const handleCloseAddSemesterModal = () => setShowAddSemesterModal(false);
+    const handleShowAddSemesterModal = () => setShowAddSemesterModal(true);
+
+    function addSemester(newSemester: Semester) {
+        setPlans(
+            plans.map((plan) => ({
+                ...plan,
+                semesters: [...plan.semesters, newSemester]
+            }))
+        );
+    }
+
+    function clearAllCourse() {
+        const [course, setCourse] = useState<Course[]>([]);
+        setCourse([]);
+        course;
+    }
+
+    function clearAllSemester() {
+        const origplan = plans[0];
+        origplan.semesters = [];
+        setPlans([origplan]);
+    }
     return (
         <div className="App">
             <img src={headerimg} width="100%" />
@@ -51,6 +87,9 @@ function App(): JSX.Element {
                     setPlans={setPlans}
                     deletePlan={deletePlan}
                 ></PlanList>
+            </div>
+            <div>
+                <CourseFinder courseData={testCourses}></CourseFinder>
             </div>
         </div>
     );
