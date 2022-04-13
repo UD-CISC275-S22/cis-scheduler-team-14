@@ -1,5 +1,6 @@
 import "./App.css";
 import React, { useState } from "react";
+import headerimg from "./media/background.jpg";
 import { Button } from "react-bootstrap";
 import { clearAllCourse } from "./components/Course";
 import { clearAllSemester } from "./components/Semester";
@@ -39,13 +40,7 @@ function App(): JSX.Element {
 
     return (
         <div className="App">
-            <header className="App-header">
-                UD CISC275 with React Hooks and TypeScript
-            </header>
-            <p>
-                Edit <code>src/App.tsx</code> and save. This page will
-                automatically reload.
-            </p>
+            <img src={headerimg} width="100%" />
             <p>Will Gunter, John Bean, Sonika Sharma</p>
             <Button onClick={clearAllCourse}>Clear All Courses</Button>
             <Button onClick={clearAllSemester}>Clear All Semesters</Button>
