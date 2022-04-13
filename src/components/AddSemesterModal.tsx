@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Col, Dropdown, Form, Modal, Row } from "react-bootstrap";
+import { Col, Form, Modal, Row } from "react-bootstrap";
 import { Season, Semester } from "../interfaces/semester";
 import CancelIcon from "@mui/icons-material/Cancel";
 import Add from "@mui/icons-material/Add";
 import Button from "@mui/material/Button";
 import Alert from "@mui/material/Alert";
+import Select, { SelectChangeEvent } from "@mui/material/Select";
 
 export function AddSemesterModal({
     show,
@@ -57,6 +58,11 @@ export function AddSemesterModal({
         }
     }
 
+    const handleChange = (event: SelectChangeEvent) => {
+        setInSeason(event.target.value as Season);
+        setAlert("");
+    };
+
     return (
         <Modal show={show} onHide={handleClose} animation={false}>
             <Modal.Header closeButton>
@@ -64,70 +70,53 @@ export function AddSemesterModal({
             </Modal.Header>
             <Modal.Body>
                 {/*Year*/}
-                <Form.Group controlId="formSemesterYear" as={Row}>
-                    <Form.Label column sm={3}>
-                        Year:
-                    </Form.Label>
-                    <Col>
-                        <Form.Control
-                            type="number"
-                            value={inYear}
-                            onChange={(
-                                event: React.ChangeEvent<HTMLInputElement>
-                            ) => setInYear(parseInt(event.target.value))}
-                        />
-                    </Col>
-                </Form.Group>
+                <div className="m-2">
+                    <Form.Group controlId="formSemesterYear" as={Row}>
+                        <Form.Label column sm={3}>
+                            Year:
+                        </Form.Label>
+                        <Col>
+                            <Form.Control
+                                type="number"
+                                value={inYear}
+                                onChange={(
+                                    event: React.ChangeEvent<HTMLInputElement>
+                                ) => setInYear(parseInt(event.target.value))}
+                            />
+                        </Col>
+                    </Form.Group>
+                </div>
                 {/*Season*/}
-                <Form.Group controlId="formSemesterSeason" as={Row}>
-                    <Form.Label column sm={3}>
-                        Season:
-                    </Form.Label>
-                    <Col>
-                        <Dropdown>
-                            <Dropdown.Toggle
-                                variant="secondary"
-                                id="dropdown-basic"
+                <div className="m-2">
+                    <Form.Group controlId="formSemesterSeason" as={Row}>
+                        <Form.Label column sm={3}>
+                            Season:
+                        </Form.Label>
+                        <Col>
+                            <Select
+                                native
+                                value={inSeason}
+                                label="Season"
+                                onChange={handleChange}
                             >
-                                {inSeason}
-                            </Dropdown.Toggle>
-                            <Dropdown.Menu>
-                                <Dropdown.Item
-                                    onClick={() => {
-                                        setInSeason(Season.fall);
-                                        setAlert("");
-                                    }}
-                                >
-                                    Fall
-                                </Dropdown.Item>
-                                <Dropdown.Item
-                                    onClick={() => {
-                                        setInSeason(Season.spring);
-                                        setAlert("");
-                                    }}
-                                >
-                                    Spring
-                                </Dropdown.Item>
-                                <Dropdown.Item
-                                    onClick={() => {
-                                        setInSeason(Season.summer);
-                                        setAlert("");
-                                    }}
-                                >
-                                    Summer
-                                </Dropdown.Item>
-                                <Dropdown.Item
-                                    onClick={() => {
-                                        setInSeason(Season.winter);
-                                        setAlert("");
-                                    }}
-                                >
-                                    Winter
-                                </Dropdown.Item>
-                            </Dropdown.Menu>
-                        </Dropdown>
-                    </Col>
-                </Form.Group>
+                                <optgroup label="Main Semesters">
+                                    <option value={Season.fall}>Fall</option>
+                                    <option value={Season.spring}>
+                                        Spring
+                                    </option>
+                                </optgroup>
+                                <optgroup label="Special Semesters">
+                                    <option value={Season.winter}>
+                                        Winter
+                                    </option>
+                                    <option value={Season.summer}>
+                                        Summer
+                                    </option>
+                                </optgroup>
+                            </Select>
+                        </Col>
+                    </Form.Group>
+                </div>
                 {alert && <Alert severity="error">{alert}</Alert>}
             </Modal.Body>
             <Modal.Footer>

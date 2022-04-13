@@ -24,7 +24,6 @@ export function PlanView({
     return (
         <div className="bg-light border m-2 p-2">
             <h3>Plan {plan.id}</h3>
-            <h6>{plan.semesters.length} Semester(s)</h6>
             <SemesterList semesters={semesters} setSemesters={setSemesters} />
             <Button
                 startIcon={<Add />}
