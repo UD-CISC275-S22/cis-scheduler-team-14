@@ -1,11 +1,12 @@
 import "./App.css";
 import React, { useState } from "react";
+import headerimg from "./media/background.jpg";
 import { Button } from "react-bootstrap";
-import { AddSemesterModal } from "./components/AddSemesterModal";
 import premadePlans from "./data/plans.json";
 import { Course, CreditType } from "./interfaces/course";
 import { Plan } from "./interfaces/plan";
-import { Semester, SemesterSeason } from "./interfaces/semester";
+import { Semester, Season } from "./interfaces/semester";
+import { PlanList } from "./components/PlanList";
 import TestCourses from "./data/testcourses.json";
 import { CourseFinder } from "./components/CourseFinder";
 
@@ -15,7 +16,7 @@ function App(): JSX.Element {
         (course): Course => ({
             ...course,
             creditTypes: course.creditTypes as CreditType[],
-            semestersOffered: course.semestersOffered as SemesterSeason[]
+            semestersOffered: course.semestersOffered as Season[]
         })
     );
     const [testCourses] = useState<Course[]>(TESTCOURSES);
@@ -26,13 +27,13 @@ function App(): JSX.Element {
             semesters: plan.semesters.map(
                 (semester): Semester => ({
                     ...semester,
-                    season: semester.season as SemesterSeason,
+                    season: semester.season as Season,
                     courses: semester.courses.map(
                         (course): Course => ({
                             ...course,
                             creditTypes: course.creditTypes as CreditType[],
                             semestersOffered:
-                                course.semestersOffered as SemesterSeason[]
+                                course.semestersOffered as Season[]
                         })
                     )
                 })
@@ -40,23 +41,13 @@ function App(): JSX.Element {
         })
     );
     const [plans, setPlans] = useState<Plan[]>(PLANS);
+    function deletePlan(id: number): void {
+        setPlans(plans.filter((plan) => plan.id !== id));
+    }
     console.log(PLANS[0]);
     /**Course States*/
 
     /**Add Semester to Plan States & Constants */
-    const [showAddSemesterModal, setShowAddSemesterModal] =
-        useState<boolean>(false);
-    const handleCloseAddSemesterModal = () => setShowAddSemesterModal(false);
-    const handleShowAddSemesterModal = () => setShowAddSemesterModal(true);
-
-    function addSemester(newSemester: Semester) {
-        setPlans(
-            plans.map((plan) => ({
-                ...plan,
-                semesters: [...plan.semesters, newSemester]
-            }))
-        );
-    }
 
     function clearAllCourse() {
         const [course, setCourse] = useState<Course[]>([]);
@@ -69,39 +60,19 @@ function App(): JSX.Element {
         origplan.semesters = [];
         setPlans([origplan]);
     }
-
     return (
         <div className="App">
-            <header className="App-header">
-                UD CISC275 with React Hooks and TypeScript
-            </header>
-            <p>
-                Edit <code>src/App.tsx</code> and save. This page will
-                automatically reload.
-            </p>
+            <img src={headerimg} width="100%" />
             <p>Will Gunter, John Bean, Sonika Sharma</p>
             <Button onClick={clearAllCourse}>Clear All Courses</Button>
             <Button onClick={clearAllSemester}>Clear All Semesters</Button>
             <p>Number of Semesters in Plan 1: {plans[0].semesters.length}</p>
-            <p>
-                Semester IDs:{" "}
-                {plans[0].semesters.map(
-                    (semester: Semester) => `${semester.id}, `
-                )}
-            </p>
             <div>
-                <Button
-                    variant="success"
-                    className="m-4"
-                    onClick={handleShowAddSemesterModal}
-                >
-                    Add Semester To Plan
-                </Button>
-                <AddSemesterModal
-                    show={showAddSemesterModal}
-                    handleClose={handleCloseAddSemesterModal}
-                    addSemester={addSemester}
-                ></AddSemesterModal>
+                <PlanList
+                    plans={plans}
+                    setPlans={setPlans}
+                    deletePlan={deletePlan}
+                ></PlanList>
             </div>
             <div>
                 <CourseFinder courseData={testCourses}></CourseFinder>
