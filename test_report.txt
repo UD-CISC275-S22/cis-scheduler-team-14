@@ -12,103 +12,6 @@
 
       at App (src/App.tsx:47:13)
 
-  console.error
-    Error: Uncaught [Error: Too many re-renders. React limits the number of renders to prevent an infinite loop.]
-        at reportException (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/jsdom/lib/jsdom/living/helpers/runtime-script-errors.js:66:24)
-        at innerInvokeEventListeners (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:341:9)
-        at invokeEventListeners (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:274:3)
-        at HTMLUnknownElementImpl._dispatch (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:221:9)
-        at HTMLUnknownElementImpl.dispatchEvent (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:94:17)
-        at HTMLUnknownElement.dispatchEvent (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:231:34)
-        at Object.invokeGuardedCallbackDev (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dom/cjs/react-dom.development.js:3994:16)
-        at invokeGuardedCallback (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dom/cjs/react-dom.development.js:4056:31)
-        at beginWork$1 (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dom/cjs/react-dom.development.js:23964:7)
-        at performUnitOfWork (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dom/cjs/react-dom.development.js:22779:12) Error: Too many re-renders. React limits the number of renders to prevent an infinite loop.
-        at renderWithHooks (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dom/cjs/react-dom.development.js:14997:17)
-        at mountIndeterminateComponent (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dom/cjs/react-dom.development.js:17811:13)
-        at beginWork (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dom/cjs/react-dom.development.js:19049:16)
-        at HTMLUnknownElement.callCallback (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dom/cjs/react-dom.development.js:3945:14)
-        at HTMLUnknownElement.callTheUserObjectsOperation (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
-        at innerInvokeEventListeners (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:338:25)
-        at invokeEventListeners (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:274:3)
-        at HTMLUnknownElementImpl._dispatch (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:221:9)
-        at HTMLUnknownElementImpl.dispatchEvent (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:94:17)
-        at HTMLUnknownElement.dispatchEvent (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:231:34)
-        at Object.invokeGuardedCallbackDev (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dom/cjs/react-dom.development.js:3994:16)
-        at invokeGuardedCallback (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dom/cjs/react-dom.development.js:4056:31)
-        at beginWork$1 (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dom/cjs/react-dom.development.js:23964:7)
-        at performUnitOfWork (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dom/cjs/react-dom.development.js:22779:12)
-        at workLoopSync (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dom/cjs/react-dom.development.js:22707:5)
-        at renderRootSync (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dom/cjs/react-dom.development.js:22670:7)
-        at performSyncWorkOnRoot (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dom/cjs/react-dom.development.js:22293:18)
-        at scheduleUpdateOnFiber (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dom/cjs/react-dom.development.js:21881:7)
-        at updateContainer (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dom/cjs/react-dom.development.js:25482:3)
-        at /home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dom/cjs/react-dom.development.js:26021:7
-        at unbatchedUpdates (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dom/cjs/react-dom.development.js:22431:12)
-        at legacyRenderSubtreeIntoContainer (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dom/cjs/react-dom.development.js:26020:5)
-        at Object.render (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dom/cjs/react-dom.development.js:26103:10)
-        at /home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@testing-library/react/dist/pure.js:101:25
-        at batchedUpdates$1 (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dom/cjs/react-dom.development.js:22380:12)
-        at act (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dom/cjs/react-dom-test-utils.development.js:1042:14)
-        at render (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@testing-library/react/dist/pure.js:97:26)
-        at Object.<anonymous> (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/App.test.tsx:7:9)
-        at Promise.then.completed (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/jest-circus/build/utils.js:391:28)
-        at new Promise (<anonymous>)
-        at callAsyncCircusFn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/jest-circus/build/utils.js:316:10)
-        at _callCircusHook (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/jest-circus/build/run.js:181:40)
-        at _runTest (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/jest-circus/build/run.js:148:5)
-        at _runTestsForDescribeBlock (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/jest-circus/build/run.js:66:9)
-        at _runTestsForDescribeBlock (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/jest-circus/build/run.js:60:9)
-        at run (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/jest-circus/build/run.js:25:3)
-        at runAndTransformResultsToJestFormat (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:170:21)
-        at jestAdapter (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:82:19)
-        at runTestInternal (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/jest-runner/build/runTest.js:389:16)
-        at runTest (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/jest-runner/build/runTest.js:475:34)
-        at TestRunner.runTests (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/jest-runner/build/index.js:111:12)
-        at TestScheduler.scheduleTests (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@jest/core/build/TestScheduler.js:333:13)
-        at runJest (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@jest/core/build/runJest.js:404:19)
-        at _run10000 (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@jest/core/build/cli/index.js:320:7)
-        at runCLI (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@jest/core/build/cli/index.js:173:3)
-        at Object.run (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/jest-cli/build/cli/index.js:155:37)
-
-      at VirtualConsole.<anonymous> (node_modules/jsdom/lib/jsdom/virtual-console.js:29:45)
-      at reportException (node_modules/jsdom/lib/jsdom/living/helpers/runtime-script-errors.js:70:28)
-      at innerInvokeEventListeners (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:341:9)
-      at invokeEventListeners (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:274:3)
-      at HTMLUnknownElementImpl._dispatch (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:221:9)
-      at HTMLUnknownElementImpl.dispatchEvent (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:94:17)
-
-  console.error
-    The above error occurred in the <SemesterView> component:
-    
-        at SemesterView (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/SemesterView.tsx:8:5)
-        at div
-        at div
-        at /home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-bootstrap/cjs/Stack.js:23:7
-        at div
-        at SemesterList (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/SemesterList.tsx:7:5)
-        at div
-        at PlanView (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/PlanView.tsx:11:5)
-        at div
-        at div
-        at /home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-bootstrap/cjs/Stack.js:23:7
-        at div
-        at PlanList (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/PlanList.tsx:10:5)
-        at div
-        at div
-        at App (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/App.tsx:22:27)
-    
-    Consider adding an error boundary to your tree to customize error handling behavior.
-    Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
-
-      at logCapturedError (node_modules/react-dom/cjs/react-dom.development.js:20085:23)
-      at update.callback (node_modules/react-dom/cjs/react-dom.development.js:20118:5)
-      at callCallback (node_modules/react-dom/cjs/react-dom.development.js:12318:12)
-      at commitUpdateQueue (node_modules/react-dom/cjs/react-dom.development.js:12339:9)
-      at commitLifeCycles (node_modules/react-dom/cjs/react-dom.development.js:20736:11)
-      at commitLayoutEffects (node_modules/react-dom/cjs/react-dom.development.js:23426:7)
-      at HTMLUnknownElement.callCallback (node_modules/react-dom/cjs/react-dom.development.js:3945:14)
-
   console.log
     {
       id: 1,
@@ -119,193 +22,211 @@
 
       at App (src/App.tsx:47:13)
 
-  console.error
-    Error: Uncaught [Error: Too many re-renders. React limits the number of renders to prevent an infinite loop.]
-        at reportException (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/jsdom/lib/jsdom/living/helpers/runtime-script-errors.js:66:24)
-        at innerInvokeEventListeners (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:341:9)
-        at invokeEventListeners (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:274:3)
-        at HTMLUnknownElementImpl._dispatch (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:221:9)
-        at HTMLUnknownElementImpl.dispatchEvent (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:94:17)
-        at HTMLUnknownElement.dispatchEvent (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:231:34)
-        at Object.invokeGuardedCallbackDev (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dom/cjs/react-dom.development.js:3994:16)
-        at invokeGuardedCallback (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dom/cjs/react-dom.development.js:4056:31)
-        at beginWork$1 (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dom/cjs/react-dom.development.js:23964:7)
-        at performUnitOfWork (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dom/cjs/react-dom.development.js:22779:12) Error: Too many re-renders. React limits the number of renders to prevent an infinite loop.
-        at renderWithHooks (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dom/cjs/react-dom.development.js:14997:17)
-        at mountIndeterminateComponent (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dom/cjs/react-dom.development.js:17811:13)
-        at beginWork (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dom/cjs/react-dom.development.js:19049:16)
-        at HTMLUnknownElement.callCallback (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dom/cjs/react-dom.development.js:3945:14)
-        at HTMLUnknownElement.callTheUserObjectsOperation (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
-        at innerInvokeEventListeners (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:338:25)
-        at invokeEventListeners (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:274:3)
-        at HTMLUnknownElementImpl._dispatch (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:221:9)
-        at HTMLUnknownElementImpl.dispatchEvent (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:94:17)
-        at HTMLUnknownElement.dispatchEvent (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:231:34)
-        at Object.invokeGuardedCallbackDev (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dom/cjs/react-dom.development.js:3994:16)
-        at invokeGuardedCallback (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dom/cjs/react-dom.development.js:4056:31)
-        at beginWork$1 (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dom/cjs/react-dom.development.js:23964:7)
-        at performUnitOfWork (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dom/cjs/react-dom.development.js:22779:12)
-        at workLoopSync (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dom/cjs/react-dom.development.js:22707:5)
-        at renderRootSync (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dom/cjs/react-dom.development.js:22670:7)
-        at performSyncWorkOnRoot (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dom/cjs/react-dom.development.js:22293:18)
-        at scheduleUpdateOnFiber (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dom/cjs/react-dom.development.js:21881:7)
-        at updateContainer (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dom/cjs/react-dom.development.js:25482:3)
-        at /home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dom/cjs/react-dom.development.js:26021:7
-        at unbatchedUpdates (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dom/cjs/react-dom.development.js:22431:12)
-        at legacyRenderSubtreeIntoContainer (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dom/cjs/react-dom.development.js:26020:5)
-        at Object.render (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dom/cjs/react-dom.development.js:26103:10)
-        at /home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@testing-library/react/dist/pure.js:101:25
-        at batchedUpdates$1 (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dom/cjs/react-dom.development.js:22380:12)
-        at act (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dom/cjs/react-dom-test-utils.development.js:1042:14)
-        at render (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@testing-library/react/dist/pure.js:97:26)
-        at Object.<anonymous> (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/App.test.tsx:7:9)
-        at Promise.then.completed (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/jest-circus/build/utils.js:391:28)
-        at new Promise (<anonymous>)
-        at callAsyncCircusFn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/jest-circus/build/utils.js:316:10)
-        at _callCircusHook (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/jest-circus/build/run.js:181:40)
-        at _runTest (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/jest-circus/build/run.js:148:5)
-        at _runTestsForDescribeBlock (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/jest-circus/build/run.js:66:9)
-        at _runTestsForDescribeBlock (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/jest-circus/build/run.js:60:9)
-        at run (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/jest-circus/build/run.js:25:3)
-        at runAndTransformResultsToJestFormat (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:170:21)
-        at jestAdapter (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:82:19)
-        at runTestInternal (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/jest-runner/build/runTest.js:389:16)
-        at runTest (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/jest-runner/build/runTest.js:475:34)
-        at TestRunner.runTests (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/jest-runner/build/index.js:111:12)
-        at TestScheduler.scheduleTests (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@jest/core/build/TestScheduler.js:333:13)
-        at runJest (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@jest/core/build/runJest.js:404:19)
-        at _run10000 (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@jest/core/build/cli/index.js:320:7)
-        at runCLI (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@jest/core/build/cli/index.js:173:3)
-        at Object.run (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/jest-cli/build/cli/index.js:155:37)
-
-      at VirtualConsole.<anonymous> (node_modules/jsdom/lib/jsdom/virtual-console.js:29:45)
-      at reportException (node_modules/jsdom/lib/jsdom/living/helpers/runtime-script-errors.js:70:28)
-      at innerInvokeEventListeners (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:341:9)
-      at invokeEventListeners (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:274:3)
-      at HTMLUnknownElementImpl._dispatch (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:221:9)
-      at HTMLUnknownElementImpl.dispatchEvent (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:94:17)
-
-  console.error
-    The above error occurred in the <SemesterView> component:
-    
-        at SemesterView (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/SemesterView.tsx:8:5)
-        at div
-        at div
-        at /home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-bootstrap/cjs/Stack.js:23:7
-        at div
-        at SemesterList (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/SemesterList.tsx:7:5)
-        at div
-        at PlanView (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/PlanView.tsx:11:5)
-        at div
-        at div
-        at /home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-bootstrap/cjs/Stack.js:23:7
-        at div
-        at PlanList (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/PlanList.tsx:10:5)
-        at div
-        at div
-        at App (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/App.tsx:22:27)
-    
-    Consider adding an error boundary to your tree to customize error handling behavior.
-    Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
-
-      at logCapturedError (node_modules/react-dom/cjs/react-dom.development.js:20085:23)
-      at update.callback (node_modules/react-dom/cjs/react-dom.development.js:20118:5)
-      at callCallback (node_modules/react-dom/cjs/react-dom.development.js:12318:12)
-      at commitUpdateQueue (node_modules/react-dom/cjs/react-dom.development.js:12339:9)
-      at commitLifeCycles (node_modules/react-dom/cjs/react-dom.development.js:20736:11)
-      at commitLayoutEffects (node_modules/react-dom/cjs/react-dom.development.js:23426:7)
-      at HTMLUnknownElement.callCallback (node_modules/react-dom/cjs/react-dom.development.js:3945:14)
-
 FAIL src/App.test.tsx
   DoubleHalf Component tests
-    ✕ renders the course name somewhere (219 ms)
-    ✕ There are Clear All Courses and Clear All Semesters buttons (19 ms)
+    ✕ renders the course name somewhere (173 ms)
+    ✓ There are Clear All Courses and Clear All Semesters buttons (243 ms)
 
   ● DoubleHalf Component tests › renders the course name somewhere
 
-    Too many re-renders. React limits the number of renders to prevent an infinite loop.
+    TestingLibraryElementError: Unable to find an element with the text: /CISC275/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
 
-       5 | describe("DoubleHalf Component tests", () => {
-       6 |     beforeEach(() => {
-    >  7 |         render(<App />);
-         |         ^
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"App"[39m
+        [36m>[39m
+          [36m<img[39m
+            [33msrc[39m=[32m"background.jpg"[39m
+            [33mwidth[39m=[32m"100%"[39m
+          [36m/>[39m
+          [36m<p>[39m
+            [0mWill Gunter, John Bean, Sonika Sharma[0m
+          [36m</p>[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mClear All Courses[0m
+          [36m</button>[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mClear All Semesters[0m
+          [36m</button>[39m
+          [36m<p>[39m
+            [0mNumber of Semesters in Plan 1: [0m
+            [0m1[0m
+          [36m</p>[39m
+          [36m<div>[39m
+            [36m<div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"vstack gap-3"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"bg-light border m-2 p-2"[39m
+                [36m>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"bg-light border m-2 p-2"[39m
+                  [36m>[39m
+                    [36m<h3>[39m
+                      [0mPlan [0m
+                      [0m1[0m
+                    [36m</h3>[39m
+                    [36m<div>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"vstack gap-3"[39m
+                      [36m>[39m
+                        [36m<div[39m
+                          [33mclass[39m=[32m"bg-light border m-2 p-0"[39m
+                        [36m>[39m
+                          [36m<div[39m
+                            [33mclass[39m=[32m"bg-light border m-2 p-2"[39m
+                          [36m>[39m
+                            [36m<h4>[39m
+                              [0mFall[0m
+                              [0m [0m
+                              [0m2022[0m
+                              [0m [0m
+                            [36m</h4>[39m
+                            [36m<h6>[39m
+                              [0m1[0m
+                              [0m Course(s)[0m
+                            [36m</h6>[39m
+                            [36m<button[39m
+                              [33mclass[39m=[32m"MuiButton-root MuiButton-outlined MuiButton-outlinedSecondary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root m-2 css-wnpvqa-MuiButtonBase-root-MuiButton-root"[39m
+                              [33mtabindex[39m=[32m"0"[39m
+                              [33mtype[39m=[32m"button"[39m
+                            [36m>[39m
+                              [36m<span[39m
+                                [33mclass[39m=[32m"MuiButton-startIcon MuiButton-iconSizeMedium css-1d6wzja-MuiButton-startIcon"[39m
+                              [36m>[39m
+                                [36m<svg[39m
+                                  [33maria-hidden[39m=[32m"true"[39m
+                                  [33mclass[39m=[32m"MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"[39m
+                                  [33mdata-testid[39m=[32m"DeleteIcon"[39m
+                                  [33mfocusable[39m=[32m"false"[39m
+                                  [33mviewBox[39m=[32m"0 0 24 24"[39m
+                                [36m>[39m
+                                  [36m<path[39m
+                                    [33md[39m=[32m"M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"[39m
+                                  [36m/>[39m
+                                [36m</svg>[39m
+                              [36m</span>[39m
+                              [0mDelete Semester[0m
+                              [36m<span[39m
+                                [33mclass[39m=[32m"MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"[39m
+                              [36m/>[39m
+                            [36m</button>[39m
+                          [36m</div>[39m
+                        [36m</div>[39m
+                      [36m</div>[39m
+                    [36m</div>[39m
+                    [36m<button[39m
+                      [33mclass[39m=[32m"MuiButton-root MuiButton-contained MuiButton-containedSuccess MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root m-2 css-ke5b6m-MuiButtonBase-root-MuiButton-root"[39m
+                      [33mtabindex[39m=[32m"0"[39m
+                      [33mtype[39m=[32m"button"[39m
+                    [36m>[39m
+                      [36m<span[39m
+                        [33mclass[39m=[32m"MuiButton-startIcon MuiButton-iconSizeMedium css-1d6wzja-MuiButton-startIcon"[39m
+                      [36m>[39m
+                        [36m<svg[39m
+                          [33maria-hidden[39m=[32m"true"[39m
+                          [33mclass[39m=[32m"MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"[39m
+                          [33mdata-testid[39m=[32m"AddIcon"[39m
+                          [33mfocusable[39m=[32m"false"[39m
+                          [33mviewBox[39m=[32m"0 0 24 24"[39m
+                        [36m>[39m
+                          [36m<path[39m
+                            [33md[39m=[32m"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"[39m
+                          [36m/>[39m
+                        [36m</svg>[39m
+                      [36m</span>[39m
+                      [0mAdd Semester[0m
+                      [36m<span[39m
+                        [33mclass[39m=[32m"MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"[39m
+                      [36m/>[39m
+                    [36m</button>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"MuiButton-root MuiButton-contained MuiButton-containedSuccess MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root m-4 css-ke5b6m-MuiButtonBase-root-MuiButton-root"[39m
+                [33mtabindex[39m=[32m"0"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"MuiButton-startIcon MuiButton-iconSizeMedium css-1d6wzja-MuiButton-startIcon"[39m
+                [36m>[39m
+                  [36m<svg[39m
+                    [33maria-hidden[39m=[32m"true"[39m
+                    [33mclass[39m=[32m"MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"[39m
+                    [33mdata-testid[39m=[32m"AddIcon"[39m
+                    [33mfocusable[39m=[32m"false"[39m
+                    [33mviewBox[39m=[32m"0 0 24 24"[39m
+                  [36m>[39m
+                    [36m<path[39m
+                      [33md[39m=[32m"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"[39m
+                    [36m/>[39m
+                  [36m</svg>[39m
+                [36m</span>[39m
+                [0mAdd Plan[0m
+                [36m<span[39m
+                  [33mclass[39m=[32m"MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"[39m
+                [36m/>[39m
+              [36m</button>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [36m<div>[39m
+              [36m<div>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"form-label"[39m
+                  [33mfor[39m=[32m"formCourseSearch"[39m
+                [36m>[39m
+                  [0mCourse lookup:[0m
+                [36m</label>[39m
+                [36m<input[39m
+                  [33mclass[39m=[32m"form-control"[39m
+                  [33mid[39m=[32m"formCourseSearch"[39m
+                  [33mplaceholder[39m=[32m"Enter class name"[39m
+                  [33mvalue[39m=[32m""[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div>[39m
+                [0mCISC144: Introduction to Typing[0m
+              [36m</div>[39m
+              [36m<div>[39m
+                [0mCISC102: Introduction to Updating Windows[0m
+              [36m</div>[39m
+              [36m<div>[39m
+                [0mCISC287: Advanced Typing[0m
+              [36m</div>[39m
+              [36m<div>[39m
+                [0mCISC255: Laptop Hygiene[0m
+              [36m</div>[39m
+              [36m<div />[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
        8 |     });
        9 |     test("renders the course name somewhere", () => {
-      10 |         const linkElement = screen.getByText(/CISC275/i);
+    > 10 |         const linkElement = screen.getByText(/CISC275/i);
+         |                                    ^
+      11 |         expect(linkElement).toBeInTheDocument();
+      12 |     });
+      13 |
 
-      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14997:17)
-      at mountIndeterminateComponent (node_modules/react-dom/cjs/react-dom.development.js:17811:13)
-      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19049:16)
-      at HTMLUnknownElement.callCallback (node_modules/react-dom/cjs/react-dom.development.js:3945:14)
-      at HTMLUnknownElement.callTheUserObjectsOperation (node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
-      at innerInvokeEventListeners (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:338:25)
-      at invokeEventListeners (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:274:3)
-      at HTMLUnknownElementImpl._dispatch (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:221:9)
-      at HTMLUnknownElementImpl.dispatchEvent (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:94:17)
-      at HTMLUnknownElement.dispatchEvent (node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:231:34)
-      at Object.invokeGuardedCallbackDev (node_modules/react-dom/cjs/react-dom.development.js:3994:16)
-      at invokeGuardedCallback (node_modules/react-dom/cjs/react-dom.development.js:4056:31)
-      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:23964:7)
-      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22779:12)
-      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
-      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:22670:7)
-      at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:22293:18)
-      at scheduleUpdateOnFiber (node_modules/react-dom/cjs/react-dom.development.js:21881:7)
-      at updateContainer (node_modules/react-dom/cjs/react-dom.development.js:25482:3)
-      at node_modules/react-dom/cjs/react-dom.development.js:26021:7
-      at unbatchedUpdates (node_modules/react-dom/cjs/react-dom.development.js:22431:12)
-      at legacyRenderSubtreeIntoContainer (node_modules/react-dom/cjs/react-dom.development.js:26020:5)
-      at Object.render (node_modules/react-dom/cjs/react-dom.development.js:26103:10)
-      at node_modules/@testing-library/react/dist/pure.js:101:25
-      at batchedUpdates$1 (node_modules/react-dom/cjs/react-dom.development.js:22380:12)
-      at act (node_modules/react-dom/cjs/react-dom-test-utils.development.js:1042:14)
-      at render (node_modules/@testing-library/react/dist/pure.js:97:26)
-      at Object.<anonymous> (src/App.test.tsx:7:9)
-      at TestScheduler.scheduleTests (node_modules/@jest/core/build/TestScheduler.js:333:13)
-      at runJest (node_modules/@jest/core/build/runJest.js:404:19)
-      at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
-      at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
-
-  ● DoubleHalf Component tests › There are Clear All Courses and Clear All Semesters buttons
-
-    Too many re-renders. React limits the number of renders to prevent an infinite loop.
-
-       5 | describe("DoubleHalf Component tests", () => {
-       6 |     beforeEach(() => {
-    >  7 |         render(<App />);
-         |         ^
-       8 |     });
-       9 |     test("renders the course name somewhere", () => {
-      10 |         const linkElement = screen.getByText(/CISC275/i);
-
-      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14997:17)
-      at mountIndeterminateComponent (node_modules/react-dom/cjs/react-dom.development.js:17811:13)
-      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19049:16)
-      at HTMLUnknownElement.callCallback (node_modules/react-dom/cjs/react-dom.development.js:3945:14)
-      at HTMLUnknownElement.callTheUserObjectsOperation (node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
-      at innerInvokeEventListeners (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:338:25)
-      at invokeEventListeners (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:274:3)
-      at HTMLUnknownElementImpl._dispatch (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:221:9)
-      at HTMLUnknownElementImpl.dispatchEvent (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:94:17)
-      at HTMLUnknownElement.dispatchEvent (node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:231:34)
-      at Object.invokeGuardedCallbackDev (node_modules/react-dom/cjs/react-dom.development.js:3994:16)
-      at invokeGuardedCallback (node_modules/react-dom/cjs/react-dom.development.js:4056:31)
-      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:23964:7)
-      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22779:12)
-      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
-      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:22670:7)
-      at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:22293:18)
-      at scheduleUpdateOnFiber (node_modules/react-dom/cjs/react-dom.development.js:21881:7)
-      at updateContainer (node_modules/react-dom/cjs/react-dom.development.js:25482:3)
-      at node_modules/react-dom/cjs/react-dom.development.js:26021:7
-      at unbatchedUpdates (node_modules/react-dom/cjs/react-dom.development.js:22431:12)
-      at legacyRenderSubtreeIntoContainer (node_modules/react-dom/cjs/react-dom.development.js:26020:5)
-      at Object.render (node_modules/react-dom/cjs/react-dom.development.js:26103:10)
-      at node_modules/@testing-library/react/dist/pure.js:101:25
-      at batchedUpdates$1 (node_modules/react-dom/cjs/react-dom.development.js:22380:12)
-      at act (node_modules/react-dom/cjs/react-dom-test-utils.development.js:1042:14)
-      at render (node_modules/@testing-library/react/dist/pure.js:97:26)
-      at Object.<anonymous> (src/App.test.tsx:7:9)
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/App.test.tsx:10:36)
       at TestScheduler.scheduleTests (node_modules/@jest/core/build/TestScheduler.js:333:13)
       at runJest (node_modules/@jest/core/build/runJest.js:404:19)
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
@@ -314,10 +235,10 @@ FAIL src/App.test.tsx
 -----------------------|---------|----------|---------|---------|-------------------
 File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------|---------|----------|---------|---------|-------------------
-All files              |   40.19 |    16.66 |   42.85 |    42.7 |                   
+All files              |    39.6 |    16.66 |   42.85 |    42.1 |                   
  src                   |   55.55 |      100 |   55.55 |   58.82 |                   
   App.tsx              |   55.55 |      100 |   55.55 |   58.82 | 45,53-61          
- src/components        |   36.14 |    16.66 |    37.5 |   38.46 |                   
+ src/components        |   35.36 |    16.66 |    37.5 |   37.66 |                   
   AddPlanModal.tsx     |   15.78 |     12.5 |      20 |   16.66 | 24-42,64-65       
   AddSemesterModal.tsx |   19.23 |     7.14 |   16.66 |   19.23 | 26-56,62-63,84    
   Course.tsx           |       0 |      100 |       0 |       0 | 6-8               
@@ -326,14 +247,14 @@ All files              |   40.19 |    16.66 |   42.85 |    42.7 |
   PlanView.tsx         |    62.5 |       50 |      25 |   83.33 | 50                
   Semester.tsx         |       0 |      100 |       0 |       0 | 6-8               
   SemesterList.tsx     |     100 |      100 |     100 |     100 |                   
-  SemesterView.tsx     |   42.85 |       25 |      25 |   42.85 | 19-23,39          
+  SemesterView.tsx     |   33.33 |       25 |      25 |   33.33 | 18-22,38          
  src/interfaces        |     100 |      100 |     100 |     100 |                   
   course.ts            |     100 |      100 |     100 |     100 |                   
   plan.ts              |       0 |        0 |       0 |       0 |                   
   semester.ts          |       0 |        0 |       0 |       0 |                   
 -----------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 1 total
-Tests:       2 failed, 2 total
+Tests:       1 failed, 1 passed, 2 total
 Snapshots:   0 total
-Time:        3.142 s
+Time:        3.285 s
 Ran all test suites.
