@@ -1,5 +1,5 @@
 //import { useState } from "react";
-import { SemesterSeason } from "./semester";
+import { Season } from "./semester";
 
 /**CourseType describes what credit(s) the course fufills
  * NOTE: We can add more course types as we see fit, these are just the ones I could think of.
@@ -28,7 +28,7 @@ export interface Course {
     /**Restrictions on the course */
     restrictions: string;
     /**A list of SemesterTypes representing what semester(s) the course is offered in */
-    semestersOffered: SemesterSeason[];
+    semestersOffered: Season[];
 }
 
 /** Returns a string representing a course, such as "CISC275: Introduction to Software Engineering" */

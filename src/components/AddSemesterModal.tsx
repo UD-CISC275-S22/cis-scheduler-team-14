@@ -1,30 +1,67 @@
 import React, { useState } from "react";
-import { Button, Col, Form, Modal, Row } from "react-bootstrap";
-import { Semester, SemesterSeason } from "../interfaces/semester";
+import { Col, Form, Modal, Row } from "react-bootstrap";
+import { Season, Semester } from "../interfaces/semester";
+import CancelIcon from "@mui/icons-material/Cancel";
+import Add from "@mui/icons-material/Add";
+import Button from "@mui/material/Button";
+import Alert from "@mui/material/Alert";
+import Select, { SelectChangeEvent } from "@mui/material/Select";
 
 export function AddSemesterModal({
     show,
     handleClose,
-    addSemester
+    semesters,
+    setSemesters
 }: {
     show: boolean;
     handleClose: () => void;
-    addSemester: (newSemester: Semester) => void;
+    semesters: Semester[];
+    setSemesters: (semesters: Semester[]) => void;
 }) {
-    const [id, setId] = useState<number>(0);
-    const [year, setYear] = useState<number>(0);
-    const [season, setSeason] = useState<SemesterSeason>("FALL");
+    const [inSeason, setInSeason] = useState<Season>(Season.fall);
+    const [inYear, setInYear] = useState<number>(2022);
+    const [alert, setAlert] = useState<string>("");
 
     function saveChanges() {
-        addSemester({
-            year: year,
-            id: id,
-            season: season,
-            credits: 0,
-            courses: []
-        });
-        handleClose();
+        const newSemester: Semester[] = semesters;
+        if (
+            semesters.filter((s) => s.season === inSeason && s.year === inYear)
+                .length > 0
+        ) {
+            setAlert("Semester already exists in this plan.");
+        } else {
+            newSemester.push({
+                season: inSeason,
+                year: inYear,
+                courses: []
+            });
+            newSemester.sort(compareSemesters);
+            setSemesters(newSemester);
+            setAlert("");
+            handleClose();
+        }
     }
+
+    function compareSemesters(a: Semester, b: Semester) {
+        if (a.year < b.year) {
+            return -1;
+        } else if (a.year > b.year) {
+            return 1;
+        } else {
+            if (a.season < b.season) {
+                return -1;
+            } else if (a.season > b.season) {
+                return 1;
+            } else {
+                return 0;
+            }
+        }
+    }
+
+    const handleChange = (event: SelectChangeEvent) => {
+        setInSeason(event.target.value as Season);
+        setAlert("");
+    };
 
     return (
         <Modal show={show} onHide={handleClose} animation={false}>
@@ -32,65 +69,74 @@ export function AddSemesterModal({
                 <Modal.Title>Add New Semester</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                {/*ID*/}
-                <Form.Group controlId="formSemesterID" as={Row}>
-                    <Form.Label column sm={3}>
-                        Semester ID:
-                    </Form.Label>
-                    <Col>
-                        <Form.Control
-                            type="number"
-                            value={id}
-                            onChange={(
-                                event: React.ChangeEvent<HTMLInputElement>
-                            ) => setId(parseInt(event.target.value))}
-                        />
-                    </Col>
-                </Form.Group>
                 {/*Year*/}
-                <Form.Group controlId="formSemesterYear" as={Row}>
-                    <Form.Label column sm={3}>
-                        Year:
-                    </Form.Label>
-                    <Col>
-                        <Form.Control
-                            type="number"
-                            value={year}
-                            onChange={(
-                                event: React.ChangeEvent<HTMLInputElement>
-                            ) => setYear(parseInt(event.target.value))}
-                        />
-                    </Col>
-                </Form.Group>
+                <div className="m-2">
+                    <Form.Group controlId="formSemesterYear" as={Row}>
+                        <Form.Label column sm={3}>
+                            Year:
+                        </Form.Label>
+                        <Col>
+                            <Form.Control
+                                type="number"
+                                value={inYear}
+                                onChange={(
+                                    event: React.ChangeEvent<HTMLInputElement>
+                                ) => setInYear(parseInt(event.target.value))}
+                            />
+                        </Col>
+                    </Form.Group>
+                </div>
                 {/*Season*/}
-                <Form.Group controlId="formSemesterSeason" as={Row}>
-                    <Form.Label column sm={3}>
-                        Season:
-                    </Form.Label>
-                    <Col>
-                        <Form.Control
-                            as="select"
-                            value={season}
-                            onChange={(
-                                event: React.ChangeEvent<HTMLInputElement>
-                            ) =>
-                                setSeason(event.target.value as SemesterSeason)
-                            }
-                        >
-                            <option value="FALL">Fall</option>
-                            <option value="WINTER">Winter</option>
-                            <option value="SPRING">Spring</option>
-                            <option value="SUMMER">Summer</option>
-                        </Form.Control>
-                    </Col>
-                </Form.Group>
+                <div className="m-2">
+                    <Form.Group controlId="formSemesterSeason" as={Row}>
+                        <Form.Label column sm={3}>
+                            Season:
+                        </Form.Label>
+                        <Col>
+                            <Select
+                                native
+                                value={inSeason}
+                                label="Season"
+                                onChange={handleChange}
+                            >
+                                <optgroup label="Main Semesters">
+                                    <option value={Season.fall}>Fall</option>
+                                    <option value={Season.spring}>
+                                        Spring
+                                    </option>
+                                </optgroup>
+                                <optgroup label="Special Semesters">
+                                    <option value={Season.winter}>
+                                        Winter
+                                    </option>
+                                    <option value={Season.summer}>
+                                        Summer
+                                    </option>
+                                </optgroup>
+                            </Select>
+                        </Col>
+                    </Form.Group>
+                </div>
+                {alert && <Alert severity="error">{alert}</Alert>}
             </Modal.Body>
             <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose}>
-                    Close
+                <Button
+                    variant="outlined"
+                    className="m-2"
+                    startIcon={<CancelIcon />}
+                    onClick={handleClose}
+                    color="secondary"
+                >
+                    Cancel
                 </Button>
-                <Button variant="primary" onClick={saveChanges}>
-                    Save New Semester
+                <Button
+                    variant="contained"
+                    className="m-2"
+                    startIcon={<Add />}
+                    onClick={saveChanges}
+                    color="primary"
+                >
+                    Add Plan
                 </Button>
             </Modal.Footer>
         </Modal>
