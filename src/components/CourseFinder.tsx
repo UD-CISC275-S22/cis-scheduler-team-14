@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import { Course, CreditType, getCourseString } from "../interfaces/course";
 import { SemesterSeason } from "../interfaces/semester";
 
@@ -47,6 +47,16 @@ export function CourseFinder({
             outlineStyle: "solid",
             outlineWidth: "medium",
             fontFamily: "monospace"
+        } as React.CSSProperties,
+        /** CSS Style for a course in the Course Pool */
+        course_pool_individual: {
+            width: 300,
+            height: 50,
+            backgroundColor: "white",
+            alignContent: "center",
+            outlineStyle: "solid",
+            outlineWidth: "thin",
+            fontFamily: "monospace"
         } as React.CSSProperties
     };
 
@@ -83,15 +93,35 @@ export function CourseFinder({
                 />
             </Form.Group>
             <div style={CourseFinderStyles.course_scroll_list}>
-                {COURSES.filter(containsQuery).map((course: Course) => (
+                {COURSES.filter(containsQuery).map(
+                    (course: Course) =>
+                        !pool.some(function (el) {
+                            return el.code === course.code;
+                        }) && (
+                            <div
+                                key={course.code}
+                                style={CourseFinderStyles.course_individual}
+                                onClick={() => setPool([...pool, course])}
+                            >
+                                {getCourseString(course)}
+                            </div>
+                        )
+                )}
+            </div>
+            <div>
+                <p>Course Pool</p>
+                {pool.length === 0 && (
+                    <p>Click a course to add it to your course pool!</p>
+                )}
+                {pool.map((course: Course) => (
                     <div
-                        key={course.code}
-                        style={CourseFinderStyles.course_individual}
-                        onClick={() => setPool([...pool, course])}
+                        key={course.name}
+                        style={CourseFinderStyles.course_pool_individual}
                     >
                         {getCourseString(course)}
                     </div>
                 ))}
+                <Button onClick={() => setPool([])}>Clear course pool</Button>
             </div>
         </div>
     );
