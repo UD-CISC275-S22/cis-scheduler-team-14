@@ -24,8 +24,8 @@
 
 FAIL src/App.test.tsx
   DoubleHalf Component tests
-    ✕ renders the course name somewhere (173 ms)
-    ✓ There are Clear All Courses and Clear All Semesters buttons (243 ms)
+    ✕ renders the course name somewhere (246 ms)
+    ✓ There are Clear All Courses and Clear All Semesters buttons (242 ms)
 
   ● DoubleHalf Component tests › renders the course name somewhere
 
@@ -180,34 +180,61 @@ FAIL src/App.test.tsx
             [36m</div>[39m
           [36m</div>[39m
           [36m<div>[39m
-            [36m<div>[39m
+            [36m<div[39m
+              [33mstyle[39m=[32m"width: 300px; height: 500px; align-content: center; background-color: beige; padding-top: 10px; outline-style: solid; outline-width: medium; font-family: monospace;"[39m
+            [36m>[39m
               [36m<div>[39m
                 [36m<label[39m
                   [33mclass[39m=[32m"form-label"[39m
                   [33mfor[39m=[32m"formCourseSearch"[39m
                 [36m>[39m
-                  [0mCourse lookup:[0m
+                  [0mCourse Lookup[0m
                 [36m</label>[39m
                 [36m<input[39m
-                  [33mclass[39m=[32m"form-control"[39m
+                  [33mclass[39m=[32m"form-control form-control-sm"[39m
                   [33mid[39m=[32m"formCourseSearch"[39m
                   [33mplaceholder[39m=[32m"Enter class name"[39m
                   [33mvalue[39m=[32m""[39m
                 [36m/>[39m
               [36m</div>[39m
-              [36m<div>[39m
-                [0mCISC144: Introduction to Typing[0m
+              [36m<div[39m
+                [33mstyle[39m=[32m"width: 300px; height: 150px; overflow: scroll; align-content: center; background-color: navy; padding-bottom: 1px; padding-top: 1px; outline-style: solid; outline-width: medium;"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mstyle[39m=[32m"width: 300px; height: 50px; background-color: whitesmoke; align-content: center; outline-style: solid; outline-width: thin; font-family: monospace;"[39m
+                [36m>[39m
+                  [0mCISC144: Introduction to Typing[0m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mstyle[39m=[32m"width: 300px; height: 50px; background-color: whitesmoke; align-content: center; outline-style: solid; outline-width: thin; font-family: monospace;"[39m
+                [36m>[39m
+                  [0mCISC102: Introduction to Updating Windows[0m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mstyle[39m=[32m"width: 300px; height: 50px; background-color: whitesmoke; align-content: center; outline-style: solid; outline-width: thin; font-family: monospace;"[39m
+                [36m>[39m
+                  [0mCISC287: Advanced Typing[0m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mstyle[39m=[32m"width: 300px; height: 50px; background-color: whitesmoke; align-content: center; outline-style: solid; outline-width: thin; font-family: monospace;"[39m
+                [36m>[39m
+                  [0mCISC255: Laptop Hygiene[0m
+                [36m</div>[39m
               [36m</div>[39m
               [36m<div>[39m
-                [0mCISC102: Introduction to Updating Windows[0m
+                [36m<p>[39m
+                  [0mCourse Pool[0m
+                [36m</p>[39m
+                [36m<p>[39m
+                  [0mClick a course to add it to your course pool![0m
+                [36m</p>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"btn btn-primary"[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [0mClear course pool[0m
+                [36m</button>[39m
               [36m</div>[39m
-              [36m<div>[39m
-                [0mCISC287: Advanced Typing[0m
-              [36m</div>[39m
-              [36m<div>[39m
-                [0mCISC255: Laptop Hygiene[0m
-              [36m</div>[39m
-              [36m<div />[39m
             [36m</div>[39m
           [36m</div>[39m
         [36m</div>[39m
@@ -235,14 +262,14 @@ FAIL src/App.test.tsx
 -----------------------|---------|----------|---------|---------|-------------------
 File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------|---------|----------|---------|---------|-------------------
-All files              |    39.6 |    16.66 |   42.85 |    42.1 |                   
+All files              |   39.25 |    28.57 |   39.13 |   41.58 |                   
  src                   |   55.55 |      100 |   55.55 |   58.82 |                   
   App.tsx              |   55.55 |      100 |   55.55 |   58.82 | 45,53-61          
- src/components        |   35.36 |    16.66 |    37.5 |   37.66 |                   
+ src/components        |   35.22 |    28.57 |   33.33 |   37.34 |                   
   AddPlanModal.tsx     |   15.78 |     12.5 |      20 |   16.66 | 24-42,64-65       
   AddSemesterModal.tsx |   19.23 |     7.14 |   16.66 |   19.23 | 26-56,62-63,84    
   Course.tsx           |       0 |      100 |       0 |       0 | 6-8               
-  CourseFinder.tsx     |    87.5 |       50 |      80 |    87.5 | 30                
+  CourseFinder.tsx     |   64.28 |    85.71 |   44.44 |   64.28 | 80,99-124         
   PlanList.tsx         |   71.42 |      100 |      50 |     100 |                   
   PlanView.tsx         |    62.5 |       50 |      25 |   83.33 | 50                
   Semester.tsx         |       0 |      100 |       0 |       0 | 6-8               
@@ -256,5 +283,5 @@ All files              |    39.6 |    16.66 |   42.85 |    42.1 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 passed, 2 total
 Snapshots:   0 total
-Time:        3.285 s
+Time:        3.994 s
 Ran all test suites.
