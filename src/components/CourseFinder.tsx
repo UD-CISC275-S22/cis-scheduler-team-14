@@ -80,6 +80,14 @@ export function CourseFinder({
         setQuery(event.target.value);
     }
 
+    /** Function to remove a course from the course pool */
+    function removeSingleCourse(courseToRemove: Course) {
+        const coursesToKeep = (course: Course): boolean =>
+            course.code.toLowerCase() !== courseToRemove.code.toLowerCase();
+        const newPool = pool.filter(coursesToKeep);
+        setPool(newPool);
+    }
+
     /** Returns final CourseFinder component */
     return (
         <div style={CourseFinderStyles.course_container}>
@@ -111,12 +119,16 @@ export function CourseFinder({
             <div>
                 <p>Course Pool</p>
                 {pool.length === 0 && (
-                    <p>Click a course to add it to your course pool!</p>
+                    <p>
+                        Click a course to add or remove it from your course
+                        pool!
+                    </p>
                 )}
                 {pool.map((course: Course) => (
                     <div
                         key={course.name}
                         style={CourseFinderStyles.course_pool_individual}
+                        onClick={() => removeSingleCourse(course)}
                     >
                         {getCourseString(course)}
                     </div>
