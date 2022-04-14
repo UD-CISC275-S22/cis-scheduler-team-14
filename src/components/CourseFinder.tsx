@@ -11,6 +11,29 @@ export function CourseFinder({
 }): JSX.Element {
     const [query, setQuery] = useState<string>("");
 
+    const CourseFinderStyles = {
+        course_list: {
+            backgroundColor: "beige",
+            width: 300,
+            height: 50,
+            alignContent: "center",
+            outlineStyle: "solid",
+            outlineWidth: "thin",
+            fontFamily: "monospace"
+        } as React.CSSProperties,
+        course_container: {
+            width: 300,
+            height: 150,
+            overflow: "scroll",
+            alignContent: "center",
+            backgroundColor: "navy",
+            paddingBottom: "1px",
+            paddingTop: "1px",
+            outlineStyle: "solid",
+            outlineWidth: "medium"
+        } as React.CSSProperties
+    };
+
     /** Imports an array of Course objects, type casts creditTypes and semestersOffered */
     const COURSES = courseData.map(
         (course: Course): Course => ({
@@ -39,11 +62,19 @@ export function CourseFinder({
                     placeholder="Enter class name"
                     value={query}
                     onChange={updateQuery}
+                    width={200}
                 />
             </Form.Group>
-            {COURSES.filter(containsQuery).map((course: Course) => (
-                <div key={course.code}>{getCourseString(course)}</div>
-            ))}
+            <div style={CourseFinderStyles.course_container}>
+                {COURSES.filter(containsQuery).map((course: Course) => (
+                    <div
+                        key={course.code}
+                        style={CourseFinderStyles.course_list}
+                    >
+                        {getCourseString(course)}
+                    </div>
+                ))}
+            </div>
             <div>{query}</div>
         </div>
     );
