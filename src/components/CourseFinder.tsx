@@ -11,17 +11,20 @@ export function CourseFinder({
 }): JSX.Element {
     const [query, setQuery] = useState<string>("");
 
+    /** CSS Styles to be used in CourseFinder */
     const CourseFinderStyles = {
-        course_list: {
-            backgroundColor: "beige",
+        /** CSS Style for the individual course div's */
+        course_individual: {
             width: 300,
             height: 50,
+            backgroundColor: "whitesmoke",
             alignContent: "center",
             outlineStyle: "solid",
             outlineWidth: "thin",
             fontFamily: "monospace"
         } as React.CSSProperties,
-        course_container: {
+        /** CSS Style for the scrollable course list */
+        course_scroll_list: {
             width: 300,
             height: 150,
             overflow: "scroll",
@@ -31,6 +34,18 @@ export function CourseFinder({
             paddingTop: "1px",
             outlineStyle: "solid",
             outlineWidth: "medium"
+        } as React.CSSProperties,
+        /** CSS Style for top level CourseFinder container */
+        course_container: {
+            width: 300,
+            height: 500,
+            alignContent: "center",
+            backgroundColor: "beige",
+            paddingBotton: "10px",
+            paddingTop: "10px",
+            outlineStyle: "solid",
+            outlineWidth: "medium",
+            fontFamily: "monospace"
         } as React.CSSProperties
     };
 
@@ -55,27 +70,26 @@ export function CourseFinder({
 
     /** Returns final CourseFinder component */
     return (
-        <div>
+        <div style={CourseFinderStyles.course_container}>
             <Form.Group controlId="formCourseSearch">
-                <Form.Label>Course lookup:</Form.Label>
+                <Form.Label>Course Lookup</Form.Label>
                 <Form.Control
                     placeholder="Enter class name"
                     value={query}
                     onChange={updateQuery}
-                    width={200}
+                    size="sm"
                 />
             </Form.Group>
-            <div style={CourseFinderStyles.course_container}>
+            <div style={CourseFinderStyles.course_scroll_list}>
                 {COURSES.filter(containsQuery).map((course: Course) => (
                     <div
                         key={course.code}
-                        style={CourseFinderStyles.course_list}
+                        style={CourseFinderStyles.course_individual}
                     >
                         {getCourseString(course)}
                     </div>
                 ))}
             </div>
-            <div>{query}</div>
         </div>
     );
 }
