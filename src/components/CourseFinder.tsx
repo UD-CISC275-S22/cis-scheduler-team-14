@@ -10,6 +10,7 @@ export function CourseFinder({
     courseData: Course[];
 }): JSX.Element {
     const [query, setQuery] = useState<string>("");
+    const [pool, setPool] = useState<Course[]>([]);
 
     /** CSS Styles to be used in CourseFinder */
     const CourseFinderStyles = {
@@ -58,10 +59,11 @@ export function CourseFinder({
         })
     );
 
-    /** A filter to find if a course contains the given query */
+    /** A filter to find if a course contains the given query and is not already in the course pool */
     const containsQuery = (course: Course): boolean =>
-        course.code.toLowerCase().includes(query.toLowerCase()) ||
-        course.name.toLowerCase().includes(query.toLowerCase());
+        (course.code.toLowerCase().includes(query.toLowerCase()) ||
+            course.name.toLowerCase().includes(query.toLowerCase())) &&
+        !pool.includes(course);
 
     /** Function to update the query useState */
     function updateQuery(event: React.ChangeEvent<HTMLInputElement>) {
@@ -85,6 +87,7 @@ export function CourseFinder({
                     <div
                         key={course.code}
                         style={CourseFinderStyles.course_individual}
+                        onClick={() => setPool([...pool, course])}
                     >
                         {getCourseString(course)}
                     </div>
