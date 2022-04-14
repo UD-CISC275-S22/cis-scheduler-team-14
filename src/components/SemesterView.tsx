@@ -13,8 +13,7 @@ export function SemesterView({
     setSemesters: (semesters: Semester[]) => void;
     semesters: Semester[];
 }): JSX.Element {
-    const [courses, setCourses] = useState<Course[]>(semester.courses);
-    setCourses(semester.courses);
+    const [courses] = useState<Course[]>(semester.courses);
     function deleteSemester(year: number, season: string) {
         const newSemesters = semesters.filter(
             (semester: Semester) =>
