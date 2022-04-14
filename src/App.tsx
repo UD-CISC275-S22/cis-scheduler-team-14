@@ -2,7 +2,6 @@ import "./App.css";
 import React, { useState } from "react";
 import headerimg from "./media/background.jpg";
 import { Button } from "react-bootstrap";
-import { AddSemesterModal } from "./components/AddSemesterModal";
 import premadePlans from "./data/plans.json";
 import { Course, CreditType } from "./interfaces/course";
 import { Plan } from "./interfaces/plan";
@@ -17,7 +16,7 @@ function App(): JSX.Element {
         (course): Course => ({
             ...course,
             creditTypes: course.creditTypes as CreditType[],
-            semestersOffered: course.semestersOffered as SemesterSeason[]
+            semestersOffered: course.semestersOffered as Season[]
         })
     );
     const [testCourses] = useState<Course[]>(TESTCOURSES);
@@ -49,19 +48,6 @@ function App(): JSX.Element {
     /**Course States*/
 
     /**Add Semester to Plan States & Constants */
-    const [showAddSemesterModal, setShowAddSemesterModal] =
-        useState<boolean>(false);
-    const handleCloseAddSemesterModal = () => setShowAddSemesterModal(false);
-    const handleShowAddSemesterModal = () => setShowAddSemesterModal(true);
-
-    function addSemester(newSemester: Semester) {
-        setPlans(
-            plans.map((plan) => ({
-                ...plan,
-                semesters: [...plan.semesters, newSemester]
-            }))
-        );
-    }
 
     function clearAllCourse() {
         const [course, setCourse] = useState<Course[]>([]);
