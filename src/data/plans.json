@@ -17,6 +17,26 @@
                         "prerequisites": "",
                         "restrictions": "",
                         "semestersOffered": ["FALL", "SPRING"]
+                    },
+                    {
+                        "name": "Test Class 2",
+                        "code": "CISC 103",
+                        "description": "An intro computer science course",
+                        "credits": 4,
+                        "creditTypes": ["MAJOR_REQUIREMENT"],
+                        "prerequisites": "",
+                        "restrictions": "",
+                        "semestersOffered": ["FALL", "SPRING"]
+                    },
+                    {
+                        "name": "Test Class 3",
+                        "code": "CISC 499",
+                        "description": "An intro computer science course",
+                        "credits": 4,
+                        "creditTypes": ["MAJOR_REQUIREMENT"],
+                        "prerequisites": "",
+                        "restrictions": "",
+                        "semestersOffered": ["FALL", "SPRING"]
                     }
                 ]
             }

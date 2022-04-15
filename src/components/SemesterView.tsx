@@ -3,6 +3,7 @@ import { Semester } from "../interfaces/semester";
 import { Course } from "../interfaces/course";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Button from "@mui/material/Button";
+import { CourseList } from "./CourseList";
 
 export function SemesterView({
     semester,
@@ -27,6 +28,7 @@ export function SemesterView({
                 {semester.season} {semester.year}{" "}
             </h4>
             <h6>{courses.length} Course(s)</h6>
+            <CourseList courses={courses}></CourseList>
             {/*Delete Semester*/}
             {semesters.length > -1 ? (
                 <Button
