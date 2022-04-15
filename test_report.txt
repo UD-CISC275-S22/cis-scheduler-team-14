@@ -22,10 +22,10 @@
 
       at App (src/App.tsx:47:13)
 
-FAIL src/App.test.tsx
+FAIL src/App.test.tsx (9.609 s)
   DoubleHalf Component tests
-    ✕ renders the course name somewhere (246 ms)
-    ✓ There are Clear All Courses and Clear All Semesters buttons (242 ms)
+    ✕ renders the course name somewhere (193 ms)
+    ✓ There are Clear All Courses and Clear All Semesters buttons (259 ms)
 
   ● DoubleHalf Component tests › renders the course name somewhere
 
@@ -92,9 +92,135 @@ FAIL src/App.test.tsx
                               [0m [0m
                             [36m</h4>[39m
                             [36m<h6>[39m
-                              [0m1[0m
+                              [0m3[0m
                               [0m Course(s)[0m
                             [36m</h6>[39m
+                            [36m<div>[39m
+                              [36m<table[39m
+                                [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
+                              [36m>[39m
+                                [36m<thead>[39m
+                                  [36m<tr>[39m
+                                    [36m<th>[39m
+                                      [0mEdit[0m
+                                    [36m</th>[39m
+                                    [36m<th>[39m
+                                      [0mCourse ID[0m
+                                    [36m</th>[39m
+                                    [36m<th>[39m
+                                      [0mCourse Name[0m
+                                    [36m</th>[39m
+                                    [36m<th>[39m
+                                      [0mCredits[0m
+                                    [36m</th>[39m
+                                  [36m</tr>[39m
+                                [36m</thead>[39m
+                                [36m<tbody>[39m
+                                  [36m<tr>[39m
+                                    [36m<td>[39m
+                                      [36m<button[39m
+                                        [33maria-label[39m=[32m"edit"[39m
+                                        [33mclass[39m=[32m"MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root"[39m
+                                        [33mtabindex[39m=[32m"0"[39m
+                                        [33mtype[39m=[32m"button"[39m
+                                      [36m>[39m
+                                        [36m<svg[39m
+                                          [33maria-hidden[39m=[32m"true"[39m
+                                          [33mclass[39m=[32m"MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"[39m
+                                          [33mdata-testid[39m=[32m"EditIcon"[39m
+                                          [33mfocusable[39m=[32m"false"[39m
+                                          [33mviewBox[39m=[32m"0 0 24 24"[39m
+                                        [36m>[39m
+                                          [36m<path[39m
+                                            [33md[39m=[32m"M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"[39m
+                                          [36m/>[39m
+                                        [36m</svg>[39m
+                                        [36m<span[39m
+                                          [33mclass[39m=[32m"MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"[39m
+                                        [36m/>[39m
+                                      [36m</button>[39m
+                                    [36m</td>[39m
+                                    [36m<td>[39m
+                                      [0mCISC 101[0m
+                                    [36m</td>[39m
+                                    [36m<td>[39m
+                                      [0mIntro to Computer Science[0m
+                                    [36m</td>[39m
+                                    [36m<td>[39m
+                                      [0m4[0m
+                                    [36m</td>[39m
+                                  [36m</tr>[39m
+                                  [36m<tr>[39m
+                                    [36m<td>[39m
+                                      [36m<button[39m
+                                        [33maria-label[39m=[32m"edit"[39m
+                                        [33mclass[39m=[32m"MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root"[39m
+                                        [33mtabindex[39m=[32m"0"[39m
+                                        [33mtype[39m=[32m"button"[39m
+                                      [36m>[39m
+                                        [36m<svg[39m
+                                          [33maria-hidden[39m=[32m"true"[39m
+                                          [33mclass[39m=[32m"MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"[39m
+                                          [33mdata-testid[39m=[32m"EditIcon"[39m
+                                          [33mfocusable[39m=[32m"false"[39m
+                                          [33mviewBox[39m=[32m"0 0 24 24"[39m
+                                        [36m>[39m
+                                          [36m<path[39m
+                                            [33md[39m=[32m"M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"[39m
+                                          [36m/>[39m
+                                        [36m</svg>[39m
+                                        [36m<span[39m
+                                          [33mclass[39m=[32m"MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"[39m
+                                        [36m/>[39m
+                                      [36m</button>[39m
+                                    [36m</td>[39m
+                                    [36m<td>[39m
+                                      [0mCISC 103[0m
+                                    [36m</td>[39m
+                                    [36m<td>[39m
+                                      [0mTest Class 2[0m
+                                    [36m</td>[39m
+                                    [36m<td>[39m
+                                      [0m4[0m
+                                    [36m</td>[39m
+                                  [36m</tr>[39m
+                                  [36m<tr>[39m
+                                    [36m<td>[39m
+                                      [36m<button[39m
+                                        [33maria-label[39m=[32m"edit"[39m
+                                        [33mclass[39m=[32m"MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root"[39m
+                                        [33mtabindex[39m=[32m"0"[39m
+                                        [33mtype[39m=[32m"button"[39m
+                                      [36m>[39m
+                                        [36m<svg[39m
+                                          [33maria-hidden[39m=[32m"true"[39m
+                                          [33mclass[39m=[32m"MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"[39m
+                                          [33mdata-testid[39m=[32m"EditIcon"[39m
+                                          [33mfocusable[39m=[32m"false"[39m
+                                          [33mviewBox[39m=[32m"0 0 24 24"[39m
+                                        [36m>[39m
+                                          [36m<path[39m
+                                            [33md[39m=[32m"M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"[39m
+                                          [36m/>[39m
+                                        [36m</svg>[39m
+                                        [36m<span[39m
+                                          [33mclass[39m=[32m"MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"[39m
+                                        [36m/>[39m
+                                      [36m</button>[39m
+                                    [36m</td>[39m
+                                    [36m<td>[39m
+                                      [0mCISC 499[0m
+                                    [36m</td>[39m
+                                    [36m<td>[39m
+                                      [0mTest Class 3[0m
+                                    [36m</td>[39m
+                                    [36m<td>[39m
+                                      [0m4[0m
+                                    [36m</td>[39m
+                                  [36m</tr>[39m
+                                [36m</tbody>[39m
+                              [36m</table>[39m
+                            [36m</div>[39m
                             [36m<button[39m
                               [33mclass[39m=[32m"MuiButton-root MuiButton-outlined MuiButton-outlinedSecondary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root m-2 css-wnpvqa-MuiButtonBase-root-MuiButton-root"[39m
                               [33mtabindex[39m=[32m"0"[39m
@@ -262,19 +388,20 @@ FAIL src/App.test.tsx
 -----------------------|---------|----------|---------|---------|-------------------
 File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------|---------|----------|---------|---------|-------------------
-All files              |   39.25 |    28.57 |   39.13 |   41.58 |                   
+All files              |   40.36 |    28.57 |   41.66 |   42.71 |                   
  src                   |   55.55 |      100 |   55.55 |   58.82 |                   
   App.tsx              |   55.55 |      100 |   55.55 |   58.82 | 45,53-61          
- src/components        |   35.22 |    28.57 |   33.33 |   37.34 |                   
+ src/components        |   36.66 |    28.57 |   36.84 |   38.82 |                   
   AddPlanModal.tsx     |   15.78 |     12.5 |      20 |   16.66 | 24-42,64-65       
   AddSemesterModal.tsx |   19.23 |     7.14 |   16.66 |   19.23 | 26-56,62-63,84    
   Course.tsx           |       0 |      100 |       0 |       0 | 6-8               
   CourseFinder.tsx     |   64.28 |    85.71 |   44.44 |   64.28 | 80,99-124         
+  CourseList.tsx       |     100 |      100 |     100 |     100 |                   
   PlanList.tsx         |   71.42 |      100 |      50 |     100 |                   
   PlanView.tsx         |    62.5 |       50 |      25 |   83.33 | 50                
   Semester.tsx         |       0 |      100 |       0 |       0 | 6-8               
   SemesterList.tsx     |     100 |      100 |     100 |     100 |                   
-  SemesterView.tsx     |   33.33 |       25 |      25 |   33.33 | 18-22,38          
+  SemesterView.tsx     |   33.33 |       25 |      25 |   33.33 | 19-23,40          
  src/interfaces        |     100 |      100 |     100 |     100 |                   
   course.ts            |     100 |      100 |     100 |     100 |                   
   plan.ts              |       0 |        0 |       0 |       0 |                   
@@ -283,5 +410,5 @@ All files              |   39.25 |    28.57 |   39.13 |   41.58 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 passed, 2 total
 Snapshots:   0 total
-Time:        3.994 s
+Time:        10.193 s
 Ran all test suites.
