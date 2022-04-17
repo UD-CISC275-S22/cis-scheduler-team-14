@@ -1,19 +1,20 @@
 import { CourseFinder } from "../components/CourseFinder";
 import { Course } from "./course";
 
-/** SemesterType describes what season the semester takes place */
-export type SemesterSeason = "FALL" | "WINTER" | "SPRING" | "SUMMER" | "EMPTY";
+/** Season describes what season the semester takes place */
+export enum Season {
+    winter = "Winter",
+    spring = "Spring",
+    summer = "Summer",
+    fall = "Fall"
+}
 
 /** A representation of a Semester that classes are scheduled in */
 export interface Semester {
-    /** The year that the semester takes place */
+    /** The year that the semester takes place, ex 2022 */
     year: number;
-    /** The ID of the semester */
-    id: number;
-    /** The season that the semester takes place */
-    season: SemesterSeason;
-    /** The total number of credits that are being taken in a semester */
-    credits: number;
+    /** The season that the semester takes place, ex Winter */
+    season: Season;
     /** A list of Course objects representing what courses are being taken in the semester */
     courses: Course[];
 }
