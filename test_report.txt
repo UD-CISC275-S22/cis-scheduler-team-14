@@ -10,7 +10,23 @@
       ]
     }
 
-      at App (src/App.tsx:47:13)
+      at App (src/App.tsx:68:13)
+
+  console.error
+    Warning: Functions are not valid as a React child. This may happen if you return a Component instead of <Component /> from render. Or maybe you meant to call this function rather than return it.
+        at span
+        at div
+        at div
+        at div
+        at App (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/App.tsx:30:9)
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
+      at warnOnFunctionType (node_modules/react-dom/cjs/react-dom.development.js:13247:5)
+      at createChild (node_modules/react-dom/cjs/react-dom.development.js:13474:9)
+      at reconcileChildrenArray (node_modules/react-dom/cjs/react-dom.development.js:13719:25)
+      at reconcileChildFibers (node_modules/react-dom/cjs/react-dom.development.js:14125:14)
+      at reconcileChildren (node_modules/react-dom/cjs/react-dom.development.js:16990:28)
 
   console.log
     {
@@ -20,12 +36,12 @@
       ]
     }
 
-      at App (src/App.tsx:47:13)
+      at App (src/App.tsx:68:13)
 
-FAIL src/App.test.tsx (9.609 s)
+FAIL src/App.test.tsx (10.025 s)
   DoubleHalf Component tests
-    ✕ renders the course name somewhere (193 ms)
-    ✓ There are Clear All Courses and Clear All Semesters buttons (259 ms)
+    ✕ renders the course name somewhere (238 ms)
+    ✓ There are Clear All Courses and Clear All Semesters buttons (275 ms)
 
   ● DoubleHalf Component tests › renders the course name somewhere
 
@@ -363,6 +379,68 @@ FAIL src/App.test.tsx (9.609 s)
               [36m</div>[39m
             [36m</div>[39m
           [36m</div>[39m
+          [36m<div>[39m
+            [36m<div>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-label"[39m
+                [33mfor[39m=[32m"userConcentration"[39m
+              [36m>[39m
+                [0mWhat is your concentration?[0m
+              [36m</label>[39m
+              [36m<select[39m
+                [33mclass[39m=[32m"form-select"[39m
+                [33mid[39m=[32m"userConcentration"[39m
+              [36m>[39m
+                [36m<option[39m
+                  [33mvalue[39m=[32m"AI"[39m
+                [36m>[39m
+                  [0mAI[0m
+                [36m</option>[39m
+                [36m<option[39m
+                  [33mvalue[39m=[32m"Bioinformatics"[39m
+                [36m>[39m
+                  [0m Bioinformatics [0m
+                [36m</option>[39m
+                [36m<option[39m
+                  [33mvalue[39m=[32m"Cybersecurity"[39m
+                [36m>[39m
+                  [0m Cybersecurity [0m
+                [36m</option>[39m
+                [36m<option[39m
+                  [33mvalue[39m=[32m"DataScience"[39m
+                [36m>[39m
+                  [0m Data Science [0m
+                [36m</option>[39m
+                [36m<option[39m
+                  [33mvalue[39m=[32m"High Performance Computing"[39m
+                [36m>[39m
+                  [0mHigh Performance and Computing[0m
+                [36m</option>[39m
+                [36m<option[39m
+                  [33mvalue[39m=[32m"Systems and Networks"[39m
+                [36m>[39m
+                  [0mSystems and Networks[0m
+                [36m</option>[39m
+                [36m<option[39m
+                  [33mvalue[39m=[32m"Theory and Computation"[39m
+                [36m>[39m
+                  [0mTheory and Computation[0m
+                [36m</option>[39m
+              [36m</select>[39m
+            [36m</div>[39m
+            [0mThe users concentration [0m
+            [0mAI[0m
+            [0m.[0m
+            [36m<div>[39m
+              [36m<span>[39m
+                [0mThe user has passed Concetration requirement[0m
+                [0m [0m
+                [36m<span>[39m
+                  [0mThe data should be checked here![0m
+                [36m</span>[39m
+              [36m</span>[39m
+            [36m</div>[39m
+          [36m</div>[39m
         [36m</div>[39m
       [36m</div>[39m
     [36m</body>[39m
@@ -388,9 +466,9 @@ FAIL src/App.test.tsx (9.609 s)
 -----------------------|---------|----------|---------|---------|-------------------
 File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------|---------|----------|---------|---------|-------------------
-All files              |   40.36 |    28.57 |   41.66 |   42.71 |                   
- src                   |   55.55 |      100 |   55.55 |   58.82 |                   
-  App.tsx              |   55.55 |      100 |   55.55 |   58.82 | 45,53-61          
+All files              |   38.13 |    28.57 |   37.03 |   40.17 |                   
+ src                   |   40.74 |      100 |   33.33 |    42.3 |                   
+  App.tsx              |   40.74 |      100 |   33.33 |    42.3 | 15-27,33,66,74-82 
  src/components        |   36.66 |    28.57 |   36.84 |   38.82 |                   
   AddPlanModal.tsx     |   15.78 |     12.5 |      20 |   16.66 | 24-42,64-65       
   AddSemesterModal.tsx |   19.23 |     7.14 |   16.66 |   19.23 | 26-56,62-63,84    
@@ -403,6 +481,7 @@ All files              |   40.36 |    28.57 |   41.66 |   42.71 |
   SemesterList.tsx     |     100 |      100 |     100 |     100 |                   
   SemesterView.tsx     |   33.33 |       25 |      25 |   33.33 | 19-23,40          
  src/interfaces        |     100 |      100 |     100 |     100 |                   
+  concentration.ts     |       0 |        0 |       0 |       0 |                   
   course.ts            |     100 |      100 |     100 |     100 |                   
   plan.ts              |       0 |        0 |       0 |       0 |                   
   semester.ts          |       0 |        0 |       0 |       0 |                   
@@ -410,5 +489,5 @@ All files              |   40.36 |    28.57 |   41.66 |   42.71 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 passed, 2 total
 Snapshots:   0 total
-Time:        10.193 s
+Time:        10.679 s
 Ran all test suites.
