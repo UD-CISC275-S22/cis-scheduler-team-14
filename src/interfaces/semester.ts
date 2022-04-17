@@ -1,4 +1,4 @@
-import { CourseFinder } from "../components/CourseFinder";
+//import { CourseFinder } from "../components/CourseFinder";
 import { Course } from "./course";
 
 /** Season describes what season the semester takes place */
