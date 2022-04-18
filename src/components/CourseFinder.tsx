@@ -4,17 +4,16 @@ import { Course, CreditType, getCourseString } from "../interfaces/course";
 import { Season } from "../interfaces/semester";
 import { DraggableCourse } from "./DraggableCourse";
 
-/** States to be passed between components  */
-interface coursePoolProps {
-    pool: Course[];
-    setPool: (courseP: Course[]) => void;
-}
-
 /** A search tab to search for a certain course within the given course catalog */
-export function CourseFinder(
-    { courseData }: { courseData: Course[] },
-    { pool, setPool }: coursePoolProps
-): JSX.Element {
+export function CourseFinder({
+    courseData,
+    pool,
+    setPool
+}: {
+    courseData: Course[];
+    pool: Course[];
+    setPool: (newPool: Course[]) => void;
+}): JSX.Element {
     const [query, setQuery] = useState<string>("");
 
     /** CSS Styles to be used in CourseFinder */
@@ -52,16 +51,6 @@ export function CourseFinder(
             outlineStyle: "solid",
             outlineWidth: "medium",
             fontFamily: "monospace"
-        } as React.CSSProperties,
-        /** CSS Style for a course in the Course Pool */
-        course_pool_individual: {
-            width: 300,
-            height: 50,
-            backgroundColor: "white",
-            alignContent: "center",
-            outlineStyle: "solid",
-            outlineWidth: "thin",
-            fontFamily: "monospace"
         } as React.CSSProperties
     };
 
@@ -83,14 +72,6 @@ export function CourseFinder(
     /** Function to update the query useState */
     function updateQuery(event: React.ChangeEvent<HTMLInputElement>) {
         setQuery(event.target.value);
-    }
-
-    /** Function to remove a course from the course pool */
-    function removeSingleCourse(courseToRemove: Course) {
-        const coursesToKeep = (course: Course): boolean =>
-            course.code.toLowerCase() !== courseToRemove.code.toLowerCase();
-        const newPool = pool.filter(coursesToKeep);
-        setPool(newPool);
     }
 
     /** Returns final CourseFinder component */
