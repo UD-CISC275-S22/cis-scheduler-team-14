@@ -1,5 +1,4 @@
 //import { useState } from "react";
-import { Season } from "./semester";
 
 /** A representation of a University of Delaware course from the course catalog */
 export interface Course {

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Col, Form, Modal, Row } from "react-bootstrap";
-import { Season, Semester } from "../interfaces/semester";
 import CancelIcon from "@mui/icons-material/Cancel";
 import Add from "@mui/icons-material/Add";
 import Button from "@mui/material/Button";
@@ -9,14 +8,12 @@ import { Course } from "../interfaces/course";
 export function EditCourseModal({
     show,
     handleClose,
-    updateCourses,
-    courses,
+    updateCourse,
     course
 }: {
     show: boolean;
     handleClose: () => void;
-    updateCourses: (courses: Course[]) => void;
-    courses: Course[];
+    updateCourse: (oldCourse: Course, newCourse: Course) => void;
     course: Course;
 }) {
     const [name, setName] = useState<string>(course.name);
@@ -45,10 +42,7 @@ export function EditCourseModal({
             restrictions: restrictions,
             semestersOffered: semestersOffered
         };
-        const newCourses = courses.filter((c) =>
-            c === course ? newCourse : c
-        );
-        updateCourses(newCourses);
+        updateCourse(course, newCourse);
         handleClose();
     }
 
@@ -59,55 +53,53 @@ export function EditCourseModal({
             </Modal.Header>
             <Modal.Body>
                 {/*Name */}
-                <Form.Group controlId="formCourseName" as={Row}>
-                    <Form.Label column sm={2}>
+                <Form.Group as={Row}>
+                    <Form.Label column sm={10}>
                         Name:
                     </Form.Label>
                     <Col sm={10}>
                         <Form.Control
                             type="text"
-                            value={course.name}
-                            onChange={(
-                                event: React.ChangeEvent<HTMLInputElement>
-                            ) => setName(event.target.value)}
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
                         />
                     </Col>
                 </Form.Group>
                 {/*Code */}
                 <Form.Group as={Row}>
-                    <Form.Label column sm={2}>
+                    <Form.Label column sm={10}>
                         Code:
                     </Form.Label>
                     <Col sm={10}>
                         <Form.Control
-                            value={course.code}
+                            value={code}
                             onChange={(e) => setCode(e.target.value)}
                         />
                     </Col>
                 </Form.Group>
                 {/*Description */}
                 <Form.Group as={Row}>
-                    <Form.Label column sm={2}>
+                    <Form.Label column sm={10}>
                         Description:
                     </Form.Label>
                     <Col sm={10}>
                         <Form.Control
                             as="textarea"
                             rows={3}
-                            value={course.description}
+                            value={description}
                             onChange={(e) => setDescription(e.target.value)}
                         />
                     </Col>
                 </Form.Group>
                 {/*Credits */}
                 <Form.Group as={Row}>
-                    <Form.Label column sm={2}>
+                    <Form.Label column sm={10}>
                         Credits:
                     </Form.Label>
                     <Col sm={10}>
                         <Form.Control
                             type="number"
-                            value={course.credits}
+                            value={credits}
                             onChange={(e) =>
                                 setCredits(parseInt(e.target.value))
                             }
@@ -116,55 +108,55 @@ export function EditCourseModal({
                 </Form.Group>
                 {/*Credit Types */}
                 <Form.Group as={Row}>
-                    <Form.Label column sm={2}>
+                    <Form.Label column sm={10}>
                         Credit Types:
                     </Form.Label>
                     <Col sm={10}>
                         <Form.Control
                             type="text"
-                            value={course.creditTypes}
+                            value={creditTypes}
                             onChange={(e) => setCreditTypes(e.target.value)}
                         />
                     </Col>
                 </Form.Group>
                 {/*Prerequisites */}
                 <Form.Group as={Row}>
-                    <Form.Label column sm={2}>
+                    <Form.Label column sm={10}>
                         Prerequisites:
                     </Form.Label>
                     <Col sm={10}>
                         <Form.Control
                             as="textarea"
                             rows={3}
-                            value={course.prerequisites}
+                            value={prerequisites}
                             onChange={(e) => setPrerequisites(e.target.value)}
                         />
                     </Col>
                 </Form.Group>
                 {/*Restrictions */}
                 <Form.Group as={Row}>
-                    <Form.Label column sm={2}>
+                    <Form.Label column sm={10}>
                         Restrictions:
                     </Form.Label>
-                    <Col sm={10}>
+                    <Col sm={20}>
                         <Form.Control
                             as="textarea"
                             rows={3}
-                            value={course.restrictions}
+                            value={restrictions}
                             onChange={(e) => setRestrictions(e.target.value)}
                         />
                     </Col>
                 </Form.Group>
                 {/*Semesters Offered */}
                 <Form.Group as={Row}>
-                    <Form.Label column sm={2}>
+                    <Form.Label column sm={10}>
                         Semesters Offered:
                     </Form.Label>
                     <Col sm={10}>
                         <Form.Control
                             as="textarea"
                             rows={3}
-                            value={course.semestersOffered}
+                            value={semestersOffered}
                             onChange={(e) =>
                                 setSemestersOffered(e.target.value)
                             }

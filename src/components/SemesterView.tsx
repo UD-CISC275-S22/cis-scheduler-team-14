@@ -35,7 +35,15 @@ export function SemesterView({
         setSemesters(newSemesters);
     }
     return (
-        <div className="bg-light border m-2 p-2">
+        <div
+            style={{
+                backgroundColor: "mintcream",
+                borderRadius: "25px",
+                padding: "10px",
+                border: "1px black",
+                borderStyle: "dashed"
+            }}
+        >
             <h4>
                 {semester.season} {semester.year}{" "}
             </h4>
