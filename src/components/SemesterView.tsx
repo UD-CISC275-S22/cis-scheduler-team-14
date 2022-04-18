@@ -4,6 +4,8 @@ import { Course } from "../interfaces/course";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Button from "@mui/material/Button";
 import { CourseList } from "./CourseList";
+import { Form } from "react-bootstrap";
+import { Plan } from "../interfaces/plan";
 
 export function SemesterView({
     semester,
@@ -14,6 +16,33 @@ export function SemesterView({
     setSemesters: (semesters: Semester[]) => void;
     semesters: Semester[];
 }): JSX.Element {
+    function checkCourse(thisSemester: Semester, Query: Course): boolean {
+        return thisSemester.courses.indexOf(Query) !== -1;
+    }
+    function checkPlan(thisPlan: Plan, Query: Course): boolean {
+        const goodSemester: Semester[] = thisPlan.semesters.filter(
+            (aSemester: Semester): boolean => checkCourse(aSemester, Query)
+        );
+        return goodSemester.length > 0;
+    }
+    function checkConcentration(aPlan: Plan, courseList: Course[]): boolean {
+        const missingCourses: Course[] = courseList.filter(
+            (aCourse: Course): boolean => checkPlan(aPlan, aCourse) === false
+        );
+        return missingCourses.length === 0;
+    }
+    function needTheseCourse(aPlan: Plan, courseList: Course[]): Course[] {
+        const missingCourses: Course[] = courseList.filter(
+            (aCourse: Course): boolean => checkPlan(aPlan, aCourse) === false
+        );
+        return missingCourses;
+    }
+    const [concentrationPicked, setconcentrationPicked] =
+        useState<string>("AI");
+
+    function updateConcentration(event: React.ChangeEvent<HTMLSelectElement>) {
+        setconcentrationPicked(event.target.value);
+    }
     const [courses] = useState<Course[]>(semester.courses);
     function deleteSemester(year: number, season: string) {
         const newSemesters = semesters.filter(
@@ -43,6 +72,40 @@ export function SemesterView({
                     Delete Semester
                 </Button>
             ) : null}
+            <div>
+                <Form.Group controlId="userConcentration">
+                    <Form.Label>What is your concentration?</Form.Label>
+                    <Form.Select
+                        value={concentrationPicked}
+                        onChange={updateConcentration}
+                    >
+                        <option value="AI">AI</option>
+                        <option value="Bioinformatics"> Bioinformatics </option>
+                        <option value="Cybersecurity"> Cybersecurity </option>
+                        <option value="DataScience"> Data Science </option>
+                        <option value="High Performance Computing">
+                            High Performance and Computing
+                        </option>
+                        <option value="Systems and Networks">
+                            Systems and Networks
+                        </option>
+                        <option value="Theory and Computation">
+                            Theory and Computation
+                        </option>
+                    </Form.Select>
+                </Form.Group>
+                The users concentration {concentrationPicked}.
+                <div>
+                    <span>
+                        The user has passed Concetration requirement{" "}
+                        {checkConcentration}
+                        The user needs these courses still to pass Concentration
+                        requirement
+                        {needTheseCourse}
+                        <span>The data should be checked here!</span>
+                    </span>
+                </div>
+            </div>
         </div>
     );
 }

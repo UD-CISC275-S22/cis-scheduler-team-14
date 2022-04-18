@@ -1,3 +1,15 @@
+export type CoreRequirement = [
+    "CISC 108",
+    "CISC 181",
+    "CISC 210",
+    "CISC 220",
+    "CISC 260",
+    "CISC 275",
+    "CISC 303",
+    "CISC 320",
+    "MATH 210",
+    "MATH 241"
+];
 export type AIRequirement = [
     "CISC 304",
     "CISC 442",
@@ -60,6 +72,7 @@ export type TheoryandComputationRequirement = [
 ];
 export interface Concentration {
     /** The concentrations offered **/
+    CoreRequirement: CoreRequirement;
     AI: AIRequirement;
     Bioinformatics: BioinformaticsRequirement;
     Cybersecurity: CybersecurityRequirement;
