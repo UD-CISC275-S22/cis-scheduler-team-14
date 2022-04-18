@@ -101,6 +101,8 @@ function App(): JSX.Element {
                         plans={plans}
                         setPlans={setPlans}
                         deletePlan={deletePlan}
+                        pool={pool}
+                        setPool={setPool}
                     ></PlanList>
                 </div>
                 <div>

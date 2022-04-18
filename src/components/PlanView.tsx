@@ -6,15 +6,20 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import Add from "@mui/icons-material/Add";
 import Button from "@mui/material/Button";
 import { SemesterList } from "./SemesterList";
+import { Course } from "../interfaces/course";
 
 export function PlanView({
     plan,
     deletePlan,
-    plans
+    plans,
+    pool,
+    setPool
 }: {
     plan: Plan;
     deletePlan: (id: number) => void;
     plans: Plan[];
+    pool: Course[];
+    setPool: (newPool: Course[]) => void;
 }): JSX.Element {
     const [semesters, setSemesters] = useState<Semester[]>(plan.semesters);
     const [showAddSemesterModal, setShowAddSemesterModal] =
@@ -32,7 +37,12 @@ export function PlanView({
             }}
         >
             <h3>Plan {plan.id}</h3>
-            <SemesterList semesters={semesters} setSemesters={setSemesters} />
+            <SemesterList
+                semesters={semesters}
+                setSemesters={setSemesters}
+                pool={pool}
+                setPool={setPool}
+            />
             <Button
                 startIcon={<Add />}
                 variant="contained"
