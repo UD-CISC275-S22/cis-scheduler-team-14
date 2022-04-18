@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
-import { Course, CreditType, getCourseString } from "../interfaces/course";
-import { Season } from "../interfaces/semester";
+import { Course, getCourseString } from "../interfaces/course";
 import { DraggableCourse } from "./DraggableCourse";
 
 /** A search tab to search for a certain course within the given course catalog */
@@ -57,9 +56,7 @@ export function CourseFinder({
     /** Imports an array of Course objects, type casts creditTypes and semestersOffered */
     const COURSES = courseData.map(
         (course: Course): Course => ({
-            ...course,
-            creditTypes: course.creditTypes as CreditType[],
-            semestersOffered: course.semestersOffered as Season[]
+            ...course
         })
     );
 

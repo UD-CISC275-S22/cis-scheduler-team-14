@@ -22,7 +22,15 @@ export function PlanView({
     const handleCloseAddSemesterModal = () => setShowAddSemesterModal(false);
     const handleShowAddSemesterModal = () => setShowAddSemesterModal(true);
     return (
-        <div className="bg-light border m-2 p-2">
+        <div
+            style={{
+                backgroundColor: "lightcyan",
+                borderRadius: "25px",
+                padding: "10px",
+                border: "1px black",
+                borderStyle: "solid"
+            }}
+        >
             <h3>Plan {plan.id}</h3>
             <SemesterList semesters={semesters} setSemesters={setSemesters} />
             <Button

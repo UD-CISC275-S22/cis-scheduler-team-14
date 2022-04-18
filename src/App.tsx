@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import headerimg from "./media/background.jpg";
 import { Button } from "react-bootstrap";
 import premadePlans from "./data/plans.json";
-import { Course, CreditType } from "./interfaces/course";
+import { Course } from "./interfaces/course";
 import { Plan } from "./interfaces/plan";
 import { Semester, Season } from "./interfaces/semester";
 import { Form } from "react-bootstrap";
@@ -43,9 +43,7 @@ function App(): JSX.Element {
     /** Test Course states */
     const TESTCOURSES = TestCourses.map(
         (course): Course => ({
-            ...course,
-            creditTypes: course.creditTypes as CreditType[],
-            semestersOffered: course.semestersOffered as Season[]
+            ...course
         })
     );
     const [testCourses] = useState<Course[]>(TESTCOURSES);
@@ -59,10 +57,7 @@ function App(): JSX.Element {
                     season: semester.season as Season,
                     courses: semester.courses.map(
                         (course): Course => ({
-                            ...course,
-                            creditTypes: course.creditTypes as CreditType[],
-                            semestersOffered:
-                                course.semestersOffered as Season[]
+                            ...course
                         })
                     )
                 })
