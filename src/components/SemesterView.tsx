@@ -14,7 +14,19 @@ export function SemesterView({
     setSemesters: (semesters: Semester[]) => void;
     semesters: Semester[];
 }): JSX.Element {
-    const [courses] = useState<Course[]>(semester.courses);
+    const [courses, setCourses] = useState<Course[]>(semester.courses);
+    function updateCourses(courses: Course[]) {
+        setCourses(courses);
+        const newSemester = { ...semester, courses: courses };
+        setSemesters(
+            semesters.map((semester) =>
+                semester.year === newSemester.year &&
+                semester.season === newSemester.season
+                    ? newSemester
+                    : semester
+            )
+        );
+    }
     function deleteSemester(year: number, season: string) {
         const newSemesters = semesters.filter(
             (semester: Semester) =>
@@ -23,12 +35,23 @@ export function SemesterView({
         setSemesters(newSemesters);
     }
     return (
-        <div className="bg-light border m-2 p-2">
+        <div
+            style={{
+                backgroundColor: "mintcream",
+                borderRadius: "25px",
+                padding: "10px",
+                border: "1px black",
+                borderStyle: "dashed"
+            }}
+        >
             <h4>
                 {semester.season} {semester.year}{" "}
             </h4>
             <h6>{courses.length} Course(s)</h6>
-            <CourseList courses={courses}></CourseList>
+            <CourseList
+                courses={courses}
+                updateCourses={updateCourses}
+            ></CourseList>
             {/*Delete Semester*/}
             {semesters.length > -1 ? (
                 <Button

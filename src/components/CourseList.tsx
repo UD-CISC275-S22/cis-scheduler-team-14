@@ -1,38 +1,38 @@
-import { Edit } from "@mui/icons-material";
-import { IconButton } from "@mui/material";
+import { Stack } from "@mui/material";
 import React from "react";
-import { Table } from "react-bootstrap";
 import { Course } from "../interfaces/course";
+import { CourseView } from "./CourseView";
 
-export function CourseList({ courses }: { courses: Course[] }): JSX.Element {
+export function CourseList({
+    courses,
+    updateCourses
+}: {
+    courses: Course[];
+    updateCourses: (courses: Course[]) => void;
+}): JSX.Element {
+    function updateCourse(oldCourse: Course, newCourse: Course) {
+        const newCourses = courses.map((c) =>
+            c === oldCourse ? newCourse : c
+        );
+        updateCourses(newCourses);
+    }
+    function deleteCourse(course: Course) {
+        const newCourses = courses.filter((c) => c !== course);
+        updateCourses(newCourses);
+    }
     return (
         <div>
-            <Table striped bordered hover>
-                <thead>
-                    <tr>
-                        <th>Edit</th>
-                        <th>Course ID</th>
-                        <th>Course Name</th>
-                        <th>Credits</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {courses.map((course: Course) => (
-                        <tr key={course.code}>
-                            <td>
-                                {
-                                    <IconButton aria-label="edit" size="small">
-                                        <Edit />
-                                    </IconButton>
-                                }
-                            </td>
-                            <td>{course.code}</td>
-                            <td>{course.name}</td>
-                            <td>{course.credits}</td>
-                        </tr>
-                    ))}
-                </tbody>
-            </Table>
+            <Stack gap={2}>
+                {courses.map((course: Course) => (
+                    <div key={course.code}>
+                        <CourseView
+                            course={course}
+                            updateCourse={updateCourse}
+                            deleteCourse={deleteCourse}
+                        ></CourseView>
+                    </div>
+                ))}
+            </Stack>
         </div>
     );
 }

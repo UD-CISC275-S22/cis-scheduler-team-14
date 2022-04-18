@@ -14,10 +14,7 @@ export function SemesterList({
         <div>
             <Stack gap={3}>
                 {semesters.map((semester: Semester) => (
-                    <div
-                        key={semester.year + "-" + semester.season}
-                        className="bg-light border m-2 p-0"
-                    >
+                    <div key={semester.year + "-" + semester.season}>
                         <SemesterView
                             semester={semester}
                             setSemesters={setSemesters}
