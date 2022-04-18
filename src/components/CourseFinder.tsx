@@ -113,6 +113,7 @@ export function CourseFinder({
                         <DraggableCourse course={course}></DraggableCourse>
                     </div>
                 ))}
+                {pool.length > 1 && <p>Drag courses into your plan!</p>}
                 <Button onClick={() => setPool([])}>Clear course pool</Button>
             </div>
         </div>
