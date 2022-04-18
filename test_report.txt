@@ -10,7 +10,7 @@
       ]
     }
 
-      at App (src/App.tsx:68:13)
+      at App (src/App.tsx:74:13)
 
   console.error
     Warning: Functions are not valid as a React child. This may happen if you return a Component instead of <Component /> from render. Or maybe you meant to call this function rather than return it.
@@ -18,7 +18,7 @@
         at div
         at div
         at div
-        at App (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/App.tsx:30:9)
+        at App (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/App.tsx:36:9)
 
       at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
       at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
@@ -36,12 +36,12 @@
       ]
     }
 
-      at App (src/App.tsx:68:13)
+      at App (src/App.tsx:74:13)
 
-FAIL src/App.test.tsx (10.025 s)
+FAIL src/App.test.tsx (10.001 s)
   DoubleHalf Component tests
-    ✕ renders the course name somewhere (238 ms)
-    ✓ There are Clear All Courses and Clear All Semesters buttons (275 ms)
+    ✕ renders the course name somewhere (240 ms)
+    ✓ There are Clear All Courses and Clear All Semesters buttons (283 ms)
 
   ● DoubleHalf Component tests › renders the course name somewhere
 
@@ -184,266 +184,7 @@ FAIL src/App.test.tsx (10.025 s)
                                           [36m<path[39m
                                             [33md[39m=[32m"M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"[39m
                                           [36m/>[39m
-                                        [36m</svg>[39m
-                                        [36m<span[39m
-                                          [33mclass[39m=[32m"MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"[39m
-                                        [36m/>[39m
-                                      [36m</button>[39m
-                                    [36m</td>[39m
-                                    [36m<td>[39m
-                                      [0mCISC 103[0m
-                                    [36m</td>[39m
-                                    [36m<td>[39m
-                                      [0mTest Class 2[0m
-                                    [36m</td>[39m
-                                    [36m<td>[39m
-                                      [0m4[0m
-                                    [36m</td>[39m
-                                  [36m</tr>[39m
-                                  [36m<tr>[39m
-                                    [36m<td>[39m
-                                      [36m<button[39m
-                                        [33maria-label[39m=[32m"edit"[39m
-                                        [33mclass[39m=[32m"MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root"[39m
-                                        [33mtabindex[39m=[32m"0"[39m
-                                        [33mtype[39m=[32m"button"[39m
-                                      [36m>[39m
-                                        [36m<svg[39m
-                                          [33maria-hidden[39m=[32m"true"[39m
-                                          [33mclass[39m=[32m"MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"[39m
-                                          [33mdata-testid[39m=[32m"EditIcon"[39m
-                                          [33mfocusable[39m=[32m"false"[39m
-                                          [33mviewBox[39m=[32m"0 0 24 24"[39m
-                                        [36m>[39m
-                                          [36m<path[39m
-                                            [33md[39m=[32m"M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"[39m
-                                          [36m/>[39m
-                                        [36m</svg>[39m
-                                        [36m<span[39m
-                                          [33mclass[39m=[32m"MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"[39m
-                                        [36m/>[39m
-                                      [36m</button>[39m
-                                    [36m</td>[39m
-                                    [36m<td>[39m
-                                      [0mCISC 499[0m
-                                    [36m</td>[39m
-                                    [36m<td>[39m
-                                      [0mTest Class 3[0m
-                                    [36m</td>[39m
-                                    [36m<td>[39m
-                                      [0m4[0m
-                                    [36m</td>[39m
-                                  [36m</tr>[39m
-                                [36m</tbody>[39m
-                              [36m</table>[39m
-                            [36m</div>[39m
-                            [36m<button[39m
-                              [33mclass[39m=[32m"MuiButton-root MuiButton-outlined MuiButton-outlinedSecondary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root m-2 css-wnpvqa-MuiButtonBase-root-MuiButton-root"[39m
-                              [33mtabindex[39m=[32m"0"[39m
-                              [33mtype[39m=[32m"button"[39m
-                            [36m>[39m
-                              [36m<span[39m
-                                [33mclass[39m=[32m"MuiButton-startIcon MuiButton-iconSizeMedium css-1d6wzja-MuiButton-startIcon"[39m
-                              [36m>[39m
-                                [36m<svg[39m
-                                  [33maria-hidden[39m=[32m"true"[39m
-                                  [33mclass[39m=[32m"MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"[39m
-                                  [33mdata-testid[39m=[32m"DeleteIcon"[39m
-                                  [33mfocusable[39m=[32m"false"[39m
-                                  [33mviewBox[39m=[32m"0 0 24 24"[39m
-                                [36m>[39m
-                                  [36m<path[39m
-                                    [33md[39m=[32m"M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"[39m
-                                  [36m/>[39m
-                                [36m</svg>[39m
-                              [36m</span>[39m
-                              [0mDelete Semester[0m
-                              [36m<span[39m
-                                [33mclass[39m=[32m"MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"[39m
-                              [36m/>[39m
-                            [36m</button>[39m
-                          [36m</div>[39m
-                        [36m</div>[39m
-                      [36m</div>[39m
-                    [36m</div>[39m
-                    [36m<button[39m
-                      [33mclass[39m=[32m"MuiButton-root MuiButton-contained MuiButton-containedSuccess MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root m-2 css-ke5b6m-MuiButtonBase-root-MuiButton-root"[39m
-                      [33mtabindex[39m=[32m"0"[39m
-                      [33mtype[39m=[32m"button"[39m
-                    [36m>[39m
-                      [36m<span[39m
-                        [33mclass[39m=[32m"MuiButton-startIcon MuiButton-iconSizeMedium css-1d6wzja-MuiButton-startIcon"[39m
-                      [36m>[39m
-                        [36m<svg[39m
-                          [33maria-hidden[39m=[32m"true"[39m
-                          [33mclass[39m=[32m"MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"[39m
-                          [33mdata-testid[39m=[32m"AddIcon"[39m
-                          [33mfocusable[39m=[32m"false"[39m
-                          [33mviewBox[39m=[32m"0 0 24 24"[39m
-                        [36m>[39m
-                          [36m<path[39m
-                            [33md[39m=[32m"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"[39m
-                          [36m/>[39m
-                        [36m</svg>[39m
-                      [36m</span>[39m
-                      [0mAdd Semester[0m
-                      [36m<span[39m
-                        [33mclass[39m=[32m"MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"[39m
-                      [36m/>[39m
-                    [36m</button>[39m
-                  [36m</div>[39m
-                [36m</div>[39m
-              [36m</div>[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"MuiButton-root MuiButton-contained MuiButton-containedSuccess MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root m-4 css-ke5b6m-MuiButtonBase-root-MuiButton-root"[39m
-                [33mtabindex[39m=[32m"0"[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m>[39m
-                [36m<span[39m
-                  [33mclass[39m=[32m"MuiButton-startIcon MuiButton-iconSizeMedium css-1d6wzja-MuiButton-startIcon"[39m
-                [36m>[39m
-                  [36m<svg[39m
-                    [33maria-hidden[39m=[32m"true"[39m
-                    [33mclass[39m=[32m"MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"[39m
-                    [33mdata-testid[39m=[32m"AddIcon"[39m
-                    [33mfocusable[39m=[32m"false"[39m
-                    [33mviewBox[39m=[32m"0 0 24 24"[39m
-                  [36m>[39m
-                    [36m<path[39m
-                      [33md[39m=[32m"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"[39m
-                    [36m/>[39m
-                  [36m</svg>[39m
-                [36m</span>[39m
-                [0mAdd Plan[0m
-                [36m<span[39m
-                  [33mclass[39m=[32m"MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"[39m
-                [36m/>[39m
-              [36m</button>[39m
-            [36m</div>[39m
-          [36m</div>[39m
-          [36m<div>[39m
-            [36m<div[39m
-              [33mstyle[39m=[32m"width: 300px; height: 500px; align-content: center; background-color: beige; padding-top: 10px; outline-style: solid; outline-width: medium; font-family: monospace;"[39m
-            [36m>[39m
-              [36m<div>[39m
-                [36m<label[39m
-                  [33mclass[39m=[32m"form-label"[39m
-                  [33mfor[39m=[32m"formCourseSearch"[39m
-                [36m>[39m
-                  [0mCourse Lookup[0m
-                [36m</label>[39m
-                [36m<input[39m
-                  [33mclass[39m=[32m"form-control form-control-sm"[39m
-                  [33mid[39m=[32m"formCourseSearch"[39m
-                  [33mplaceholder[39m=[32m"Enter class name"[39m
-                  [33mvalue[39m=[32m""[39m
-                [36m/>[39m
-              [36m</div>[39m
-              [36m<div[39m
-                [33mstyle[39m=[32m"width: 300px; height: 150px; overflow: scroll; align-content: center; background-color: navy; padding-bottom: 1px; padding-top: 1px; outline-style: solid; outline-width: medium;"[39m
-              [36m>[39m
-                [36m<div[39m
-                  [33mstyle[39m=[32m"width: 300px; height: 50px; background-color: whitesmoke; align-content: center; outline-style: solid; outline-width: thin; font-family: monospace;"[39m
-                [36m>[39m
-                  [0mCISC144: Introduction to Typing[0m
-                [36m</div>[39m
-                [36m<div[39m
-                  [33mstyle[39m=[32m"width: 300px; height: 50px; background-color: whitesmoke; align-content: center; outline-style: solid; outline-width: thin; font-family: monospace;"[39m
-                [36m>[39m
-                  [0mCISC102: Introduction to Updating Windows[0m
-                [36m</div>[39m
-                [36m<div[39m
-                  [33mstyle[39m=[32m"width: 300px; height: 50px; background-color: whitesmoke; align-content: center; outline-style: solid; outline-width: thin; font-family: monospace;"[39m
-                [36m>[39m
-                  [0mCISC287: Advanced Typing[0m
-                [36m</div>[39m
-                [36m<div[39m
-                  [33mstyle[39m=[32m"width: 300px; height: 50px; background-color: whitesmoke; align-content: center; outline-style: solid; outline-width: thin; font-family: monospace;"[39m
-                [36m>[39m
-                  [0mCISC255: Laptop Hygiene[0m
-                [36m</div>[39m
-              [36m</div>[39m
-              [36m<div>[39m
-                [36m<p>[39m
-                  [0mCourse Pool[0m
-                [36m</p>[39m
-                [36m<p>[39m
-                  [0mClick a course to add it to your course pool![0m
-                [36m</p>[39m
-                [36m<button[39m
-                  [33mclass[39m=[32m"btn btn-primary"[39m
-                  [33mtype[39m=[32m"button"[39m
-                [36m>[39m
-                  [0mClear course pool[0m
-                [36m</button>[39m
-              [36m</div>[39m
-            [36m</div>[39m
-          [36m</div>[39m
-          [36m<div>[39m
-            [36m<div>[39m
-              [36m<label[39m
-                [33mclass[39m=[32m"form-label"[39m
-                [33mfor[39m=[32m"userConcentration"[39m
-              [36m>[39m
-                [0mWhat is your concentration?[0m
-              [36m</label>[39m
-              [36m<select[39m
-                [33mclass[39m=[32m"form-select"[39m
-                [33mid[39m=[32m"userConcentration"[39m
-              [36m>[39m
-                [36m<option[39m
-                  [33mvalue[39m=[32m"AI"[39m
-                [36m>[39m
-                  [0mAI[0m
-                [36m</option>[39m
-                [36m<option[39m
-                  [33mvalue[39m=[32m"Bioinformatics"[39m
-                [36m>[39m
-                  [0m Bioinformatics [0m
-                [36m</option>[39m
-                [36m<option[39m
-                  [33mvalue[39m=[32m"Cybersecurity"[39m
-                [36m>[39m
-                  [0m Cybersecurity [0m
-                [36m</option>[39m
-                [36m<option[39m
-                  [33mvalue[39m=[32m"DataScience"[39m
-                [36m>[39m
-                  [0m Data Science [0m
-                [36m</option>[39m
-                [36m<option[39m
-                  [33mvalue[39m=[32m"High Performance Computing"[39m
-                [36m>[39m
-                  [0mHigh Performance and Computing[0m
-                [36m</option>[39m
-                [36m<option[39m
-                  [33mvalue[39m=[32m"Systems and Networks"[39m
-                [36m>[39m
-                  [0mSystems and Networks[0m
-                [36m</option>[39m
-                [36m<option[39m
-                  [33mvalue[39m=[32m"Theory and Computation"[39m
-                [36m>[39m
-                  [0mTheory and Computation[0m
-                [36m</option>[39m
-              [36m</select>[39m
-            [36m</div>[39m
-            [0mThe users concentration [0m
-            [0mAI[0m
-            [0m.[0m
-            [36m<div>[39m
-              [36m<span>[39m
-                [0mThe user has passed Concetration requirement[0m
-                [0m [0m
-                [36m<span>[39m
-                  [0mThe data should be checked here![0m
-                [36m</span>[39m
-              [36m</span>[39m
-            [36m</div>[39m
-          [36m</div>[39m
-        [36m</div>[39m
-      [36m</div>[39m
-    [36m</body>[39m
+                                      ...
 
        8 |     });
        9 |     test("renders the course name somewhere", () => {
@@ -466,9 +207,9 @@ FAIL src/App.test.tsx (10.025 s)
 -----------------------|---------|----------|---------|---------|-------------------
 File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------|---------|----------|---------|---------|-------------------
-All files              |   38.13 |    28.57 |   37.03 |   40.17 |                   
- src                   |   40.74 |      100 |   33.33 |    42.3 |                   
-  App.tsx              |   40.74 |      100 |   33.33 |    42.3 | 15-27,33,66,74-82 
+All files              |   37.19 |    28.57 |   35.71 |   39.13 |                   
+ src                   |   36.66 |      100 |   29.41 |   37.93 |                   
+  App.tsx              |   36.66 |      100 |   29.41 |   37.93 | 15-33,39,72,80-88 
  src/components        |   36.66 |    28.57 |   36.84 |   38.82 |                   
   AddPlanModal.tsx     |   15.78 |     12.5 |      20 |   16.66 | 24-42,64-65       
   AddSemesterModal.tsx |   19.23 |     7.14 |   16.66 |   19.23 | 26-56,62-63,84    
@@ -489,5 +230,5 @@ All files              |   38.13 |    28.57 |   37.03 |   40.17 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 passed, 2 total
 Snapshots:   0 total
-Time:        10.679 s
+Time:        10.632 s
 Ran all test suites.
