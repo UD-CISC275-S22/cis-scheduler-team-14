@@ -10,7 +10,7 @@
       ]
     }
 
-      at App (src/App.tsx:74:13)
+      at App (src/App.tsx:69:13)
 
   console.error
     Warning: Functions are not valid as a React child. This may happen if you return a Component instead of <Component /> from render. Or maybe you meant to call this function rather than return it.
@@ -36,12 +36,12 @@
       ]
     }
 
-      at App (src/App.tsx:74:13)
+      at App (src/App.tsx:69:13)
 
-FAIL src/App.test.tsx (10.001 s)
+FAIL src/App.test.tsx (9.852 s)
   DoubleHalf Component tests
-    ✕ renders the course name somewhere (240 ms)
-    ✓ There are Clear All Courses and Clear All Semesters buttons (283 ms)
+    ✕ renders the course name somewhere (268 ms)
+    ✓ There are Clear All Courses and Clear All Semesters buttons (514 ms)
 
   ● DoubleHalf Component tests › renders the course name somewhere
 
@@ -85,7 +85,7 @@ FAIL src/App.test.tsx (10.001 s)
                   [33mclass[39m=[32m"bg-light border m-2 p-2"[39m
                 [36m>[39m
                   [36m<div[39m
-                    [33mclass[39m=[32m"bg-light border m-2 p-2"[39m
+                    [33mstyle[39m=[32m"background-color: lightcyan; border-radius: 25px; padding: 10px; border: 1px black; border-style: solid;"[39m
                   [36m>[39m
                     [36m<h3>[39m
                       [0mPlan [0m
@@ -95,11 +95,9 @@ FAIL src/App.test.tsx (10.001 s)
                       [36m<div[39m
                         [33mclass[39m=[32m"vstack gap-3"[39m
                       [36m>[39m
-                        [36m<div[39m
-                          [33mclass[39m=[32m"bg-light border m-2 p-0"[39m
-                        [36m>[39m
+                        [36m<div>[39m
                           [36m<div[39m
-                            [33mclass[39m=[32m"bg-light border m-2 p-2"[39m
+                            [33mstyle[39m=[32m"background-color: mintcream; border-radius: 25px; padding: 10px; border: 1px black; border-style: dashed;"[39m
                           [36m>[39m
                             [36m<h4>[39m
                               [0mFall[0m
@@ -112,79 +110,79 @@ FAIL src/App.test.tsx (10.001 s)
                               [0m Course(s)[0m
                             [36m</h6>[39m
                             [36m<div>[39m
-                              [36m<table[39m
-                                [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
+                              [36m<div[39m
+                                [33mclass[39m=[32m"css-1ucnu3w-MuiStack-root"[39m
                               [36m>[39m
-                                [36m<thead>[39m
-                                  [36m<tr>[39m
-                                    [36m<th>[39m
-                                      [0mEdit[0m
-                                    [36m</th>[39m
-                                    [36m<th>[39m
-                                      [0mCourse ID[0m
-                                    [36m</th>[39m
-                                    [36m<th>[39m
-                                      [0mCourse Name[0m
-                                    [36m</th>[39m
-                                    [36m<th>[39m
-                                      [0mCredits[0m
-                                    [36m</th>[39m
-                                  [36m</tr>[39m
-                                [36m</thead>[39m
-                                [36m<tbody>[39m
-                                  [36m<tr>[39m
-                                    [36m<td>[39m
-                                      [36m<button[39m
-                                        [33maria-label[39m=[32m"edit"[39m
-                                        [33mclass[39m=[32m"MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root"[39m
-                                        [33mtabindex[39m=[32m"0"[39m
-                                        [33mtype[39m=[32m"button"[39m
+                                [36m<div>[39m
+                                  [36m<div[39m
+                                    [33mstyle[39m=[32m"background-color: gainsboro; border-radius: 25px; padding: 10px; border: 1px solid black;"[39m
+                                  [36m>[39m
+                                    [36m<h4>[39m
+                                      [0mCISC 101[0m
+                                      [0m [0m
+                                      [0mIntro to Computer Science[0m
+                                      [0m [0m
+                                    [36m</h4>[39m
+                                    [36m<h6>[39m
+                                      [0m4[0m
+                                      [0m Credit(s)[0m
+                                    [36m</h6>[39m
+                                    [36m<p>[39m
+                                      [0mAn intro computer science course[0m
+                                    [36m</p>[39m
+                                    [36m<p>[39m
+                                      [0mCounts for: [0m
+                                      [0mMAJOR_REQUIREMENT[0m
+                                    [36m</p>[39m
+                                    [36m<p>[39m
+                                      [0mPrerequisites: [0m
+                                      [0m[0m
+                                    [36m</p>[39m
+                                    [36m<p>[39m
+                                      [0mRestrictions:[0m
+                                      [0m [0m
+                                      [0mNone[0m
+                                    [36m</p>[39m
+                                    [36m<p>[39m
+                                      [0mSemesters Offered: [0m
+                                      [0mFALL,SPRING[0m
+                                    [36m</p>[39m
+                                    [36m<button[39m
+                                      [33mclass[39m=[32m"MuiButton-root MuiButton-outlined MuiButton-outlinedSecondary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root m-2 css-wnpvqa-MuiButtonBase-root-MuiButton-root"[39m
+                                      [33mtabindex[39m=[32m"0"[39m
+                                      [33mtype[39m=[32m"button"[39m
+                                    [36m>[39m
+                                      [36m<span[39m
+                                        [33mclass[39m=[32m"MuiButton-startIcon MuiButton-iconSizeMedium css-1d6wzja-MuiButton-startIcon"[39m
                                       [36m>[39m
                                         [36m<svg[39m
                                           [33maria-hidden[39m=[32m"true"[39m
                                           [33mclass[39m=[32m"MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"[39m
-                                          [33mdata-testid[39m=[32m"EditIcon"[39m
+                                          [33mdata-testid[39m=[32m"DeleteIcon"[39m
                                           [33mfocusable[39m=[32m"false"[39m
                                           [33mviewBox[39m=[32m"0 0 24 24"[39m
                                         [36m>[39m
                                           [36m<path[39m
-                                            [33md[39m=[32m"M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"[39m
+                                            [33md[39m=[32m"M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"[39m
                                           [36m/>[39m
                                         [36m</svg>[39m
-                                        [36m<span[39m
-                                          [33mclass[39m=[32m"MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"[39m
-                                        [36m/>[39m
-                                      [36m</button>[39m
-                                    [36m</td>[39m
-                                    [36m<td>[39m
-                                      [0mCISC 101[0m
-                                    [36m</td>[39m
-                                    [36m<td>[39m
-                                      [0mIntro to Computer Science[0m
-                                    [36m</td>[39m
-                                    [36m<td>[39m
-                                      [0m4[0m
-                                    [36m</td>[39m
-                                  [36m</tr>[39m
-                                  [36m<tr>[39m
-                                    [36m<td>[39m
-                                      [36m<button[39m
-                                        [33maria-label[39m=[32m"edit"[39m
-                                        [33mclass[39m=[32m"MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root"[39m
-                                        [33mtabindex[39m=[32m"0"[39m
-                                        [33mtype[39m=[32m"button"[39m
+                                      [36m</span>[39m
+                                      [0mDelete Course[0m
+                                      [36m<span[39m
+                                        [33mclass[39m=[32m"MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"[39m
+                                      [36m/>[39m
+                                    [36m</button>[39m
+                                    [36m<button[39m
+                                      [33mclass[39m=[32m"MuiButton-root MuiButton-outlined MuiButton-outlinedSecondary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root m-2 css-wnpvqa-MuiButtonBase-root-MuiButton-root"[39m
+                                      [33mtabindex[39m=[32m"0"[39m
+                                      [33mtype[39m=[32m"button"[39m
+                                    [36m>[39m
+                                      [36m<span[39m
+                                        [33mclass[39m=[32m"MuiButton-startIcon MuiButton-iconSizeMedium css-1d6wzja-MuiButton-startIcon"[39m
                                       [36m>[39m
                                         [36m<svg[39m
                                           [33maria-hidden[39m=[32m"true"[39m
-                                          [33mclass[39m=[32m"MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"[39m
-                                          [33mdata-testid[39m=[32m"EditIcon"[39m
-                                          [33mfocusable[39m=[32m"false"[39m
-                                          [33mviewBox[39m=[32m"0 0 24 24"[39m
-                                        [36m>[39m
-                                          [36m<path[39m
-                                            [33md[39m=[32m"M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"[39m
-                                          [36m/>[39m
-                                      ...
+           ...
 
        8 |     });
        9 |     test("renders the course name somewhere", () => {
@@ -207,20 +205,22 @@ FAIL src/App.test.tsx (10.001 s)
 -----------------------|---------|----------|---------|---------|-------------------
 File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------|---------|----------|---------|---------|-------------------
-All files              |   37.19 |    28.57 |   35.71 |   39.13 |                   
+All files              |    36.7 |    25.58 |   28.94 |   38.92 |                   
  src                   |   36.66 |      100 |   29.41 |   37.93 |                   
-  App.tsx              |   36.66 |      100 |   29.41 |   37.93 | 15-33,39,72,80-88 
- src/components        |   36.66 |    28.57 |   36.84 |   38.82 |                   
+  App.tsx              |   36.66 |      100 |   29.41 |   37.93 | 15-33,39,67,75-83 
+ src/components        |   36.22 |    25.58 |   27.58 |   38.65 |                   
   AddPlanModal.tsx     |   15.78 |     12.5 |      20 |   16.66 | 24-42,64-65       
   AddSemesterModal.tsx |   19.23 |     7.14 |   16.66 |   19.23 | 26-56,62-63,84    
   Course.tsx           |       0 |      100 |       0 |       0 | 6-8               
-  CourseFinder.tsx     |   64.28 |    85.71 |   44.44 |   64.28 | 80,99-124         
-  CourseList.tsx       |     100 |      100 |     100 |     100 |                   
+  CourseFinder.tsx     |   64.28 |    85.71 |   44.44 |   64.28 | 77,96-121         
+  CourseList.tsx       |      25 |        0 |   33.33 |   28.57 | 14-21             
+  CourseView.tsx       |   57.14 |       50 |      25 |      80 | 47                
+  EditCourseModal.tsx  |      45 |      100 |      10 |      45 | 35-46,64-161      
   PlanList.tsx         |   71.42 |      100 |      50 |     100 |                   
-  PlanView.tsx         |    62.5 |       50 |      25 |   83.33 | 50                
+  PlanView.tsx         |    62.5 |       50 |      25 |   83.33 | 58                
   Semester.tsx         |       0 |      100 |       0 |       0 | 6-8               
   SemesterList.tsx     |     100 |      100 |     100 |     100 |                   
-  SemesterView.tsx     |   33.33 |       25 |      25 |   33.33 | 19-23,40          
+  SemesterView.tsx     |      20 |     12.5 |   16.66 |      20 | 19-35,63          
  src/interfaces        |     100 |      100 |     100 |     100 |                   
   concentration.ts     |       0 |        0 |       0 |       0 |                   
   course.ts            |     100 |      100 |     100 |     100 |                   
@@ -230,5 +230,5 @@ All files              |   37.19 |    28.57 |   35.71 |   39.13 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 passed, 2 total
 Snapshots:   0 total
-Time:        10.632 s
+Time:        10.491 s
 Ran all test suites.
