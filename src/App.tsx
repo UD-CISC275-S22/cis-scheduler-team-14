@@ -26,6 +26,12 @@ function App(): JSX.Element {
         );
         return missingCourses.length === 0;
     }
+    function needTheseCourse(aPlan: Plan, courseList: Course[]): Course[] {
+        const missingCourses: Course[] = courseList.filter(
+            (aCourse: Course): boolean => checkPlan(aPlan, aCourse) === false
+        );
+        return missingCourses;
+    }
     const [concentrationPicked, setconcentrationPicked] =
         useState<string>("AI");
 
@@ -125,6 +131,9 @@ function App(): JSX.Element {
                     <span>
                         The user has passed Concetration requirement{" "}
                         {checkConcentration}
+                        The user needs these courses still to pass Concentration
+                        requirement
+                        {needTheseCourse}
                         <span>The data should be checked here!</span>
                     </span>
                 </div>
