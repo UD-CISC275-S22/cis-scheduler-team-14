@@ -1,14 +1,19 @@
 import React from "react";
 import { Stack } from "react-bootstrap";
+import { Course } from "../interfaces/course";
 import { Semester } from "../interfaces/semester";
 import { SemesterView } from "./SemesterView";
 
 export function SemesterList({
     semesters,
-    setSemesters
+    setSemesters,
+    pool,
+    setPool
 }: {
     semesters: Semester[];
     setSemesters: (semesters: Semester[]) => void;
+    pool: Course[];
+    setPool: (newPool: Course[]) => void;
 }): JSX.Element {
     return (
         <div>
@@ -19,6 +24,8 @@ export function SemesterList({
                             semester={semester}
                             setSemesters={setSemesters}
                             semesters={semesters}
+                            pool={pool}
+                            setPool={setPool}
                         ></SemesterView>
                     </div>
                 ))}
