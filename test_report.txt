@@ -2,233 +2,76 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-  console.log
-    {
-      id: 1,
-      semesters: [
-        { id: 1, year: 2022, season: 'Fall', credits: 4, courses: [Array] }
-      ]
-    }
+FAIL src/App.test.tsx
+  ● Test suite failed to run
 
-      at App (src/App.tsx:69:13)
+    Jest encountered an unexpected token
 
-  console.error
-    Warning: Functions are not valid as a React child. This may happen if you return a Component instead of <Component /> from render. Or maybe you meant to call this function rather than return it.
-        at span
-        at div
-        at div
-        at div
-        at App (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/App.tsx:36:9)
+    Jest failed to parse a file. This happens e.g. when your code or its dependencies use non-standard JavaScript syntax, or when Jest is not configured to support such syntax.
 
-      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
-      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
-      at warnOnFunctionType (node_modules/react-dom/cjs/react-dom.development.js:13247:5)
-      at createChild (node_modules/react-dom/cjs/react-dom.development.js:13474:9)
-      at reconcileChildrenArray (node_modules/react-dom/cjs/react-dom.development.js:13719:25)
-      at reconcileChildFibers (node_modules/react-dom/cjs/react-dom.development.js:14125:14)
-      at reconcileChildren (node_modules/react-dom/cjs/react-dom.development.js:16990:28)
+    Out of the box Jest supports Babel, which will be used to transform your files into valid JS based on your Babel configuration.
 
-  console.log
-    {
-      id: 1,
-      semesters: [
-        { id: 1, year: 2022, season: 'Fall', credits: 4, courses: [Array] }
-      ]
-    }
+    By default "node_modules" folder is ignored by transformers.
 
-      at App (src/App.tsx:69:13)
+    Here's what you can do:
+     • If you are trying to use ECMAScript Modules, see https://jestjs.io/docs/ecmascript-modules for how to enable it.
+     • If you are trying to use TypeScript, see https://jestjs.io/docs/getting-started#using-typescript
+     • To have some of your "node_modules" files transformed, you can specify a custom "transformIgnorePatterns" in your config.
+     • If you need a custom transformation specify a "transform" option in your config.
+     • If you simply want to mock your non-JS modules (e.g. binary assets) you can stub them out with the "moduleNameMapper" config option.
 
-FAIL src/App.test.tsx (9.852 s)
-  DoubleHalf Component tests
-    ✕ renders the course name somewhere (268 ms)
-    ✓ There are Clear All Courses and Clear All Semesters buttons (514 ms)
+    You'll find more details and examples of these config options in the docs:
+    https://jestjs.io/docs/configuration
+    For information about custom transformations, see:
+    https://jestjs.io/docs/code-transformation
 
-  ● DoubleHalf Component tests › renders the course name somewhere
+    Details:
 
-    TestingLibraryElementError: Unable to find an element with the text: /CISC275/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+    /home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dnd-html5-backend/dist/index.js:1
+    ({"Object.<anonymous>":function(module,exports,require,__dirname,__filename,jest){import { HTML5BackendImpl } from './HTML5BackendImpl.js';
+                                                                                      ^^^^^^
 
-    Ignored nodes: comments, <script />, <style />
-    [36m<body>[39m
-      [36m<div>[39m
-        [36m<div[39m
-          [33mclass[39m=[32m"App"[39m
-        [36m>[39m
-          [36m<img[39m
-            [33msrc[39m=[32m"background.jpg"[39m
-            [33mwidth[39m=[32m"100%"[39m
-          [36m/>[39m
-          [36m<p>[39m
-            [0mWill Gunter, John Bean, Sonika Sharma[0m
-          [36m</p>[39m
-          [36m<button[39m
-            [33mclass[39m=[32m"btn btn-primary"[39m
-            [33mtype[39m=[32m"button"[39m
-          [36m>[39m
-            [0mClear All Courses[0m
-          [36m</button>[39m
-          [36m<button[39m
-            [33mclass[39m=[32m"btn btn-primary"[39m
-            [33mtype[39m=[32m"button"[39m
-          [36m>[39m
-            [0mClear All Semesters[0m
-          [36m</button>[39m
-          [36m<p>[39m
-            [0mNumber of Semesters in Plan 1: [0m
-            [0m1[0m
-          [36m</p>[39m
-          [36m<div>[39m
-            [36m<div>[39m
-              [36m<div[39m
-                [33mclass[39m=[32m"vstack gap-3"[39m
-              [36m>[39m
-                [36m<div[39m
-                  [33mclass[39m=[32m"bg-light border m-2 p-2"[39m
-                [36m>[39m
-                  [36m<div[39m
-                    [33mstyle[39m=[32m"background-color: lightcyan; border-radius: 25px; padding: 10px; border: 1px black; border-style: solid;"[39m
-                  [36m>[39m
-                    [36m<h3>[39m
-                      [0mPlan [0m
-                      [0m1[0m
-                    [36m</h3>[39m
-                    [36m<div>[39m
-                      [36m<div[39m
-                        [33mclass[39m=[32m"vstack gap-3"[39m
-                      [36m>[39m
-                        [36m<div>[39m
-                          [36m<div[39m
-                            [33mstyle[39m=[32m"background-color: mintcream; border-radius: 25px; padding: 10px; border: 1px black; border-style: dashed;"[39m
-                          [36m>[39m
-                            [36m<h4>[39m
-                              [0mFall[0m
-                              [0m [0m
-                              [0m2022[0m
-                              [0m [0m
-                            [36m</h4>[39m
-                            [36m<h6>[39m
-                              [0m3[0m
-                              [0m Course(s)[0m
-                            [36m</h6>[39m
-                            [36m<div>[39m
-                              [36m<div[39m
-                                [33mclass[39m=[32m"css-1ucnu3w-MuiStack-root"[39m
-                              [36m>[39m
-                                [36m<div>[39m
-                                  [36m<div[39m
-                                    [33mstyle[39m=[32m"background-color: gainsboro; border-radius: 25px; padding: 10px; border: 1px solid black;"[39m
-                                  [36m>[39m
-                                    [36m<h4>[39m
-                                      [0mCISC 101[0m
-                                      [0m [0m
-                                      [0mIntro to Computer Science[0m
-                                      [0m [0m
-                                    [36m</h4>[39m
-                                    [36m<h6>[39m
-                                      [0m4[0m
-                                      [0m Credit(s)[0m
-                                    [36m</h6>[39m
-                                    [36m<p>[39m
-                                      [0mAn intro computer science course[0m
-                                    [36m</p>[39m
-                                    [36m<p>[39m
-                                      [0mCounts for: [0m
-                                      [0mMAJOR_REQUIREMENT[0m
-                                    [36m</p>[39m
-                                    [36m<p>[39m
-                                      [0mPrerequisites: [0m
-                                      [0m[0m
-                                    [36m</p>[39m
-                                    [36m<p>[39m
-                                      [0mRestrictions:[0m
-                                      [0m [0m
-                                      [0mNone[0m
-                                    [36m</p>[39m
-                                    [36m<p>[39m
-                                      [0mSemesters Offered: [0m
-                                      [0mFALL,SPRING[0m
-                                    [36m</p>[39m
-                                    [36m<button[39m
-                                      [33mclass[39m=[32m"MuiButton-root MuiButton-outlined MuiButton-outlinedSecondary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root m-2 css-wnpvqa-MuiButtonBase-root-MuiButton-root"[39m
-                                      [33mtabindex[39m=[32m"0"[39m
-                                      [33mtype[39m=[32m"button"[39m
-                                    [36m>[39m
-                                      [36m<span[39m
-                                        [33mclass[39m=[32m"MuiButton-startIcon MuiButton-iconSizeMedium css-1d6wzja-MuiButton-startIcon"[39m
-                                      [36m>[39m
-                                        [36m<svg[39m
-                                          [33maria-hidden[39m=[32m"true"[39m
-                                          [33mclass[39m=[32m"MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"[39m
-                                          [33mdata-testid[39m=[32m"DeleteIcon"[39m
-                                          [33mfocusable[39m=[32m"false"[39m
-                                          [33mviewBox[39m=[32m"0 0 24 24"[39m
-                                        [36m>[39m
-                                          [36m<path[39m
-                                            [33md[39m=[32m"M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"[39m
-                                          [36m/>[39m
-                                        [36m</svg>[39m
-                                      [36m</span>[39m
-                                      [0mDelete Course[0m
-                                      [36m<span[39m
-                                        [33mclass[39m=[32m"MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"[39m
-                                      [36m/>[39m
-                                    [36m</button>[39m
-                                    [36m<button[39m
-                                      [33mclass[39m=[32m"MuiButton-root MuiButton-outlined MuiButton-outlinedSecondary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root m-2 css-wnpvqa-MuiButtonBase-root-MuiButton-root"[39m
-                                      [33mtabindex[39m=[32m"0"[39m
-                                      [33mtype[39m=[32m"button"[39m
-                                    [36m>[39m
-                                      [36m<span[39m
-                                        [33mclass[39m=[32m"MuiButton-startIcon MuiButton-iconSizeMedium css-1d6wzja-MuiButton-startIcon"[39m
-                                      [36m>[39m
-                                        [36m<svg[39m
-                                          [33maria-hidden[39m=[32m"true"[39m
-           ...
+    SyntaxError: Cannot use import statement outside a module
 
-       8 |     });
-       9 |     test("renders the course name somewhere", () => {
-    > 10 |         const linkElement = screen.getByText(/CISC275/i);
-         |                                    ^
-      11 |         expect(linkElement).toBeInTheDocument();
-      12 |     });
-      13 |
+      12 | import { CourseFinder } from "./components/CourseFinder";
+      13 | import { DndProvider } from "react-dnd";
+    > 14 | import { HTML5Backend } from "react-dnd-html5-backend";
+         | ^
+      15 | function App(): JSX.Element {
+      16 |     function checkCourse(thisSemester: Semester, Query: Course): boolean {
+      17 |         return thisSemester.courses.indexOf(Query) !== -1;
 
-      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
-      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
-      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
-      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
-      at Object.<anonymous> (src/App.test.tsx:10:36)
-      at TestScheduler.scheduleTests (node_modules/@jest/core/build/TestScheduler.js:333:13)
-      at runJest (node_modules/@jest/core/build/runJest.js:404:19)
-      at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
-      at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
+      at Runtime.createScriptFromCode (node_modules/jest-runtime/build/index.js:1728:14)
+      at Object.<anonymous> (src/App.tsx:14:1)
 
 -----------------------|---------|----------|---------|---------|-------------------
 File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------|---------|----------|---------|---------|-------------------
-All files              |    36.7 |    25.58 |   28.94 |   38.92 |                   
- src                   |   36.66 |      100 |   29.41 |   37.93 |                   
-  App.tsx              |   36.66 |      100 |   29.41 |   37.93 | 15-33,39,67,75-83 
- src/components        |   36.22 |    25.58 |   27.58 |   38.65 |                   
-  AddPlanModal.tsx     |   15.78 |     12.5 |      20 |   16.66 | 24-42,64-65       
-  AddSemesterModal.tsx |   19.23 |     7.14 |   16.66 |   19.23 | 26-56,62-63,84    
+All files              |       0 |        0 |       0 |       0 |                   
+ src                   |       0 |      100 |       0 |       0 |                   
+  App.tsx              |       0 |      100 |       0 |       0 | 17-89             
+ src/components        |       0 |        0 |       0 |       0 |                   
+  AddPlanModal.tsx     |       0 |        0 |       0 |       0 | 20-65             
+  AddSemesterModal.tsx |       0 |        0 |       0 |       0 | 21-84             
   Course.tsx           |       0 |      100 |       0 |       0 | 6-8               
-  CourseFinder.tsx     |   64.28 |    85.71 |   44.44 |   64.28 | 77,96-121         
-  CourseList.tsx       |      25 |        0 |   33.33 |   28.57 | 14-21             
-  CourseView.tsx       |   57.14 |       50 |      25 |      80 | 47                
-  EditCourseModal.tsx  |      45 |      100 |      10 |      45 | 35-46,64-161      
-  PlanList.tsx         |   71.42 |      100 |      50 |     100 |                   
-  PlanView.tsx         |    62.5 |       50 |      25 |   83.33 | 58                
+  CourseFinder.tsx     |       0 |        0 |       0 |       0 | 16-117            
+  CourseList.tsx       |       0 |        0 |       0 |       0 | 14-27             
+  CourseView.tsx       |       0 |        0 |       0 |       0 | 17-47             
+  DraggableCourse.tsx  |       0 |      100 |       0 |       0 | 5-32              
+  EditCourseModal.tsx  |       0 |      100 |       0 |       0 | 19-161            
+  PlanList.tsx         |       0 |      100 |       0 |       0 | 23-31             
+  PlanView.tsx         |       0 |        0 |       0 |       0 | 24-68             
   Semester.tsx         |       0 |      100 |       0 |       0 | 6-8               
-  SemesterList.tsx     |     100 |      100 |     100 |     100 |                   
-  SemesterView.tsx     |      20 |     12.5 |   16.66 |      20 | 19-35,63          
- src/interfaces        |     100 |      100 |     100 |     100 |                   
+  SemesterList.tsx     |       0 |      100 |       0 |       0 | 18-22             
+  SemesterView.tsx     |       0 |        0 |       0 |       0 | 22-94             
+ src/interfaces        |       0 |      100 |       0 |       0 |                   
   concentration.ts     |       0 |        0 |       0 |       0 |                   
-  course.ts            |     100 |      100 |     100 |     100 |                   
+  course.ts            |       0 |      100 |       0 |       0 | 25                
   plan.ts              |       0 |        0 |       0 |       0 |                   
   semester.ts          |       0 |        0 |       0 |       0 |                   
 -----------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 1 total
-Tests:       1 failed, 1 passed, 2 total
+Tests:       0 total
 Snapshots:   0 total
-Time:        10.491 s
+Time:        15.591 s
 Ran all test suites.
