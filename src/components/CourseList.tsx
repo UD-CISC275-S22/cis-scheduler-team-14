@@ -1,10 +1,20 @@
 import { Edit } from "@mui/icons-material";
 import { IconButton } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import { Table } from "react-bootstrap";
 import { Course } from "../interfaces/course";
+import { EditCourseModal } from "./EditCourseModal";
 
-export function CourseList({ courses }: { courses: Course[] }): JSX.Element {
+export function CourseList({
+    courses,
+    updateCourses
+}: {
+    courses: Course[];
+    updateCourses: (courses: Course[]) => void;
+}): JSX.Element {
+    const [showEditModal, setShowEditModal] = useState(false);
+    const handleCloseEditModal = () => setShowEditModal(false);
+    const handleShowEditModal = () => setShowEditModal(true);
     return (
         <div>
             <Table striped bordered hover>
@@ -21,8 +31,19 @@ export function CourseList({ courses }: { courses: Course[] }): JSX.Element {
                         <tr key={course.code}>
                             <td>
                                 {
-                                    <IconButton aria-label="edit" size="small">
+                                    <IconButton
+                                        aria-label="edit"
+                                        size="small"
+                                        onClick={handleShowEditModal}
+                                    >
                                         <Edit />
+                                        <EditCourseModal
+                                            show={showEditModal}
+                                            handleClose={handleCloseEditModal}
+                                            updateCourses={updateCourses}
+                                            courses={courses}
+                                            course={course}
+                                        ></EditCourseModal>
                                     </IconButton>
                                 }
                             </td>
