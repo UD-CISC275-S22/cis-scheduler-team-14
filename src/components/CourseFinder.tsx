@@ -2,15 +2,20 @@ import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { Course, CreditType, getCourseString } from "../interfaces/course";
 import { Season } from "../interfaces/semester";
+import { DraggableCourse } from "./DraggableCourse";
+
+/** States to be passed between components  */
+interface coursePoolProps {
+    pool: Course[];
+    setPool: (courseP: Course[]) => void;
+}
 
 /** A search tab to search for a certain course within the given course catalog */
-export function CourseFinder({
-    courseData
-}: {
-    courseData: Course[];
-}): JSX.Element {
+export function CourseFinder(
+    { courseData }: { courseData: Course[] },
+    { pool, setPool }: coursePoolProps
+): JSX.Element {
     const [query, setQuery] = useState<string>("");
-    const [pool, setPool] = useState<Course[]>([]);
 
     /** CSS Styles to be used in CourseFinder */
     const CourseFinderStyles = {
@@ -80,7 +85,16 @@ export function CourseFinder({
         setQuery(event.target.value);
     }
 
+    /** Function to remove a course from the course pool */
+    function removeSingleCourse(courseToRemove: Course) {
+        const coursesToKeep = (course: Course): boolean =>
+            course.code.toLowerCase() !== courseToRemove.code.toLowerCase();
+        const newPool = pool.filter(coursesToKeep);
+        setPool(newPool);
+    }
+
     /** Returns final CourseFinder component */
+    /** In order from top to bottom: Course search bar, Course Pool, Clear Courses Button */
     return (
         <div style={CourseFinderStyles.course_container}>
             <Form.Group controlId="formCourseSearch">
@@ -111,14 +125,14 @@ export function CourseFinder({
             <div>
                 <p>Course Pool</p>
                 {pool.length === 0 && (
-                    <p>Click a course to add it to your course pool!</p>
+                    <p>
+                        Click a course to add or remove it from your course
+                        pool!
+                    </p>
                 )}
                 {pool.map((course: Course) => (
-                    <div
-                        key={course.name}
-                        style={CourseFinderStyles.course_pool_individual}
-                    >
-                        {getCourseString(course)}
+                    <div key={course.code}>
+                        <DraggableCourse course={course}></DraggableCourse>
                     </div>
                 ))}
                 <Button onClick={() => setPool([])}>Clear course pool</Button>
@@ -126,3 +140,11 @@ export function CourseFinder({
         </div>
     );
 }
+
+/**<div
+                        key={course.name}
+                        style={CourseFinderStyles.course_pool_individual}
+                        onClick={() => removeSingleCourse(course)}
+                    >
+                        {getCourseString(course)}
+                    </div> */
