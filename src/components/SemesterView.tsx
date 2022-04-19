@@ -4,18 +4,27 @@ import { Course } from "../interfaces/course";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Button from "@mui/material/Button";
 import { CourseList } from "./CourseList";
+<<<<<<< HEAD
 import { Form } from "react-bootstrap";
 import { Plan } from "../interfaces/plan";
+=======
+import { useDrop } from "react-dnd";
+>>>>>>> main
 
 export function SemesterView({
     semester,
     setSemesters,
-    semesters
+    semesters,
+    pool,
+    setPool
 }: {
     semester: Semester;
     setSemesters: (semesters: Semester[]) => void;
     semesters: Semester[];
+    pool: Course[];
+    setPool: (newPool: Course[]) => void;
 }): JSX.Element {
+<<<<<<< HEAD
     function checkCourse(thisSemester: Semester, Query: Course): boolean {
         return thisSemester.courses.indexOf(Query) !== -1;
     }
@@ -44,6 +53,45 @@ export function SemesterView({
         setconcentrationPicked(event.target.value);
     }
     const [courses] = useState<Course[]>(semester.courses);
+=======
+    const [courses, setCourses] = useState<Course[]>(semester.courses);
+    /** Use state and implementation of drag functionality, linked with DraggableCourse.tsx and CourseFinder.tsx */
+    /** Calls updateCourses when a new course is dropped into a semester */
+    const [{ isOver }, dropRef] = useDrop({
+        accept: "course",
+        drop: (item: Course) => {
+            if (
+                !courses.some(function (el) {
+                    return el.code === item.code;
+                })
+            ) {
+                //Adds the course to the SemesterView, and removes it from the CoursePool
+                updateCourses([...courses, item]);
+                const removeCourseFromPool = (course: Course): boolean =>
+                    course.code !== item.code;
+                const newPool = pool.filter(removeCourseFromPool);
+                setPool(newPool);
+            }
+        },
+        collect: (monitor) => ({
+            isOver: monitor.isOver()
+        })
+    });
+    /** Updates the courses inside of a semester */
+    function updateCourses(courses: Course[]) {
+        setCourses(courses);
+        const newSemester = { ...semester, courses: courses };
+        setSemesters(
+            semesters.map((semester) =>
+                semester.year === newSemester.year &&
+                semester.season === newSemester.season
+                    ? newSemester
+                    : semester
+            )
+        );
+    }
+    /** Removes a semester from a plan */
+>>>>>>> main
     function deleteSemester(year: number, season: string) {
         const newSemesters = semesters.filter(
             (semester: Semester) =>
@@ -51,13 +99,26 @@ export function SemesterView({
         );
         setSemesters(newSemesters);
     }
+    /** Returns a view of a Semester within a plan, containing courses */
     return (
-        <div className="bg-light border m-2 p-2">
+        <div
+            ref={dropRef}
+            style={{
+                backgroundColor: "mintcream",
+                borderRadius: "25px",
+                padding: "10px",
+                border: "1px black",
+                borderStyle: "dashed"
+            }}
+        >
             <h4>
                 {semester.season} {semester.year}{" "}
             </h4>
             <h6>{courses.length} Course(s)</h6>
-            <CourseList courses={courses}></CourseList>
+            <CourseList
+                courses={courses}
+                updateCourses={updateCourses}
+            ></CourseList>
             {/*Delete Semester*/}
             {semesters.length > -1 ? (
                 <Button
@@ -72,6 +133,7 @@ export function SemesterView({
                     Delete Semester
                 </Button>
             ) : null}
+<<<<<<< HEAD
             <div>
                 <Form.Group controlId="userConcentration">
                     <Form.Label>What is your concentration?</Form.Label>
@@ -106,6 +168,9 @@ export function SemesterView({
                     </span>
                 </div>
             </div>
+=======
+            {isOver && <div>Insert Course!</div>}
+>>>>>>> main
         </div>
     );
 }

@@ -1,16 +1,19 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
-import { Course, CreditType, getCourseString } from "../interfaces/course";
-import { Season } from "../interfaces/semester";
+import { Course, getCourseString } from "../interfaces/course";
+import { DraggableCourse } from "./DraggableCourse";
 
 /** A search tab to search for a certain course within the given course catalog */
 export function CourseFinder({
-    courseData
+    courseData,
+    pool,
+    setPool
 }: {
     courseData: Course[];
+    pool: Course[];
+    setPool: (newPool: Course[]) => void;
 }): JSX.Element {
     const [query, setQuery] = useState<string>("");
-    const [pool, setPool] = useState<Course[]>([]);
 
     /** CSS Styles to be used in CourseFinder */
     const CourseFinderStyles = {
@@ -47,25 +50,13 @@ export function CourseFinder({
             outlineStyle: "solid",
             outlineWidth: "medium",
             fontFamily: "monospace"
-        } as React.CSSProperties,
-        /** CSS Style for a course in the Course Pool */
-        course_pool_individual: {
-            width: 300,
-            height: 50,
-            backgroundColor: "white",
-            alignContent: "center",
-            outlineStyle: "solid",
-            outlineWidth: "thin",
-            fontFamily: "monospace"
         } as React.CSSProperties
     };
 
     /** Imports an array of Course objects, type casts creditTypes and semestersOffered */
     const COURSES = courseData.map(
         (course: Course): Course => ({
-            ...course,
-            creditTypes: course.creditTypes as CreditType[],
-            semestersOffered: course.semestersOffered as Season[]
+            ...course
         })
     );
 
@@ -81,6 +72,7 @@ export function CourseFinder({
     }
 
     /** Returns final CourseFinder component */
+    /** In order from top to bottom: Course search bar, Course Pool, Clear Courses Button */
     return (
         <div style={CourseFinderStyles.course_container}>
             <Form.Group controlId="formCourseSearch">
@@ -111,18 +103,27 @@ export function CourseFinder({
             <div>
                 <p>Course Pool</p>
                 {pool.length === 0 && (
-                    <p>Click a course to add it to your course pool!</p>
+                    <p>
+                        Click a course to add or remove it from your course
+                        pool!
+                    </p>
                 )}
                 {pool.map((course: Course) => (
-                    <div
-                        key={course.name}
-                        style={CourseFinderStyles.course_pool_individual}
-                    >
-                        {getCourseString(course)}
+                    <div key={course.code}>
+                        <DraggableCourse course={course}></DraggableCourse>
                     </div>
                 ))}
+                {pool.length > 1 && <p>Drag courses into your plan!</p>}
                 <Button onClick={() => setPool([])}>Clear course pool</Button>
             </div>
         </div>
     );
 }
+
+/**<div
+                        key={course.name}
+                        style={CourseFinderStyles.course_pool_individual}
+                        onClick={() => removeSingleCourse(course)}
+                    >
+                        {getCourseString(course)}
+                    </div> */
