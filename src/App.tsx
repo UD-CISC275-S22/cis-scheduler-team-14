@@ -1,7 +1,7 @@
 import "./App.css";
 import React, { useState } from "react";
 import headerimg from "./media/background.jpg";
-import { Button } from "react-bootstrap";
+import { Button, Col, Container, Row } from "react-bootstrap";
 import premadePlans from "./data/plans.json";
 import { Course } from "./interfaces/course";
 import { Plan } from "./interfaces/plan";
@@ -88,71 +88,93 @@ function App(): JSX.Element {
     }
     return (
         <DndProvider backend={HTML5Backend}>
-            <div className="App">
-                <img src={headerimg} width="100%" />
-                <p>Will Gunter, John Bean, Sonika Sharma</p>
-                <Button onClick={clearAllCourse}>Clear All Courses</Button>
-                <Button onClick={clearAllSemester}>Clear All Semesters</Button>
-                <p>
-                    Number of Semesters in Plan 1: {plans[0].semesters.length}
-                </p>
-                <div>
-                    <PlanList
-                        plans={plans}
-                        setPlans={setPlans}
-                        deletePlan={deletePlan}
-                        pool={pool}
-                        setPool={setPool}
-                    ></PlanList>
+            <Container>
+                <div className="App">
+                    <img src={headerimg} width="100%" />
+                    <p>Will Gunter, John Bean, Sonika Sharma</p>
+                    <Row>
+                        <Col xs={12} md={8}>
+                            <Button onClick={clearAllCourse}>
+                                Clear All Courses
+                            </Button>
+                            <Button onClick={clearAllSemester}>
+                                Clear All Semesters
+                            </Button>
+                            <p>
+                                Number of Semesters in Plan 1:{" "}
+                                {plans[0].semesters.length}
+                            </p>
+                            <div>
+                                <PlanList
+                                    plans={plans}
+                                    setPlans={setPlans}
+                                    deletePlan={deletePlan}
+                                    pool={pool}
+                                    setPool={setPool}
+                                ></PlanList>
+                            </div>
+                        </Col>
+                        <Col xs={6} md={4}>
+                            <div>
+                                <CourseFinder
+                                    courseData={testCourses}
+                                    pool={pool}
+                                    setPool={setPool}
+                                ></CourseFinder>
+                            </div>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <div>
+                            <Form.Group controlId="userConcentration">
+                                <Form.Label>
+                                    What is your concentration?
+                                </Form.Label>
+                                <Form.Select
+                                    value={concentrationPicked}
+                                    onChange={updateConcentration}
+                                >
+                                    <option value="AI">AI</option>
+                                    <option value="Bioinformatics">
+                                        {" "}
+                                        Bioinformatics{" "}
+                                    </option>
+                                    <option value="Cybersecurity">
+                                        {" "}
+                                        Cybersecurity{" "}
+                                    </option>
+                                    <option value="DataScience">
+                                        {" "}
+                                        Data Science{" "}
+                                    </option>
+                                    <option value="High Performance Computing">
+                                        High Performance and Computing
+                                    </option>
+                                    <option value="Systems and Networks">
+                                        Systems and Networks
+                                    </option>
+                                    <option value="Theory and Computation">
+                                        Theory and Computation
+                                    </option>
+                                </Form.Select>
+                            </Form.Group>
+                            The users concentration {concentrationPicked}.
+                            <div>
+                                <span>
+                                    The user has passed Concetration requirement{" "}
+                                    {checkConcentration}
+                                    The user needs these courses still to pass
+                                    Concentration requirement
+                                    {needTheseCourse}
+                                    <span>
+                                        The data should be checked here!
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </Row>
                 </div>
-                <div>
-                    <CourseFinder
-                        courseData={testCourses}
-                        pool={pool}
-                        setPool={setPool}
-                    ></CourseFinder>
-                </div>
-                <div>
-                    <Form.Group controlId="userConcentration">
-                        <Form.Label>What is your concentration?</Form.Label>
-                        <Form.Select
-                            value={concentrationPicked}
-                            onChange={updateConcentration}
-                        >
-                            <option value="AI">AI</option>
-                            <option value="Bioinformatics">
-                                {" "}
-                                Bioinformatics{" "}
-                            </option>
-                            <option value="Cybersecurity">
-                                {" "}
-                                Cybersecurity{" "}
-                            </option>
-                            <option value="DataScience"> Data Science </option>
-                            <option value="High Performance Computing">
-                                High Performance and Computing
-                            </option>
-                            <option value="Systems and Networks">
-                                Systems and Networks
-                            </option>
-                            <option value="Theory and Computation">
-                                Theory and Computation
-                            </option>
-                        </Form.Select>
-                    </Form.Group>
-                    The users concentration {concentrationPicked}.
-                    <div>
-                        <span>
-                            The user has passed Concetration requirement{" "}
-                            {checkConcentration}
-                            The user needs these courses still to pass
-                            Concentration requirement
-                            {needTheseCourse}
-                            <span>The data should be checked here!</span>
-                        </span>
-                    </div>
-                </div>
-            </div>
+            </Container>
         </DndProvider>
     );
 }
