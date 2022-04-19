@@ -12,6 +12,33 @@ import { CourseFinder } from "./components/CourseFinder";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 function App(): JSX.Element {
+    function checkCourse(thisSemester: Semester, Query: Course): boolean {
+        return thisSemester.courses.indexOf(Query) !== -1;
+    }
+    function checkPlan(thisPlan: Plan, Query: Course): boolean {
+        const goodSemester: Semester[] = thisPlan.semesters.filter(
+            (aSemester: Semester): boolean => checkCourse(aSemester, Query)
+        );
+        return goodSemester.length > 0;
+    }
+    function checkConcentration(aPlan: Plan, courseList: Course[]): boolean {
+        const missingCourses: Course[] = courseList.filter(
+            (aCourse: Course): boolean => checkPlan(aPlan, aCourse) === false
+        );
+        return missingCourses.length === 0;
+    }
+    function needTheseCourse(aPlan: Plan, courseList: Course[]): Course[] {
+        const missingCourses: Course[] = courseList.filter(
+            (aCourse: Course): boolean => checkPlan(aPlan, aCourse) === false
+        );
+        return missingCourses;
+    }
+    const [concentrationPicked, setconcentrationPicked] =
+        useState<string>("AI");
+
+    function updateConcentration(event: React.ChangeEvent<HTMLSelectElement>) {
+        setconcentrationPicked(event.target.value);
+    }
     /** Test Course states */
     const TESTCOURSES = TestCourses.map(
         (course): Course => ({
@@ -59,44 +86,6 @@ function App(): JSX.Element {
         setPlans([origplan]);
     }
     return (
-        <div className="App">
-            <img src={headerimg} width="100%" />
-            <h3>
-                Hello People of Delaware! Welcome to UDCIS Course Planner!
-                website will help you plan out what classes to take in your
-                college career. To get started there is a plan where you can add
-                add semesters and in the semesters you can add courses.
-            </h3>
-            <p>
-                This website is brought to by: Will Gunter, John Bean, Sonika
-                Sharma
-            </p>
-            <Button
-                type="button"
-                className="btn btn-danger"
-                onClick={clearAllCourse}
-            >
-                Clear All Courses
-            </Button>
-            <Button
-                type="button"
-                className="btn btn-danger"
-                onClick={clearAllSemester}
-            >
-                Clear All Semesters
-            </Button>
-            <p>Number of Semesters in Plan 1: {plans[0].semesters.length}</p>
-            <div>
-                <PlanList
-                    plans={plans}
-                    setPlans={setPlans}
-                    deletePlan={deletePlan}
-                ></PlanList>
-            </div>
-            <div>
-                <CourseFinder courseData={testCourses}></CourseFinder>
-            </div>
-        </div>
         <DndProvider backend={HTML5Backend}>
             <div className="App">
                 <img src={headerimg} width="100%" />
