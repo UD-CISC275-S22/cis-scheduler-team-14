@@ -28,7 +28,7 @@ export function PlanList({
         <div>
             <Stack gap={3}>
                 {plans.map((plan: Plan) => (
-                    <div key={plan.id} className="bg-light border m-2 p-2">
+                    <div key={plan.id}>
                         <PlanView
                             plan={plan}
                             deletePlan={deletePlan}
