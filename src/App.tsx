@@ -1,7 +1,7 @@
 import "./App.css";
 import React, { useState } from "react";
 import headerimg from "./media/background.jpg";
-import { Button, Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import premadePlans from "./data/plans.json";
 import { Course } from "./interfaces/course";
 import { Plan } from "./interfaces/plan";
@@ -72,20 +72,6 @@ function App(): JSX.Element {
     }
     console.log(PLANS[0]);
     /**Course States*/
-
-    /**Add Semester to Plan States & Constants */
-
-    function clearAllCourse() {
-        const [course, setCourse] = useState<Course[]>([]);
-        setCourse([]);
-        course;
-    }
-
-    function clearAllSemester() {
-        const origplan = plans[0];
-        origplan.semesters = [];
-        setPlans([origplan]);
-    }
     return (
         <DndProvider backend={HTML5Backend}>
             <img src={headerimg} width="100%" />
@@ -94,16 +80,6 @@ function App(): JSX.Element {
                     <p>Will Gunter, John Bean, Sonika Sharma</p>
                     <Row>
                         <Col xs={12} md={8}>
-                            <Button onClick={clearAllCourse}>
-                                Clear All Courses
-                            </Button>
-                            <Button onClick={clearAllSemester}>
-                                Clear All Semesters
-                            </Button>
-                            <p>
-                                Number of Semesters in Plan 1:{" "}
-                                {plans[0].semesters.length}
-                            </p>
                             <div>
                                 <PlanList
                                     plans={plans}
