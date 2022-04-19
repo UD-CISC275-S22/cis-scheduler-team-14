@@ -54,7 +54,7 @@ All files              |       0 |        0 |       0 |       0 |
   AddPlanModal.tsx     |       0 |        0 |       0 |       0 | 20-65             
   AddSemesterModal.tsx |       0 |        0 |       0 |       0 | 21-84             
   Course.tsx           |       0 |      100 |       0 |       0 | 6-8               
-  CourseFinder.tsx     |       0 |        0 |       0 |       0 | 16-120            
+  CourseFinder.tsx     |       0 |        0 |       0 |       0 | 16-121            
   CourseList.tsx       |       0 |        0 |       0 |       0 | 14-27             
   CourseView.tsx       |       0 |        0 |       0 |       0 | 18-44             
   DraggableCourse.tsx  |       0 |      100 |       0 |       0 | 5-30              
@@ -73,5 +73,5 @@ All files              |       0 |        0 |       0 |       0 |
 Test Suites: 1 failed, 1 total
 Tests:       0 total
 Snapshots:   0 total
-Time:        11.208 s
+Time:        10.192 s
 Ran all test suites.
