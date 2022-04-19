@@ -88,9 +88,9 @@ function App(): JSX.Element {
     }
     return (
         <DndProvider backend={HTML5Backend}>
+            <img src={headerimg} width="100%" />
             <Container>
                 <div className="App">
-                    <img src={headerimg} width="100%" />
                     <p>Will Gunter, John Bean, Sonika Sharma</p>
                     <Row>
                         <Col xs={12} md={8}>
