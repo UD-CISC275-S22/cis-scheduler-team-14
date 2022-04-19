@@ -4,12 +4,9 @@ import { Course } from "../interfaces/course";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Button from "@mui/material/Button";
 import { CourseList } from "./CourseList";
-<<<<<<< HEAD
 import { Form } from "react-bootstrap";
 import { Plan } from "../interfaces/plan";
-=======
 import { useDrop } from "react-dnd";
->>>>>>> main
 
 export function SemesterView({
     semester,
@@ -24,7 +21,6 @@ export function SemesterView({
     pool: Course[];
     setPool: (newPool: Course[]) => void;
 }): JSX.Element {
-<<<<<<< HEAD
     function checkCourse(thisSemester: Semester, Query: Course): boolean {
         return thisSemester.courses.indexOf(Query) !== -1;
     }
@@ -52,8 +48,6 @@ export function SemesterView({
     function updateConcentration(event: React.ChangeEvent<HTMLSelectElement>) {
         setconcentrationPicked(event.target.value);
     }
-    const [courses] = useState<Course[]>(semester.courses);
-=======
     const [courses, setCourses] = useState<Course[]>(semester.courses);
     /** Use state and implementation of drag functionality, linked with DraggableCourse.tsx and CourseFinder.tsx */
     /** Calls updateCourses when a new course is dropped into a semester */
@@ -91,7 +85,6 @@ export function SemesterView({
         );
     }
     /** Removes a semester from a plan */
->>>>>>> main
     function deleteSemester(year: number, season: string) {
         const newSemesters = semesters.filter(
             (semester: Semester) =>
@@ -133,7 +126,6 @@ export function SemesterView({
                     Delete Semester
                 </Button>
             ) : null}
-<<<<<<< HEAD
             <div>
                 <Form.Group controlId="userConcentration">
                     <Form.Label>What is your concentration?</Form.Label>
@@ -168,9 +160,7 @@ export function SemesterView({
                     </span>
                 </div>
             </div>
-=======
             {isOver && <div>Insert Course!</div>}
->>>>>>> main
         </div>
     );
 }
