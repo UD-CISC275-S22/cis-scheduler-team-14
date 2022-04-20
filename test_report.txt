@@ -33,28 +33,28 @@ FAIL src/App.test.tsx
 
     SyntaxError: Cannot use import statement outside a module
 
-      12 | import { CourseFinder } from "./components/CourseFinder";
-      13 | import { DndProvider } from "react-dnd";
-    > 14 | import { HTML5Backend } from "react-dnd-html5-backend";
+      11 | import { CourseFinder } from "./components/CourseFinder";
+      12 | import { DndProvider } from "react-dnd";
+    > 13 | import { HTML5Backend } from "react-dnd-html5-backend";
          | ^
+      14 |
       15 | function App(): JSX.Element {
-      16 |     function checkCourse(thisSemester: Semester, Query: Course): boolean {
-      17 |         return thisSemester.courses.indexOf(Query) !== -1;
+      16 |     /** Test Course states */
 
       at Runtime.createScriptFromCode (node_modules/jest-runtime/build/index.js:1728:14)
-      at Object.<anonymous> (src/App.tsx:14:1)
+      at Object.<anonymous> (src/App.tsx:13:1)
 
 -----------------------|---------|----------|---------|---------|-------------------
 File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------|---------|----------|---------|---------|-------------------
 All files              |       0 |        0 |       0 |       0 |                   
  src                   |       0 |      100 |       0 |       0 |                   
-  App.tsx              |       0 |      100 |       0 |       0 | 17-75             
+  App.tsx              |       0 |      100 |       0 |       0 | 17-62             
  src/components        |       0 |        0 |       0 |       0 |                   
   AddPlanModal.tsx     |       0 |        0 |       0 |       0 | 20-65             
   AddSemesterModal.tsx |       0 |        0 |       0 |       0 | 21-84             
   Course.tsx           |       0 |      100 |       0 |       0 | 6-8               
-  CourseFinder.tsx     |       0 |        0 |       0 |       0 | 16-121            
+  CourseFinder.tsx     |       0 |        0 |       0 |       0 | 16-124            
   CourseList.tsx       |       0 |        0 |       0 |       0 | 15-31             
   CourseView.tsx       |       0 |        0 |       0 |       0 | 18-64             
   DraggableCourse.tsx  |       0 |      100 |       0 |       0 | 5-30              
@@ -63,7 +63,7 @@ All files              |       0 |        0 |       0 |       0 |
   PlanView.tsx         |       0 |        0 |       0 |       0 | 25-81             
   Semester.tsx         |       0 |      100 |       0 |       0 | 6-8               
   SemesterList.tsx     |       0 |      100 |       0 |       0 | 18-22             
-  SemesterView.tsx     |       0 |        0 |       0 |       0 | 22-92             
+  SemesterView.tsx     |       0 |        0 |       0 |       0 | 25-168            
  src/interfaces        |       0 |      100 |       0 |       0 |                   
   concentration.ts     |       0 |        0 |       0 |       0 |                   
   course.ts            |       0 |      100 |       0 |       0 | 25                
@@ -73,5 +73,5 @@ All files              |       0 |        0 |       0 |       0 |
 Test Suites: 1 failed, 1 total
 Tests:       0 total
 Snapshots:   0 total
-Time:        11.445 s
+Time:        12.757 s
 Ran all test suites.
