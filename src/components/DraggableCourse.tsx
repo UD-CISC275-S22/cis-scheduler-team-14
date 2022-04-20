@@ -5,13 +5,11 @@ import React from "react";
 const DraggableCourseStyle = {
     /** CSS Style for a course in the Course Pool */
     course_pool_individual: {
-        width: 300,
-        height: 50,
-        backgroundColor: "white",
+        height: 75,
+        backgroundColor: "whitesmoke",
         alignContent: "center",
         outlineStyle: "solid",
-        outlineWidth: "thin",
-        fontFamily: "monospace"
+        outlineWidth: "thin"
     } as React.CSSProperties
 };
 

@@ -19,17 +19,14 @@ export function CourseFinder({
     const CourseFinderStyles = {
         /** CSS Style for the individual course div's */
         course_individual: {
-            width: 300,
             height: 50,
-            backgroundColor: "whitesmoke",
+            backgroundColor: "gainsboro",
             alignContent: "center",
             outlineStyle: "solid",
-            outlineWidth: "thin",
-            fontFamily: "monospace"
+            outlineWidth: "thin"
         } as React.CSSProperties,
         /** CSS Style for the scrollable course list */
         course_scroll_list: {
-            width: 300,
             height: 150,
             overflow: "scroll",
             alignContent: "center",
@@ -41,15 +38,18 @@ export function CourseFinder({
         } as React.CSSProperties,
         /** CSS Style for top level CourseFinder container */
         course_container: {
-            width: 300,
-            height: 500,
+            borderRadius: "25px",
             alignContent: "center",
-            backgroundColor: "beige",
-            paddingBotton: "10px",
-            paddingTop: "10px",
+            backgroundColor: "lightcyan",
+            padding: "10px",
             outlineStyle: "solid",
-            outlineWidth: "medium",
-            fontFamily: "monospace"
+            outlineWidth: "medium"
+        } as React.CSSProperties,
+        /** CSS Style for course pool container */
+        course_pool_container: {
+            backgroundColor: "lightcyan",
+            alignContent: "center",
+            padding: "10px"
         } as React.CSSProperties
     };
 
@@ -62,8 +62,7 @@ export function CourseFinder({
 
     /** A filter to find if a course contains the given query and is not already in the course pool */
     const containsQuery = (course: Course): boolean =>
-        (course.code.toLowerCase().includes(query.toLowerCase()) ||
-            course.name.toLowerCase().includes(query.toLowerCase())) &&
+        getCourseString(course).toLowerCase().includes(query.toLowerCase()) &&
         !pool.includes(course);
 
     /** Function to update the query useState */
@@ -75,10 +74,10 @@ export function CourseFinder({
     /** In order from top to bottom: Course search bar, Course Pool, Clear Courses Button */
     return (
         <div style={CourseFinderStyles.course_container}>
+            <h4>Course Lookup</h4>
             <Form.Group controlId="formCourseSearch">
-                <Form.Label>Course Lookup</Form.Label>
                 <Form.Control
-                    placeholder="Enter class name"
+                    placeholder="Enter course name or code"
                     value={query}
                     onChange={updateQuery}
                     size="sm"
@@ -101,7 +100,8 @@ export function CourseFinder({
                 )}
             </div>
             <div>
-                <p>Course Pool</p>
+                <p></p>
+                <h4>Course Pool</h4>
                 {pool.length === 0 && (
                     <p>
                         Click a course to add or remove it from your course
@@ -109,21 +109,22 @@ export function CourseFinder({
                     </p>
                 )}
                 {pool.map((course: Course) => (
-                    <div key={course.code}>
+                    <div
+                        key={course.code}
+                        style={CourseFinderStyles.course_pool_container}
+                    >
                         <DraggableCourse course={course}></DraggableCourse>
                     </div>
                 ))}
-                {pool.length > 1 && <p>Drag courses into your plan!</p>}
-                <Button onClick={() => setPool([])}>Clear course pool</Button>
+                {pool.length >= 1 && <p>Drag courses into your plan!</p>}
+                <Button
+                    type="button"
+                    className="btn btn-danger"
+                    onClick={() => setPool([])}
+                >
+                    Clear course pool
+                </Button>
             </div>
         </div>
     );
 }
-
-/**<div
-                        key={course.name}
-                        style={CourseFinderStyles.course_pool_individual}
-                        onClick={() => removeSingleCourse(course)}
-                    >
-                        {getCourseString(course)}
-                    </div> */
