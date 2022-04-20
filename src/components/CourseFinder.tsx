@@ -118,7 +118,13 @@ export function CourseFinder({
                     </div>
                 ))}
                 {pool.length >= 1 && <p>Drag courses into your plan!</p>}
-                <Button onClick={() => setPool([])}>Clear course pool</Button>
+                <Button
+                    type="button"
+                    className="btn btn-danger"
+                    onClick={() => setPool([])}
+                >
+                    Clear course pool
+                </Button>
             </div>
         </div>
     );
