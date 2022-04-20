@@ -151,10 +151,10 @@ export function SemesterView({
                 The users concentration {concentrationPicked}.
                 <div>
                     <span>
-                        The user has passed Concetration requirement{" "}
+                        The user has passed Concetration requirement.
                         {checkConcentration}
                         The user needs these courses still to pass Concentration
-                        requirement
+                        requirement.
                         {needTheseCourse}
                         <span>The data should be checked here!</span>
                     </span>
