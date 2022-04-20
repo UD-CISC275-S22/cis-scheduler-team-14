@@ -88,7 +88,7 @@ export function SemesterView({
     function deleteSemester(year: number, season: string) {
         const newSemesters = semesters.filter(
             (semester: Semester) =>
-                semester.year !== year || semester.season !== season
+                semester.year !== year && semester.season !== season
         );
         setSemesters(newSemesters);
     }
@@ -160,6 +160,15 @@ export function SemesterView({
                     </span>
                 </div>
             </div>
+            <Button
+                startIcon={<DeleteIcon />}
+                variant="outlined"
+                color="error"
+                className="m-2"
+                onClick={() => deleteSemester(semester.year, semester.season)}
+            >
+                Delete Semester
+            </Button>
             {isOver && <div>Insert Course!</div>}
         </div>
     );

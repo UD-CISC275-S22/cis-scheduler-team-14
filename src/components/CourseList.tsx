@@ -1,4 +1,5 @@
-import { Stack } from "@mui/material";
+import { DeleteForever } from "@mui/icons-material";
+import { Button, Stack } from "@mui/material";
 import React from "react";
 import { Course } from "../interfaces/course";
 import { CourseView } from "./CourseView";
@@ -20,6 +21,9 @@ export function CourseList({
         const newCourses = courses.filter((c) => c !== course);
         updateCourses(newCourses);
     }
+    function deleteAllCourses() {
+        updateCourses([]);
+    }
     return (
         <div>
             <Stack gap={2}>
@@ -33,6 +37,15 @@ export function CourseList({
                     </div>
                 ))}
             </Stack>
+            <Button
+                startIcon={<DeleteForever />}
+                variant="outlined"
+                color="error"
+                className="m-1"
+                onClick={deleteAllCourses}
+            >
+                Delete All Courses
+            </Button>
         </div>
     );
 }

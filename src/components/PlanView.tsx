@@ -7,6 +7,7 @@ import Add from "@mui/icons-material/Add";
 import Button from "@mui/material/Button";
 import { SemesterList } from "./SemesterList";
 import { Course } from "../interfaces/course";
+import { DeleteForever } from "@mui/icons-material";
 
 export function PlanView({
     plan,
@@ -26,6 +27,9 @@ export function PlanView({
         useState<boolean>(false);
     const handleCloseAddSemesterModal = () => setShowAddSemesterModal(false);
     const handleShowAddSemesterModal = () => setShowAddSemesterModal(true);
+    function deleteAllSemesters() {
+        setSemesters([]);
+    }
     return (
         <div
             style={{
@@ -51,6 +55,15 @@ export function PlanView({
                 onClick={handleShowAddSemesterModal}
             >
                 Add Semester
+            </Button>
+            <Button
+                startIcon={<DeleteForever />}
+                variant="contained"
+                color="error"
+                className="m-2"
+                onClick={() => deleteAllSemesters()}
+            >
+                Delete All Semesters
             </Button>
             <AddSemesterModal
                 show={showAddSemesterModal}

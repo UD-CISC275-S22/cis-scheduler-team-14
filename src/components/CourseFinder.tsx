@@ -83,6 +83,7 @@ export function CourseFinder({
                     size="sm"
                 />
             </Form.Group>
+            <p></p>
             <div style={CourseFinderStyles.course_scroll_list}>
                 {COURSES.filter(containsQuery).map(
                     (course: Course) =>
