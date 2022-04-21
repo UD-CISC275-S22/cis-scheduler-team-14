@@ -35,16 +35,6 @@ export function CourseView({
                 {course.code} {course.name}{" "}
             </h4>
             <h6>{course.credits} Credit(s)</h6>
-            {/*Delete Course*/}
-            <Button
-                startIcon={<DeleteIcon />}
-                variant="outlined"
-                color="secondary"
-                className="m-2"
-                onClick={() => deleteCourse(course)}
-            >
-                Delete Course
-            </Button>
             <Collapse isOpened={isOpened}>
                 {/*Information hidden until course is expanded*/}
                 <p>{course.descr}</p>
@@ -64,6 +54,16 @@ export function CourseView({
                     onClick={handleShowEditModal}
                 >
                     Edit Course
+                </Button>
+                {/*Delete Course*/}
+                <Button
+                    startIcon={<DeleteIcon />}
+                    variant="outlined"
+                    color="error"
+                    className="m-2"
+                    onClick={() => deleteCourse(course)}
+                >
+                    Delete Course
                 </Button>
                 <EditCourseModal
                     show={showEditModal}

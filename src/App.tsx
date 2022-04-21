@@ -1,12 +1,11 @@
 import "./App.css";
 import React, { useState } from "react";
 import headerimg from "./media/background.jpg";
-import { Button, Col, Container, Row } from "react-bootstrap";
+import { Button, Col, Container, Row, Modal } from "react-bootstrap";
 import premadePlans from "./data/plans.json";
 import { Course } from "./interfaces/course";
 import { Plan } from "./interfaces/plan";
 import { Semester, Season } from "./interfaces/semester";
-import { Form } from "react-bootstrap";
 import { PlanList } from "./components/PlanList";
 import { CourseFinder } from "./components/CourseFinder";
 import { DndProvider } from "react-dnd";
@@ -14,33 +13,6 @@ import { HTML5Backend } from "react-dnd-html5-backend";
 import catalog_json from "./data/catalog.json";
 
 function App(): JSX.Element {
-    function checkCourse(thisSemester: Semester, Query: Course): boolean {
-        return thisSemester.courses.indexOf(Query) !== -1;
-    }
-    function checkPlan(thisPlan: Plan, Query: Course): boolean {
-        const goodSemester: Semester[] = thisPlan.semesters.filter(
-            (aSemester: Semester): boolean => checkCourse(aSemester, Query)
-        );
-        return goodSemester.length > 0;
-    }
-    function checkConcentration(aPlan: Plan, courseList: Course[]): boolean {
-        const missingCourses: Course[] = courseList.filter(
-            (aCourse: Course): boolean => checkPlan(aPlan, aCourse) === false
-        );
-        return missingCourses.length === 0;
-    }
-    function needTheseCourse(aPlan: Plan, courseList: Course[]): Course[] {
-        const missingCourses: Course[] = courseList.filter(
-            (aCourse: Course): boolean => checkPlan(aPlan, aCourse) === false
-        );
-        return missingCourses;
-    }
-    const [concentrationPicked, setconcentrationPicked] =
-        useState<string>("AI");
-
-    function updateConcentration(event: React.ChangeEvent<HTMLSelectElement>) {
-        setconcentrationPicked(event.target.value);
-    }
     /** Test Course states */
     const COURSECATALOG = Object.values(catalog_json);
     const CATALOG = COURSECATALOG.map((course): Course => ({ ...course }));
@@ -69,9 +41,6 @@ function App(): JSX.Element {
     }
     console.log(PLANS[0]);
     /**Course States*/
-
-    /**Add Semester to Plan States & Constants */
-
     function clearAllCourse() {
         const [course, setCourse] = useState<Course[]>([]);
         setCourse([]);
@@ -83,24 +52,71 @@ function App(): JSX.Element {
         origplan.semesters = [];
         setPlans([origplan]);
     }
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
     return (
         <DndProvider backend={HTML5Backend}>
             <img src={headerimg} width="100%" />
             <Container>
                 <div className="App">
                     <p>Will Gunter, John Bean, Sonika Sharma</p>
+                    <div>
+                        <Button
+                            type="button"
+                            className="btn btn-success"
+                            onClick={handleOpen}
+                        >
+                            click here to learn how to get started
+                        </Button>
+                        <Modal
+                            show={open}
+                            onHide={handleClose}
+                            animation={false}
+                            fade={false}
+                        >
+                            <Modal.Header closeButton>
+                                <Modal.Title>
+                                    Welcome to the UDCIS Course Planner!
+                                </Modal.Title>
+                            </Modal.Header>
+                            <Modal.Body>
+                                This website helps you plan out what courses you
+                                must take to graduate with a computer science
+                                degree. We have have plans wheer you can add
+                                semesters and course to orgainze what classes
+                                you need to take every semester. Hope this
+                                website will ease your stress about planing your
+                                classes :)
+                            </Modal.Body>
+                            <Modal.Footer>
+                                <Button
+                                    type="button"
+                                    className="btn btn-success"
+                                    onClick={handleClose}
+                                >
+                                    Close
+                                </Button>
+                            </Modal.Footer>
+                        </Modal>
+                    </div>
+                    <Button
+                        type="button"
+                        className="btn btn-danger"
+                        onClick={clearAllCourse}
+                    >
+                        Clear All Courses
+                    </Button>
+                    <Button
+                        type="button"
+                        className="btn btn-danger"
+                        onClick={clearAllSemester}
+                    >
+                        Clear All Semesters
+                    </Button>
+
                     <Row>
                         <Col xs={12} md={8}>
-                            <Button onClick={clearAllCourse}>
-                                Clear All Courses
-                            </Button>
-                            <Button onClick={clearAllSemester}>
-                                Clear All Semesters
-                            </Button>
-                            <p>
-                                Number of Semesters in Plan 1:{" "}
-                                {plans[0].semesters.length}
-                            </p>
                             <div>
                                 <PlanList
                                     plans={plans}
@@ -121,55 +137,7 @@ function App(): JSX.Element {
                             </div>
                         </Col>
                     </Row>
-                    <Row>
-                        <div>
-                            <Form.Group controlId="userConcentration">
-                                <Form.Label>
-                                    What is your concentration?
-                                </Form.Label>
-                                <Form.Select
-                                    value={concentrationPicked}
-                                    onChange={updateConcentration}
-                                >
-                                    <option value="AI">AI</option>
-                                    <option value="Bioinformatics">
-                                        {" "}
-                                        Bioinformatics{" "}
-                                    </option>
-                                    <option value="Cybersecurity">
-                                        {" "}
-                                        Cybersecurity{" "}
-                                    </option>
-                                    <option value="DataScience">
-                                        {" "}
-                                        Data Science{" "}
-                                    </option>
-                                    <option value="High Performance Computing">
-                                        High Performance and Computing
-                                    </option>
-                                    <option value="Systems and Networks">
-                                        Systems and Networks
-                                    </option>
-                                    <option value="Theory and Computation">
-                                        Theory and Computation
-                                    </option>
-                                </Form.Select>
-                            </Form.Group>
-                            The users concentration {concentrationPicked}.
-                            <div>
-                                <span>
-                                    The user has passed Concetration requirement{" "}
-                                    {checkConcentration}
-                                    The user needs these courses still to pass
-                                    Concentration requirement
-                                    {needTheseCourse}
-                                    <span>
-                                        The data should be checked here!
-                                    </span>
-                                </span>
-                            </div>
-                        </div>
-                    </Row>
+                    <Row></Row>
                 </div>
             </Container>
         </DndProvider>
