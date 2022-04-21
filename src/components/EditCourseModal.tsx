@@ -18,29 +18,25 @@ export function EditCourseModal({
 }) {
     const [name, setName] = useState<string>(course.name);
     const [code, setCode] = useState<string>(course.code);
-    const [description, setDescription] = useState<string>(course.description);
-    const [credits, setCredits] = useState<number>(course.credits);
-    const [creditTypes, setCreditTypes] = useState<string>(course.creditTypes);
-    const [prerequisites, setPrerequisites] = useState<string>(
-        course.prerequisites
-    );
-    const [restrictions, setRestrictions] = useState<string>(
-        course.restrictions
-    );
+    const [description, setDescription] = useState<string>(course.descr);
+    const [credits, setCredits] = useState<string>(course.credits);
+    const [prerequisites, setPrerequisites] = useState<string>(course.preReq);
+    const [restrictions, setRestrictions] = useState<string>(course.restrict);
+    const [breadth, setBreadth] = useState<string>(course.breadth);
     const [semestersOffered, setSemestersOffered] = useState<string>(
-        course.semestersOffered
+        course.typ
     );
 
     function saveChanges() {
         const newCourse: Course = {
-            name: name,
             code: code,
-            description: description,
+            name: name,
+            descr: description,
             credits: credits,
-            creditTypes: creditTypes,
-            prerequisites: prerequisites,
-            restrictions: restrictions,
-            semestersOffered: semestersOffered
+            preReq: prerequisites,
+            restrict: restrictions,
+            breadth: breadth,
+            typ: semestersOffered
         };
         updateCourse(course, newCourse);
         handleClose();
@@ -100,13 +96,11 @@ export function EditCourseModal({
                         <Form.Control
                             type="number"
                             value={credits}
-                            onChange={(e) =>
-                                setCredits(parseInt(e.target.value))
-                            }
+                            onChange={(e) => setCredits(e.target.value)}
                         />
                     </Col>
                 </Form.Group>
-                {/*Credit Types */}
+                {/*Breadth */}
                 <Form.Group as={Row}>
                     <Form.Label column sm={10}>
                         Credit Types:
@@ -114,8 +108,8 @@ export function EditCourseModal({
                     <Col sm={10}>
                         <Form.Control
                             type="text"
-                            value={creditTypes}
-                            onChange={(e) => setCreditTypes(e.target.value)}
+                            value={breadth}
+                            onChange={(e) => setBreadth(e.target.value)}
                         />
                     </Col>
                 </Form.Group>
