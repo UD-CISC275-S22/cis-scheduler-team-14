@@ -17,7 +17,7 @@ export function AddPlanModal({
     plans: Plan[];
     setPlans: (plans: Plan[]) => void;
 }): JSX.Element {
-    const [inId, setInId] = useState<number>(0);
+    const [inId, setInId] = useState<number>(plans.length);
     const [alert, setAlert] = useState<string>("");
 
     function savePlan(): void {

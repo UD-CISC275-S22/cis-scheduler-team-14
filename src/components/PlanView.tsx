@@ -69,49 +69,51 @@ export function PlanView({
                 borderStyle: "solid"
             }}
         >
-            <h3>Plan {plan.id}</h3>
+            <h3 style={{ textAlign: "center" }}>Plan {plan.id}</h3>
             <SemesterList
                 semesters={semesters}
                 setSemesters={setSemesters}
                 pool={pool}
                 setPool={setPool}
             />
-            <Button
-                startIcon={<Add />}
-                variant="contained"
-                color="success"
-                className="m-2"
-                onClick={handleShowAddSemesterModal}
-            >
-                Add Semester
-            </Button>
-            <Button
-                startIcon={<DeleteForever />}
-                variant="contained"
-                color="error"
-                className="m-2"
-                onClick={() => deleteAllSemesters()}
-            >
-                Delete All Semesters
-            </Button>
-            <AddSemesterModal
-                show={showAddSemesterModal}
-                handleClose={handleCloseAddSemesterModal}
-                semesters={semesters}
-                setSemesters={setSemesters}
-            ></AddSemesterModal>
-            {/*Delete Plan*/}
-            {plans.length > 1 ? (
+            <div style={{ textAlign: "center" }}>
                 <Button
-                    startIcon={<DeleteIcon />}
-                    variant="outlined"
-                    color="secondary"
+                    startIcon={<Add />}
+                    variant="contained"
+                    color="success"
                     className="m-2"
-                    onClick={() => deletePlan(plan.id)}
+                    onClick={handleShowAddSemesterModal}
                 >
-                    Delete Plan
+                    Add Semester
                 </Button>
-            ) : null}
+                <Button
+                    startIcon={<DeleteForever />}
+                    variant="contained"
+                    color="error"
+                    className="m-2"
+                    onClick={() => deleteAllSemesters()}
+                >
+                    Delete All Semesters
+                </Button>
+                <AddSemesterModal
+                    show={showAddSemesterModal}
+                    handleClose={handleCloseAddSemesterModal}
+                    semesters={semesters}
+                    setSemesters={setSemesters}
+                ></AddSemesterModal>
+                {/*Delete Plan*/}
+                {plans.length > 1 ? (
+                    <Button
+                        startIcon={<DeleteIcon />}
+                        variant="outlined"
+                        color="secondary"
+                        className="m-2"
+                        onClick={() => deletePlan(plan.id)}
+                    >
+                        Delete Plan
+                    </Button>
+                ) : null}
+            </div>
             <div>
                 <Form.Group controlId="userConcentration">
                     <Form.Label>What is your concentration?</Form.Label>
