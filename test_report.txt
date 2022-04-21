@@ -33,37 +33,38 @@ FAIL src/App.test.tsx
 
     SyntaxError: Cannot use import statement outside a module
 
-      10 | import { CourseFinder } from "./components/CourseFinder";
-      11 | import { DndProvider } from "react-dnd";
-    > 12 | import { HTML5Backend } from "react-dnd-html5-backend";
+       8 | import { Semester, Season } from "./interfaces/semester";
+       9 | import { DndProvider } from "react-dnd";
+    > 10 | import { HTML5Backend } from "react-dnd-html5-backend";
          | ^
-      13 | import catalog_json from "./data/catalog.json";
-      14 |
-      15 | /** IMPORTING CATALOG FROM catalog.json */
+      11 | import { PlanTabs } from "./components/PlanTabs";
+      12 | import { Add, HelpOutlined } from "@mui/icons-material";
+      13 | import { Button } from "@mui/material";
 
       at Runtime.createScriptFromCode (node_modules/jest-runtime/build/index.js:1728:14)
-      at Object.<anonymous> (src/App.tsx:12:1)
+      at Object.<anonymous> (src/App.tsx:10:1)
 
 -----------------------|---------|----------|---------|---------|-------------------
 File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------|---------|----------|---------|---------|-------------------
 All files              |       0 |        0 |       0 |       0 |                   
  src                   |       0 |      100 |       0 |       0 |                   
-  App.tsx              |       0 |      100 |       0 |       0 | 16-49             
+  App.tsx              |       0 |      100 |       0 |       0 | 18-46             
  src/components        |       0 |        0 |       0 |       0 |                   
   AddPlanModal.tsx     |       0 |        0 |       0 |       0 | 20-65             
   AddSemesterModal.tsx |       0 |        0 |       0 |       0 | 21-84             
   Course.tsx           |       0 |      100 |       0 |       0 | 6-8               
   CourseFinder.tsx     |       0 |        0 |       0 |       0 | 16-124            
-  CourseList.tsx       |       0 |        0 |       0 |       0 | 15-31             
+  CourseList.tsx       |       0 |        0 |       0 |       0 | 14-27             
   CourseView.tsx       |       0 |        0 |       0 |       0 | 18-64             
   DraggableCourse.tsx  |       0 |      100 |       0 |       0 | 5-32              
   EditCourseModal.tsx  |       0 |      100 |       0 |       0 | 19-155            
   PlanList.tsx         |       0 |      100 |       0 |       0 | 23-31             
-  PlanView.tsx         |       0 |        0 |       0 |       0 | 26-110            
+  PlanTabs.tsx         |       0 |        0 |       0 |       0 | 20-84             
+  PlanView.tsx         |       0 |        0 |       0 |       0 | 26-111            
   Semester.tsx         |       0 |      100 |       0 |       0 | 6-8               
   SemesterList.tsx     |       0 |      100 |       0 |       0 | 18-22             
-  SemesterView.tsx     |       0 |        0 |       0 |       0 | 22-94             
+  SemesterView.tsx     |       0 |        0 |       0 |       0 | 23-112            
  src/interfaces        |       0 |      100 |       0 |       0 |                   
   concentration.ts     |       0 |        0 |       0 |       0 |                   
   course.ts            |       0 |      100 |       0 |       0 | 25                
@@ -73,5 +74,5 @@ All files              |       0 |        0 |       0 |       0 |
 Test Suites: 1 failed, 1 total
 Tests:       0 total
 Snapshots:   0 total
-Time:        15.484 s
+Time:        4.085 s
 Ran all test suites.
