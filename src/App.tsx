@@ -1,25 +1,19 @@
 import "./App.css";
 import React, { useState } from "react";
 import headerimg from "./media/background.jpg";
-import { Button, Col, Container, Row, Modal } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 import premadePlans from "./data/plans.json";
 import { Course } from "./interfaces/course";
 import { Plan } from "./interfaces/plan";
 import { Semester, Season } from "./interfaces/semester";
-import { PlanList } from "./components/PlanList";
-import { CourseFinder } from "./components/CourseFinder";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
-import catalog_json from "./data/catalog.json";
-
-/** IMPORTING CATALOG FROM catalog.json */
-const COURSECATALOG = Object.values(catalog_json);
-const CATALOG = COURSECATALOG.map((course): Course => ({ ...course }));
+import { PlanTabs } from "./components/PlanTabs";
+import { Add, HelpOutlined } from "@mui/icons-material";
+import { Button } from "@mui/material";
+import { AddPlanModal } from "./components/AddPlanModal";
 
 function App(): JSX.Element {
-    /** Test Course states */
-    const [courseCatalog] = useState<Course[]>(CATALOG);
-
     /**Plan States*/
     const PLANS = premadePlans.map(
         (plan): Plan => ({
@@ -46,77 +40,77 @@ function App(): JSX.Element {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+    const [showAddPlanModal, setShowAddPlanModal] = useState<boolean>(false);
+    const handleCloseAddPlanModal = () => setShowAddPlanModal(false);
+    const handleShowAddPlanModal = () => setShowAddPlanModal(true);
     return (
         <DndProvider backend={HTML5Backend}>
             <img src={headerimg} width="100%" />
-            <Container>
-                <div className="App">
-                    <p>Will Gunter, John Bean, Sonika Sharma</p>
-                    <div>
+            <div style={{ textAlign: "center", margin: "auto" }}>
+                <p></p>
+                <Button
+                    variant="contained"
+                    startIcon={<HelpOutlined />}
+                    color="success"
+                    className="m-4"
+                    onClick={handleOpen}
+                >
+                    Click here to learn how to get started!
+                </Button>
+                <Modal
+                    show={open}
+                    onHide={handleClose}
+                    animation={false}
+                    fade={false}
+                >
+                    <Modal.Header closeButton>
+                        <Modal.Title>
+                            Welcome to the UDCIS Course Planner!
+                        </Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        This website helps you plan out what courses you must
+                        take to graduate with a Computer Science degree. We have
+                        plans where you can add semesters and course to organize
+                        what classes you need to take every semester. Hopefully
+                        this website will ease your stress about planning
+                        classes :)
+                    </Modal.Body>
+                    <Modal.Footer>
                         <Button
                             type="button"
                             className="btn btn-success"
-                            onClick={handleOpen}
+                            onClick={handleClose}
                         >
-                            Click here to learn how to get started!
+                            Close
                         </Button>
-                        <p></p>
-                        <Modal
-                            show={open}
-                            onHide={handleClose}
-                            animation={false}
-                            fade={false}
-                        >
-                            <Modal.Header closeButton>
-                                <Modal.Title>
-                                    Welcome to the UDCIS Course Planner!
-                                </Modal.Title>
-                            </Modal.Header>
-                            <Modal.Body>
-                                This website helps you plan out what courses you
-                                must take to graduate with a Computer Science
-                                degree. We have plans where you can add
-                                semesters and course to organize what classes
-                                you need to take every semester. Hopefully this
-                                website will ease your stress about planning
-                                classes :)
-                            </Modal.Body>
-                            <Modal.Footer>
-                                <Button
-                                    type="button"
-                                    className="btn btn-success"
-                                    onClick={handleClose}
-                                >
-                                    Close
-                                </Button>
-                            </Modal.Footer>
-                        </Modal>
-                    </div>
-                    <Row>
-                        <Col xs={12} md={8}>
-                            <div>
-                                <PlanList
-                                    plans={plans}
-                                    setPlans={setPlans}
-                                    deletePlan={deletePlan}
-                                    pool={pool}
-                                    setPool={setPool}
-                                ></PlanList>
-                            </div>
-                        </Col>
-                        <Col xs={6} md={4}>
-                            <div>
-                                <CourseFinder
-                                    courseData={courseCatalog}
-                                    pool={pool}
-                                    setPool={setPool}
-                                ></CourseFinder>
-                            </div>
-                        </Col>
-                    </Row>
-                    <Row></Row>
-                </div>
-            </Container>
+                    </Modal.Footer>
+                </Modal>
+            </div>
+            <div style={{ textAlign: "center", margin: "auto" }}>
+                <Button
+                    variant="contained"
+                    startIcon={<Add />}
+                    color="success"
+                    className="m-4"
+                    onClick={handleShowAddPlanModal}
+                    style={{ width: "50%" }}
+                >
+                    Add Plan
+                </Button>
+                <AddPlanModal
+                    show={showAddPlanModal}
+                    handleClose={handleCloseAddPlanModal}
+                    plans={plans}
+                    setPlans={setPlans}
+                ></AddPlanModal>
+            </div>
+            <PlanTabs
+                plans={plans}
+                deletePlan={deletePlan}
+                pool={pool}
+                setPool={setPool}
+            ></PlanTabs>
         </DndProvider>
     );
 }

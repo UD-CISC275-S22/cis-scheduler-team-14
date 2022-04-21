@@ -5,6 +5,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import Button from "@mui/material/Button";
 import { CourseList } from "./CourseList";
 import { useDrop } from "react-dnd";
+import { DeleteForever } from "@mui/icons-material";
 
 export function SemesterView({
     semester,
@@ -63,6 +64,17 @@ export function SemesterView({
         );
         setSemesters(newSemesters);
     }
+
+    /**Deletes all courses in a semester */
+    function deleteAllCourses() {
+        updateCourses([]);
+    }
+
+    const numOfCredits = courses.reduce(
+        (accumulator, currentCourse) =>
+            accumulator + parseInt(currentCourse.credits),
+        0
+    );
     /** Returns a view of a Semester within a plan, containing courses */
     return (
         <div
@@ -72,13 +84,19 @@ export function SemesterView({
                 borderRadius: "25px",
                 padding: "10px",
                 border: "1px black",
-                borderStyle: "dashed"
+                borderStyle: "dashed",
+                textAlign: "center"
             }}
         >
             <h4>
                 {semester.season} {semester.year}{" "}
             </h4>
-            <h6>{courses.length} Course(s)</h6>
+            <h6>
+                {courses.length} Course
+                {courses.length > 1 || courses.length === 0 ? "s" : ""} .:.
+                {" " + numOfCredits} Credit
+                {numOfCredits > 1 || numOfCredits === 0 ? "s" : ""}
+            </h6>
             <CourseList
                 courses={courses}
                 updateCourses={updateCourses}
@@ -97,6 +115,17 @@ export function SemesterView({
                     Delete Semester
                 </Button>
             ) : null}
+            {courses.length > 0 && (
+                <Button
+                    startIcon={<DeleteForever />}
+                    variant="outlined"
+                    color="error"
+                    className="m-1"
+                    onClick={deleteAllCourses}
+                >
+                    Delete All Courses
+                </Button>
+            )}
             {isOver && <div>Insert Course!</div>}
         </div>
     );
