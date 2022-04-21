@@ -33,23 +33,23 @@ FAIL src/App.test.tsx
 
     SyntaxError: Cannot use import statement outside a module
 
-      11 | import { CourseFinder } from "./components/CourseFinder";
-      12 | import { DndProvider } from "react-dnd";
-    > 13 | import { HTML5Backend } from "react-dnd-html5-backend";
+      10 | import { CourseFinder } from "./components/CourseFinder";
+      11 | import { DndProvider } from "react-dnd";
+    > 12 | import { HTML5Backend } from "react-dnd-html5-backend";
          | ^
+      13 | import catalog_json from "./data/catalog.json";
       14 |
       15 | function App(): JSX.Element {
-      16 |     /** Test Course states */
 
       at Runtime.createScriptFromCode (node_modules/jest-runtime/build/index.js:1728:14)
-      at Object.<anonymous> (src/App.tsx:13:1)
+      at Object.<anonymous> (src/App.tsx:12:1)
 
 -----------------------|---------|----------|---------|---------|-------------------
 File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------|---------|----------|---------|---------|-------------------
 All files              |       0 |        0 |       0 |       0 |                   
  src                   |       0 |      100 |       0 |       0 |                   
-  App.tsx              |       0 |      100 |       0 |       0 | 17-62             
+  App.tsx              |       0 |      100 |       0 |       0 | 17-58             
  src/components        |       0 |        0 |       0 |       0 |                   
   AddPlanModal.tsx     |       0 |        0 |       0 |       0 | 20-65             
   AddSemesterModal.tsx |       0 |        0 |       0 |       0 | 21-84             
@@ -58,7 +58,7 @@ All files              |       0 |        0 |       0 |       0 |
   CourseList.tsx       |       0 |        0 |       0 |       0 | 15-31             
   CourseView.tsx       |       0 |        0 |       0 |       0 | 18-64             
   DraggableCourse.tsx  |       0 |      100 |       0 |       0 | 5-30              
-  EditCourseModal.tsx  |       0 |      100 |       0 |       0 | 19-161            
+  EditCourseModal.tsx  |       0 |      100 |       0 |       0 | 19-155            
   PlanList.tsx         |       0 |      100 |       0 |       0 | 23-31             
   PlanView.tsx         |       0 |        0 |       0 |       0 | 25-81             
   Semester.tsx         |       0 |      100 |       0 |       0 | 6-8               
@@ -73,5 +73,5 @@ All files              |       0 |        0 |       0 |       0 |
 Test Suites: 1 failed, 1 total
 Tests:       0 total
 Snapshots:   0 total
-Time:        12.757 s
+Time:        11.23 s
 Ran all test suites.
