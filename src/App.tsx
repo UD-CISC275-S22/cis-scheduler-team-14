@@ -7,19 +7,17 @@ import { Course } from "./interfaces/course";
 import { Plan } from "./interfaces/plan";
 import { Semester, Season } from "./interfaces/semester";
 import { PlanList } from "./components/PlanList";
-import TestCourses from "./data/testcourses.json";
 import { CourseFinder } from "./components/CourseFinder";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
+import catalog_json from "./data/catalog.json";
 
 function App(): JSX.Element {
     /** Test Course states */
-    const TESTCOURSES = TestCourses.map(
-        (course): Course => ({
-            ...course
-        })
-    );
-    const [testCourses] = useState<Course[]>(TESTCOURSES);
+    const COURSECATALOG = Object.values(catalog_json);
+    const CATALOG = COURSECATALOG.map((course): Course => ({ ...course }));
+    const [courseCatalog] = useState<Course[]>(CATALOG);
+
     /**Plan States*/
     const PLANS = premadePlans.map(
         (plan): Plan => ({
@@ -29,9 +27,7 @@ function App(): JSX.Element {
                     ...semester,
                     season: semester.season as Season,
                     courses: semester.courses.map(
-                        (course): Course => ({
-                            ...course
-                        })
+                        (course): Course => ({ ...course })
                     )
                 })
             )
@@ -134,7 +130,7 @@ function App(): JSX.Element {
                         <Col xs={6} md={4}>
                             <div>
                                 <CourseFinder
-                                    courseData={testCourses}
+                                    courseData={courseCatalog}
                                     pool={pool}
                                     setPool={setPool}
                                 ></CourseFinder>

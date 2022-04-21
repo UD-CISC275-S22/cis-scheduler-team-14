@@ -37,14 +37,14 @@ export function CourseView({
             <h6>{course.credits} Credit(s)</h6>
             <Collapse isOpened={isOpened}>
                 {/*Information hidden until course is expanded*/}
-                <p>{course.description}</p>
-                <p>Counts for: {course.creditTypes}</p>
-                <p>Prerequisites: {course.prerequisites}</p>
+                <p>{course.descr}</p>
+                <p>Counts for: {course.breadth}</p>
+                <p>Prerequisites: {course.preReq}</p>
                 <p>
                     Restrictions:{" "}
-                    {course.restrictions === "" ? "None" : course.restrictions}
+                    {course.restrict === "" ? "None" : course.restrict}
                 </p>
-                <p>Semesters Offered: {course.semestersOffered}</p>
+                {course.typ !== "" && <p>Usually offered:{" " + course.typ}</p>}
                 {/*Edit Course*/}
                 <Button
                     startIcon={<Edit />}
