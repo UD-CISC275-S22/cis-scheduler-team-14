@@ -5,9 +5,11 @@ import React from "react";
 const DraggableCourseStyle = {
     /** CSS Style for a course in the Course Pool */
     course_pool_individual: {
-        height: 75,
+        height: "75px",
+        lineHeight: "75px",
+        borderRadius: "25px",
         backgroundColor: "whitesmoke",
-        alignContent: "center",
+        textAlign: "center",
         outlineStyle: "solid",
         outlineWidth: "thin"
     } as React.CSSProperties
@@ -33,7 +35,7 @@ export function DraggableCourse({ course }: { course: Course }): JSX.Element {
             ref={dragRef}
             style={DraggableCourseStyle.course_pool_individual}
         >
-            {getCourseString(course)}
+            <h5>{getCourseString(course)}</h5>
             {isDragging}
         </div>
     );

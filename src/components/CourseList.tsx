@@ -37,15 +37,17 @@ export function CourseList({
                     </div>
                 ))}
             </Stack>
-            <Button
-                startIcon={<DeleteForever />}
-                variant="outlined"
-                color="error"
-                className="m-1"
-                onClick={deleteAllCourses}
-            >
-                Delete All Courses
-            </Button>
+            {courses.length > 0 && (
+                <Button
+                    startIcon={<DeleteForever />}
+                    variant="outlined"
+                    color="error"
+                    className="m-1"
+                    onClick={deleteAllCourses}
+                >
+                    Delete All Courses
+                </Button>
+            )}
         </div>
     );
 }

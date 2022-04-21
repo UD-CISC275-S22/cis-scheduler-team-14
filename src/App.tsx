@@ -12,10 +12,12 @@ import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import catalog_json from "./data/catalog.json";
 
+/** IMPORTING CATALOG FROM catalog.json */
+const COURSECATALOG = Object.values(catalog_json);
+const CATALOG = COURSECATALOG.map((course): Course => ({ ...course }));
+
 function App(): JSX.Element {
     /** Test Course states */
-    const COURSECATALOG = Object.values(catalog_json);
-    const CATALOG = COURSECATALOG.map((course): Course => ({ ...course }));
     const [courseCatalog] = useState<Course[]>(CATALOG);
 
     /**Plan States*/
@@ -40,18 +42,7 @@ function App(): JSX.Element {
         setPlans(plans.filter((plan) => plan.id !== id));
     }
     console.log(PLANS[0]);
-    /**Course States*/
-    function clearAllCourse() {
-        const [course, setCourse] = useState<Course[]>([]);
-        setCourse([]);
-        course;
-    }
 
-    function clearAllSemester() {
-        const origplan = plans[0];
-        origplan.semesters = [];
-        setPlans([origplan]);
-    }
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
@@ -67,8 +58,9 @@ function App(): JSX.Element {
                             className="btn btn-success"
                             onClick={handleOpen}
                         >
-                            click here to learn how to get started
+                            Click here to learn how to get started!
                         </Button>
+                        <p></p>
                         <Modal
                             show={open}
                             onHide={handleClose}
@@ -82,11 +74,11 @@ function App(): JSX.Element {
                             </Modal.Header>
                             <Modal.Body>
                                 This website helps you plan out what courses you
-                                must take to graduate with a computer science
-                                degree. We have have plans wheer you can add
-                                semesters and course to orgainze what classes
-                                you need to take every semester. Hope this
-                                website will ease your stress about planing your
+                                must take to graduate with a Computer Science
+                                degree. We have plans where you can add
+                                semesters and course to organize what classes
+                                you need to take every semester. Hopefully this
+                                website will ease your stress about planning
                                 classes :)
                             </Modal.Body>
                             <Modal.Footer>
@@ -100,21 +92,6 @@ function App(): JSX.Element {
                             </Modal.Footer>
                         </Modal>
                     </div>
-                    <Button
-                        type="button"
-                        className="btn btn-danger"
-                        onClick={clearAllCourse}
-                    >
-                        Clear All Courses
-                    </Button>
-                    <Button
-                        type="button"
-                        className="btn btn-danger"
-                        onClick={clearAllSemester}
-                    >
-                        Clear All Semesters
-                    </Button>
-
                     <Row>
                         <Col xs={12} md={8}>
                             <div>
