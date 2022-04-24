@@ -35,6 +35,7 @@ export function PlanList({
                             plans={plans}
                             pool={pool}
                             setPool={setPool}
+                            setPlans={setPlans}
                         ></PlanView>
                     </div>
                 ))}
