@@ -33,10 +33,10 @@ export function CourseView({
             {/*Information shown by default*/}
             <h4>
                 {course.code} {course.name}{" "}
-                {course.preReq === "" ? (
-                    ""
-                ) : (
+                {course.preReq !== "" ? (
                     <NewReleases style={{ color: "red" }} />
+                ) : (
+                    <></>
                 )}
             </h4>
             <h6>{course.credits} Credit(s)</h6>
