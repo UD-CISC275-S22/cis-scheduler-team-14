@@ -47,12 +47,14 @@ export function PlanTabs({
     plans,
     deletePlan,
     pool,
-    setPool
+    setPool,
+    setPlans
 }: {
     plans: Plan[];
     deletePlan: (id: number) => void;
     pool: Course[];
     setPool: (newPool: Course[]) => void;
+    setPlans: (plans: Plan[]) => void;
 }): JSX.Element {
     const [value, setValue] = React.useState(0);
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -90,6 +92,7 @@ export function PlanTabs({
                                     plans={plans}
                                     pool={pool}
                                     setPool={setPool}
+                                    setPlans={setPlans}
                                 ></PlanView>
                             </Col>
                             <Col xs={6} md={4}>
