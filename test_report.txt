@@ -53,16 +53,14 @@ All files              |       0 |        0 |       0 |       0 |
  src/components        |       0 |        0 |       0 |       0 |                   
   AddPlanModal.tsx     |       0 |        0 |       0 |       0 | 20-65             
   AddSemesterModal.tsx |       0 |        0 |       0 |       0 | 21-84             
-  Course.tsx           |       0 |      100 |       0 |       0 | 6-8               
   CourseFinder.tsx     |       0 |        0 |       0 |       0 | 16-124            
   CourseList.tsx       |       0 |        0 |       0 |       0 | 14-27             
   CourseView.tsx       |       0 |        0 |       0 |       0 | 18-64             
   DraggableCourse.tsx  |       0 |      100 |       0 |       0 | 5-32              
   EditCourseModal.tsx  |       0 |      100 |       0 |       0 | 19-155            
   PlanList.tsx         |       0 |      100 |       0 |       0 | 23-31             
-  PlanTabs.tsx         |       0 |        0 |       0 |       0 | 20-84             
-  PlanView.tsx         |       0 |        0 |       0 |       0 | 26-111            
-  Semester.tsx         |       0 |      100 |       0 |       0 | 6-8               
+  PlanTabs.tsx         |       0 |        0 |       0 |       0 | 20-86             
+  PlanView.tsx         |       0 |        0 |       0 |       0 | 28-129            
   SemesterList.tsx     |       0 |      100 |       0 |       0 | 18-22             
   SemesterView.tsx     |       0 |        0 |       0 |       0 | 23-112            
  src/interfaces        |       0 |      100 |       0 |       0 |                   
@@ -74,5 +72,5 @@ All files              |       0 |        0 |       0 |       0 |
 Test Suites: 1 failed, 1 total
 Tests:       0 total
 Snapshots:   0 total
-Time:        4.085 s
+Time:        3.243 s
 Ran all test suites.
