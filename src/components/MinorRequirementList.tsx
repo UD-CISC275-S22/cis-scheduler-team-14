@@ -1,15 +1,5 @@
 import React from "react";
 import { Grid, List } from "@mui/material";
-import {
-    capstone,
-    dle,
-    firstYearExp,
-    groupA,
-    groupB,
-    groupC,
-    groupD,
-    multiCult
-} from "../data/universityreqs";
 
 export function MinorRequirementList({
     allCourses,
