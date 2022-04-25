@@ -2,6 +2,7 @@ import React from "react";
 import { Course } from "../interfaces/course";
 import { Plan } from "../interfaces/plan";
 import { Semester } from "../interfaces/semester";
+import { MajorRequirementList } from "./MajorRequirementList";
 import { MinorRequirementList } from "./MinorRequirementList";
 
 export function RequirementList({
@@ -37,12 +38,7 @@ export function RequirementList({
     }
     return (
         <div>
-            <MinorRequirementList
-                allCourses={allCourses}
-                checkIfInList={checkIfInList}
-                checkIfInListMulti={checkIfInListMulti}
-            />
-            {/* {majMin === "Major" ? (
+            {majMin === "Major" ? (
                 <MajorRequirementList
                     allCourses={allCourses}
                     checkIfInList={checkIfInList}
@@ -56,7 +52,7 @@ export function RequirementList({
                     checkIfInList={checkIfInList}
                     checkIfInListMulti={checkIfInListMulti}
                 />
-            )} */}
+            )}
         </div>
     );
 }
