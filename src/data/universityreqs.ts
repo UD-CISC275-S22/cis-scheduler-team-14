@@ -2405,3 +2405,11 @@ export const engineerProfess = [
     "UAPP 411",
     "UAPP 421"
 ];
+export const noTech = [
+    "CISC 355",
+    "CISC 356",
+    "CISC 357",
+    "CISC 366",
+    "CISC 465",
+    "CISC 466"
+];
