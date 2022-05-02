@@ -35,7 +35,6 @@ function App(): JSX.Element {
     function deletePlan(id: number): void {
         setPlans(plans.filter((plan) => plan.id !== id));
     }
-    console.log(PLANS[0]);
 
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);

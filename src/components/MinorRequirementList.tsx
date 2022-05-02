@@ -34,7 +34,7 @@ export function MinorRequirementList({
         ).length;
     }
     return (
-        <div>
+        <div data-testid="minorreqlist">
             <p></p>
             <h5>Course Requirements</h5>
             <div style={{ textAlign: "center" }}>

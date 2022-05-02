@@ -39,7 +39,7 @@ export function RequirementsViewer({
                 textAlign: "center"
             }}
         >
-            <div>
+            <div data-testid="requirementsViewer">
                 <h5>Requirements</h5>
                 <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
                     <InputLabel id="demo-simple-select-standard-label">
@@ -54,8 +54,12 @@ export function RequirementsViewer({
                         }}
                         label="Major/Minor"
                     >
-                        <MenuItem value={"Major"}>Major</MenuItem>
-                        <MenuItem value={"Minor"}>Minor</MenuItem>
+                        <MenuItem data-testid="MajorSelect" value={"Major"}>
+                            Major
+                        </MenuItem>
+                        <MenuItem data-testid="MinorSelect" value={"Minor"}>
+                            Minor
+                        </MenuItem>
                     </Select>
                 </FormControl>
                 {majMin === "Major" ? (
@@ -128,6 +132,7 @@ export function RequirementsViewer({
             <Button
                 variant="contained"
                 color="primary"
+                data-testid="showRequirementsButton"
                 onClick={() => {
                     setShowCourseList(!showCourseList);
                 }}

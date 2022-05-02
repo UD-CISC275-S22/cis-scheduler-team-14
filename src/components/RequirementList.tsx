@@ -37,7 +37,7 @@ export function RequirementList({
         );
     }
     return (
-        <div>
+        <div data-testid="majorMinorContainer">
             {majMin === "Major" ? (
                 <MajorRequirementList
                     allCourses={allCourses}

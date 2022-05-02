@@ -135,4 +135,14 @@ describe("PlanView tests", () => {
         const saveChangesButton = screen.getByTestId("saveChangesButton");
         saveChangesButton.click();
     });
+    test("Requirements box renders", () => {
+        const requirementsViewer = screen.getByTestId("requirementsViewer");
+        expect(requirementsViewer).toBeInTheDocument();
+        const showRequirementsButton = screen.getByTestId(
+            "showRequirementsButton"
+        );
+        showRequirementsButton.click();
+        const majorMinorContainer = screen.getByTestId("majorMinorContainer");
+        expect(majorMinorContainer).toBeInTheDocument();
+    });
 });

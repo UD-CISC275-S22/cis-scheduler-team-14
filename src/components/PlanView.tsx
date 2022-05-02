@@ -64,7 +64,9 @@ export function PlanView({
                     borderStyle: "solid"
                 }}
             >
-                <h3 style={{ textAlign: "center" }}>Plan {plan.id}</h3>
+                <h3 style={{ textAlign: "center" }} data-testid="plan-title">
+                    Plan {plan.id}
+                </h3>
                 <SemesterList
                     semesters={semesters}
                     setSemesters={setSemesters}
@@ -77,6 +79,7 @@ export function PlanView({
                         variant="contained"
                         color="success"
                         className="m-2"
+                        data-testid="addSemesterButton"
                         onClick={handleShowAddSemesterModal}
                     >
                         Add Semester
@@ -86,6 +89,7 @@ export function PlanView({
                         variant="contained"
                         color="error"
                         className="m-2"
+                        data-testid="deleteAllSemestersButton"
                         onClick={() => deleteAllSemesters()}
                     >
                         Delete All Semesters
@@ -97,17 +101,16 @@ export function PlanView({
                         setSemesters={setSemesters}
                     ></AddSemesterModal>
                     {/*Delete Plan*/}
-                    {plans.length > 1 ? (
-                        <Button
-                            startIcon={<DeleteIcon />}
-                            variant="outlined"
-                            color="secondary"
-                            className="m-2"
-                            onClick={() => deletePlan(plan.id)}
-                        >
-                            Delete Plan
-                        </Button>
-                    ) : null}
+                    <Button
+                        startIcon={<DeleteIcon />}
+                        variant="outlined"
+                        color="secondary"
+                        className="m-2"
+                        data-testid="deletePlanButton"
+                        onClick={() => deletePlan(plan.id)}
+                    >
+                        Delete Plan
+                    </Button>
                 </div>
             </div>
             <p></p>
