@@ -10,7 +10,6 @@ import { Course } from "../interfaces/course";
 import { DeleteForever } from "@mui/icons-material";
 import { RequirementsViewer } from "./RequirementsViewer";
 
-
 export function PlanView({
     plan,
     plans,
