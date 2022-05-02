@@ -16,12 +16,14 @@ export function CourseView({
     deleteCourse: (course: Course) => void;
 }): JSX.Element {
     const [showEditModal, setShowEditModal] = useState<boolean>(false);
+    const [defaultCourseInfo] = useState<Course>(course);
     const handleCloseEditModal = () => setShowEditModal(false);
     const handleShowEditModal = () => setShowEditModal(true);
     const [isOpened, toggleOpened] = useState<boolean>(false); //Usestate for react-collapse collapsable div to show/hide course info
 
     return (
         <div
+            className="draggable-course-view"
             onClick={() => toggleOpened(!isOpened)}
             style={{
                 backgroundColor: "gainsboro",
@@ -29,7 +31,6 @@ export function CourseView({
                 padding: "10px",
                 border: "1px solid black"
             }}
-            data-testid="courseview"
         >
             {/*Information shown by default*/}
             <h4>
@@ -57,7 +58,6 @@ export function CourseView({
                     variant="outlined"
                     color="secondary"
                     className="m-2"
-                    data-testid="editcoursebutton"
                     onClick={handleShowEditModal}
                 >
                     Edit Course
@@ -68,7 +68,6 @@ export function CourseView({
                     variant="outlined"
                     color="error"
                     className="m-2"
-                    data-testid="deletecoursebutton"
                     onClick={() => deleteCourse(course)}
                 >
                     Delete Course
@@ -78,6 +77,7 @@ export function CourseView({
                     handleClose={handleCloseEditModal}
                     course={course}
                     updateCourse={updateCourse}
+                    defaultCourseInfo={defaultCourseInfo}
                 ></EditCourseModal>
             </Collapse>
         </div>

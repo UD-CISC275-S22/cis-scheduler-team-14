@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Col, Form, Modal, Row } from "react-bootstrap";
 import CancelIcon from "@mui/icons-material/Cancel";
+import RestartAltIcon from "@mui/icons-material/RestartAlt";
 import Add from "@mui/icons-material/Add";
 import Button from "@mui/material/Button";
 import { Course } from "../interfaces/course";
@@ -9,12 +10,14 @@ export function EditCourseModal({
     show,
     handleClose,
     updateCourse,
-    course
+    course,
+    defaultCourseInfo
 }: {
     show: boolean;
     handleClose: () => void;
     updateCourse: (oldCourse: Course, newCourse: Course) => void;
     course: Course;
+    defaultCourseInfo: Course;
 }) {
     const [name, setName] = useState<string>(course.name);
     const [code, setCode] = useState<string>(course.code);
@@ -26,6 +29,17 @@ export function EditCourseModal({
     const [semestersOffered, setSemestersOffered] = useState<string>(
         course.typ
     );
+
+    function resetCourse() {
+        setName(defaultCourseInfo.name);
+        setCode(defaultCourseInfo.code);
+        setDescription(defaultCourseInfo.descr);
+        setCredits(defaultCourseInfo.credits);
+        setPrerequisites(defaultCourseInfo.preReq);
+        setRestrictions(defaultCourseInfo.restrict);
+        setBreadth(defaultCourseInfo.breadth);
+        setSemestersOffered(defaultCourseInfo.typ);
+    }
 
     function saveChanges() {
         const newCourse: Course = {
@@ -172,6 +186,15 @@ export function EditCourseModal({
                 </Form.Group>
             </Modal.Body>
             <Modal.Footer>
+                <Button
+                    variant="contained"
+                    className="m-2"
+                    startIcon={<RestartAltIcon />}
+                    onClick={resetCourse}
+                    color="primary"
+                >
+                    Reset to Default
+                </Button>
                 <Button
                     variant="outlined"
                     className="m-2"
