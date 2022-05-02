@@ -90,6 +90,7 @@ export function PlanTabs({
                             <Col xs={12} md={8}>
                                 <PlanView
                                     plan={plan}
+                                    plans={plans}
                                     deletePlan={deletePlan}
                                     pool={pool}
                                     setPool={setPool}
