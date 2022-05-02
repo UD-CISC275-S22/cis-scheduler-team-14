@@ -45,7 +45,7 @@ function App(): JSX.Element {
     const handleShowAddPlanModal = () => setShowAddPlanModal(true);
     return (
         <DndProvider backend={HTML5Backend}>
-            <img src={headerimg} width="100%" />
+            <img src={headerimg} width="100%" data-testid="header-image" />
             <div style={{ textAlign: "center", margin: "auto" }}>
                 <p></p>
                 <Button
@@ -94,6 +94,7 @@ function App(): JSX.Element {
                     color="success"
                     className="m-4"
                     onClick={handleShowAddPlanModal}
+                    data-testid="addPlanButton"
                     style={{ width: "50%" }}
                 >
                     Add Plan

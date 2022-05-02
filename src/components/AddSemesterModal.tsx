@@ -64,7 +64,12 @@ export function AddSemesterModal({
     };
 
     return (
-        <Modal show={show} onHide={handleClose} animation={false}>
+        <Modal
+            show={show}
+            onHide={handleClose}
+            animation={false}
+            data-testid="addSemesterModal"
+        >
             <Modal.Header closeButton>
                 <Modal.Title>Add New Semester</Modal.Title>
             </Modal.Header>
@@ -79,6 +84,7 @@ export function AddSemesterModal({
                             <Form.Control
                                 type="number"
                                 value={inYear}
+                                data-testid="INPUTyearbox"
                                 onChange={(
                                     event: React.ChangeEvent<HTMLInputElement>
                                 ) => setInYear(parseInt(event.target.value))}
@@ -88,7 +94,11 @@ export function AddSemesterModal({
                 </div>
                 {/*Season*/}
                 <div className="m-2">
-                    <Form.Group controlId="formSemesterSeason" as={Row}>
+                    <Form.Group
+                        controlId="formSemesterSeason"
+                        as={Row}
+                        data-testid="INPUTseasondropdown"
+                    >
                         <Form.Label column sm={3}>
                             Season:
                         </Form.Label>
@@ -135,6 +145,7 @@ export function AddSemesterModal({
                     startIcon={<Add />}
                     onClick={saveChanges}
                     color="primary"
+                    data-testid="SAVEbutton"
                 >
                     Add Plan
                 </Button>

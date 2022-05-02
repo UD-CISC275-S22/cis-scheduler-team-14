@@ -29,6 +29,7 @@ export function CourseView({
                 padding: "10px",
                 border: "1px solid black"
             }}
+            data-testid="courseview"
         >
             {/*Information shown by default*/}
             <h4>
@@ -51,6 +52,7 @@ export function CourseView({
                     variant="outlined"
                     color="secondary"
                     className="m-2"
+                    data-testid="editcoursebutton"
                     onClick={handleShowEditModal}
                 >
                     Edit Course
@@ -61,6 +63,7 @@ export function CourseView({
                     variant="outlined"
                     color="error"
                     className="m-2"
+                    data-testid="deletecoursebutton"
                     onClick={() => deleteCourse(course)}
                 >
                     Delete Course
