@@ -836,7 +836,7 @@ export function MajorRequirementList({
                             </List>
                         </div>
                     )}
-                    {conc == "AI" ? (
+                    {conc == "AI" && baBs == "BS" ? (
                         <div>
                             <p>
                                 Artificial Intelligence Concentration
@@ -940,7 +940,7 @@ export function MajorRequirementList({
                     ) : (
                         <></>
                     )}
-                    {conc == "Bioinformatics" ? (
+                    {conc == "Bioinformatics" && baBs == "BS" ? (
                         <div>
                             <p>Bioinformatics Concentration Requirements</p>
                             <List
@@ -1122,7 +1122,7 @@ export function MajorRequirementList({
                     ) : (
                         <></>
                     )}
-                    {conc == "Cybersecurity" ? (
+                    {conc == "Cybersecurity" && baBs == "BS" ? (
                         <div>
                             <p>Cybersecurity Concentration Requirements</p>
                             <List
@@ -1233,7 +1233,7 @@ export function MajorRequirementList({
                     ) : (
                         <></>
                     )}
-                    {conc == "DataSci" ? (
+                    {conc == "DataSci" && baBs == "BS" ? (
                         <div>
                             <p>Data Science Concentration Requirements</p>
                             <List
