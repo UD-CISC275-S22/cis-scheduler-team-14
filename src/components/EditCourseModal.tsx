@@ -43,7 +43,12 @@ export function EditCourseModal({
     }
 
     return (
-        <Modal show={show} onHide={handleClose} animation={false}>
+        <Modal
+            show={show}
+            onHide={handleClose}
+            animation={false}
+            data-testid="editCourseModal"
+        >
             <Modal.Header>
                 <Modal.Title>Edit Course</Modal.Title>
             </Modal.Header>
@@ -57,6 +62,7 @@ export function EditCourseModal({
                         <Form.Control
                             type="text"
                             value={name}
+                            data-testid="INPUTcourseName"
                             onChange={(e) => setName(e.target.value)}
                         />
                     </Col>
@@ -69,6 +75,7 @@ export function EditCourseModal({
                     <Col sm={10}>
                         <Form.Control
                             value={code}
+                            data-testid="INPUTcourseCode"
                             onChange={(e) => setCode(e.target.value)}
                         />
                     </Col>
@@ -83,6 +90,7 @@ export function EditCourseModal({
                             as="textarea"
                             rows={3}
                             value={description}
+                            data-testid="INPUTcourseDescription"
                             onChange={(e) => setDescription(e.target.value)}
                         />
                     </Col>
@@ -96,6 +104,7 @@ export function EditCourseModal({
                         <Form.Control
                             type="number"
                             value={credits}
+                            data-testid="INPUTcourseCredits"
                             onChange={(e) => setCredits(e.target.value)}
                         />
                     </Col>
@@ -109,6 +118,7 @@ export function EditCourseModal({
                         <Form.Control
                             type="text"
                             value={breadth}
+                            data-testid="INPUTcourseBreadth"
                             onChange={(e) => setBreadth(e.target.value)}
                         />
                     </Col>
@@ -123,6 +133,7 @@ export function EditCourseModal({
                             as="textarea"
                             rows={3}
                             value={prerequisites}
+                            data-testid="INPUTcoursePrereqs"
                             onChange={(e) => setPrerequisites(e.target.value)}
                         />
                     </Col>
@@ -137,6 +148,7 @@ export function EditCourseModal({
                             as="textarea"
                             rows={3}
                             value={restrictions}
+                            data-testid="INPUTcourseRestrictions"
                             onChange={(e) => setRestrictions(e.target.value)}
                         />
                     </Col>
@@ -151,6 +163,7 @@ export function EditCourseModal({
                             as="textarea"
                             rows={3}
                             value={semestersOffered}
+                            data-testid="INPUTcourseSemesters"
                             onChange={(e) =>
                                 setSemestersOffered(e.target.value)
                             }
@@ -173,6 +186,7 @@ export function EditCourseModal({
                     className="m-2"
                     startIcon={<Add />}
                     onClick={saveChanges}
+                    data-testid="saveChangesButton"
                     color="primary"
                 >
                     Save Edits

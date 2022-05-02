@@ -10,17 +10,18 @@ import { Course } from "../interfaces/course";
 import { DeleteForever } from "@mui/icons-material";
 import { RequirementsViewer } from "./RequirementsViewer";
 
+
 export function PlanView({
     plan,
-    deletePlan,
     plans,
+    deletePlan,
     pool,
     setPool,
     setPlans
 }: {
     plan: Plan;
-    deletePlan: (id: number) => void;
     plans: Plan[];
+    deletePlan: (id: number) => void;
     pool: Course[];
     setPool: (newPool: Course[]) => void;
     setPlans: (plans: Plan[]) => void;

@@ -26,6 +26,7 @@ function TabPanel(props: TabPanelProps) {
             id={`simple-tabpanel-${index}`}
             aria-labelledby={`simple-tab-${index}`}
             {...other}
+            data-testid="tab-panel"
         >
             {value === index && (
                 <Box sx={{ p: 3 }}>
@@ -78,6 +79,7 @@ export function PlanTabs({
                                 {...a11yProps(index)}
                                 key={plan.id}
                                 sx={{ fontSize: "1rem" }}
+                                data-testid="tab"
                             />
                         ))}
                     </Tabs>
@@ -88,8 +90,8 @@ export function PlanTabs({
                             <Col xs={12} md={8}>
                                 <PlanView
                                     plan={plan}
-                                    deletePlan={deletePlan}
                                     plans={plans}
+                                    deletePlan={deletePlan}
                                     pool={pool}
                                     setPool={setPool}
                                     setPlans={setPlans}

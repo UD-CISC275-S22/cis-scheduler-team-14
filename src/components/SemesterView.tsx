@@ -78,6 +78,7 @@ export function SemesterView({
     /** Returns a view of a Semester within a plan, containing courses */
     return (
         <div
+            data-testid="semesterView"
             ref={dropRef}
             style={{
                 backgroundColor: "mintcream",
@@ -88,7 +89,7 @@ export function SemesterView({
                 textAlign: "center"
             }}
         >
-            <h4>
+            <h4 data-testid="semesterTitle">
                 {semester.season} {semester.year}{" "}
             </h4>
             <h6>
@@ -108,6 +109,7 @@ export function SemesterView({
                     variant="outlined"
                     color="secondary"
                     className="m-2"
+                    data-testid="deleteSemesterButton"
                     onClick={() =>
                         deleteSemester(semester.year, semester.season)
                     }
@@ -122,6 +124,7 @@ export function SemesterView({
                     color="error"
                     className="m-1"
                     onClick={deleteAllCourses}
+                    data-testid="deleteAllCoursesButton"
                 >
                     Delete All Courses
                 </Button>
