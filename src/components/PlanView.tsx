@@ -11,20 +11,41 @@ import { DeleteForever } from "@mui/icons-material";
 
 export function PlanView({
     plan,
+    plans,
     deletePlan,
     pool,
-    setPool
+    setPool,
+    setPlans
 }: {
     plan: Plan;
+    plans: Plan[];
     deletePlan: (id: number) => void;
     pool: Course[];
     setPool: (newPool: Course[]) => void;
+    setPlans: (plans: Plan[]) => void;
 }): JSX.Element {
-    const [semesters, setSemesters] = useState<Semester[]>(plan.semesters);
+    const [semesters, saveSemesters] = useState<Semester[]>(plan.semesters);
     const [showAddSemesterModal, setShowAddSemesterModal] =
         useState<boolean>(false);
     const handleCloseAddSemesterModal = () => setShowAddSemesterModal(false);
     const handleShowAddSemesterModal = () => setShowAddSemesterModal(true);
+
+    function setSemesters(semesters: Semester[]): void {
+        saveSemesters(semesters);
+        setPlans(
+            plans.map((listplan: Plan) => {
+                if (listplan.id === plan.id) {
+                    return {
+                        ...plan,
+                        semesters: semesters
+                    };
+                } else {
+                    return listplan;
+                }
+            })
+        );
+    }
+
     function deleteAllSemesters() {
         setSemesters([]);
     }

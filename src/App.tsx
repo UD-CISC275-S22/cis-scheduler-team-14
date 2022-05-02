@@ -111,6 +111,7 @@ function App(): JSX.Element {
                 deletePlan={deletePlan}
                 pool={pool}
                 setPool={setPool}
+                setPlans={setPlans}
             ></PlanTabs>
         </DndProvider>
     );

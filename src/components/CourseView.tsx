@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Course } from "../interfaces/course";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Button from "@mui/material/Button";
-import { Edit } from "@mui/icons-material";
+import { Edit, NewReleases } from "@mui/icons-material";
 import { EditCourseModal } from "./EditCourseModal";
 import { Collapse } from "react-collapse";
 
@@ -34,6 +34,11 @@ export function CourseView({
             {/*Information shown by default*/}
             <h4>
                 {course.code} {course.name}{" "}
+                {course.preReq !== "" ? (
+                    <NewReleases style={{ color: "red" }} />
+                ) : (
+                    <></>
+                )}
             </h4>
             <h6>{course.credits} Credit(s)</h6>
             <Collapse isOpened={isOpened}>
