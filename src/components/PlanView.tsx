@@ -7,7 +7,7 @@ import Add from "@mui/icons-material/Add";
 import Button from "@mui/material/Button";
 import { SemesterList } from "./SemesterList";
 import { Course } from "../interfaces/course";
-import { DeleteForever, HelpOutlined } from "@mui/icons-material";
+import { DeleteForever } from "@mui/icons-material";
 import { RequirementsViewer } from "./RequirementsViewer";
 import { ExportCsv } from "./ExportCsv";
 import { ImportCsv } from "./ImportCsv";
