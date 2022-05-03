@@ -44,7 +44,12 @@ export function AddPlanModal({
     }
 
     return (
-        <Modal show={show} onHide={handleClose} animation={false}>
+        <Modal
+            show={show}
+            onHide={handleClose}
+            animation={false}
+            data-testid="addPlanModal"
+        >
             <Modal.Header closeButton>
                 <Modal.Title>Add New Plan</Modal.Title>
             </Modal.Header>
@@ -58,6 +63,7 @@ export function AddPlanModal({
                         <Form.Control
                             type="number"
                             value={inId}
+                            data-testid="inputPLANID"
                             onChange={(
                                 event: React.ChangeEvent<HTMLInputElement>
                             ) => {
@@ -84,6 +90,7 @@ export function AddPlanModal({
                     className="m-2"
                     startIcon={<Add />}
                     onClick={savePlan}
+                    data-testid="savePlanButton"
                     color="primary"
                 >
                     Add Plan

@@ -35,14 +35,13 @@ function App(): JSX.Element {
     function deletePlan(id: number): void {
         setPlans(plans.filter((plan) => plan.id !== id));
     }
-    console.log(PLANS[0]);
 
     const [showAddPlanModal, setShowAddPlanModal] = useState<boolean>(false);
     const handleCloseAddPlanModal = () => setShowAddPlanModal(false);
     const handleShowAddPlanModal = () => setShowAddPlanModal(true);
     return (
         <DndProvider backend={HTML5Backend}>
-            <img src={headerimg} width="100%" />
+            <img src={headerimg} width="100%" data-testid="header-image" />
             <div style={{ textAlign: "center", margin: "auto" }}>
                 <p></p>
                 <div>
@@ -56,6 +55,7 @@ function App(): JSX.Element {
                     color="success"
                     className="m-4"
                     onClick={handleShowAddPlanModal}
+                    data-testid="addPlanButton"
                     style={{ width: "50%" }}
                 >
                     Add Plan
@@ -72,6 +72,7 @@ function App(): JSX.Element {
                 deletePlan={deletePlan}
                 pool={pool}
                 setPool={setPool}
+                setPlans={setPlans}
             ></PlanTabs>
         </DndProvider>
     );
