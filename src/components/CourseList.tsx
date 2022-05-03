@@ -1,14 +1,21 @@
 import { Stack } from "@mui/material";
 import React from "react";
 import { Course } from "../interfaces/course";
+import { Semester } from "../interfaces/semester";
 import { CourseView } from "./CourseView";
 
 export function CourseList({
     courses,
-    updateCourses
+    updateCourses,
+    semester,
+    semesters,
+    setSemesters
 }: {
     courses: Course[];
     updateCourses: (courses: Course[]) => void;
+    semester: Semester;
+    semesters: Semester[];
+    setSemesters: (semesters: Semester[]) => void;
 }): JSX.Element {
     function updateCourse(oldCourse: Course, newCourse: Course) {
         const newCourses = courses.map((c) =>
@@ -29,6 +36,9 @@ export function CourseList({
                             course={course}
                             updateCourse={updateCourse}
                             deleteCourse={deleteCourse}
+                            setSemesters={setSemesters}
+                            semester={semester}
+                            semesters={semesters}
                         ></CourseView>
                     </div>
                 ))}

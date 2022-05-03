@@ -101,6 +101,9 @@ export function SemesterView({
             <CourseList
                 courses={courses}
                 updateCourses={updateCourses}
+                semester={semester}
+                semesters={semesters}
+                setSemesters={setSemesters}
             ></CourseList>
             {/*Delete Semester*/}
             {semesters.length > -1 ? (
