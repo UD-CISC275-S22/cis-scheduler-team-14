@@ -43,7 +43,9 @@ export function CourseFinder({
             backgroundColor: "lightcyan",
             padding: "10px",
             outlineStyle: "solid",
-            outlineWidth: "medium"
+            outlineWidth: "medium",
+            overflow: "auto",
+            maxHeight: "650px"
         } as React.CSSProperties,
         /** CSS Style for course pool container */
         course_pool_container: {
