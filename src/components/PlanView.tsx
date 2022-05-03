@@ -9,6 +9,8 @@ import { SemesterList } from "./SemesterList";
 import { Course } from "../interfaces/course";
 import { DeleteForever } from "@mui/icons-material";
 import { Form } from "react-bootstrap";
+import { ExportCsv } from "./ExportCsv";
+import { ImportCsv } from "./ImportCsv";
 
 export function PlanView({
     plan,
@@ -146,6 +148,12 @@ export function PlanView({
                         {needTheseCourse}
                         <span>The data should be checked here!</span>
                     </span>
+                    <div>
+                        <ExportCsv semesters={semesters}></ExportCsv>
+                    </div>
+                    <div>
+                        <ImportCsv></ImportCsv>
+                    </div>
                 </div>
             </div>
         </div>
