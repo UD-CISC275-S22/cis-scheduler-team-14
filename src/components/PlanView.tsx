@@ -7,8 +7,11 @@ import Add from "@mui/icons-material/Add";
 import Button from "@mui/material/Button";
 import { SemesterList } from "./SemesterList";
 import { Course } from "../interfaces/course";
-import { DeleteForever } from "@mui/icons-material";
+import { DeleteForever, HelpOutlined } from "@mui/icons-material";
 import { RequirementsViewer } from "./RequirementsViewer";
+import { ExportCsv } from "./ExportCsv";
+import { ImportCsv } from "./ImportCsv";
+import { Modal } from "react-bootstrap";
 
 export function PlanView({
     plan,
@@ -30,6 +33,9 @@ export function PlanView({
         useState<boolean>(false);
     const handleCloseAddSemesterModal = () => setShowAddSemesterModal(false);
     const handleShowAddSemesterModal = () => setShowAddSemesterModal(true);
+    const [open, setOpen] = React.useState(false);
+    const handleClose = () => setOpen(false);
+    const handleOpen = () => setOpen(true);
 
     function setSemesters(semesters: Semester[]): void {
         saveSemesters(semesters);
@@ -123,6 +129,43 @@ export function PlanView({
                 setBaBs={setBaBS}
                 setConc={setConc}
             />
+            <div>
+                <Button
+                    variant="contained"
+                    color="success"
+                    className="m-4"
+                    onClick={handleOpen}
+                >
+                    Click Here To Import Or Export Your Plan
+                </Button>
+                <Modal
+                    show={open}
+                    onHide={handleClose}
+                    animation={false}
+                    fade={false}
+                >
+                    <Modal.Header closeButton>
+                        <Modal.Title>Import Or Export Your Plan</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <div>
+                            <ExportCsv semesters={semesters}></ExportCsv>
+                        </div>
+                        <div>
+                            <ImportCsv></ImportCsv>
+                        </div>
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button
+                            type="button"
+                            className="btn btn-success"
+                            onClick={handleClose}
+                        >
+                            Close
+                        </Button>
+                    </Modal.Footer>
+                </Modal>
+            </div>
         </div>
     );
 }
