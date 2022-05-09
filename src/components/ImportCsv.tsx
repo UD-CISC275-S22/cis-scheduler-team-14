@@ -1,12 +1,23 @@
 //import { HelpOutlined } from "@mui/icons-material";
 import React, { useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
+import { Course } from "../interfaces/course";
+import catalog_json from "../data/catalog.json";
+import { Semester } from "../interfaces/semester";
+import { CourseList } from "./CourseList";
+import { stringify } from "querystring";
+import { Plan } from "../interfaces/plan";
 
 export function ImportCsv(): JSX.Element {
     const [content, setContent] = useState<string>("No file data uploaded");
     const [open, setOpen] = React.useState(false);
     const handleClose = () => setOpen(false);
     const handleOpen = () => setOpen(true);
+    // const COURSECATALOG = Object.values(catalog_json);
+    const [semester, setSemester] = useState<Semester>();
+    const [plans, setPlans] = useState<Plan[]>([]);
+
+    //<R> Stream </R> new Map(function () { }, super.T, R > mapper)
 
     function uploadFile(event: React.ChangeEvent<HTMLInputElement>) {
         // Might have removed the file, need to check that the files exist
@@ -22,6 +33,46 @@ export function ImportCsv(): JSX.Element {
                     loadEvent.target?.result || "Data was not loaded";
                 // FileReader provides string or ArrayBuffer, force it to be string
                 setContent(newContent as string);
+                console.log(newContent);
+                console.log("new text");
+                const newText = newContent as string;
+                console.log(newText);
+                //console.log(newContent.size);
+                const newArray = newText.split("\n");
+                const newData = newArray.map((data: string) => data.split(","));
+                console.log(newData);
+                let newSemesterUser: Semester;
+                let newPlanUser: Plan;
+
+                newSemesterUser = newData.map((data: Semester) =>
+                    newSemesterUser.push(data)
+                );
+
+                setSemester(newSemesterUser);
+
+                //how to add newData to semester and then add that semester to a new plan
+                //set that plan so they can see
+
+                //     newSemsterUser = newData.map((data: Semester) =>
+                //         newSemester.push(data)
+                //     );
+                //    newPlanUser = newData.map((data: Plan) => newPlan.plan.push(data));
+                //     setPlans(newPlan);
+                // newSemesterUser.season
+                // const moreData = COURSECATALOG.filter(
+                //     (data: Course) => (data.code = newData[0][0])
+                // );
+                // console.log(moreData);
+                // newSemsterUser.courses.push(moreData);
+                // const moreData = newData.filter(
+                //     (data: string) => data.split(",")[0]
+                // );
+                //const newName = newData.map((data:string) => data[0]);
+                //console.log(newArray[0]);
+                //console.log(newData);
+                //Course.name = newData[0];
+                //Course.code = newData[1];
+                //Course.credits = newData[2];
             };
             // Actually read the file
             reader.readAsText(filename);
@@ -68,107 +119,3 @@ export function ImportCsv(): JSX.Element {
         </div>
     );
 }
-
-/*import { useState } from "react";
-import { Button, Form } from "react-bootstrap";
-import React, { Component } from "react";
-
-let loadedData = [29, 44, 55];
-
-// You can make up your own key however you want, but make it unique!
-const saveDataKey = "MY-PAGE-DATA";
-
-// Check if the user's data already exists
-const previousData = localStorage.getItem(saveDataKey);
-// If the data doesn't exist, `getItem` returns null
-if (previousData !== null) {
-    loadedData = JSON.parse(previousData);
-}
-
-export function Csv(): JSX.Element {
-    const [data, setData] = useState<number[]>(loadedData);
-
-    function addRandom() {
-        const newNumber = Math.floor(Math.random() * 100);
-        setData([...data, newNumber]);
-    }
-
-    function saveData() {
-        localStorage.setItem(saveDataKey, JSON.stringify(data));
-    }
-
-    function loadData() {
-        localStorage.getItem(saveDataKey);
-    }
-
-    return (
-        <div>
-            <ol>
-                {data.map((value: number) => (
-                    <li key={value}>{value}</li>
-                ))}
-            </ol>
-            <Button onClick={saveData}>Save Data</Button>
-            <Button onClick={addRandom}>Add new random number</Button>
-            <Button onClick={loadData}>Load Data</Button>
-        </div>
-    );
-}
-*/
-/*import { Course } from "../interfaces/course";
-
-export const exportToCsv = (
-    filename: string,
-    rows: Course[],
-    headers?: string[]
-): void => {
-    if (!rows || !rows.length) {
-        return;
-    }
-    const separator = ",";
-
-    const keys: Course[] = rows;
-
-    let columHearders: string[];
-
-    if (headers) {
-        columHearders = headers;
-    } else {
-        columHearders = keys.map((key: Course) => key.code);
-    }
-
-    const csvContent =
-        "sep=,\n" +
-        columHearders.join(separator) +
-        "\n" +
-        rows
-            .map((row) => {
-                return keys
-                    .map((key: Course) => {
-                        const cell =
-                            key === null || key === undefined ? "" : key;
-                        return cell;
-                    })
-                    .join(separator);
-            })
-            .join("\n");
-
-    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
-    //if (navigator.msSaveBlob) {
-    // In case of IE 10+
-    //    navigator.msSaveBlob(blob, filename);
-    //} else {
-    const link = document.createElement("a");
-    if (link.download !== undefined) {
-        // Browsers that support HTML5 download attribute
-        const url = URL.createObjectURL(blob);
-        link.setAttribute("href", url);
-        link.setAttribute("download", filename);
-        link.style.visibility = "hidden";
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    }
-    //}
-};
-*/
