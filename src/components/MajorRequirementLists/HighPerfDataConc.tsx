@@ -22,7 +22,7 @@ export function HighPerfDataConc({
     ).length;
     return (
         <div>
-            <p>High Performance Computing - Math Concentration</p>
+            <p>High Performance Computing - Data Concentration</p>
             <List
                 sx={{
                     maxWidth: 360,
