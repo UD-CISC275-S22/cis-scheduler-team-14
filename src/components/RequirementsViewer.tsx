@@ -113,14 +113,17 @@ export function RequirementsViewer({
                                 Cybersecurity
                             </MenuItem>
                             <MenuItem value={"DataSci"}>Data Science</MenuItem>
-                            <MenuItem value={"HighPerf"}>
-                                High Performance Computing
+                            <MenuItem value={"HighPerfMath"}>
+                                High Performance Computing - Applied Math
                             </MenuItem>
-                            <MenuItem value={"Theory"}>
-                                Theory and Computation
+                            <MenuItem value={"HighPerfData"}>
+                                High Performance Computing - Data
                             </MenuItem>
-                            <MenuItem value={"Trad"}>
-                                Traditional Program
+                            <MenuItem value={"TheoryDiscrete"}>
+                                Theory and Computation - Discrete
+                            </MenuItem>
+                            <MenuItem value={"TheoryContinuous"}>
+                                Theory and Computation - Continuous
                             </MenuItem>
                         </Select>
                     </FormControl>
