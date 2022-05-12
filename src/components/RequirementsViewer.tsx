@@ -125,9 +125,6 @@ export function RequirementsViewer({
                             <MenuItem value={"TheoryContinuous"}>
                                 Theory and Computation - Continuous
                             </MenuItem>
-                            <MenuItem value={"Trad"}>
-                                Traditional Program
-                            </MenuItem>
                         </Select>
                     </FormControl>
                 ) : (

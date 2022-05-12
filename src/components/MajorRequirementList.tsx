@@ -9,6 +9,8 @@ import { CybersecurityConc } from "./MajorRequirementLists/CybersecurityConc";
 import { DataSciConc } from "./MajorRequirementLists/DataSciConc";
 import { HighPerfDataConc } from "./MajorRequirementLists/HighPerfDataConc";
 import { HighPerfMathConc } from "./MajorRequirementLists/HighPerfMathConc";
+import { TheoryContinuousConc } from "./MajorRequirementLists/TheoryContinuousConc";
+import { TheoryDiscreteConc } from "./MajorRequirementLists/TheoryDiscreteConc";
 import { UniversityRequirements } from "./MajorRequirementLists/UniversityRequirements";
 
 export function MajorRequirementList({
@@ -27,13 +29,6 @@ export function MajorRequirementList({
     baBs: string;
     conc: string;
 }): JSX.Element {
-    function getCommonCourses(
-        currentCourses: string[],
-        acceptable: string[]
-    ): string[] {
-        return currentCourses.filter((course) => acceptable.includes(course));
-    }
-
     return (
         <div>
             <p></p>
@@ -133,6 +128,28 @@ export function MajorRequirementList({
                                 checkIfInList={checkIfInList}
                                 checkIfInListMulti={checkIfInListMulti}
                             ></HighPerfDataConc>
+                        </div>
+                    ) : (
+                        <></>
+                    )}
+                    {conc == "TheoryDiscrete" && baBs == "BS" ? (
+                        <div>
+                            <TheoryDiscreteConc
+                                allCourses={allCourses}
+                                checkIfInList={checkIfInList}
+                                checkIfInListMulti={checkIfInListMulti}
+                            ></TheoryDiscreteConc>
+                        </div>
+                    ) : (
+                        <></>
+                    )}
+                    {conc == "TheoryContinuous" && baBs == "BS" ? (
+                        <div>
+                            <TheoryContinuousConc
+                                allCourses={allCourses}
+                                checkIfInList={checkIfInList}
+                                checkIfInListMulti={checkIfInListMulti}
+                            ></TheoryContinuousConc>
                         </div>
                     ) : (
                         <></>
