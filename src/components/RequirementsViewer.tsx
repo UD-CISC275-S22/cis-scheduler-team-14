@@ -1,3 +1,4 @@
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 import {
     Button,
     FormControl,
@@ -40,7 +41,7 @@ export function RequirementsViewer({
             }}
         >
             <div data-testid="requirementsViewer">
-                <h5>Requirements</h5>
+                <h3>Requirement Checker</h3>
                 <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
                     <InputLabel id="demo-simple-select-standard-label">
                         Major/Minor
@@ -113,14 +114,17 @@ export function RequirementsViewer({
                                 Cybersecurity
                             </MenuItem>
                             <MenuItem value={"DataSci"}>Data Science</MenuItem>
-                            <MenuItem value={"HighPerf"}>
-                                High Performance Computing
+                            <MenuItem value={"HighPerfMath"}>
+                                High Performance Computing - Applied Math
                             </MenuItem>
-                            <MenuItem value={"Theory"}>
-                                Theory and Computation
+                            <MenuItem value={"HighPerfData"}>
+                                High Performance Computing - Data
                             </MenuItem>
-                            <MenuItem value={"Trad"}>
-                                Traditional Program
+                            <MenuItem value={"TheoryDiscrete"}>
+                                Theory and Computation - Discrete
+                            </MenuItem>
+                            <MenuItem value={"TheoryContinuous"}>
+                                Theory and Computation - Continuous
                             </MenuItem>
                         </Select>
                     </FormControl>
@@ -129,16 +133,29 @@ export function RequirementsViewer({
                 )}
             </div>
             {/* Button to show met / unmet requirements*/}
-            <Button
-                variant="contained"
-                color="primary"
-                data-testid="showRequirementsButton"
-                onClick={() => {
-                    setShowCourseList(!showCourseList);
-                }}
-            >
-                Show Requirements
-            </Button>
+            {showCourseList ? (
+                <Button
+                    variant="contained"
+                    color="primary"
+                    startIcon={<VisibilityOff />}
+                    onClick={() => {
+                        setShowCourseList(false);
+                    }}
+                >
+                    Hide Requirements
+                </Button>
+            ) : (
+                <Button
+                    variant="contained"
+                    color="primary"
+                    startIcon={<Visibility />}
+                    onClick={() => {
+                        setShowCourseList(true);
+                    }}
+                >
+                    Show Requirements
+                </Button>
+            )}
             {showCourseList ? (
                 <RequirementList
                     plan={plan}

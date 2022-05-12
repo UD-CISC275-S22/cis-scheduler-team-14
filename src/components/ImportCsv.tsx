@@ -1,6 +1,8 @@
 //import { HelpOutlined } from "@mui/icons-material";
+import { FileUpload } from "@mui/icons-material";
+import { Button } from "@mui/material";
 import React, { useState } from "react";
-import { Button, Form, Modal } from "react-bootstrap";
+import { Form, Modal } from "react-bootstrap";
 
 export function ImportCsv(): JSX.Element {
     const [content, setContent] = useState<string>("No file data uploaded");
@@ -31,8 +33,8 @@ export function ImportCsv(): JSX.Element {
         <div>
             <Button
                 type="button"
-                className="btn btn-success"
-                href="#contained-buttons"
+                variant="outlined"
+                startIcon={<FileUpload />}
                 onClick={handleOpen}
             >
                 Import Your Plan

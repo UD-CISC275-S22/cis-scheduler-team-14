@@ -99,7 +99,7 @@ export function PlanTabs({
                             </Col>
                             <Col xs={6} md={4}>
                                 <div
-                                    style={{ position: "sticky", top: "25px" }}
+                                    style={{ position: "sticky", top: "18px" }}
                                 >
                                     <CourseFinder
                                         courseData={courseCatalog}
