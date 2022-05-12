@@ -38,11 +38,7 @@ export function Welcomemessage(): JSX.Element {
                     website will ease your stress about planning classes :)
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button
-                        type="button"
-                        className="btn btn-success"
-                        onClick={handleClose}
-                    >
+                    <Button variant="contained" onClick={handleClose}>
                         Close
                     </Button>
                 </Modal.Footer>
