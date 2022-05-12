@@ -1,3 +1,4 @@
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 import {
     Button,
     FormControl,
@@ -40,7 +41,7 @@ export function RequirementsViewer({
             }}
         >
             <div data-testid="requirementsViewer">
-                <h5>Requirements</h5>
+                <h3>Requirement Checker</h3>
                 <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
                     <InputLabel id="demo-simple-select-standard-label">
                         Major/Minor
@@ -132,16 +133,29 @@ export function RequirementsViewer({
                 )}
             </div>
             {/* Button to show met / unmet requirements*/}
-            <Button
-                variant="contained"
-                color="primary"
-                data-testid="showRequirementsButton"
-                onClick={() => {
-                    setShowCourseList(!showCourseList);
-                }}
-            >
-                Show Requirements
-            </Button>
+            {showCourseList ? (
+                <Button
+                    variant="contained"
+                    color="primary"
+                    startIcon={<VisibilityOff />}
+                    onClick={() => {
+                        setShowCourseList(false);
+                    }}
+                >
+                    Hide Requirements
+                </Button>
+            ) : (
+                <Button
+                    variant="contained"
+                    color="primary"
+                    startIcon={<Visibility />}
+                    onClick={() => {
+                        setShowCourseList(true);
+                    }}
+                >
+                    Show Requirements
+                </Button>
+            )}
             {showCourseList ? (
                 <RequirementList
                     plan={plan}
