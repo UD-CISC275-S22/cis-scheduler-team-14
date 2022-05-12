@@ -2,7 +2,7 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-PASS src/tests/PlanView.test.tsx (96.568 s)
+PASS src/tests/PlanView.test.tsx (94.803 s)
   ● Console
 
     console.error
@@ -303,11 +303,13 @@ PASS src/tests/PlanView.test.tsx (96.568 s)
           at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@emotion/react/dist/emotion-element-e89f38a3.cjs.dev.js:64:23)
           at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@mui/material/node/List/List.js:74:17)
           at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/MajorRequirementLists/UniversityRequirements.tsx:15:5)
+          at div
           at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@emotion/react/dist/emotion-element-e89f38a3.cjs.dev.js:64:23)
           at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@mui/material/node/Grid/Grid.js:315:22)
           at div
           at div
-          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/MajorRequirementList.tsx:16:5)
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/MajorRequirementList.tsx:17:5)
           at div
           at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/RequirementList.tsx:9:5)
           at div
@@ -395,42 +397,55 @@ PASS src/tests/ImportCsv.test.tsx
       at setInitialProperties (node_modules/react-dom/cjs/react-dom.development.js:9041:5)
       at finalizeInitialChildren (node_modules/react-dom/cjs/react-dom.development.js:10201:3)
 
----------------------------|---------|----------|---------|---------|-------------------
-File                       | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
----------------------------|---------|----------|---------|---------|-------------------
-All files                  |   75.09 |    36.47 |   71.66 |    75.3 |                   
- src                       |     100 |      100 |     100 |     100 |                   
-  App.tsx                  |     100 |      100 |     100 |     100 |                   
- src/components            |   72.26 |    36.47 |   69.36 |   72.64 |                   
-  AddPlanModal.tsx         |   84.21 |       50 |     100 |   83.33 | 26,38,42          
-  AddSemesterModal.tsx     |   65.38 |    42.85 |   83.33 |   65.38 | 31,47,51-56,62-63 
-  CourseFinder.tsx         |   61.53 |     87.5 |   44.44 |   61.53 | 72,93-126         
-  CourseList.tsx           |     100 |      100 |     100 |     100 |                   
-  CourseView.tsx           |     100 |      100 |     100 |     100 |                   
-  DraggableCourse.tsx      |      25 |      100 |       0 |      25 | 20-32             
-  EditCourseModal.tsx      |     100 |      100 |     100 |     100 |                   
-  ExportCsv.tsx            |       0 |      100 |       0 |       0 | 16-52             
-  ImportCsv.tsx            |   42.85 |        0 |      40 |   41.66 | 13-27             
-  MajorRequirementList.tsx |   95.65 |    30.04 |   83.33 |   95.45 | 75                
-  MinorRequirementList.tsx |       0 |        0 |       0 |       0 | 16-36             
-  PlanTabs.tsx             |    92.3 |      100 |   85.71 |   91.66 | 62                
-  PlanView.tsx             |   86.95 |       50 |      80 |   94.73 | 50                
-  RequirementList.tsx      |     100 |       50 |     100 |     100 | 41                
-  RequirementsViewer.tsx   |      50 |       75 |      40 |      50 | 53-102            
-  SemesterList.tsx         |     100 |      100 |     100 |     100 |                   
-  SemesterView.tsx         |   68.18 |    63.63 |      75 |   68.18 | 29-39             
-  WelcomeModal.tsx         |   83.33 |      100 |   66.66 |     100 |                   
- src/data                  |     100 |      100 |     100 |     100 |                   
-  universityreqs.ts        |     100 |      100 |     100 |     100 |                   
- src/interfaces            |     100 |      100 |     100 |     100 |                   
-  concentration.ts         |       0 |        0 |       0 |       0 |                   
-  course.ts                |     100 |      100 |     100 |     100 |                   
-  plan.ts                  |       0 |        0 |       0 |       0 |                   
-  semester.ts              |       0 |        0 |       0 |       0 |                   
----------------------------|---------|----------|---------|---------|-------------------
+--------------------------------------|---------|----------|---------|---------|-------------------
+File                                  | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+--------------------------------------|---------|----------|---------|---------|-------------------
+All files                             |   64.54 |    27.41 |   61.22 |   65.45 |                   
+ src                                  |     100 |      100 |     100 |     100 |                   
+  App.tsx                             |     100 |      100 |     100 |     100 |                   
+ src/components                       |    69.9 |    51.93 |   68.86 |   70.29 |                   
+  AddPlanModal.tsx                    |   84.21 |       50 |     100 |   83.33 | 26,38,42          
+  AddSemesterModal.tsx                |   65.38 |    42.85 |   83.33 |   65.38 | 31,47,51-56,62-63 
+  CourseFinder.tsx                    |   61.53 |     87.5 |   44.44 |   61.53 | 72,93-126         
+  CourseList.tsx                      |     100 |      100 |     100 |     100 |                   
+  CourseView.tsx                      |     100 |      100 |     100 |     100 |                   
+  DraggableCourse.tsx                 |      25 |      100 |       0 |      25 | 20-32             
+  EditCourseModal.tsx                 |     100 |      100 |     100 |     100 |                   
+  ExportCsv.tsx                       |       0 |      100 |       0 |       0 | 16-52             
+  ImportCsv.tsx                       |   42.85 |        0 |      40 |   41.66 | 13-27             
+  MajorRequirementList.tsx            |     100 |    52.94 |     100 |     100 | 50-146            
+  MinorRequirementList.tsx            |       0 |        0 |       0 |       0 | 16-36             
+  PlanTabs.tsx                        |    92.3 |      100 |   85.71 |   91.66 | 62                
+  PlanView.tsx                        |   86.95 |       50 |      80 |   94.73 | 50                
+  RequirementList.tsx                 |     100 |       50 |     100 |     100 | 41                
+  RequirementsViewer.tsx              |      50 |       75 |      40 |      50 | 53-102            
+  SemesterList.tsx                    |     100 |      100 |     100 |     100 |                   
+  SemesterView.tsx                    |   68.18 |    63.63 |      75 |   68.18 | 29-39             
+  WelcomeModal.tsx                    |   83.33 |      100 |   66.66 |     100 |                   
+ src/components/MajorRequirementLists |   26.78 |     17.4 |      25 |   28.57 |                   
+  ArtificialIntelligenceConc.tsx      |     100 |       50 |     100 |     100 | 60-118            
+  BARequirements.tsx                  |       0 |        0 |       0 |       0 | 20-49             
+  BSMajorRequirements.tsx             |     100 |    51.51 |     100 |     100 | 25-235            
+  BSRequirements.tsx                  |      80 |    71.42 |   66.66 |      80 | 19                
+  BioinformaticsConc.tsx              |       0 |        0 |       0 |       0 | 17-38             
+  CybersecurityConc.tsx               |       0 |        0 |       0 |       0 | 15-52             
+  DataSciConc.tsx                     |       0 |        0 |       0 |       0 | 17-44             
+  HighPerfDataConc.tsx                |       0 |        0 |       0 |       0 | 13-23             
+  HighPerfMathConc.tsx                |       0 |        0 |       0 |       0 | 13-23             
+  TheoryContinuousConc.tsx            |       0 |        0 |       0 |       0 | 13-41             
+  TheoryDiscreteConc.tsx              |       0 |        0 |       0 |       0 | 13-41             
+  UniversityRequirements.tsx          |     100 |       50 |     100 |     100 | 38-111            
+ src/data                             |     100 |      100 |     100 |     100 |                   
+  universityreqs.ts                   |     100 |      100 |     100 |     100 |                   
+ src/interfaces                       |     100 |      100 |     100 |     100 |                   
+  concentration.ts                    |       0 |        0 |       0 |       0 |                   
+  course.ts                           |     100 |      100 |     100 |     100 |                   
+  plan.ts                             |       0 |        0 |       0 |       0 |                   
+  semester.ts                         |       0 |        0 |       0 |       0 |                   
+--------------------------------------|---------|----------|---------|---------|-------------------
 
 Test Suites: 3 passed, 3 total
 Tests:       15 passed, 15 total
 Snapshots:   0 total
-Time:        103.362 s
+Time:        101.371 s
 Ran all test suites.
