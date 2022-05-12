@@ -149,6 +149,7 @@ export function RequirementsViewer({
                     variant="contained"
                     color="primary"
                     startIcon={<Visibility />}
+                    data-testid="showRequirementsButton"
                     onClick={() => {
                         setShowCourseList(true);
                     }}
