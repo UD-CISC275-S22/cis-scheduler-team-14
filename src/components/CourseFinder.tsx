@@ -16,7 +16,6 @@ export function CourseFinder({
     setPool: (newPool: Course[]) => void;
 }): JSX.Element {
     const [query, setQuery] = useState<string>("");
-
     /** CSS Styles to be used in CourseFinder */
     const CourseFinderStyles = {
         /** CSS Style for the individual course div's */
@@ -53,7 +52,8 @@ export function CourseFinder({
         course_pool_container: {
             backgroundColor: "lightcyan",
             alignContent: "center",
-            padding: "10px"
+            padding: "10px",
+            overflow: "hidden"
         } as React.CSSProperties
     };
 
