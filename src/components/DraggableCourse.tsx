@@ -1,6 +1,7 @@
 import { useDrag } from "react-dnd";
 import { Course, getCourseString } from "../interfaces/course";
-import React from "react";
+import React, { useState } from "react";
+import { Popover, Typography } from "@mui/material";
 
 const DraggableCourseStyle = {
     /** CSS Style for a course in the Course Pool */
@@ -28,15 +29,48 @@ export function DraggableCourse({ course }: { course: Course }): JSX.Element {
         [course]
     );
 
+    const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
+    /** Handler functions and implementation for popovers from https://mui.com/material-ui/react-popover/ */
+    const handlePopoverOpen = (event: React.MouseEvent<HTMLElement>) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handlePopoverClose = () => {
+        setAnchorEl(null);
+    };
+    const open = Boolean(anchorEl);
+    const popoverMessage = "Drag into a semester\nto add to your plan";
+
     //Drag and dropable class component for use in CourseFinder.tsx coursepool
     return (
         <div
             className="draggable-course"
             ref={dragRef}
             style={DraggableCourseStyle.course_pool_individual}
+            onMouseEnter={handlePopoverOpen}
+            onMouseLeave={handlePopoverClose}
         >
             <h5>{getCourseString(course)}</h5>
             {isDragging}
+            <Popover
+                id="mouse-over-popover"
+                sx={{
+                    pointerEvents: "none"
+                }}
+                open={open}
+                anchorEl={anchorEl}
+                anchorOrigin={{
+                    vertical: "bottom",
+                    horizontal: "left"
+                }}
+                transformOrigin={{
+                    vertical: "top",
+                    horizontal: "left"
+                }}
+                onClose={handlePopoverClose}
+            >
+                <Typography sx={{ p: 1 }}>{popoverMessage}</Typography>
+            </Popover>
         </div>
     );
 }

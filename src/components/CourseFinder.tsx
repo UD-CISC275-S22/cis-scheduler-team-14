@@ -14,7 +14,6 @@ export function CourseFinder({
     setPool: (newPool: Course[]) => void;
 }): JSX.Element {
     const [query, setQuery] = useState<string>("");
-
     /** CSS Styles to be used in CourseFinder */
     const CourseFinderStyles = {
         /** CSS Style for the individual course div's */
@@ -51,7 +50,8 @@ export function CourseFinder({
         course_pool_container: {
             backgroundColor: "lightcyan",
             alignContent: "center",
-            padding: "10px"
+            padding: "10px",
+            overflow: "hidden"
         } as React.CSSProperties
     };
 
@@ -106,10 +106,7 @@ export function CourseFinder({
                 <p></p>
                 <h4>Course Pool</h4>
                 {pool.length === 0 && (
-                    <p>
-                        Click a course to add or remove it from your course
-                        pool!
-                    </p>
+                    <p>Click a course to add it to your course pool!</p>
                 )}
                 {pool.map((course: Course) => (
                     <div
