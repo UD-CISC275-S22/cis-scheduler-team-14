@@ -2,7 +2,7 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-PASS src/tests/PlanView.test.tsx (93.824 s)
+PASS src/tests/PlanView.test.tsx (123.265 s)
   ● Console
 
     console.error
@@ -374,7 +374,7 @@ PASS src/tests/WelcomeModal.test.tsx
       at setInitialProperties (node_modules/react-dom/cjs/react-dom.development.js:9041:5)
       at finalizeInitialChildren (node_modules/react-dom/cjs/react-dom.development.js:10201:3)
 
-PASS src/tests/ImportCsv.test.tsx
+PASS src/tests/ImportCsv.test.tsx (5.027 s)
   ● Console
 
     console.error
@@ -450,5 +450,5 @@ All files                             |   62.86 |    27.74 |      60 |    63.6 |
 Test Suites: 3 passed, 3 total
 Tests:       15 passed, 15 total
 Snapshots:   0 total
-Time:        103.712 s
+Time:        134.666 s
 Ran all test suites.
