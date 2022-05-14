@@ -98,6 +98,12 @@ export function SemesterView({
                 {" " + numOfCredits} Credit
                 {numOfCredits > 1 || numOfCredits === 0 ? "s" : ""}
             </h6>
+            {numOfCredits >= 21 ? (
+                <h6 style={{ fontStyle: "italic", fontSize: "small" }}>
+                    You have 21 or more credits in this semester. You may need
+                    permission from your advisor to take this course load.
+                </h6>
+            ) : null}
             <CourseList
                 courses={courses}
                 updateCourses={updateCourses}

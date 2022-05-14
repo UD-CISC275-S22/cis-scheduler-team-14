@@ -1,4 +1,15 @@
-import { Visibility, VisibilityOff } from "@mui/icons-material";
+import {
+    BiotechOutlined,
+    CalculateOutlined,
+    DataObjectOutlined,
+    DataThresholdingOutlined,
+    FunctionsOutlined,
+    LockOutlined,
+    NumbersOutlined,
+    SmartToyOutlined,
+    Visibility,
+    VisibilityOff
+} from "@mui/icons-material";
 import {
     Button,
     FormControl,
@@ -105,25 +116,67 @@ export function RequirementsViewer({
                             label="Concentration"
                         >
                             <MenuItem value={"AI"}>
+                                {
+                                    <SmartToyOutlined
+                                        style={{ marginRight: "8px" }}
+                                    />
+                                }
                                 Artificial Intelligence & Robotics
                             </MenuItem>
                             <MenuItem value={"Bioinformatics"}>
+                                {
+                                    <BiotechOutlined
+                                        style={{ marginRight: "8px" }}
+                                    />
+                                }
                                 Bioinformatics
                             </MenuItem>
                             <MenuItem value={"Cybersecurity"}>
+                                {
+                                    <LockOutlined
+                                        style={{ marginRight: "8px" }}
+                                    />
+                                }
                                 Cybersecurity
                             </MenuItem>
-                            <MenuItem value={"DataSci"}>Data Science</MenuItem>
+                            <MenuItem value={"DataSci"}>
+                                {
+                                    <DataThresholdingOutlined
+                                        style={{ marginRight: "8px" }}
+                                    />
+                                }
+                                Data Science
+                            </MenuItem>
                             <MenuItem value={"HighPerfMath"}>
+                                {
+                                    <CalculateOutlined
+                                        style={{ marginRight: "8px" }}
+                                    />
+                                }
                                 High Performance Computing - Applied Math
                             </MenuItem>
                             <MenuItem value={"HighPerfData"}>
+                                {
+                                    <DataObjectOutlined
+                                        style={{ marginRight: "8px" }}
+                                    />
+                                }
                                 High Performance Computing - Data
                             </MenuItem>
                             <MenuItem value={"TheoryDiscrete"}>
+                                {
+                                    <NumbersOutlined
+                                        style={{ marginRight: "8px" }}
+                                    />
+                                }
                                 Theory and Computation - Discrete
                             </MenuItem>
                             <MenuItem value={"TheoryContinuous"}>
+                                {
+                                    <FunctionsOutlined
+                                        style={{ marginRight: "8px" }}
+                                    />
+                                }
                                 Theory and Computation - Continuous
                             </MenuItem>
                         </Select>

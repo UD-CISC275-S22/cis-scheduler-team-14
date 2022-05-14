@@ -1,4 +1,4 @@
-import { Clear } from "@mui/icons-material";
+import { Clear, MouseOutlined } from "@mui/icons-material";
 import { Button } from "@mui/material";
 import React, { useState } from "react";
 import { Form } from "react-bootstrap";
@@ -21,7 +21,7 @@ export function CourseFinder({
         /** CSS Style for the individual course div's */
         course_individual: {
             height: 50,
-            backgroundColor: "gainsboro",
+            backgroundColor: "#ebebeb",
             alignContent: "center",
             outlineStyle: "solid",
             outlineWidth: "thin"
@@ -79,14 +79,34 @@ export function CourseFinder({
     return (
         <div style={CourseFinderStyles.course_container}>
             <h3 style={{ textAlign: "center" }}>Course Lookup</h3>
+            <h6
+                style={{
+                    fontStyle: "italic",
+                    textAlign: "center",
+                    fontSize: "small"
+                }}
+            >
+                Search for a course by course code below.
+            </h6>
             <Form.Group controlId="formCourseSearch">
                 <Form.Control
                     placeholder="Enter course name or code"
                     value={query}
                     onChange={updateQuery}
-                    size="sm"
+                    style={{ textAlign: "center" }}
                 />
             </Form.Group>
+            <p></p>
+            <h6
+                style={{
+                    fontStyle: "italic",
+                    textAlign: "center",
+                    fontSize: "small"
+                }}
+            >
+                Click a course from the list below to add it to your Course
+                Pool.
+            </h6>
             <p></p>
             <div style={CourseFinderStyles.course_scroll_list}>
                 {COURSES.filter(containsQuery).map(
@@ -99,6 +119,7 @@ export function CourseFinder({
                                 style={CourseFinderStyles.course_individual}
                                 onClick={() => setPool([...pool, course])}
                             >
+                                <MouseOutlined />
                                 {getCourseString(course)}
                             </div>
                         )
@@ -108,10 +129,16 @@ export function CourseFinder({
                 <p></p>
                 <h4 style={{ textAlign: "center" }}>Course Pool</h4>
                 {pool.length === 0 && (
-                    <p style={{ textAlign: "center" }}>
-                        Click a course to add or remove it from your course
-                        pool!
-                    </p>
+                    <h6
+                        style={{
+                            fontStyle: "italic",
+                            textAlign: "center",
+                            fontSize: "small"
+                        }}
+                    >
+                        Your Course Pool is empty. Click a course from the list
+                        above to add it.
+                    </h6>
                 )}
                 {pool.map((course: Course) => (
                     <div
@@ -121,7 +148,6 @@ export function CourseFinder({
                         <DraggableCourse course={course}></DraggableCourse>
                     </div>
                 ))}
-                {pool.length >= 1 && <p>Drag courses into your plan!</p>}
                 <div style={{ textAlign: "center" }}>
                     <Button
                         type="button"
