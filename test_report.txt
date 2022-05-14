@@ -2,7 +2,7 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-PASS src/tests/PlanView.test.tsx (123.265 s)
+PASS src/tests/PlanView.test.tsx (140.956 s)
   ● Console
 
     console.error
@@ -268,7 +268,7 @@ PASS src/tests/PlanView.test.tsx (123.265 s)
           at div
           at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/RequirementList.tsx:9:5)
           at div
-          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/RequirementsViewer.tsx:15:5)
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/RequirementsViewer.tsx:26:5)
           at div
           at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/PlanView.tsx:17:5)
           at div
@@ -316,7 +316,7 @@ PASS src/tests/PlanView.test.tsx (123.265 s)
           at div
           at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/RequirementList.tsx:9:5)
           at div
-          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/RequirementsViewer.tsx:15:5)
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/RequirementsViewer.tsx:26:5)
           at div
           at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/PlanView.tsx:17:5)
           at div
@@ -374,7 +374,7 @@ PASS src/tests/WelcomeModal.test.tsx
       at setInitialProperties (node_modules/react-dom/cjs/react-dom.development.js:9041:5)
       at finalizeInitialChildren (node_modules/react-dom/cjs/react-dom.development.js:10201:3)
 
-PASS src/tests/ImportCsv.test.tsx (5.027 s)
+PASS src/tests/ImportCsv.test.tsx (5.536 s)
   ● Console
 
     console.error
@@ -403,16 +403,16 @@ PASS src/tests/ImportCsv.test.tsx (5.027 s)
 --------------------------------------|---------|----------|---------|---------|-------------------
 File                                  | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 --------------------------------------|---------|----------|---------|---------|-------------------
-All files                             |   62.86 |    27.74 |      60 |    63.6 |                   
+All files                             |   63.49 |    27.47 |   60.52 |   64.13 |                   
  src                                  |     100 |      100 |     100 |     100 |                   
   App.tsx                             |     100 |      100 |     100 |     100 |                   
- src/components                       |   67.41 |    52.67 |   66.97 |   67.61 |                   
+ src/components                       |    68.1 |    54.67 |   67.56 |    68.2 |                   
   AddPlanModal.tsx                    |   84.21 |       50 |     100 |   83.33 | 26,38,42          
   AddSemesterModal.tsx                |   65.38 |    42.85 |   83.33 |   65.38 | 31,47,51-56,62-63 
-  CourseFinder.tsx                    |   61.53 |     87.5 |   44.44 |   61.53 | 74,95-131         
+  CourseFinder.tsx                    |   61.53 |      100 |   44.44 |   61.53 | 74,115-157        
   CourseList.tsx                      |     100 |      100 |     100 |     100 |                   
-  CourseView.tsx                      |     100 |      100 |     100 |     100 |                   
-  DraggableCourse.tsx                 |    9.09 |      100 |       0 |    9.09 | 21-45             
+  CourseView.tsx                      |   94.11 |    92.85 |     100 |   92.85 | 30                
+  DraggableCourse.tsx                 |    9.09 |      100 |       0 |    9.09 | 22-46             
   EditCourseModal.tsx                 |     100 |      100 |     100 |     100 |                   
   ExportCsv.tsx                       |       0 |      100 |       0 |       0 | 17-54             
   ImportCsv.tsx                       |   42.85 |        0 |      40 |   41.66 | 15-29             
@@ -421,14 +421,14 @@ All files                             |   62.86 |    27.74 |      60 |    63.6 |
   PlanTabs.tsx                        |    92.3 |      100 |   85.71 |   91.66 | 62                
   PlanView.tsx                        |   86.95 |       50 |      80 |   94.73 | 50                
   RequirementList.tsx                 |     100 |       50 |     100 |     100 | 41                
-  RequirementsViewer.tsx              |   42.85 |       80 |   33.33 |   42.85 | 54-142            
+  RequirementsViewer.tsx              |   42.85 |       80 |   33.33 |   42.85 | 65-195            
   SemesterList.tsx                    |     100 |      100 |     100 |     100 |                   
-  SemesterView.tsx                    |   68.18 |    63.63 |      75 |   68.18 | 29-39             
+  SemesterView.tsx                    |   68.18 |     62.5 |      75 |   68.18 | 29-39             
   WelcomeModal.tsx                    |   83.33 |      100 |   66.66 |     100 |                   
- src/components/MajorRequirementLists |   26.78 |     17.4 |      25 |   28.57 |                   
+ src/components/MajorRequirementLists |   26.78 |     15.5 |      25 |   28.57 |                   
   ArtificialIntelligenceConc.tsx      |     100 |       50 |     100 |     100 | 60-118            
   BARequirements.tsx                  |       0 |        0 |       0 |       0 | 20-49             
-  BSMajorRequirements.tsx             |     100 |    51.51 |     100 |     100 | 25-235            
+  BSMajorRequirements.tsx             |     100 |    42.42 |     100 |     100 | 16-235            
   BSRequirements.tsx                  |      80 |    71.42 |   66.66 |      80 | 19                
   BioinformaticsConc.tsx              |       0 |        0 |       0 |       0 | 17-38             
   CybersecurityConc.tsx               |       0 |        0 |       0 |       0 | 15-52             
@@ -450,5 +450,5 @@ All files                             |   62.86 |    27.74 |      60 |    63.6 |
 Test Suites: 3 passed, 3 total
 Tests:       15 passed, 15 total
 Snapshots:   0 total
-Time:        134.666 s
+Time:        152.913 s
 Ran all test suites.
