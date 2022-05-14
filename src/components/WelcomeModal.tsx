@@ -1,7 +1,7 @@
 import { Modal } from "react-bootstrap";
 import { Button } from "@mui/material";
 import React from "react";
-import { HelpOutlined } from "@mui/icons-material";
+import { HelpOutlineOutlined } from "@mui/icons-material";
 
 export function Welcomemessage(): JSX.Element {
     const [open, setOpen] = React.useState(false);
@@ -12,7 +12,7 @@ export function Welcomemessage(): JSX.Element {
         <div>
             <Button
                 variant="contained"
-                startIcon={<HelpOutlined />}
+                startIcon={<HelpOutlineOutlined />}
                 color="success"
                 className="m-4"
                 onClick={handleOpen}
@@ -30,12 +30,15 @@ export function Welcomemessage(): JSX.Element {
                         Welcome to the UDCIS Course Planner!
                     </Modal.Title>
                 </Modal.Header>
-                <Modal.Body>
-                    This website helps you plan out what courses you must take
-                    to graduate with a Computer Science degree. We have plans
-                    where you can add semesters and course to organize what
-                    classes you need to take every semester. Hopefully this
-                    website will ease your stress about planning classes :)
+                <Modal.Body style={{ textAlign: "center" }}>
+                    <p>
+                        This website helps you plan out what courses you must
+                        take to graduate with a Computer Science degree. We have
+                        plans where you can add semesters and course to organize
+                        what classes you need to take every semester. Hopefully
+                        this website will ease your stress about planning
+                        classes :)
+                    </p>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="contained" onClick={handleClose}>
