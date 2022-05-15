@@ -2,6 +2,7 @@
 import { Course } from "./course";
 
 /** Season describes what season the semester takes place */
+
 export enum Season {
     winter = "Winter",
     spring = "Spring",
