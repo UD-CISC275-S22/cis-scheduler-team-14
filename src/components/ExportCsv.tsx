@@ -1,7 +1,9 @@
-import { Button } from "react-bootstrap";
 import { Course } from "../interfaces/course";
 import React from "react";
 import { Semester } from "../interfaces/semester";
+import { Button } from "@mui/material";
+import { FileDownload } from "@mui/icons-material";
+import { Plan } from "../interfaces/plan";
 
 //import React from "react";
 //import { Button } from "@mui/material";
@@ -17,6 +19,9 @@ export function ExportCsv({
     //const content: Course[] = [];
     //Need to make a nested semester and plan!
     function arrayToCsv(data: Course[]) {
+        // let idNumber: Plan;
+        // let whatYear: Semester;
+        // //let whatSeason: Season;
         const tempData = data.map(
             (row) => `${row.name},${row.code}, ${row.credits}`
         );
@@ -48,7 +53,8 @@ export function ExportCsv({
         <div>
             <Button
                 type="button"
-                className="btn btn-success"
+                variant="outlined"
+                startIcon={<FileDownload />}
                 onClick={() => downloadBlob(content.flat(), "CsvExport.CSV")}
             >
                 Export Your Plan

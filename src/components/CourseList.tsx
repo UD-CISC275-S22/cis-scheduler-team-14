@@ -29,6 +29,7 @@ export function CourseList({
                             course={course}
                             updateCourse={updateCourse}
                             deleteCourse={deleteCourse}
+                            courses={courses}
                         ></CourseView>
                     </div>
                 ))}

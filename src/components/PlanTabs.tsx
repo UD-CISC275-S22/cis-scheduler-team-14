@@ -98,7 +98,9 @@ export function PlanTabs({
                                 ></PlanView>
                             </Col>
                             <Col xs={6} md={4}>
-                                <div>
+                                <div
+                                    style={{ position: "sticky", top: "18px" }}
+                                >
                                     <CourseFinder
                                         courseData={courseCatalog}
                                         pool={pool}

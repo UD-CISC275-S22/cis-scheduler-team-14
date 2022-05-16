@@ -7,7 +7,8 @@ export enum Season {
     winter = "Winter",
     spring = "Spring",
     summer = "Summer",
-    fall = "Fall"
+    fall = "Fall",
+    invalid = ""
 }
 
 /** A representation of a Semester that classes are scheduled in */

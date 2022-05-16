@@ -1,12 +1,12 @@
-//import { HelpOutlined } from "@mui/icons-material";
+//import catalog_json from "../data/catalog.json";
+import { FileUpload } from "@mui/icons-material";
+import { Button } from "@mui/material";
+import { Form, Modal } from "react-bootstrap";
 import React, { useState } from "react";
-import { Button, Form, Modal } from "react-bootstrap";
-import { Course, getCourseString } from "../interfaces/course";
-import catalog_json from "../data/catalog.json";
+import { Course } from "../interfaces/course";
 import { Season, Semester } from "../interfaces/semester";
-import { CourseList } from "./CourseList";
-import { stringify } from "querystring";
 import { Plan } from "../interfaces/plan";
+import { PlanView } from "./PlanView";
 
 //data looks like this
 //107
@@ -25,15 +25,67 @@ export function ImportCsv(): JSX.Element {
     // You want the actual data storage useState, but also need something
     // to handle the fact that the parsing can fail!
     // ...
-    const [plans, setPlans] = useState<Plan[]>([]);
-    const [error, setError] = useState<string | null>(null);
+    // const [plans, setPlans] = useState<Plan[]>([]);
+    // const [error, setError] = useState<string | null>(null);
     // ...
+    //getfile name from modal dialog
+    //open file
+    //put content of file into rawData-> string
+    //call loadCsvData with rawData
+    //update data from appplication
+    //update display-need to be a new function
+    // function uploadFile(event: React.ChangeEvent<HTMLInputElement>) {
+    //     // Might have removed the file, need to check that the files exist
+    //     if (event.target.files && event.target.files.length) {
+    //         // Get the first filename
+    //         const filename = event.target.files[0];
+    //         // Create a reader
+    //         const reader = new FileReader();
+    //         // Create lambda callback to handle when we read the file
+    //         reader.onload = (loadEvent) => {
+    //             // Target might be null, so provide default error value
+    //             const newContent =
+    //                 loadEvent.target?.result || "Data was not loaded";
+    //             // FileReader provides string or ArrayBuffer, force it to be string
+    //             setContent(newContent as string);
+    //         };
+    //         // Actually read the file
+    //         reader.readAsText(filename);
+    //     }
+    // }
+    function planWebsite() {
+        loadCsvData;
+        PlanView;
+    }
+
+    function readFile(event: React.ChangeEvent<HTMLInputElement>) {
+        // Might have removed the file, need to check that the files exist
+        if (event.target.files && event.target.files.length) {
+            // Get the first filename
+            const filename = event.target.files[0];
+            // Create a reader
+            const reader = new FileReader();
+            // Create lambda callback to handle when we read the file
+            reader.onload = (loadEvent) => {
+                // Target might be null, so provide default error value
+                const newContent =
+                    loadEvent.target?.result || "Data was not loaded";
+                // FileReader provides string or ArrayBuffer, force it to be string
+                setContent(newContent as string);
+                const newPlan = loadCsvData(newContent as string);
+                return newPlan;
+            };
+            // Actually read the file
+            reader.readAsText(filename);
+        }
+    }
 
     // Here's the kickoff function. Takes in a raw glob of string data should return a plan
     //make id-> string to number
     function loadCsvData(rawData: string): Plan {
         // Break it up into rows
         const lines = rawData.split("\n");
+        console.log(lines);
         /// Fancy array destructing to get "first" and "rest" elements
         //const [header, ...body] = rows;
         const metadata = lines[0];
@@ -65,41 +117,19 @@ export function ImportCsv(): JSX.Element {
         //     setError("Body is corrupted!");
         // }
     }
+
     function getSeason(oneseason: string): Season {
         if (oneseason === "Fall") {
-            enum Season {
-                winter = "",
-                spring = "",
-                summer = "",
-                fall = "Fall"
-            }
             return Season.fall;
         } else if (oneseason === "Spring") {
-            enum Season {
-                winter = "",
-                spring = "Spring",
-                summer = "",
-                fall = ""
-            }
             return Season.spring;
         } else if (oneseason === "Winter") {
-            enum Season {
-                winter = "Winter",
-                spring = "",
-                summer = "",
-                fall = ""
-            }
             return Season.winter;
         } else if (oneseason === "Summer") {
-            enum Season {
-                winter = "",
-                spring = "",
-                summer = "Summer",
-                fall = ""
-            }
             return Season.summer;
+        } else {
+            return Season.invalid;
         }
-        return Season;
     }
     //make a helper function that takes my index - courses and made it to a number
     //make a helper function that will take the semester number and turn it into a string ex 2020 -> "2020"
@@ -110,14 +140,19 @@ export function ImportCsv(): JSX.Element {
             const year = +cells[0];
             const season = cells[1];
             const courseList = cells.slice(2);
-            return { year, season, courses: getCourseList(courseList) };
+            return {
+                year,
+                season: getSeason(season),
+                courses: getCourseList(courseList)
+            };
         });
     }
     //Change map tp filter so you find the course that has the code for ex.
     // catalog_json.filter((data: string )) => data.code = courseString
     function getCourseList(acourse: string[]): Course[] {
+        let catalog: Record<string, Course>;
         return acourse.map(
-            (courseString: string): Course => catalog_json[courseString]
+            (courseString: string): Course => catalog[courseString]
         );
     }
 
@@ -192,8 +227,8 @@ export function ImportCsv(): JSX.Element {
         <div>
             <Button
                 type="button"
-                className="btn btn-success"
-                href="#contained-buttons"
+                variant="outlined"
+                startIcon={<FileUpload />}
                 onClick={handleOpen}
             >
                 Import Your Plan
@@ -207,12 +242,15 @@ export function ImportCsv(): JSX.Element {
                 <Modal.Header closeButton>
                     <Modal.Title></Modal.Title>
                 </Modal.Header>
-                <Modal.Body>
+                <div>
                     <pre style={{ overflow: "scroll", height: "100px" }}>
                         {content}
                     </pre>
-                    onClick= {loadCsvData}
-                </Modal.Body>
+                    <Form.Group controlId="exampleForm">
+                        <Form.Label>Upload a file</Form.Label>
+                        <Form.Control type="file" onChange={readFile} />
+                    </Form.Group>
+                </div>
                 <Modal.Footer>
                     <Button
                         type="button"
@@ -220,6 +258,13 @@ export function ImportCsv(): JSX.Element {
                         onClick={handleClose}
                     >
                         Close
+                    </Button>
+                    <Button
+                        type="button"
+                        className="btn btn-success"
+                        onClick={planWebsite}
+                    >
+                        Add Import File Data To Website
                     </Button>
                 </Modal.Footer>
             </Modal>

@@ -43,7 +43,6 @@ function App(): JSX.Element {
         <DndProvider backend={HTML5Backend}>
             <img src={headerimg} width="100%" data-testid="header-image" />
             <div style={{ textAlign: "center", margin: "auto" }}>
-                <p></p>
                 <div>
                     <Welcomemessage></Welcomemessage>
                 </div>
@@ -53,7 +52,6 @@ function App(): JSX.Element {
                     variant="contained"
                     startIcon={<Add />}
                     color="success"
-                    className="m-4"
                     onClick={handleShowAddPlanModal}
                     data-testid="addPlanButton"
                     style={{ width: "50%" }}
