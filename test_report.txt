@@ -2,7 +2,7 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-PASS src/tests/PlanView.test.tsx (140.956 s)
+PASS src/tests/PlanView.test.tsx (140.857 s)
   ● Console
 
     console.error
@@ -348,7 +348,7 @@ PASS src/tests/PlanView.test.tsx (140.956 s)
       at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
       at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
 
-PASS src/tests/WelcomeModal.test.tsx
+PASS src/tests/WelcomeModal.test.tsx (5.616 s)
   ● Console
 
     console.error
@@ -374,8 +374,31 @@ PASS src/tests/WelcomeModal.test.tsx
       at setInitialProperties (node_modules/react-dom/cjs/react-dom.development.js:9041:5)
       at finalizeInitialChildren (node_modules/react-dom/cjs/react-dom.development.js:10201:3)
 
-PASS src/tests/ImportCsv.test.tsx (5.536 s)
+PASS src/tests/ImportCsv.test.tsx
   ● Console
+
+    console.error
+      Warning: Functions are not valid as a React child. This may happen if you return a Component instead of <Component /> from render. Or maybe you meant to call this function rather than return it.
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-bootstrap/cjs/FormGroup.js:19:3)
+          at div
+          at div
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-bootstrap/cjs/ModalDialog.js:21:3)
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@restart/ui/cjs/Modal.js:75:5)
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-bootstrap/cjs/Modal.js:85:3)
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/ImportCsv.tsx:16:5)
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
+      at warnOnFunctionType (node_modules/react-dom/cjs/react-dom.development.js:13247:5)
+      at createChild (node_modules/react-dom/cjs/react-dom.development.js:13474:9)
+      at reconcileChildrenArray (node_modules/react-dom/cjs/react-dom.development.js:13719:25)
+      at mountChildFibers (node_modules/react-dom/cjs/react-dom.development.js:14125:14)
+      at reconcileChildren (node_modules/react-dom/cjs/react-dom.development.js:16990:28)
+      at updateHostComponent (node_modules/react-dom/cjs/react-dom.development.js:17632:3)
 
     console.error
       Warning: Received `false` for a non-boolean attribute `fade`.
@@ -389,7 +412,7 @@ PASS src/tests/ImportCsv.test.tsx (5.536 s)
           at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@restart/ui/cjs/Modal.js:75:5)
           at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-bootstrap/cjs/Modal.js:85:3)
           at div
-          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/ImportCsv.tsx:8:35)
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/ImportCsv.tsx:16:5)
 
       at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
       at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
@@ -400,13 +423,14 @@ PASS src/tests/ImportCsv.test.tsx (5.536 s)
       at setInitialProperties (node_modules/react-dom/cjs/react-dom.development.js:9041:5)
       at finalizeInitialChildren (node_modules/react-dom/cjs/react-dom.development.js:10201:3)
 
+PASS src/tests/ExportCsv.test.tsx (5.211 s)
 --------------------------------------|---------|----------|---------|---------|-------------------
 File                                  | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 --------------------------------------|---------|----------|---------|---------|-------------------
-All files                             |   63.49 |    27.47 |   60.52 |   64.13 |                   
+All files                             |   57.46 |    26.88 |   58.12 |   57.57 |                   
  src                                  |     100 |      100 |     100 |     100 |                   
   App.tsx                             |     100 |      100 |     100 |     100 |                   
- src/components                       |    68.1 |    54.67 |   67.56 |    68.2 |                   
+ src/components                       |   59.55 |       51 |   63.86 |   59.14 |                   
   AddPlanModal.tsx                    |   84.21 |       50 |     100 |   83.33 | 26,38,42          
   AddSemesterModal.tsx                |   65.38 |    42.85 |   83.33 |   65.38 | 31,47,51-56,62-63 
   CourseFinder.tsx                    |   61.53 |      100 |   44.44 |   61.53 | 74,115-157        
@@ -414,12 +438,12 @@ All files                             |   63.49 |    27.47 |   60.52 |   64.13 |
   CourseView.tsx                      |   94.11 |    92.85 |     100 |   92.85 | 30                
   DraggableCourse.tsx                 |    9.09 |      100 |       0 |    9.09 | 22-46             
   EditCourseModal.tsx                 |     100 |      100 |     100 |     100 |                   
-  ExportCsv.tsx                       |       0 |      100 |       0 |       0 | 17-54             
-  ImportCsv.tsx                       |   42.85 |        0 |      40 |   41.66 | 15-29             
+  ExportCsv.tsx                       |    12.5 |      100 |   14.28 |   13.33 | 16-41,49          
+  ImportCsv.tsx                       |   15.09 |        0 |   16.66 |   13.72 | 28-129            
   MajorRequirementList.tsx            |     100 |    52.94 |     100 |     100 | 50-146            
   MinorRequirementList.tsx            |       0 |        0 |       0 |       0 | 16-36             
   PlanTabs.tsx                        |    92.3 |      100 |   85.71 |   91.66 | 62                
-  PlanView.tsx                        |   86.95 |       50 |      80 |   94.73 | 50                
+  PlanView.tsx                        |   83.33 |       50 |   72.72 |      90 | 50,155            
   RequirementList.tsx                 |     100 |       50 |     100 |     100 | 41                
   RequirementsViewer.tsx              |   42.85 |       80 |   33.33 |   42.85 | 65-195            
   SemesterList.tsx                    |     100 |      100 |     100 |     100 |                   
@@ -447,8 +471,8 @@ All files                             |   63.49 |    27.47 |   60.52 |   64.13 |
   semester.ts                         |       0 |        0 |       0 |       0 |                   
 --------------------------------------|---------|----------|---------|---------|-------------------
 
-Test Suites: 3 passed, 3 total
-Tests:       15 passed, 15 total
+Test Suites: 4 passed, 4 total
+Tests:       16 passed, 16 total
 Snapshots:   0 total
-Time:        152.913 s
+Time:        158.177 s
 Ran all test suites.
