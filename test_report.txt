@@ -2,7 +2,7 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-PASS src/tests/PlanView.test.tsx (140.857 s)
+PASS src/tests/PlanView.test.tsx (164.638 s)
   ● Console
 
     console.error
@@ -348,7 +348,460 @@ PASS src/tests/PlanView.test.tsx (140.857 s)
       at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
       at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
 
-PASS src/tests/WelcomeModal.test.tsx (5.616 s)
+FAIL src/tests/CourseFinder.test.tsx (29.404 s)
+  ● Console
+
+    console.error
+      Warning: validateDOMNesting(...): <h3> cannot appear as a descendant of <p>.
+          at h3
+          at div
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/PlanView.tsx:17:5)
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-bootstrap/cjs/Col.js:72:8)
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-bootstrap/cjs/Row.js:22:3)
+          at p
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@emotion/react/dist/emotion-element-e89f38a3.cjs.dev.js:64:23)
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@mui/material/node/Typography/Typography.js:108:22)
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@emotion/react/dist/emotion-element-e89f38a3.cjs.dev.js:64:23)
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@mui/system/createBox.js:43:19)
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/PlanTabs.tsx:20:13)
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@emotion/react/dist/emotion-element-e89f38a3.cjs.dev.js:64:23)
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@mui/system/createBox.js:43:19)
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/PlanTabs.tsx:48:5)
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dnd/dist/cjs/core/DndProvider.js:41:23)
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/App.tsx:32:31)
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
+      at validateDOMNesting (node_modules/react-dom/cjs/react-dom.development.js:10083:7)
+      at createInstance (node_modules/react-dom/cjs/react-dom.development.js:10181:5)
+      at completeWork (node_modules/react-dom/cjs/react-dom.development.js:19464:28)
+      at completeUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22812:16)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
+
+    console.error
+      Warning: validateDOMNesting(...): <h4> cannot appear as a descendant of <p>.
+          at h4
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/SemesterView.tsx:11:5)
+          at div
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-bootstrap/cjs/Stack.js:23:7)
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/SemesterList.tsx:8:5)
+          at div
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/PlanView.tsx:17:5)
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-bootstrap/cjs/Col.js:72:8)
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-bootstrap/cjs/Row.js:22:3)
+          at p
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@emotion/react/dist/emotion-element-e89f38a3.cjs.dev.js:64:23)
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@mui/material/node/Typography/Typography.js:108:22)
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@emotion/react/dist/emotion-element-e89f38a3.cjs.dev.js:64:23)
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@mui/system/createBox.js:43:19)
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/PlanTabs.tsx:20:13)
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@emotion/react/dist/emotion-element-e89f38a3.cjs.dev.js:64:23)
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@mui/system/createBox.js:43:19)
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/PlanTabs.tsx:48:5)
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dnd/dist/cjs/core/DndProvider.js:41:23)
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/App.tsx:32:31)
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
+      at validateDOMNesting (node_modules/react-dom/cjs/react-dom.development.js:10083:7)
+      at createInstance (node_modules/react-dom/cjs/react-dom.development.js:10181:5)
+      at completeWork (node_modules/react-dom/cjs/react-dom.development.js:19464:28)
+      at completeUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22812:16)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
+
+    console.error
+      Warning: validateDOMNesting(...): <h6> cannot appear as a descendant of <p>.
+          at h6
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/SemesterView.tsx:11:5)
+          at div
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-bootstrap/cjs/Stack.js:23:7)
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/SemesterList.tsx:8:5)
+          at div
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/PlanView.tsx:17:5)
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-bootstrap/cjs/Col.js:72:8)
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-bootstrap/cjs/Row.js:22:3)
+          at p
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@emotion/react/dist/emotion-element-e89f38a3.cjs.dev.js:64:23)
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@mui/material/node/Typography/Typography.js:108:22)
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@emotion/react/dist/emotion-element-e89f38a3.cjs.dev.js:64:23)
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@mui/system/createBox.js:43:19)
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/PlanTabs.tsx:20:13)
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@emotion/react/dist/emotion-element-e89f38a3.cjs.dev.js:64:23)
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@mui/system/createBox.js:43:19)
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/PlanTabs.tsx:48:5)
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dnd/dist/cjs/core/DndProvider.js:41:23)
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/App.tsx:32:31)
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
+      at validateDOMNesting (node_modules/react-dom/cjs/react-dom.development.js:10083:7)
+      at createInstance (node_modules/react-dom/cjs/react-dom.development.js:10181:5)
+      at completeWork (node_modules/react-dom/cjs/react-dom.development.js:19464:28)
+      at completeUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22812:16)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
+
+    console.error
+      Warning: validateDOMNesting(...): <p> cannot appear as a descendant of <p>.
+          at p
+          at div
+          at div
+          at construct (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-collapse/lib/Collapse.js:44:5)
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/CourseView.tsx:10:5)
+          at div
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@emotion/react/dist/emotion-element-e89f38a3.cjs.dev.js:64:23)
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@mui/material/node/Stack/Stack.js:124:22)
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/CourseList.tsx:7:5)
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/SemesterView.tsx:11:5)
+          at div
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-bootstrap/cjs/Stack.js:23:7)
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/SemesterList.tsx:8:5)
+          at div
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/PlanView.tsx:17:5)
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-bootstrap/cjs/Col.js:72:8)
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-bootstrap/cjs/Row.js:22:3)
+          at p
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@emotion/react/dist/emotion-element-e89f38a3.cjs.dev.js:64:23)
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@mui/material/node/Typography/Typography.js:108:22)
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@emotion/react/dist/emotion-element-e89f38a3.cjs.dev.js:64:23)
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@mui/system/createBox.js:43:19)
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/PlanTabs.tsx:20:13)
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@emotion/react/dist/emotion-element-e89f38a3.cjs.dev.js:64:23)
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@mui/system/createBox.js:43:19)
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/PlanTabs.tsx:48:5)
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dnd/dist/cjs/core/DndProvider.js:41:23)
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/App.tsx:32:31)
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
+      at validateDOMNesting (node_modules/react-dom/cjs/react-dom.development.js:10083:7)
+      at createInstance (node_modules/react-dom/cjs/react-dom.development.js:10181:5)
+      at completeWork (node_modules/react-dom/cjs/react-dom.development.js:19464:28)
+      at completeUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22812:16)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
+
+    console.error
+      Warning: validateDOMNesting(...): <div> cannot appear as a descendant of <p>.
+          at div
+          at div
+          at construct (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-collapse/lib/Collapse.js:44:5)
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/CourseView.tsx:10:5)
+          at div
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@emotion/react/dist/emotion-element-e89f38a3.cjs.dev.js:64:23)
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@mui/material/node/Stack/Stack.js:124:22)
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/CourseList.tsx:7:5)
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/SemesterView.tsx:11:5)
+          at div
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-bootstrap/cjs/Stack.js:23:7)
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/SemesterList.tsx:8:5)
+          at div
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/PlanView.tsx:17:5)
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-bootstrap/cjs/Col.js:72:8)
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-bootstrap/cjs/Row.js:22:3)
+          at p
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@emotion/react/dist/emotion-element-e89f38a3.cjs.dev.js:64:23)
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@mui/material/node/Typography/Typography.js:108:22)
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@emotion/react/dist/emotion-element-e89f38a3.cjs.dev.js:64:23)
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@mui/system/createBox.js:43:19)
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/PlanTabs.tsx:20:13)
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@emotion/react/dist/emotion-element-e89f38a3.cjs.dev.js:64:23)
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@mui/system/createBox.js:43:19)
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/PlanTabs.tsx:48:5)
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dnd/dist/cjs/core/DndProvider.js:41:23)
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/App.tsx:32:31)
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
+      at validateDOMNesting (node_modules/react-dom/cjs/react-dom.development.js:10083:7)
+      at createInstance (node_modules/react-dom/cjs/react-dom.development.js:10181:5)
+      at completeWork (node_modules/react-dom/cjs/react-dom.development.js:19464:28)
+      at completeUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22812:16)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
+
+    console.error
+      Warning: validateDOMNesting(...): <h5> cannot appear as a descendant of <p>.
+          at h5
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/DraggableCourse.tsx:20:35)
+          at div
+          at div
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/CourseFinder.tsx:10:5)
+          at div
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-bootstrap/cjs/Col.js:72:8)
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-bootstrap/cjs/Row.js:22:3)
+          at p
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@emotion/react/dist/emotion-element-e89f38a3.cjs.dev.js:64:23)
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@mui/material/node/Typography/Typography.js:108:22)
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@emotion/react/dist/emotion-element-e89f38a3.cjs.dev.js:64:23)
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@mui/system/createBox.js:43:19)
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/PlanTabs.tsx:20:13)
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@emotion/react/dist/emotion-element-e89f38a3.cjs.dev.js:64:23)
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/@mui/system/createBox.js:43:19)
+          at div
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/components/PlanTabs.tsx:48:5)
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/node_modules/react-dnd/dist/cjs/core/DndProvider.js:41:23)
+          at fn (/home/runner/work/cis-scheduler-team-14/cis-scheduler-team-14/src/App.tsx:32:31)
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
+      at validateDOMNesting (node_modules/react-dom/cjs/react-dom.development.js:10083:7)
+      at createInstance (node_modules/react-dom/cjs/react-dom.development.js:10181:5)
+      at completeWork (node_modules/react-dom/cjs/react-dom.development.js:19464:28)
+      at completeUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22812:16)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
+
+  ● Testing CourseFinder › Searching for a course works
+
+    expect(received).toBeInTheDocument()
+
+    received value must be an HTMLElement or an SVGElement.
+    Received has type:  string
+    Received has value: "Introduction to Computer Science II"
+
+      12 |         const searchBar = screen.getByTestId("formCourseSearch");
+      13 |         userEvent.type(searchBar, "CISC 181");
+    > 14 |         expect("Introduction to Computer Science II").toBeInTheDocument();
+         |                                                       ^
+      15 |         expect("ACCT 166: SPECIAL PROBLEM").not.toBeInTheDocument();
+      16 |     });
+      17 |
+
+      at __EXTERNAL_MATCHER_TRAP__ (node_modules/expect/build/index.js:386:30)
+      at Object.toBeInTheDocument (node_modules/expect/build/index.js:387:15)
+      at Object.<anonymous> (src/tests/CourseFinder.test.tsx:14:55)
+
+  ● Testing CourseFinder › Clicking a course adds it to the course pool
+
+    TestingLibraryElementError: Unable to find an element by: [data-testid="draggableCourse"]
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<img[39m
+          [33mdata-testid[39m=[32m"header-image"[39m
+          [33msrc[39m=[32m"background.jpg"[39m
+          [33mwidth[39m=[32m"100%"[39m
+        [36m/>[39m
+        [36m<div[39m
+          [33mstyle[39m=[32m"text-align: center; margin: auto;"[39m
+        [36m>[39m
+          [36m<div>[39m
+            [36m<div>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"MuiButton-root MuiButton-contained MuiButton-containedSuccess MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root m-4 css-ke5b6m-MuiButtonBase-root-MuiButton-root"[39m
+                [33mtabindex[39m=[32m"0"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"MuiButton-startIcon MuiButton-iconSizeMedium css-1d6wzja-MuiButton-startIcon"[39m
+                [36m>[39m
+                  [36m<svg[39m
+                    [33maria-hidden[39m=[32m"true"[39m
+                    [33mclass[39m=[32m"MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"[39m
+                    [33mdata-testid[39m=[32m"HelpOutlineOutlinedIcon"[39m
+                    [33mfocusable[39m=[32m"false"[39m
+                    [33mviewBox[39m=[32m"0 0 24 24"[39m
+                  [36m>[39m
+                    [36m<path[39m
+                      [33md[39m=[32m"M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"[39m
+                    [36m/>[39m
+                  [36m</svg>[39m
+                [36m</span>[39m
+                [0mClick here to learn how to get started![0m
+                [36m<span[39m
+                  [33mclass[39m=[32m"MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"[39m
+                [36m/>[39m
+              [36m</button>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mstyle[39m=[32m"text-align: center; margin: auto;"[39m
+        [36m>[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"MuiButton-root MuiButton-contained MuiButton-containedSuccess MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root  css-ke5b6m-MuiButtonBase-root-MuiButton-root"[39m
+            [33mdata-testid[39m=[32m"addPlanButton"[39m
+            [33mstyle[39m=[32m"width: 50%;"[39m
+            [33mtabindex[39m=[32m"0"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"MuiButton-startIcon MuiButton-iconSizeMedium css-1d6wzja-MuiButton-startIcon"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"[39m
+                [33mdata-testid[39m=[32m"AddIcon"[39m
+                [33mfocusable[39m=[32m"false"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+            [36m</span>[39m
+            [0mAdd Plan[0m
+            [36m<span[39m
+              [33mclass[39m=[32m"MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"[39m
+            [36m/>[39m
+          [36m</button>[39m
+        [36m</div>[39m
+        [36m<div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"MuiBox-root css-8atqhb"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"MuiBox-root css-1gsv261"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"MuiTabs-root css-1ujnqem-MuiTabs-root"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"MuiTabs-scroller MuiTabs-fixed css-jpln7h-MuiTabs-scroller"[39m
+                  [33mstyle[39m=[32m"overflow: hidden; margin-bottom: 0px;"[39m
+                [36m>[39m
+                  [36m<div[39m
+                    [33maria-label[39m=[32m"tabs"[39m
+                    [33mclass[39m=[32m"MuiTabs-flexContainer css-heg063-MuiTabs-flexContainer"[39m
+                    [33mrole[39m=[32m"tablist"[39m
+                  [36m>[39m
+                    [36m<button[39m
+                      [33maria-controls[39m=[32m"simple-tabpanel-0"[39m
+                      [33maria-selected[39m=[32m"true"[39m
+                      [33mclass[39m=[32m"MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary Mui-selected css-1ed6n6u-MuiButtonBase-root-MuiTab-root"[39m
+                      [33mdata-testid[39m=[32m"tab"[39m
+                      [33mid[39m=[32m"simple-tab-0"[39m
+                      [33mrole[39m=[32m"tab"[39m
+                      [33mtabindex[39m=[32m"0"[39m
+                      [33mtype[39m=[32m"button"[39m
+                    [36m>[39m
+                      [0mPlan 1[0m
+                      [36m<span[39m
+                        [33mclass[39m=[32m"MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"[39m
+                      [36m/>[39m
+                    [36m</button>[39m
+                  [36m</div>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"MuiTabs-indicator css-1aquho2-MuiTabs-indicator"[39m
+                    [33mstyle[39m=[32m"left: 0px; width: 0px;"[39m
+                  [36m/>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33maria-labelledby[39m=[32m"simple-tab-0"[39m
+              [33mdata-testid[39m=[32m"tab-panel"[39m
+              [33mid[39m=[32m"simple-tabpanel-0"[39m
+              [33mrole[39m=[32m"tabpanel"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"MuiBox-root css-19kzrtu"[39m
+              [36m>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"[39m
+                [36m>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"row"[39m
+                  [36m>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"col-md-8 col-12"[39m
+                    [36m>[39m
+                      [36m<div>[39m
+                        [36m<div[39m
+                          [33mstyle[39m=[32m"background-color: lightcyan; border-radius: 25px; padding: 10px; border: 1px black; border-style: solid;"[39m
+                        [36m>[39m
+                          [36m<h3[39m
+                            [33mdata-testid[39m=[32m"plan-title"[39m
+                            [33mstyle[39m=[32m"text-align: center;"[39m
+                          [36m>[39m
+                            [0mPlan [0m
+                            [0m1[0m
+                          [36m</h3>[39m
+                          [36m<div>[39m
+                            [36m<div[39m
+                              [33mclass[39m=[32m"vstack gap-3"[39m
+                            [36m>[39m
+               ...
+
+      19 |         const searchCourses = screen.getAllByTestId("searchCourse");
+      20 |         searchCourses[0].click();
+    > 21 |         const addedCourse = screen.getByTestId("draggableCourse");
+         |                                    ^
+      22 |         expect(addedCourse).toContain("ACCT 166: SPECIAL PROBLEM");
+      23 |     });
+      24 |
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at allQuery (node_modules/@testing-library/dom/dist/query-helpers.js:90:38)
+      at query (node_modules/@testing-library/dom/dist/query-helpers.js:62:17)
+      at getByTestId (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/tests/CourseFinder.test.tsx:21:36)
+
+PASS src/tests/WelcomeModal.test.tsx (5.671 s)
   ● Console
 
     console.error
@@ -374,7 +827,7 @@ PASS src/tests/WelcomeModal.test.tsx (5.616 s)
       at setInitialProperties (node_modules/react-dom/cjs/react-dom.development.js:9041:5)
       at finalizeInitialChildren (node_modules/react-dom/cjs/react-dom.development.js:10201:3)
 
-PASS src/tests/ImportCsv.test.tsx
+PASS src/tests/ImportCsv.test.tsx (6.313 s)
   ● Console
 
     console.error
@@ -423,20 +876,20 @@ PASS src/tests/ImportCsv.test.tsx
       at setInitialProperties (node_modules/react-dom/cjs/react-dom.development.js:9041:5)
       at finalizeInitialChildren (node_modules/react-dom/cjs/react-dom.development.js:10201:3)
 
-PASS src/tests/ExportCsv.test.tsx (5.211 s)
+PASS src/tests/ExportCsv.test.tsx
 --------------------------------------|---------|----------|---------|---------|-------------------
 File                                  | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 --------------------------------------|---------|----------|---------|---------|-------------------
-All files                             |   57.46 |    26.88 |   58.12 |   57.57 |                   
+All files                             |   61.12 |    27.19 |    62.5 |   61.51 |                   
  src                                  |     100 |      100 |     100 |     100 |                   
   App.tsx                             |     100 |      100 |     100 |     100 |                   
- src/components                       |   59.55 |       51 |   63.86 |   59.14 |                   
+ src/components                       |   64.33 |    51.65 |   69.74 |    64.2 |                   
   AddPlanModal.tsx                    |   84.21 |       50 |     100 |   83.33 | 26,38,42          
   AddSemesterModal.tsx                |   65.38 |    42.85 |   83.33 |   65.38 | 31,47,51-56,62-63 
-  CourseFinder.tsx                    |   61.53 |      100 |   44.44 |   61.53 | 74,115-157        
+  CourseFinder.tsx                    |     100 |      100 |     100 |     100 |                   
   CourseList.tsx                      |     100 |      100 |     100 |     100 |                   
   CourseView.tsx                      |   94.11 |    92.85 |     100 |   92.85 | 30                
-  DraggableCourse.tsx                 |    9.09 |      100 |       0 |    9.09 | 22-46             
+  DraggableCourse.tsx                 |   81.81 |      100 |      50 |   81.81 | 36,40             
   EditCourseModal.tsx                 |     100 |      100 |     100 |     100 |                   
   ExportCsv.tsx                       |    12.5 |      100 |   14.28 |   13.33 | 16-41,49          
   ImportCsv.tsx                       |   15.09 |        0 |   16.66 |   13.72 | 28-129            
@@ -471,8 +924,8 @@ All files                             |   57.46 |    26.88 |   58.12 |   57.57 |
   semester.ts                         |       0 |        0 |       0 |       0 |                   
 --------------------------------------|---------|----------|---------|---------|-------------------
 
-Test Suites: 4 passed, 4 total
-Tests:       16 passed, 16 total
+Test Suites: 1 failed, 4 passed, 5 total
+Tests:       2 failed, 17 passed, 19 total
 Snapshots:   0 total
-Time:        158.177 s
+Time:        212.938 s
 Ran all test suites.
