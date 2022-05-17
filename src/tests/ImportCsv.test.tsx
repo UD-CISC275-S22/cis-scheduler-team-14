@@ -4,7 +4,7 @@ import { ImportCsv } from "../components/ImportCsv";
 
 describe("ImportCsv Test", () => {
     beforeEach(() => {
-        render(<ImportCsv />);
+        render(<ImportCsv setPlans={() => void {}}></ImportCsv>);
     });
 
     test("There is a Import Button", () => {
