@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import App from "../App";
 
@@ -11,15 +11,19 @@ describe("Testing CourseFinder", () => {
     test("Searching for a course works", () => {
         const searchBar = screen.getByTestId("formCourseSearch");
         userEvent.type(searchBar, "CISC 181");
-        expect("Introduction to Computer Science II").toBeInTheDocument();
-        expect("ACCT 166: SPECIAL PROBLEM").not.toBeInTheDocument();
+        const correctCourse = screen.getAllByText(
+            "Introduction to Computer Science II"
+        );
+        expect(correctCourse).toHaveLength(1);
+        const badCourse = screen.getAllByText("ACCT 166: SPECIAL PROBLEM");
+        expect(badCourse).toHaveLength(0);
     });
 
     test("Clicking a course adds it to the course pool", () => {
         const searchCourses = screen.getAllByTestId("searchCourse");
         searchCourses[0].click();
-        const addedCourse = screen.getByTestId("draggableCourse");
-        expect(addedCourse).toContain("ACCT 166: SPECIAL PROBLEM");
+        const { getByText } = within(screen.getByTestId("draggableCourse"));
+        expect(getByText("ACCT 166: SPECIAL PROBLEM")).toBeInTheDocument();
     });
 
     test("Clear course pool button works", () => {
