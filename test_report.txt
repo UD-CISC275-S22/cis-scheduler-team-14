@@ -2,7 +2,7 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-PASS src/tests/PlanView.test.tsx (164.638 s)
+PASS src/tests/PlanView.test.tsx (173.172 s)
   ● Console
 
     console.error
@@ -348,7 +348,7 @@ PASS src/tests/PlanView.test.tsx (164.638 s)
       at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
       at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
 
-FAIL src/tests/CourseFinder.test.tsx (29.404 s)
+FAIL src/tests/CourseFinder.test.tsx (29.961 s)
   ● Console
 
     console.error
@@ -616,27 +616,7 @@ FAIL src/tests/CourseFinder.test.tsx (29.404 s)
 
   ● Testing CourseFinder › Searching for a course works
 
-    expect(received).toBeInTheDocument()
-
-    received value must be an HTMLElement or an SVGElement.
-    Received has type:  string
-    Received has value: "Introduction to Computer Science II"
-
-      12 |         const searchBar = screen.getByTestId("formCourseSearch");
-      13 |         userEvent.type(searchBar, "CISC 181");
-    > 14 |         expect("Introduction to Computer Science II").toBeInTheDocument();
-         |                                                       ^
-      15 |         expect("ACCT 166: SPECIAL PROBLEM").not.toBeInTheDocument();
-      16 |     });
-      17 |
-
-      at __EXTERNAL_MATCHER_TRAP__ (node_modules/expect/build/index.js:386:30)
-      at Object.toBeInTheDocument (node_modules/expect/build/index.js:387:15)
-      at Object.<anonymous> (src/tests/CourseFinder.test.tsx:14:55)
-
-  ● Testing CourseFinder › Clicking a course adds it to the course pool
-
-    TestingLibraryElementError: Unable to find an element by: [data-testid="draggableCourse"]
+    TestingLibraryElementError: Unable to find an element with the text: Introduction to Computer Science II. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
 
     Ignored nodes: comments, <script />, <style />
     [36m<body>[39m
@@ -787,21 +767,20 @@ FAIL src/tests/CourseFinder.test.tsx (29.404 s)
                             [36m>[39m
                ...
 
-      19 |         const searchCourses = screen.getAllByTestId("searchCourse");
-      20 |         searchCourses[0].click();
-    > 21 |         const addedCourse = screen.getByTestId("draggableCourse");
-         |                                    ^
-      22 |         expect(addedCourse).toContain("ACCT 166: SPECIAL PROBLEM");
-      23 |     });
-      24 |
+      12 |         const searchBar = screen.getByTestId("formCourseSearch");
+      13 |         userEvent.type(searchBar, "CISC 181");
+    > 14 |         const correctCourse = screen.getAllByText(
+         |                                      ^
+      15 |             "Introduction to Computer Science II"
+      16 |         );
+      17 |         expect(correctCourse).toHaveLength(1);
 
       at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
-      at allQuery (node_modules/@testing-library/dom/dist/query-helpers.js:90:38)
-      at query (node_modules/@testing-library/dom/dist/query-helpers.js:62:17)
-      at getByTestId (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
-      at Object.<anonymous> (src/tests/CourseFinder.test.tsx:21:36)
+      at query (node_modules/@testing-library/dom/dist/query-helpers.js:90:38)
+      at getAllByText (node_modules/@testing-library/dom/dist/query-helpers.js:130:15)
+      at Object.<anonymous> (src/tests/CourseFinder.test.tsx:14:38)
 
-PASS src/tests/WelcomeModal.test.tsx (5.671 s)
+PASS src/tests/WelcomeModal.test.tsx (6.709 s)
   ● Console
 
     console.error
@@ -827,7 +806,7 @@ PASS src/tests/WelcomeModal.test.tsx (5.671 s)
       at setInitialProperties (node_modules/react-dom/cjs/react-dom.development.js:9041:5)
       at finalizeInitialChildren (node_modules/react-dom/cjs/react-dom.development.js:10201:3)
 
-PASS src/tests/ImportCsv.test.tsx (6.313 s)
+PASS src/tests/ImportCsv.test.tsx (5.584 s)
   ● Console
 
     console.error
@@ -876,7 +855,7 @@ PASS src/tests/ImportCsv.test.tsx (6.313 s)
       at setInitialProperties (node_modules/react-dom/cjs/react-dom.development.js:9041:5)
       at finalizeInitialChildren (node_modules/react-dom/cjs/react-dom.development.js:10201:3)
 
-PASS src/tests/ExportCsv.test.tsx
+PASS src/tests/ExportCsv.test.tsx (6.217 s)
 --------------------------------------|---------|----------|---------|---------|-------------------
 File                                  | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 --------------------------------------|---------|----------|---------|---------|-------------------
@@ -925,7 +904,7 @@ All files                             |   61.12 |    27.19 |    62.5 |   61.51 |
 --------------------------------------|---------|----------|---------|---------|-------------------
 
 Test Suites: 1 failed, 4 passed, 5 total
-Tests:       2 failed, 17 passed, 19 total
+Tests:       1 failed, 18 passed, 19 total
 Snapshots:   0 total
-Time:        212.938 s
+Time:        224.073 s
 Ran all test suites.
