@@ -93,6 +93,8 @@ export function CourseFinder({
                     placeholder="Enter course name or code"
                     value={query}
                     onChange={updateQuery}
+                    size="sm"
+                    data-testid="formCourseSearch"
                     style={{ textAlign: "center" }}
                 />
             </Form.Group>
@@ -118,6 +120,7 @@ export function CourseFinder({
                                 key={course.code}
                                 style={CourseFinderStyles.course_individual}
                                 onClick={() => setPool([...pool, course])}
+                                data-testid="searchCourse"
                             >
                                 <MouseOutlined />
                                 {getCourseString(course)}
@@ -148,12 +151,14 @@ export function CourseFinder({
                         <DraggableCourse course={course}></DraggableCourse>
                     </div>
                 ))}
+                {pool.length >= 1 && <p>Drag courses into your plan!</p>}
                 <div style={{ textAlign: "center" }}>
                     <Button
                         type="button"
                         startIcon={<Clear />}
                         color="error"
                         variant="contained"
+                        data-testid="clearPoolButton"
                         onClick={() => setPool([])}
                     >
                         Clear course pool

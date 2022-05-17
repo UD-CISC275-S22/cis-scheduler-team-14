@@ -50,6 +50,7 @@ export function DraggableCourse({ course }: { course: Course }): JSX.Element {
             style={DraggableCourseStyle.course_pool_individual}
             onMouseEnter={handlePopoverOpen}
             onMouseLeave={handlePopoverClose}
+            test-id="draggableCourse"
         >
             <h5 style={{ margin: 0, position: "relative", top: "35%" }}>
                 <DragIndicator />
