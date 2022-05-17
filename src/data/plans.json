@@ -9,7 +9,7 @@
                 "credits": 4,
                 "courses": [
                     {
-                        "code": "CISC 101",
+                        "code": "CISC 108",
                         "name": "Intro to Computer Science",
                         "descr": "An intro computer science course",
                         "credits": "4",
@@ -19,9 +19,9 @@
                         "typ": ""
                     },
                     {
-                        "code": "CISC 103",
-                        "name": "Test Class 2",
-                        "descr": "An intro computer science course",
+                        "code": "EGGG 101",
+                        "name": "Intro to Engineering",
+                        "descr": "An intro engineering course",
                         "credits": "4",
                         "preReq": "",
                         "restrict": "",
@@ -29,9 +29,9 @@
                         "typ": ""
                     },
                     {
-                        "code": "CISC 499",
-                        "name": "Test Class 3",
-                        "descr": "An intro computer science course",
+                        "code": "ENGL 110",
+                        "name": "Introductory English",
+                        "descr": "An intro English course",
                         "credits": "4",
                         "preReq": "",
                         "restrict": "",

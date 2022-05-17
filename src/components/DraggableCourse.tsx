@@ -2,6 +2,7 @@ import { useDrag } from "react-dnd";
 import { Course, getCourseString } from "../interfaces/course";
 import React, { useState } from "react";
 import { Popover, Typography } from "@mui/material";
+import { DragIndicator } from "@mui/icons-material";
 
 const DraggableCourseStyle = {
     /** CSS Style for a course in the Course Pool */
@@ -51,7 +52,10 @@ export function DraggableCourse({ course }: { course: Course }): JSX.Element {
             onMouseLeave={handlePopoverClose}
             test-id="draggableCourse"
         >
-            <h5>{getCourseString(course)}</h5>
+            <h5 style={{ margin: 0, position: "relative", top: "35%" }}>
+                <DragIndicator />
+                {getCourseString(course)}
+            </h5>
             {isDragging}
             <Popover
                 id="mouse-over-popover"

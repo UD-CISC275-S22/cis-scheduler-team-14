@@ -7,7 +7,7 @@ import Add from "@mui/icons-material/Add";
 import Button from "@mui/material/Button";
 import { SemesterList } from "./SemesterList";
 import { Course } from "../interfaces/course";
-import { DeleteForever } from "@mui/icons-material";
+import { DeleteForever, ImportExport } from "@mui/icons-material";
 import { RequirementsViewer } from "./RequirementsViewer";
 import { ExportCsv } from "./ExportCsv";
 import { ImportCsv } from "./ImportCsv";
@@ -90,6 +90,17 @@ export function PlanView({
                     >
                         Add Semester
                     </Button>
+                    {/*Delete Plan*/}
+                    <Button
+                        startIcon={<DeleteIcon />}
+                        variant="contained"
+                        color="secondary"
+                        className="m-2"
+                        data-testid="deletePlanButton"
+                        onClick={() => deletePlan(plan.id)}
+                    >
+                        Delete Plan
+                    </Button>
                     <Button
                         startIcon={<DeleteForever />}
                         variant="contained"
@@ -106,17 +117,6 @@ export function PlanView({
                         semesters={semesters}
                         setSemesters={setSemesters}
                     ></AddSemesterModal>
-                    {/*Delete Plan*/}
-                    <Button
-                        startIcon={<DeleteIcon />}
-                        variant="outlined"
-                        color="secondary"
-                        className="m-2"
-                        data-testid="deletePlanButton"
-                        onClick={() => deletePlan(plan.id)}
-                    >
-                        Delete Plan
-                    </Button>
                 </div>
             </div>
             <p></p>
@@ -129,11 +129,12 @@ export function PlanView({
                 setBaBs={setBaBS}
                 setConc={setConc}
             />
-            <div>
+            <div style={{ textAlign: "center" }}>
                 <Button
                     variant="contained"
                     color="success"
                     className="m-4"
+                    startIcon={<ImportExport />}
                     onClick={handleOpen}
                 >
                     Click Here To Import Or Export Your Plan
@@ -148,17 +149,16 @@ export function PlanView({
                         <Modal.Title>Import Or Export Your Plan</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <div>
+                        <div style={{ textAlign: "center" }}>
                             <ExportCsv semesters={semesters}></ExportCsv>
-                        </div>
-                        <div>
-                            <ImportCsv></ImportCsv>
+                            <p></p>
+                            <ImportCsv setPlans={() => void {}}></ImportCsv>
                         </div>
                     </Modal.Body>
                     <Modal.Footer>
                         <Button
                             type="button"
-                            className="btn btn-success"
+                            variant="contained"
                             onClick={handleClose}
                         >
                             Close

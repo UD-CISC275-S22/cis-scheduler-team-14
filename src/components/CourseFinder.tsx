@@ -1,5 +1,7 @@
+import { Clear, MouseOutlined } from "@mui/icons-material";
+import { Button } from "@mui/material";
 import React, { useState } from "react";
-import { Button, Form } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import { Course, getCourseString } from "../interfaces/course";
 import { DraggableCourse } from "./DraggableCourse";
 
@@ -19,7 +21,7 @@ export function CourseFinder({
         /** CSS Style for the individual course div's */
         course_individual: {
             height: 50,
-            backgroundColor: "gainsboro",
+            backgroundColor: "#ebebeb",
             alignContent: "center",
             outlineStyle: "solid",
             outlineWidth: "thin"
@@ -41,8 +43,8 @@ export function CourseFinder({
             alignContent: "center",
             backgroundColor: "lightcyan",
             padding: "10px",
-            outlineStyle: "solid",
-            outlineWidth: "medium",
+            border: "1px black",
+            borderStyle: "solid",
             overflow: "auto",
             maxHeight: "650px"
         } as React.CSSProperties,
@@ -76,7 +78,16 @@ export function CourseFinder({
     /** In order from top to bottom: Course search bar, Course Pool, Clear Courses Button */
     return (
         <div style={CourseFinderStyles.course_container}>
-            <h4>Course Lookup</h4>
+            <h3 style={{ textAlign: "center" }}>Course Lookup</h3>
+            <h6
+                style={{
+                    fontStyle: "italic",
+                    textAlign: "center",
+                    fontSize: "small"
+                }}
+            >
+                Search for a course by course code below.
+            </h6>
             <Form.Group controlId="formCourseSearch">
                 <Form.Control
                     placeholder="Enter course name or code"
@@ -84,8 +95,20 @@ export function CourseFinder({
                     onChange={updateQuery}
                     size="sm"
                     data-testid="formCourseSearch"
+                    style={{ textAlign: "center" }}
                 />
             </Form.Group>
+            <p></p>
+            <h6
+                style={{
+                    fontStyle: "italic",
+                    textAlign: "center",
+                    fontSize: "small"
+                }}
+            >
+                Click a course from the list below to add it to your Course
+                Pool.
+            </h6>
             <p></p>
             <div style={CourseFinderStyles.course_scroll_list}>
                 {COURSES.filter(containsQuery).map(
@@ -99,6 +122,7 @@ export function CourseFinder({
                                 onClick={() => setPool([...pool, course])}
                                 data-testid="searchCourse"
                             >
+                                <MouseOutlined />
                                 {getCourseString(course)}
                             </div>
                         )
@@ -106,9 +130,18 @@ export function CourseFinder({
             </div>
             <div>
                 <p></p>
-                <h4>Course Pool</h4>
+                <h4 style={{ textAlign: "center" }}>Course Pool</h4>
                 {pool.length === 0 && (
-                    <p>Click a course to add it to your course pool!</p>
+                    <h6
+                        style={{
+                            fontStyle: "italic",
+                            textAlign: "center",
+                            fontSize: "small"
+                        }}
+                    >
+                        Your Course Pool is empty. Click a course from the list
+                        above to add it.
+                    </h6>
                 )}
                 {pool.map((course: Course) => (
                     <div
@@ -119,14 +152,18 @@ export function CourseFinder({
                     </div>
                 ))}
                 {pool.length >= 1 && <p>Drag courses into your plan!</p>}
-                <Button
-                    type="button"
-                    className="btn btn-danger"
-                    onClick={() => setPool([])}
-                    data-testid="clearPoolButton"
-                >
-                    Clear course pool
-                </Button>
+                <div style={{ textAlign: "center" }}>
+                    <Button
+                        type="button"
+                        startIcon={<Clear />}
+                        color="error"
+                        variant="contained"
+                        data-testid="clearPoolButton"
+                        onClick={() => setPool([])}
+                    >
+                        Clear course pool
+                    </Button>
+                </div>
             </div>
         </div>
     );

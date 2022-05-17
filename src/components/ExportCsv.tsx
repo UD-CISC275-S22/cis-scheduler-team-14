@@ -1,12 +1,8 @@
-import { Button } from "react-bootstrap";
 import { Course } from "../interfaces/course";
 import React from "react";
 import { Semester } from "../interfaces/semester";
-
-//import React from "react";
-//import { Button } from "@mui/material";
-//import { Download } from "@mui/icons-material";
-
+import { Button } from "@mui/material";
+import { FileDownload } from "@mui/icons-material";
 export function ExportCsv({
     semesters
 }: {
@@ -48,7 +44,8 @@ export function ExportCsv({
         <div>
             <Button
                 type="button"
-                className="btn btn-success"
+                variant="outlined"
+                startIcon={<FileDownload />}
                 onClick={() => downloadBlob(content.flat(), "CsvExport.CSV")}
             >
                 Export Your Plan
@@ -56,23 +53,3 @@ export function ExportCsv({
         </div>
     );
 }
-
-/*function arrayToCsv(data: Course[]) {
-    return data
-        .map((row) => `${row.name},${row.code}, ${row.credits}`)
-        .join("\r\n"); // rows starting on new lines
-}
-
-export function downloadBlob(content: Course[], filename: string) {
-    // Create a blob
-    const blob = new Blob([arrayToCsv(content)]);
-    const url = URL.createObjectURL(blob);
-
-    // Create a link to download it
-    const pom = document.createElement("a");
-    pom.href = url;
-    pom.setAttribute("download", filename);
-    pom.click();
-    //downloadBlob(csv, "export.csv");
-}
-*/
