@@ -83,6 +83,7 @@ export function CourseFinder({
                     value={query}
                     onChange={updateQuery}
                     size="sm"
+                    data-testid="formCourseSearch"
                 />
             </Form.Group>
             <p></p>
@@ -96,6 +97,7 @@ export function CourseFinder({
                                 key={course.code}
                                 style={CourseFinderStyles.course_individual}
                                 onClick={() => setPool([...pool, course])}
+                                data-testid="searchCourse"
                             >
                                 {getCourseString(course)}
                             </div>
@@ -121,6 +123,7 @@ export function CourseFinder({
                     type="button"
                     className="btn btn-danger"
                     onClick={() => setPool([])}
+                    data-testid="clearPoolButton"
                 >
                     Clear course pool
                 </Button>
