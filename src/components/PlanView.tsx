@@ -152,7 +152,7 @@ export function PlanView({
                         <div style={{ textAlign: "center" }}>
                             <ExportCsv semesters={semesters}></ExportCsv>
                             <p></p>
-                            <ImportCsv></ImportCsv>
+                            <ImportCsv setPlans={() => void {}}></ImportCsv>
                         </div>
                     </Modal.Body>
                     <Modal.Footer>

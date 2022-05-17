@@ -1,4 +1,3 @@
-//import catalog_json from "../data/catalog.json";
 import { FileUpload } from "@mui/icons-material";
 import { Button } from "@mui/material";
 import { Form, Modal } from "react-bootstrap";
@@ -6,7 +5,6 @@ import React, { useState } from "react";
 import { Course } from "../interfaces/course";
 import { Season, Semester } from "../interfaces/semester";
 import { Plan } from "../interfaces/plan";
-import { PlanView } from "./PlanView";
 
 //data looks like this
 //107
@@ -14,48 +12,21 @@ import { PlanView } from "./PlanView";
 //2021, Fall, Cisc108, Math241
 //2022, Spring, Cisc181
 
-export function ImportCsv(): JSX.Element {
+export function ImportCsv({
+    setPlans
+}: {
+    setPlans: (plans: Plan[]) => void;
+}): JSX.Element {
     const [content, setContent] = useState<string>("No file data uploaded");
     const [open, setOpen] = React.useState(false);
+    const [plans] = useState<Plan[]>([]);
+    const [error, setError] = useState<string | null>(null);
     const handleClose = () => setOpen(false);
     const handleOpen = () => setOpen(true);
-    // const COURSECATALOG = Object.values(catalog_json);
-    // Assuming data was something simple like this...
 
-    // You want the actual data storage useState, but also need something
-    // to handle the fact that the parsing can fail!
-    // ...
-    // const [plans, setPlans] = useState<Plan[]>([]);
-    // const [error, setError] = useState<string | null>(null);
-    // ...
-    //getfile name from modal dialog
-    //open file
-    //put content of file into rawData-> string
-    //call loadCsvData with rawData
-    //update data from appplication
-    //update display-need to be a new function
-    // function uploadFile(event: React.ChangeEvent<HTMLInputElement>) {
-    //     // Might have removed the file, need to check that the files exist
-    //     if (event.target.files && event.target.files.length) {
-    //         // Get the first filename
-    //         const filename = event.target.files[0];
-    //         // Create a reader
-    //         const reader = new FileReader();
-    //         // Create lambda callback to handle when we read the file
-    //         reader.onload = (loadEvent) => {
-    //             // Target might be null, so provide default error value
-    //             const newContent =
-    //                 loadEvent.target?.result || "Data was not loaded";
-    //             // FileReader provides string or ArrayBuffer, force it to be string
-    //             setContent(newContent as string);
-    //         };
-    //         // Actually read the file
-    //         reader.readAsText(filename);
-    //     }
-    // }
-    function planWebsite() {
+    function addImportFile() {
         loadCsvData;
-        PlanView;
+        readFile;
     }
 
     function readFile(event: React.ChangeEvent<HTMLInputElement>) {
@@ -73,7 +44,9 @@ export function ImportCsv(): JSX.Element {
                 // FileReader provides string or ArrayBuffer, force it to be string
                 setContent(newContent as string);
                 const newPlan = loadCsvData(newContent as string);
-                return newPlan;
+                const newPlan1: Plan[] = [];
+                newPlan1.push(newPlan);
+                return setPlans(newPlan1);
             };
             // Actually read the file
             reader.readAsText(filename);
@@ -91,31 +64,32 @@ export function ImportCsv(): JSX.Element {
         const metadata = lines[0];
         const id = +metadata.substring(0);
         const semesters = getSemesters(lines.slice(2));
-        return { id, semesters };
-        // I'd do a heckton more sanity checking, but as an example...
-        // if (header !== "Semester,Course") {
-        //    setError("Header is corrupted or missing");
-        //}
+        const [header, ...body] = lines;
+        if (header !== "Semester,Course") {
+            setError("Header is corrupted or missing");
+        }
         // Then we could collect the actual data
-        // try {
-        //     // Could also just return the data instead, and call setPlans elsewhere
-        //     setPlans(
-        //         // Add this plan to our existing collection
-        //         [
-        //             ...plans,
-        //             {
-        //                 id: 10,
-        //                 // Decomposition is your friend for managing complexity
-        //                 semesters: makeSemesters(body)
-        //             }
-        //         ]
-        //     );
-        // } catch (e) {
-        //     // Render the original error for dev purposes
-        //     console.error(e);
-        //     // Let the user know something went wrong
-        //     setError("Body is corrupted!");
-        // }
+        try {
+            // Could also just return the data instead, and call setPlans elsewhere
+            setPlans(
+                // Add this plan to our existing collection
+                [
+                    ...plans,
+                    {
+                        id: 10,
+                        // Decomposition is your friend for managing complexity
+                        semesters: getSemesters(body)
+                    }
+                ]
+            );
+        } catch (e) {
+            // Render the original error for dev purposes
+            console.error(e);
+            console.log(error);
+            // Let the user know something went wrong
+            setError("Body is corrupted!");
+        }
+        return { id, semesters };
     }
 
     function getSeason(oneseason: string): Season {
@@ -156,73 +130,6 @@ export function ImportCsv(): JSX.Element {
         );
     }
 
-    // function makeSemesters(body: string[]): Semester[] {
-    //     // Need to do a bit of fancy logic to "group by"
-    //     // eslint-disable-next-line prettier/prettier
-    //     // interface sznAndCourses {
-    //     //     s: Season;
-    //     //     c: Course[];
-    //     // }
-    //     const coursesBySemester: Record<number, Semester> = {};
-    //     // Using reduce, we can push the elements into the right structure
-    //     body.reduce(
-    //         (
-    //             result: Record<number, Semester>,
-    //             row: string
-    //         ): Record<number, Semester> => {
-    //             const [semester, course] = row.split(",");
-    //             // If we haven't seen the semester yet, we need a new array
-    //             //course gives me id num need to look up in course catlogue to get full class
-    //             //save them to variable and push varible to
-    //             const COURSECATALOG = Object.values(catalog_json);
-    //             const fullCourse = COURSECATALOG.filter((data: Course) => course === data.code);
-    //             const courses = result[coursetonumber(semester)] || [];
-    //             // Add the course to the array
-    //             courses.courses = fullCourse;
-    //             // Keep building up the result hi
-    //             return result;
-    //         },
-    //         coursesBySemester
-    //     );
-
-    //     // Change the "Record mapping strings to course arrays" into an
-    //     //   "Array of Semesters, where each Semester has a courses array"
-    //     return Object.entries(coursesBySemester).map(
-    //         ([stringtonumber(semester), Semester]: [number, Semester]) => ({
-    //             year: year,
-    //             season: sznAndCourses.s,
-    //             courses: sznAndCourses.c
-    //         })
-    //     );
-    // }
-
-    // function uploadFile(event: React.ChangeEvent<HTMLInputElement>) {
-    //     // Might have removed the file, need to check that the files exist
-    //     if (event.target.files && event.target.files.length) {
-    //         // Get the first filename
-    //         const filename = event.target.files[0];
-    //         // Create a reader
-    //         const reader = new FileReader();
-    //         // Create lambda callback to handle when we read the file
-    //         reader.onload = (loadEvent) => {
-    //             // Target might be null, so provide default error value
-    //             const newContent =
-    //                 loadEvent.target?.result || "Data was not loaded";
-    //             // FileReader provides string or ArrayBuffer, force it to be string
-    //             setContent(newContent as string);
-    //             console.log(newContent);
-    //             console.log("new text");
-    //             const newText = newContent as string;
-    //             console.log(newText);
-    //             //console.log(newContent.size);
-    //             const newArray = newText.split("\n");
-    //             const newData = newArray.map((data: string) => data.split(","));
-    //             console.log(newData);
-    //         };
-    //         // Actually read the file
-    //         reader.readAsText(filename);
-    //     }
-    // }
     return (
         <div>
             <Button
@@ -249,9 +156,17 @@ export function ImportCsv(): JSX.Element {
                     <Form.Group controlId="exampleForm">
                         <Form.Label>Upload a file</Form.Label>
                         <Form.Control type="file" onChange={readFile} />
+                        {readFile}
                     </Form.Group>
                 </div>
                 <Modal.Footer>
+                    <Button
+                        type="button"
+                        variant="text"
+                        onClick={addImportFile}
+                    >
+                        Import File Data To Website
+                    </Button>
                     <Button
                         type="button"
                         className="btn btn-success"
@@ -259,55 +174,8 @@ export function ImportCsv(): JSX.Element {
                     >
                         Close
                     </Button>
-                    <Button
-                        type="button"
-                        className="btn btn-success"
-                        onClick={planWebsite}
-                    >
-                        Add Import File Data To Website
-                    </Button>
                 </Modal.Footer>
             </Modal>
         </div>
     );
 }
-
-// //make string array into courses
-// const newCourse: Course;
-// newCourse = newData.map(
-//     (data: Course) => (newCourse.code = data[1]),
-//     (newCourse.name = data[0]),
-//     (newCourse.credits = data[2])
-// );
-
-// let newSemesterUser: Semester;
-// let newPlanUser: Plan;
-
-// newSemesterUser = newData.map((data: Semester) =>
-//     newSemesterUser.push(data)
-// );
-// setSemester(newSemesterUser);
-
-//how to add newData to semester and then add that semester to a new plan
-//set that plan so they can see
-
-//     newSemsterUser = newData.map((data: Semester) =>
-//         newSemester.push(data)
-//     );
-//    newPlanUser = newData.map((data: Plan) => newPlan.plan.push(data));
-//     setPlans(newPlan);
-// newSemesterUser.season
-// const moreData = COURSECATALOG.filter(
-//     (data: Course) => (data.code = newData[0][0])
-// );
-// console.log(moreData);
-// newSemsterUser.courses.push(moreData);
-// const moreData = newData.filter(
-//     (data: string) => data.split(",")[0]
-// );
-//const newName = newData.map((data:string) => data[0]);
-//console.log(newArray[0]);
-//console.log(newData);
-//Course.name = newData[0];
-//Course.code = newData[1];
-//Course.credits = newData[2];
