@@ -2,7 +2,7 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-PASS src/tests/PlanView.test.tsx (173.172 s)
+PASS src/tests/PlanView.test.tsx (161.28 s)
   ● Console
 
     console.error
@@ -348,7 +348,8 @@ PASS src/tests/PlanView.test.tsx (173.172 s)
       at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
       at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
 
-FAIL src/tests/CourseFinder.test.tsx (29.961 s)
+PASS src/tests/Requirements.test.tsx
+PASS src/tests/CourseFinder.test.tsx (26.38 s)
   ● Console
 
     console.error
@@ -614,173 +615,7 @@ FAIL src/tests/CourseFinder.test.tsx (29.961 s)
       at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
       at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
 
-  ● Testing CourseFinder › Searching for a course works
-
-    TestingLibraryElementError: Unable to find an element with the text: Introduction to Computer Science II. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
-
-    Ignored nodes: comments, <script />, <style />
-    [36m<body>[39m
-      [36m<div>[39m
-        [36m<img[39m
-          [33mdata-testid[39m=[32m"header-image"[39m
-          [33msrc[39m=[32m"background.jpg"[39m
-          [33mwidth[39m=[32m"100%"[39m
-        [36m/>[39m
-        [36m<div[39m
-          [33mstyle[39m=[32m"text-align: center; margin: auto;"[39m
-        [36m>[39m
-          [36m<div>[39m
-            [36m<div>[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"MuiButton-root MuiButton-contained MuiButton-containedSuccess MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root m-4 css-ke5b6m-MuiButtonBase-root-MuiButton-root"[39m
-                [33mtabindex[39m=[32m"0"[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m>[39m
-                [36m<span[39m
-                  [33mclass[39m=[32m"MuiButton-startIcon MuiButton-iconSizeMedium css-1d6wzja-MuiButton-startIcon"[39m
-                [36m>[39m
-                  [36m<svg[39m
-                    [33maria-hidden[39m=[32m"true"[39m
-                    [33mclass[39m=[32m"MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"[39m
-                    [33mdata-testid[39m=[32m"HelpOutlineOutlinedIcon"[39m
-                    [33mfocusable[39m=[32m"false"[39m
-                    [33mviewBox[39m=[32m"0 0 24 24"[39m
-                  [36m>[39m
-                    [36m<path[39m
-                      [33md[39m=[32m"M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"[39m
-                    [36m/>[39m
-                  [36m</svg>[39m
-                [36m</span>[39m
-                [0mClick here to learn how to get started![0m
-                [36m<span[39m
-                  [33mclass[39m=[32m"MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"[39m
-                [36m/>[39m
-              [36m</button>[39m
-            [36m</div>[39m
-          [36m</div>[39m
-        [36m</div>[39m
-        [36m<div[39m
-          [33mstyle[39m=[32m"text-align: center; margin: auto;"[39m
-        [36m>[39m
-          [36m<button[39m
-            [33mclass[39m=[32m"MuiButton-root MuiButton-contained MuiButton-containedSuccess MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root  css-ke5b6m-MuiButtonBase-root-MuiButton-root"[39m
-            [33mdata-testid[39m=[32m"addPlanButton"[39m
-            [33mstyle[39m=[32m"width: 50%;"[39m
-            [33mtabindex[39m=[32m"0"[39m
-            [33mtype[39m=[32m"button"[39m
-          [36m>[39m
-            [36m<span[39m
-              [33mclass[39m=[32m"MuiButton-startIcon MuiButton-iconSizeMedium css-1d6wzja-MuiButton-startIcon"[39m
-            [36m>[39m
-              [36m<svg[39m
-                [33maria-hidden[39m=[32m"true"[39m
-                [33mclass[39m=[32m"MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"[39m
-                [33mdata-testid[39m=[32m"AddIcon"[39m
-                [33mfocusable[39m=[32m"false"[39m
-                [33mviewBox[39m=[32m"0 0 24 24"[39m
-              [36m>[39m
-                [36m<path[39m
-                  [33md[39m=[32m"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"[39m
-                [36m/>[39m
-              [36m</svg>[39m
-            [36m</span>[39m
-            [0mAdd Plan[0m
-            [36m<span[39m
-              [33mclass[39m=[32m"MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"[39m
-            [36m/>[39m
-          [36m</button>[39m
-        [36m</div>[39m
-        [36m<div>[39m
-          [36m<div[39m
-            [33mclass[39m=[32m"MuiBox-root css-8atqhb"[39m
-          [36m>[39m
-            [36m<div[39m
-              [33mclass[39m=[32m"MuiBox-root css-1gsv261"[39m
-            [36m>[39m
-              [36m<div[39m
-                [33mclass[39m=[32m"MuiTabs-root css-1ujnqem-MuiTabs-root"[39m
-              [36m>[39m
-                [36m<div[39m
-                  [33mclass[39m=[32m"MuiTabs-scroller MuiTabs-fixed css-jpln7h-MuiTabs-scroller"[39m
-                  [33mstyle[39m=[32m"overflow: hidden; margin-bottom: 0px;"[39m
-                [36m>[39m
-                  [36m<div[39m
-                    [33maria-label[39m=[32m"tabs"[39m
-                    [33mclass[39m=[32m"MuiTabs-flexContainer css-heg063-MuiTabs-flexContainer"[39m
-                    [33mrole[39m=[32m"tablist"[39m
-                  [36m>[39m
-                    [36m<button[39m
-                      [33maria-controls[39m=[32m"simple-tabpanel-0"[39m
-                      [33maria-selected[39m=[32m"true"[39m
-                      [33mclass[39m=[32m"MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary Mui-selected css-1ed6n6u-MuiButtonBase-root-MuiTab-root"[39m
-                      [33mdata-testid[39m=[32m"tab"[39m
-                      [33mid[39m=[32m"simple-tab-0"[39m
-                      [33mrole[39m=[32m"tab"[39m
-                      [33mtabindex[39m=[32m"0"[39m
-                      [33mtype[39m=[32m"button"[39m
-                    [36m>[39m
-                      [0mPlan 1[0m
-                      [36m<span[39m
-                        [33mclass[39m=[32m"MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"[39m
-                      [36m/>[39m
-                    [36m</button>[39m
-                  [36m</div>[39m
-                  [36m<span[39m
-                    [33mclass[39m=[32m"MuiTabs-indicator css-1aquho2-MuiTabs-indicator"[39m
-                    [33mstyle[39m=[32m"left: 0px; width: 0px;"[39m
-                  [36m/>[39m
-                [36m</div>[39m
-              [36m</div>[39m
-            [36m</div>[39m
-            [36m<div[39m
-              [33maria-labelledby[39m=[32m"simple-tab-0"[39m
-              [33mdata-testid[39m=[32m"tab-panel"[39m
-              [33mid[39m=[32m"simple-tabpanel-0"[39m
-              [33mrole[39m=[32m"tabpanel"[39m
-            [36m>[39m
-              [36m<div[39m
-                [33mclass[39m=[32m"MuiBox-root css-19kzrtu"[39m
-              [36m>[39m
-                [36m<p[39m
-                  [33mclass[39m=[32m"MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"[39m
-                [36m>[39m
-                  [36m<div[39m
-                    [33mclass[39m=[32m"row"[39m
-                  [36m>[39m
-                    [36m<div[39m
-                      [33mclass[39m=[32m"col-md-8 col-12"[39m
-                    [36m>[39m
-                      [36m<div>[39m
-                        [36m<div[39m
-                          [33mstyle[39m=[32m"background-color: lightcyan; border-radius: 25px; padding: 10px; border: 1px black; border-style: solid;"[39m
-                        [36m>[39m
-                          [36m<h3[39m
-                            [33mdata-testid[39m=[32m"plan-title"[39m
-                            [33mstyle[39m=[32m"text-align: center;"[39m
-                          [36m>[39m
-                            [0mPlan [0m
-                            [0m1[0m
-                          [36m</h3>[39m
-                          [36m<div>[39m
-                            [36m<div[39m
-                              [33mclass[39m=[32m"vstack gap-3"[39m
-                            [36m>[39m
-               ...
-
-      12 |         const searchBar = screen.getByTestId("formCourseSearch");
-      13 |         userEvent.type(searchBar, "CISC 181");
-    > 14 |         const correctCourse = screen.getAllByText(
-         |                                      ^
-      15 |             "Introduction to Computer Science II"
-      16 |         );
-      17 |         expect(correctCourse).toHaveLength(1);
-
-      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
-      at query (node_modules/@testing-library/dom/dist/query-helpers.js:90:38)
-      at getAllByText (node_modules/@testing-library/dom/dist/query-helpers.js:130:15)
-      at Object.<anonymous> (src/tests/CourseFinder.test.tsx:14:38)
-
-PASS src/tests/WelcomeModal.test.tsx (6.709 s)
+PASS src/tests/WelcomeModal.test.tsx (7.159 s)
   ● Console
 
     console.error
@@ -806,7 +641,7 @@ PASS src/tests/WelcomeModal.test.tsx (6.709 s)
       at setInitialProperties (node_modules/react-dom/cjs/react-dom.development.js:9041:5)
       at finalizeInitialChildren (node_modules/react-dom/cjs/react-dom.development.js:10201:3)
 
-PASS src/tests/ImportCsv.test.tsx (5.584 s)
+PASS src/tests/ImportCsv.test.tsx (5.285 s)
   ● Console
 
     console.error
@@ -855,11 +690,11 @@ PASS src/tests/ImportCsv.test.tsx (5.584 s)
       at setInitialProperties (node_modules/react-dom/cjs/react-dom.development.js:9041:5)
       at finalizeInitialChildren (node_modules/react-dom/cjs/react-dom.development.js:10201:3)
 
-PASS src/tests/ExportCsv.test.tsx (6.217 s)
+PASS src/tests/ExportCsv.test.tsx
 --------------------------------------|---------|----------|---------|---------|-------------------
 File                                  | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 --------------------------------------|---------|----------|---------|---------|-------------------
-All files                             |   61.12 |    27.19 |    62.5 |   61.51 |                   
+All files                             |   72.39 |    49.25 |   76.87 |   71.81 |                   
  src                                  |     100 |      100 |     100 |     100 |                   
   App.tsx                             |     100 |      100 |     100 |     100 |                   
  src/components                       |   64.33 |    51.65 |   69.74 |    64.2 |                   
@@ -881,19 +716,19 @@ All files                             |   61.12 |    27.19 |    62.5 |   61.51 |
   SemesterList.tsx                    |     100 |      100 |     100 |     100 |                   
   SemesterView.tsx                    |   68.18 |     62.5 |      75 |   68.18 | 29-39             
   WelcomeModal.tsx                    |   83.33 |      100 |   66.66 |     100 |                   
- src/components/MajorRequirementLists |   26.78 |     15.5 |      25 |   28.57 |                   
+ src/components/MajorRequirementLists |   98.21 |     48.1 |   96.87 |   97.95 |                   
   ArtificialIntelligenceConc.tsx      |     100 |       50 |     100 |     100 | 60-118            
-  BARequirements.tsx                  |       0 |        0 |       0 |       0 | 20-49             
-  BSMajorRequirements.tsx             |     100 |    42.42 |     100 |     100 | 16-235            
+  BARequirements.tsx                  |     100 |    43.24 |     100 |     100 | 41-205            
+  BSMajorRequirements.tsx             |     100 |    46.96 |     100 |     100 | 16-31,88-235      
   BSRequirements.tsx                  |      80 |    71.42 |   66.66 |      80 | 19                
-  BioinformaticsConc.tsx              |       0 |        0 |       0 |       0 | 17-38             
-  CybersecurityConc.tsx               |       0 |        0 |       0 |       0 | 15-52             
-  DataSciConc.tsx                     |       0 |        0 |       0 |       0 | 17-44             
-  HighPerfDataConc.tsx                |       0 |        0 |       0 |       0 | 13-23             
-  HighPerfMathConc.tsx                |       0 |        0 |       0 |       0 | 13-23             
-  TheoryContinuousConc.tsx            |       0 |        0 |       0 |       0 | 13-41             
-  TheoryDiscreteConc.tsx              |       0 |        0 |       0 |       0 | 13-41             
-  UniversityRequirements.tsx          |     100 |       50 |     100 |     100 | 38-111            
+  BioinformaticsConc.tsx              |     100 |       50 |     100 |     100 | 20-172            
+  CybersecurityConc.tsx               |     100 |       50 |     100 |     100 | 67-130            
+  DataSciConc.tsx                     |     100 |       50 |     100 |     100 | 59-157            
+  HighPerfDataConc.tsx                |     100 |    41.93 |     100 |     100 | 15-140            
+  HighPerfMathConc.tsx                |     100 |    41.37 |     100 |     100 | 15-131            
+  TheoryContinuousConc.tsx            |     100 |       50 |     100 |     100 | 56-153            
+  TheoryDiscreteConc.tsx              |     100 |       50 |     100 |     100 | 56-153            
+  UniversityRequirements.tsx          |     100 |    61.11 |     100 |     100 | 56-111            
  src/data                             |     100 |      100 |     100 |     100 |                   
   universityreqs.ts                   |     100 |      100 |     100 |     100 |                   
  src/interfaces                       |     100 |      100 |     100 |     100 |                   
@@ -903,8 +738,8 @@ All files                             |   61.12 |    27.19 |    62.5 |   61.51 |
   semester.ts                         |       0 |        0 |       0 |       0 |                   
 --------------------------------------|---------|----------|---------|---------|-------------------
 
-Test Suites: 1 failed, 4 passed, 5 total
-Tests:       1 failed, 18 passed, 19 total
+Test Suites: 6 passed, 6 total
+Tests:       31 passed, 31 total
 Snapshots:   0 total
-Time:        224.073 s
+Time:        208.292 s
 Ran all test suites.
