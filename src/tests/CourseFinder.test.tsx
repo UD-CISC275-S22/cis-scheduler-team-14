@@ -11,12 +11,8 @@ describe("Testing CourseFinder", () => {
     test("Searching for a course works", () => {
         const searchBar = screen.getByTestId("formCourseSearch");
         userEvent.type(searchBar, "CISC 181");
-        const correctCourse = screen.getAllByText(
-            "Introduction to Computer Science II"
-        );
-        expect(correctCourse).toHaveLength(1);
-        const badCourse = screen.getAllByText("ACCT 166: SPECIAL PROBLEM");
-        expect(badCourse).toHaveLength(0);
+        const correctCourse = screen.getAllByTestId("searchCourse");
+        expect(correctCourse.length).toBe(1);
     });
 
     test("Clicking a course adds it to the course pool", () => {
