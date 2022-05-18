@@ -2,7 +2,7 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-PASS src/tests/PlanView.test.tsx (147.488 s)
+PASS src/tests/PlanView.test.tsx (130.959 s)
   ● Console
 
     console.error
@@ -349,7 +349,7 @@ PASS src/tests/PlanView.test.tsx (147.488 s)
       at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
 
 PASS src/tests/Requirements.test.tsx
-PASS src/tests/CourseFinder.test.tsx (24.134 s)
+PASS src/tests/CourseFinder.test.tsx (19.952 s)
   ● Console
 
     console.error
@@ -615,7 +615,7 @@ PASS src/tests/CourseFinder.test.tsx (24.134 s)
       at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
       at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
 
-PASS src/tests/WelcomeModal.test.tsx (5.422 s)
+PASS src/tests/WelcomeModal.test.tsx (6.8 s)
   ● Console
 
     console.error
@@ -641,7 +641,7 @@ PASS src/tests/WelcomeModal.test.tsx (5.422 s)
       at setInitialProperties (node_modules/react-dom/cjs/react-dom.development.js:9041:5)
       at finalizeInitialChildren (node_modules/react-dom/cjs/react-dom.development.js:10201:3)
 
-PASS src/tests/ImportCsv.test.tsx (5.113 s)
+PASS src/tests/ImportCsv.test.tsx (5.158 s)
   ● Console
 
     console.error
@@ -741,5 +741,5 @@ All files                             |   72.39 |    49.25 |   76.87 |   71.81 |
 Test Suites: 6 passed, 6 total
 Tests:       31 passed, 31 total
 Snapshots:   0 total
-Time:        190.345 s
+Time:        169.785 s
 Ran all test suites.
